@@ -1,9 +1,9 @@
 # site settings
-title: Forty
+title: Blacksuan19
 subtitle: by HTML5 UP
-email: youremailaddress@gmail.com
-description: A responsive site template designed by HTML5 Up<br /> and released under the Creative Commons.
-baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
+email: abubakaryagob@@gmail.com
+description: A place where i have my portfolio,  projects and random thoughts
+baseurl: "" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
 author:
 street_address: 1234 Somewhere Road
@@ -20,10 +20,10 @@ tiles-count: 6
 # social settings
 500px_url:
 facebook_url:
-github_url:
+github_url: https://github.com/blacksuan19
 gitlab_url: https://gitlab.com/u/andrewbanchich
 googleplus_url: https://plus.google.com/u/0/+AndrewBanchich
-instagram_url: https://instagram.com
+instagram_url: https://instagram.com/blacksuan19
 linkedin_url: https://www.linkedin.com/in/andrew-banchich-a4ba1195
 pinterest_url:
 slack_url:
