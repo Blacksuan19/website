@@ -24,10 +24,20 @@
           /></span>
           {% endif %}
           <p>{{ content }}</p>
-          {% if page.title != 404 %}
-          <ul class="actions">
-            <a href="/blog" class="button">Back To Blog</a>
-          </ul>
+          {% if page.project != true %}
+          <div class="actions">
+            {% if page.previous.url and page.previous.project != true %}
+            <a class="button" href="{{ page.previous.url }}"
+              >&laquo;{{ page.previous.title }}</a
+            >
+            {% endif %} {% if page.next.url and page.next.project != true %}
+            <a style="float: right;" class="button" href="{{ page.next.url }}"
+              >{{ page.next.title }}&raquo;</a
+            >
+            <br />
+            <br />
+            {% endif %}
+          </div>
           {% endif %}
         </div>
       </section>
