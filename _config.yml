@@ -1,8 +1,8 @@
 # site settings
 title: Blacksuan19
 subtitle:
-email: abubakaryagob@@gmail.com
-description: A place where i have my portfolio,  projects and random thoughts
+email: abubakaryagob@gmail.com
+description: An Android and Linux Enthusiast, JavaFX developer and a gym fanatic
 baseurl: "" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
 author: Blacksuan19
@@ -18,8 +18,6 @@ tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 6
 
 # social settings
-500px_url:
-facebook_url:
 github_url: https://github.com/blacksuan19
 instagram_url: https://instagram.com/blacksuan19
 # build settings
