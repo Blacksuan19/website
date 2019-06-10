@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-    Forty by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-  -->
+
 <html>
   {% include head.html %}
 
@@ -13,7 +9,7 @@
     <!-- Main -->
     <div id="main" class="alt">
       <!-- Two -->
-      {% for post in site.posts %} {% if post.project != true %}
+      {% for post in site.posts %} {% if post.project == true %}
       <section id="two" class="spotlights" style="padding: 10px">
         <section>
           <a href="{{ post.url }}" class="image">
