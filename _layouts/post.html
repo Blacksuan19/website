@@ -4,24 +4,31 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
 <html>
   {% include head.html %}
-
   <body>
     {% include header.html %}
-
     <!-- Main -->
     <div id="main" class="alt">
       <!-- One -->
       <section id="one">
         <div class="inner">
           <header class="major">
+            {% if page.title != 404 %}
             <h1>{{ page.title }}</h1>
+            {% endif %}
           </header>
           {% if page.image %}<span class="image main"
-            ><img src="{{ page.image }}" alt=""/></span
-          >{% endif %}
+            ><img src="{{ page.image }}" alt=""
+          /></span>
+          {% endif %}
           <p>{{ content }}</p>
+          {% if page.title != 404 %}
+          <ul class="actions">
+            <a href="/blog" class="button">Back To Blog</a>
+          </ul>
+          {% endif %}
         </div>
       </section>
     </div>
