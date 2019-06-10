@@ -25,3 +25,11 @@ markdown: kramdown
 
 sass:
   style: compressed
+
+include: ["_pages"]
+collections:
+  pages:
+    output: true
+    permalink: /:path
+
+permalink: pretty
