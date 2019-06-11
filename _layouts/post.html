@@ -27,10 +27,12 @@
           {% if page.project != true %}
           <div class="actions">
             {% if page.next.url and page.next.project != true %}
-            <a class="button" href="{{ page.next.url }}">&laquo;{{ page.next.title | truncatewords: 3 }}</a>
+            <a class="button" href="{{ page.next.url }}">&laquo;{% if page.next.main-title %} {{ page.next.main-title }} 
+            {% else %} {{page.next.title}} {% endif %}</a>
             {% endif %}
             {% if page.previous.url and page.previous.project != true %}
-            <a style="float: right;" class="button" href="{{ page.previous.url }}">{{ page.previous.title | truncatewords: 3 }}&raquo;</a>
+            <a style="float: right;" class="button" href="{{ page.previous.url }}">{% if page.previous.main-title %} {{page.previous.main-title}}
+            {% else %} {{page.previous.title}} {% endif %}&raquo;</a>
             <br />
             <br />
             {% endif %} 
