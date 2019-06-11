@@ -14,8 +14,8 @@ country: Malaysia
 phone: (716) 555-5555
 
 # homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 6
+tiles-source: posts # accepts "posts" or "pages"
+tiles-count: 4
 
 # social settings
 github_url: https://github.com/blacksuan19
