@@ -6,44 +6,45 @@
 -->
 <html>
 
-{% include head.html %}
+    {% include head.html %}
 
-<body>
+    <body>
 
-    {% include header.html %}
+        {% include header.html %}
 
-    <!-- Banner -->
-    <section id="banner" class="major">
-        <div class="inner">
-            <header class="major">
-                <h1>{{ page.landing-title }}</h1>
-            </header>
-            <div class="content">
-                <p style="text-transform: uppercase;">{{ site.description }}</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main -->
-    <div id="main">
-
-        <!-- One -->
-        {% include tiles.html %}
-
-        <!-- Two -->
-        <section id="two">
+        <!-- Banner -->
+        <section class="major" id="banner">
             <div class="inner">
                 <header class="major">
-                    <h2>Massa libero</h2>
+                    <h1>{{ page.landing-title }}</h1>
                 </header>
-                <p>{{ content }}</p>
+                <div class="content">
+                    <p style="text-transform: uppercase;">{{ site.description }}</p>
+                </div>
             </div>
         </section>
 
-    </div>
+        <!-- Main -->
+        <div
+            id="main">
 
-    {% include footer.html %}
+            <!-- One -->
+            {% include tiles.html %}
 
-</body>
+            <!-- Two -->
+            <section id="two">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Massa libero</h2>
+                    </header>
+                    <p>{{ content }}</p>
+                </div>
+            </section>
+
+        </div>
+
+        {% include footer.html %}
+
+    </body>
 
 </html>
