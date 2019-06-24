@@ -9,9 +9,18 @@
   justify-content: center;
 }
 
+.github {
+  float: right;
+  padding-top: 20px;
+}
 @media only screen and (max-width: 600px) {
   .single-chart {
     width: 33%;
+  }
+
+  .github {
+    float: none;
+    padding-top: 20px;
   }
 }
 
