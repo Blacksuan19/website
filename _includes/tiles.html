@@ -2,7 +2,7 @@
 <section class="tiles" id="one">
     {% for post in site.posts limit:site.tiles-count %}
         {% if site.tiles-source == 'posts' %}
-            {% if post.project != true %}
+            {% if post.project == true %}
                 <article>
                     <span class="image">
                         <img src="{{ post.image }}" alt=""/>
