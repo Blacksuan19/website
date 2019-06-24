@@ -25,6 +25,9 @@ xda_url: https://forum.xda-developers.com/member.php?u=5980272
 # build settings
 markdown: kramdown
 
+kramdown:
+  input: GFM
+
 sass:
   style: compressed
 
