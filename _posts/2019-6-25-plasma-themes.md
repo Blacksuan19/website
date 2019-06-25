@@ -34,7 +34,7 @@ this will install the desired theme and then you can choose them in plasma setti
 ##### From source:
 
 - clone the repo <code>git clone https://github.com/Blacksuan19/Plasma-Themes.git</code>
-- copy the desired theme folder to <code>\$HOME/.local/share/plasma/desktoptheme/</code>
+- copy the desired theme folder to <code>$HOME/.local/share/plasma/desktoptheme/</code>
 - select theme from plasma settings
 
 #### Screenshots:
