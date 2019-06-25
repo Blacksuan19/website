@@ -11,6 +11,7 @@
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   border-radius: 60px;
+  z-index: 100;
 }
 #scroll span {
   position: absolute;
