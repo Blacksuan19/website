@@ -22,7 +22,7 @@ github: https://github.com/jsimplefx/bmicalculator
 - calculate ideal weight
 - GUI build with [JFoenix Library](https://github.com/jfoenixadmin/JFoenix)
 
-##### Calculations:
+#### Calculations:
 
 the standard BMI formula is known and can ve found easily, the hard part is calculating the idea body weight, which i used [robinson's formula (1989)](https://www.calculator.net/ideal-weight-calculator.html) for it.
 
