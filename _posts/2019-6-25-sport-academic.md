@@ -15,7 +15,7 @@ github: https://github.com/jsimplefx/Sport-Academic
 
 > there is an yearly event an uni, it involves both sports and academics, hence the naming
 
-### Features:
+#### Features:
 
 - divided to sessions
 - different categories
@@ -26,20 +26,20 @@ github: https://github.com/jsimplefx/Sport-Academic
 - question masking after it has been opened
 - GUI build with [JFoenix Library](https://github.com/jfoenixadmin/JFoenix)
 
-### Screenshots:
+#### Screenshots:
 
-#### Session selection:
+##### Session selection:
 
 <img src="https://raw.githubusercontent.com/jsimplefx/Sport-Academic/master/Screenshots/2019-05-04_15-35.png">
 
-#### categories selection:
+##### categories selection:
 
 <img src="https://raw.githubusercontent.com/jsimplefx/Sport-Academic/master/Screenshots/2019-05-04_15-35_1.png">
 
-#### questions view:
+##### questions view:
 
 <img src="https://raw.githubusercontent.com/jsimplefx/Sport-Academic/master/Screenshots/2019-05-04_15-35_2.png">
 
-#### Open Question view:
+##### Open Question view:
 
 <img src="https://raw.githubusercontent.com/jsimplefx/Sport-Academic/master/Screenshots/2019-05-04_15-35_3.png">
