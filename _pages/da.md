@@ -65,10 +65,8 @@ nav-menu: true
                 <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-El-Octavo-27062019-0437.zip/download" class="button special">Sourceforge</a></li>
                 <li><a target="_blank"  href="https://t.me/da_ci/1921" class="button special">Telegram</a></li>
             </ul>
-
         </div>
     </div>
-
     <div class="row 200%">
         <div class="6u 12u$(medium)">
             <h2>Séptimo</h2>
