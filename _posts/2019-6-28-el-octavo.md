@@ -13,7 +13,7 @@ finally, with this release the goal is mainly to deliver a stable UX, and try to
 
 ###### Default profile:
 
-the default profile as mentioned before leans towered the balanced side, i personally dont play games and find them a waste of time ao dont expect a gaming profile from me.
+the default profile as mentioned before leans towered the balanced side, i personally don't play games and find them a waste of time so don't expect a gaming profile from me.
 
 > governor: pixel_smurfutils (tweaked)<br>
 > Min CPU frequency: 652<br>
@@ -35,7 +35,7 @@ some might say the battery took a hit with 4.9, but i partially agree, i see som
     <img src="/assets/images/bat2.jpg">
     </div>
 </div>
-as you can see those are sold af stats (which also uses material ocean theme btw), even tho the drain doesn't corelate with SOT which is what we call idle drain.<br>
+as you can see those are solid af stats (which also uses material ocean theme btw), even tho the drain doesn't corelate with SOT which is what we call idle drain.<br>
 
 for full changelog and Downloads check the downlaods Page
 
