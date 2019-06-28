@@ -47,12 +47,20 @@
                 <header class="major">
                     <h2>Recent Projects</h2>
                 </header>
-
             </div>
-
-            {% include tiles.html %}
+            {% include projects-tiles.html %}
             <div class="extra">
                 <a href="{{ site.url }}/projects" class="button">View All Projects</a>
+            </div>
+
+            <div class="inner">
+                <header class="major">
+                    <h2>Recent Posts</h2>
+                </header>
+            </div>
+            {% include posts-tiles.html %}
+            <div class="extra">
+                <a href="{{ site.url }}/blog" class="button">View All posts</a>
             </div>
         </div>
 
