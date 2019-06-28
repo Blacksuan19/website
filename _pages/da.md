@@ -28,6 +28,49 @@ nav-menu: true
     <h1>Latest Releases</h1>
     <div class="row 200%">
         <div class="6u 12u$(medium)">
+            <h2>El Octavo</h2>
+            <li> First 4.9 release</li>
+            <li> Latest Linux-stable and caf tags </li>
+            <li> New profiles applied automatically on boot </li>
+            <li> OC GPU to 725 </li>
+            <li> Klapse 5.0 </li>
+            <li> BFQ IO scheduler </li>
+            <li> westwood TCP </li>
+            <li> Advanced TCP congestion algorithms </li>
+            <li> state notifier driver </li>
+            <li> pixel_smurfutil governor (from pixel 3 and smurf kernel) </li>
+            <li> Dynamic stune sched boost </li>
+            <li> DS Boost </li>
+            <li> Dynamic Fsync </li>
+            <li> CPU input boost </li>
+            <li> Adreno GPU input boost </li>
+            <li> Enable 19MHz idle GPU Frequency </li>
+            <li> adaptive low memory killer </li>
+            <li> Sound control </li>
+            <li> USB fast charge up to 900mAh </li>
+            <li> Power efficient workqueue enabled by default </li>
+            <li> F2FS and sdcardFS support </li>
+            <li> Latest wireguard </li>
+            <li> Boeffla wakelock blocker </li>
+            <li> Various IO Optimizations </li>
+            <li> magisk module for custom profiles coming soon </li><br>
+        </div>
+        <div class="6u$ 12u$(medium)">
+            <br><br><br>
+            <p><strong>File Name:</strong> Dark-Ages-El-Octavo-27062019-0437.zip<br>
+            <strong>File Size:</strong> 13.8 MB<br>
+            <strong>MD5:</strong> 986738af6540310a1ba6c6eec9d6b762</p>
+            <h3>Downloads:</h3>
+            <ul class="actions">
+                <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-El-Octavo-27062019-0437.zip/download" class="button special">Sourceforge</a></li>
+                <li><a target="_blank"  href="https://t.me/da_ci/1921" class="button special">Telegram</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="row 200%">
+        <div class="6u 12u$(medium)">
             <h2>Séptimo</h2>
             <li> Latest Linux-stable and caf tags </li>
             <li> Compiled with dark-engine 2.0 </li>
@@ -57,8 +100,8 @@ nav-menu: true
             <strong>MD5:</strong> dfe3b334c4ed0c880ef36f7e6a1f650c</p>
             <h3>Downloads:</h3>
             <ul class="actions">
-	            <li><a href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-Septimo-13032019-0503.zip/download" class="button special">Sourceforge</a></li>
-                <li><a href="https://t.me/da_ci/1757" class="button special">Telegram</a></li>
+                <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-Septimo-13032019-0503.zip/download" class="button special">Sourceforge</a></li>
+                <li><a target="_blank" href="https://t.me/da_ci/1757" class="button special">Telegram</a></li>
             </ul>
 
         </div>
