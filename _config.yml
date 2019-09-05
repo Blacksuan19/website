@@ -11,7 +11,6 @@ city: Kuala Lumpur
 state: Selangor
 zip_code: 53100
 country: Malaysia
-phone: (716) 555-5555
 
 # homepage tiles
 tiles-source: posts # accepts "posts" or "pages"
@@ -35,6 +34,6 @@ include: ["_pages"]
 collections:
   pages:
     output: true
-    permalink: /:path
+    permalink: :path
 
 permalink: pretty
