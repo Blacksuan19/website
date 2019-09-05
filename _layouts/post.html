@@ -20,14 +20,17 @@
                             <header class="major">
                                 <h2>{{ page.title }}</h2>
                             </header>
+                            {% include social-share.html %}
                         </div>
-                        <div class="6u 12u$(medium)">
+                        <div class="6u 12u$(medium)" style="text-align: right;padding-top: 40px;padding-right: 20px;">
                             {% if page.github %}
                                 <ul class="actions github">
                                     <li>
                                         <a href="{{ page.github }}" target="_blank" class="button">Fork on Github</a>
                                     </li>
                                 </ul>
+                            {%- else -%}
+                            <h3>{% include read-time.html content=page.content %}</h3>
                             {% endif %}
                         </div>
                     </div>
