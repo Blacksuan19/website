@@ -5,7 +5,7 @@
 }
 
 .single-chart {
-  max-width: 25%;
+  max-width: 20%;
   justify-content: center;
 }
 
@@ -39,19 +39,9 @@
     stroke-dasharray: 0 100;
   }
 }
-
-.circular-chart.orange .circle {
-  stroke: #ff9f00;
+.circle {
+  stroke: #fff;
 }
-
-.circular-chart.green .circle {
-  stroke: #4cc790;
-}
-
-.circular-chart.blue .circle {
-  stroke: #3c9ee5;
-}
-
 .percentage {
   text-transform: uppercase;
   fill: #ffffffb2;
@@ -71,11 +61,7 @@
 .read-time {
   float: right;
 }
-@media only screen and (max-width: 850px) {
-  .single-chart {
-    max-width: 20%;
-  }
-}
+
 @media only screen and (max-width: 480px) {
   .read-time {
     text-align: left;
@@ -94,6 +80,6 @@
     margin-top: 20px;
   }
   .single-chart {
-    max-width: 20%;
+    max-width: 30%;
   }
 }
