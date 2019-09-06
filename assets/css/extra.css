@@ -69,30 +69,23 @@
 }
 
 .read-time {
-  text-align: right;
-  margin-top: 100px;
-  padding-right: 20px;
+  float: right;
 }
 @media only screen and (max-width: 850px) {
-  .read-time {
-    margin-top: -60px;
-  }
   .single-chart {
     max-width: 20%;
   }
 }
 @media only screen and (max-width: 480px) {
   .read-time {
-    margin-top: -20px;
     text-align: left;
+    float: none;
+    margin-bottom: -20px;
   }
   .social-icons {
     margin-top: -10px;
+    width: 100%;
   }
-  .single-chart {
-    width: 33%;
-  }
-
   .github {
     float: none;
     padding-top: 20px;
