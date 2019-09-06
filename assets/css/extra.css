@@ -13,16 +13,6 @@
   float: right;
   padding-top: 20px;
 }
-@media only screen and (max-width: 600px) {
-  .single-chart {
-    width: 33%;
-  }
-
-  .github {
-    float: none;
-    padding-top: 20px;
-  }
-}
 
 .circular-chart {
   display: block;
@@ -76,4 +66,39 @@
   display: flex;
   padding: 20px 0px 20px 0px;
   justify-content: center;
+}
+
+.read-time {
+  text-align: right;
+  margin-top: 100px;
+  padding-right: 20px;
+}
+@media only screen and (max-width: 850px) {
+  .read-time {
+    margin-top: -60px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .read-time {
+    margin-top: -20px;
+    text-align: left;
+  }
+  .social-icons {
+    margin-top: -10px;
+  }
+  .single-chart {
+    width: 33%;
+  }
+
+  .github {
+    float: none;
+    padding-top: 20px;
+  }
+  .fork {
+    margin-top: 20px;
+    min-width: 310px;
+  }
+  .button {
+    width: 310px;
+  }
 }

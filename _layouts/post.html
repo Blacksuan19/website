@@ -20,9 +20,11 @@
                             <header class="major">
                                 <h2>{{ page.title }}</h2>
                             </header>
+                            <div class="social-icons">
                             {% include social-share.html %}
+                            </div>
                         </div>
-                        <div class="6u 12u$(medium)" style="text-align: right;padding-top: 40px;padding-right: 20px;">
+                        <div class="6u 12u$(medium)">
                             {% if page.github %}
                                 <ul class="actions github">
                                     <li>
@@ -30,7 +32,9 @@
                                     </li>
                                 </ul>
                             {%- else -%}
+                            <div class="read-time">
                             <h3>{% include read-time.html content=page.content %}</h3>
+                            </div>
                             {% endif %}
                         </div>
                     </div>
