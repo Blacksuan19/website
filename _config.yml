@@ -37,3 +37,4 @@ collections:
     permalink: :path
 
 permalink: pretty
+permalink: /:title/
