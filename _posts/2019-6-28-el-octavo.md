@@ -3,6 +3,7 @@ layout: post
 title: Dark Ages El Octavo
 description: the 8th release of dark ages
 image: /assets/images/da.jpg
+project: false
 ---
 
 today marks a whole year since the first DA release, and issa a special day, it has come a long way, from the good stuff to the great stuff to the weird bugs caused by firmware's and even more weird bugs caused by what we still deem as unknown.<br>

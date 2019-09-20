@@ -1,18 +1,16 @@
-<div id="two"></div>
+{% assign ps = site.posts | where: 'project', 'false' %}
 <section class="tiles" id="one">
-    {% for post in site.posts limit:site.tiles-count %}
-        {% if post.project != true %}
-            <article>
-                <span class="image">
-                    <img src="{{ post.image }}" alt=""/>
-                </span>
-                <header class="major">
-                    <h3>
-                        <a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a>
-                    </h3>
-                    <p>{{ post.description }}</p>
-                </header>
-            </article>
-        {% endif %}
+    {% for post in ps limit: site.tiles-count %}
+    <article>
+        <span class="image">
+            <img src="{{ post.image }}" alt="{{ post.title }}" />
+        </span>
+        <header class="major">
+            <h3>
+                <a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a>
+            </h3>
+            <p>{{ post.description }}</p>
+        </header>
+    </article>
     {% endfor %}
 </section>

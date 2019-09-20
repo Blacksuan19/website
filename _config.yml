@@ -14,8 +14,7 @@ country: Malaysia
 
 # homepage tiles
 tiles-source: posts # accepts "posts" or "pages"
-tiles-count: 6
-
+tiles-count: 4
 # social settings
 github_url: https://github.com/blacksuan19
 instagram_url: https://instagram.com/blacksuan19
