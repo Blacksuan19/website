@@ -6,66 +6,66 @@
     -->
 <html>
 
-    {% include head.html %}
+{% include head.html %}
 
-    <body>
+<body>
 
-        {% include header.html %}
+    {% include header.html %}
 
-        <!-- Banner -->
-        <section class="major" id="banner">
+    <!-- Banner -->
+    <section class="major" id="banner">
+        <div class="inner">
+            <header class="major">
+                <h1>{{ page.landing-title }}</h1>
+            </header>
+            <div class="content">
+                <p style="text-transform: uppercase;">{{ site.description }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Two -->
+        <section id="two">
             <div class="inner">
                 <header class="major">
-                    <h1>{{ page.landing-title }}</h1>
+                    <h2>About</h2>
                 </header>
-                <div class="content">
-                    <p style="text-transform: uppercase;">{{ site.description }}</p>
-                </div>
+                <p>{{ content }}</p>
+                <header class="major">
+                    <h2>Skills</h2>
+                </header>
             </div>
         </section>
 
-        <!-- Main -->
-        <div
-            id="main">
+        <!-- One -->
+        {% include skills.html %}
 
-            <!-- Two -->
-            <section id="two">
-                <div class="inner">
-                    <header class="major">
-                        <h2>About</h2>
-                    </header>
-                    <p>{{ content }}</p>
-                    <header class="major">
-                        <h2>Skills</h2>
-                    </header>
-                </div>
-            </section>
-
-            <!-- One -->
-            {% include skills.html %}
-            <div class="inner">
-                <header class="major">
-                    <h2>Recent Projects</h2>
-                </header>
-            </div>
-            {% include projects-tiles.html %}
-            <div class="extra">
-                <a href="{{ site.url }}/projects" class="button">View All Projects</a>
-            </div>
-
-            <div class="inner">
-                <header class="major">
-                    <h2>Recent Posts</h2>
-                </header>
-            </div>
-            {% include posts-tiles.html %}
-            <div class="extra">
-                <a href="{{ site.url }}/blog" class="button">View All posts</a>
-            </div>
+        <div class="inner">
+            <header class="major">
+                <h2>Recent Posts</h2>
+            </header>
+        </div>
+        {% include posts-tiles.html %}
+        <div class="extra">
+            <a href="{{ site.url }}/blog" class="button">View All posts</a>
         </div>
 
-        {% include footer.html %}
+        <div class="inner">
+            <header class="major">
+                <h2>Recent Projects</h2>
+            </header>
+        </div>
+        {% include projects-tiles.html %}
+        <div class="extra">
+            <a href="{{ site.url }}/projects" class="button">View All Projects</a>
+        </div>
+    </div>
 
-    </body>
+    {% include footer.html %}
+
+</body>
 
 </html>

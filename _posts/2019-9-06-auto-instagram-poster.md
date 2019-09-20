@@ -3,6 +3,7 @@ layout: post
 title: Auto Instagram Poster
 description: Automating the Boring Stuff with Python
 image: /assets/images/instagram.png
+project: false
 ---
 So few days ago i had to market my new instagram account, i needed to post every hour or so. and instagram doesn't exactly help with bulk posting especially from PC, and it was frustrating to do from mobile and instagram never suppoted uploading from desktop. so i got fed up and decided to write a simple script that will take a photo, caption and a timer.<br> <br>
 The script will sleep for the amount of specified time and after that post the photos,(yes i could've done this on an async way but ain't nobody got time for that), anyway i had to find a way to upload phots from pc and as a linux user i just googled instagram cli (works all the time) and boom here is [instapy](https://github.com/instagrambot/instapy-cli){:target="_blank"} a cli tool that uploads photos or videos with a caption.<br> <br>
