@@ -19,7 +19,9 @@
                     <div class="6u 12u$(medium)">
                         <header class="major">
                             <h2>{{ page.title }}</h2>
+                            {% if page.project == false%}
                             {{ page.date | date: '%B %d, %Y' }}
+                            {% endif %}
                         </header>
                     </div>
                     <div class="6u 12u$(medium)">
