@@ -4,6 +4,7 @@ title: Microsoft Office On Linux
 description: How to get full office formats support on linux
 image: /assets/images/office.jpg
 project: false
+permalink: /blog/:title/
 ---
 The semester just started and like other semesters and other universities in this whole planet they use proprietary microsoft formats to distribute study material like slides and documents, why cant you just use regular formats that work everywhere (like pdf)!! <br><br>
 Last sem most of the materials didn't have compatibility issues with the office apps i use ([WPS office](https://www.wps.com/index.html){:target="_blank"} and recently [Only Office](https://www.onlyoffice.com/){:target="_blank"}), now people are gonna jump with the stupid ```wHy cAnT yOu uSe LiBrEOfFiCe```, tbh screw libreoffice, it looks like trash, its heavy and its slow af to open not to mention still not fully compatible with with proprietary office files. <br><br> So i use the other 2 and each has their own good features, only office is just one window with docs, sheets and slides which i really love, i can switch back and foreword without having to switch windows (which is arguably not that intuitive on a tiling wm), wps office on the other hand has better compatibility and renders slides that look exactly like on office (only office has issues with black on black text).<br><br>
