@@ -38,3 +38,9 @@ collections:
 
 permalink: pretty
 permalink: /:title/
+
+plugins:
+  - jekyll-compress-images
+
+compress_images:
+  images_path: "assets/img/**/*.{gif,png,jpg,jpeg,svg}"
