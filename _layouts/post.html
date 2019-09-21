@@ -44,8 +44,11 @@
                 <span class="image main"><img src="{{ page.image }}" alt="" /></span>
                 {% endif %}
                 <p>{{ content }}</p>
+                {% if page.project == false %}
+                {% include disque.html %}
+                {% endif %}
                 {% if page.project != true %}
-                <div class="actions">
+                <div class="actions" style="padding-top: 10px">
                     {% if page.previous.url and page.previous.project != true %}
                     <a class="button" href="{{ page.previous.url }}">
                         &laquo; Previous Post
@@ -63,7 +66,6 @@
             </div>
         </section>
     </div>
-
     {% include footer.html %}
 </body>
 
