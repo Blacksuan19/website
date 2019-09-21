@@ -5,6 +5,7 @@ description: a javaFX and SQlite based app for tracking attendance
 project: true
 image: /assets/images/attendance.png
 github: https://github.com/jsimplefx/Attendance-System
+permalink: /projects/:title/
 ---
 
 #### Introduction:

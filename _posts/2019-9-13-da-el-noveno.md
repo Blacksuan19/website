@@ -4,6 +4,7 @@ title: Dark Ages El Noveno
 description: the 9th release of dark ages
 image: /assets/images/noveno.png
 project: false
+permalink: /blog/:title/
 ---
 
 Its been a while since the last release, exactly 2 months and 2 weeks and its about time this gets out so i can focus on this semester.
