@@ -16,6 +16,7 @@ country: Malaysia
 tiles-source: posts # accepts "posts" or "pages"
 tiles-count: 4
 # social settings
+disqus: 'blacksuan19-me'
 github_url: https://github.com/blacksuan19
 instagram_url: https://instagram.com/blacksuan19
 telegram_url: https://t.me/blacksuan19
