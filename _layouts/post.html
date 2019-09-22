@@ -16,23 +16,19 @@
         <section id="one">
             <div class="inner">
                 <div class="row 200%">
-                    <div class="6u 12u$(medium)">
-                        <header class="major">
-                            <h2>{{ page.title }}</h2>
-                            {% if page.project == false%}
-                            {{ page.date | date: '%B %d, %Y' }}
-                            {% endif %}
-                        </header>
-                    </div>
-                    <div class="6u 12u$(medium)">
-                        {% if page.github %}
-                        <ul class="actions github">
-                            <li>
-                                <a href="{{ page.github }}" target="_blank" class="button">Fork on Github</a>
-                            </li>
-                        </ul>
+                    <header class="major">
+                        <h2>{{ page.title }}</h2>
+                        {% if page.project == false%}
+                        {{ page.date | date: '%B %d, %Y' }}
                         {% endif %}
-                    </div>
+                    </header>
+                    {% if page.github %}
+                    <ul class="actions github">
+                        <li>
+                            <a href="{{ page.github }}" target="_blank" class="button">Fork on Github</a>
+                        </li>
+                    </ul>
+                    {% endif %}
                 </div>
                 <div class="row 200%">
 
@@ -49,8 +45,6 @@
                 <p>{{ content }}</p>
                 {% if page.project == false %}
                 {% include disque.html %}
-                {% endif %}
-                {% if page.project != true %}
                 <div class="actions" style="padding-top: 10px">
                     {% if page.previous.url and page.previous.project != true %}
                     <a class="button" href="{{ page.previous.url }}">
