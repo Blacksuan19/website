@@ -11,7 +11,7 @@
 
 .github {
   float: right;
-  padding-top: 20px;
+  margin-top: 15px;
 }
 
 .circular-chart {
@@ -94,7 +94,6 @@
   }
   .github {
     float: none;
-    padding-top: 20px;
   }
   .fork {
     margin-top: 20px;
