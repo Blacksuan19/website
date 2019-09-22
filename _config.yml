@@ -15,12 +15,22 @@ country: Malaysia
 # homepage tiles
 tiles-source: posts # accepts "posts" or "pages"
 tiles-count: 4
+
 # social settings
 disqus: 'blacksuan19-me'
 github_url: https://github.com/blacksuan19
 instagram_url: https://instagram.com/blacksuan19
 telegram_url: https://t.me/blacksuan19
 xda_url: https://forum.xda-developers.com/member.php?u=5980272
+
+# skills widget
+skills: 
+  Linux: "90"
+  Git: "90"
+  Java: "80"
+  Prototyping: "70"
+  C/C++: "60"
+
 # build settings
 markdown: kramdown
 
