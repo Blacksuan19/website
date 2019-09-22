@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 
 <html>
-    {% include head.html %}
+{% include head.html %}
 
-    <body>
-        {% include header.html %}
+<body>
+    {% include header.html %}
 
-        <!-- Main -->
-        <div
-            class="alt" id="main">
-            <!-- Two -->
-            {% for post in site.posts %}
-                {% if post.project == true %}
-                    <section class="spotlights" id="two" style="padding: 10px">
-                        <section>
-                            <a href="{{ post.url }}" class="image">
-                                <img src="{{ post.image }}" alt="" data-position="center center"/>
-                            </a>
-                            <div class="content">
-                                <div class="inner">
-                                    <header class="major">
-                                        <h3>{{ post.title }}</h3>
-                                    </header>
-                                    <p>
-                                        {{ post.description }}
-                                    </p>
-                                    <ul class="actions">
-                                        <li>
-                                            <a href="{{ post.url }}" class="button">Continue Reading</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ post.github }}" class="fork button special">Fork on Github</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-                    </section>
-                {% endif %}
-            {% endfor %}
-        </div>
+    <!-- Main -->
+    <div class="alt" id="main">
+        <!-- Two -->
+        {% for post in site.posts %}
+        {% if post.project == true %}
+        <section class="spotlights" id="two" style="padding: 10px">
+            <section>
+                <a href="{{ post.url }}" class="image">
+                    <img src="{{ post.image }}" alt="" data-position="center center" />
+                </a>
+                <div class="content">
+                    <div class="inner">
+                        <header class="major">
+                            <h3>{{ post.title }}</h3>
+                        </header>
+                        <p>
+                            {{ post.description }}
+                        </p>
+                        <ul class="actions">
+                            <li>
+                                <a href="{{ post.url }}" class="button">Continue Reading</a>
+                            </li>
+                            <li>
+                                <a href="{{ post.github }}" class="fork button special">Fork on Github</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        {% endif %}
+        {% endfor %}
+    </div>
 
-        {% include footer.html %}
-    </body>
+    {% include footer.html %}
+</body>
+
 </html>
