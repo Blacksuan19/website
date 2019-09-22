@@ -1,50 +1,12 @@
 <div class="flex-wrapper">
+    {% for skill in site.skills %}
     <div class="single-chart">
         <svg class="circular-chart" viewbox="0 0 40 40">
             <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
             <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                stroke-dasharray="90, 100" />
-            <text class="percentage" x="18" y="20.35">Linux</text>
+                stroke-dasharray="{{ skill[1] }}, 100" />
+            <text class="percentage" x="18" y="20.35">{{ skill[0] }}</text>
         </svg>
     </div>
-
-    <div class="single-chart">
-        <svg class="circular-chart" viewbox="0 0 40 40">
-            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-            <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                stroke-dasharray="90, 100" />
-            <text class="percentage" x="18" y="20.35">Git</text>
-        </svg>
-
-    </div>
-
-    <div class="single-chart">
-        <svg class="circular-chart" viewbox="0 0 40 40">
-            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-            <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                stroke-dasharray="80, 100" />
-            <text class="percentage" x="18" y="20.35">Java</text>
-        </svg>
-
-    </div>
-
-    <div class="single-chart">
-        <svg class="circular-chart" viewbox="0 0 40 40">
-            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-            <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                stroke-dasharray="70, 100" />
-            <text class="percentage" x="18" y="20.35">Prototyping</text>
-        </svg>
-
-    </div>
-
-    <div class="single-chart">
-        <svg class="circular-chart" viewbox="0 0 40 40">
-            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-            <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                stroke-dasharray="60, 100" />
-            <text class="percentage" x="18" y="20.35">C/C++</text>
-        </svg>
-    </div>
-
+    {% endfor %}
 </div>
