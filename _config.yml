@@ -13,7 +13,6 @@ zip_code: 53100
 country: Malaysia
 
 # homepage tiles
-tiles-source: posts # accepts "posts" or "pages"
 tiles-count: 4
 
 # social settings
