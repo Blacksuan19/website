@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: projects
 title: Projects
 landing-title: "Projects"
 nav-menu: true
