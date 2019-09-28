@@ -15,7 +15,9 @@ country: Malaysia
 
 # homepage tiles
 tiles-count: 4
-
+post-tiles: true
+projects-tiles: true
+home-about: true
 # social settings
 disqus: 'blacksuan19-me'
 github_url: https://github.com/blacksuan19

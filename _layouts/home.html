@@ -24,44 +24,52 @@
         </div>
     </section>
 
-    <!-- Main -->
+    <!-- about section -->
     <div id="main">
-
-        <!-- Two -->
-        <section id="two">
+        {% if site.home-about == true %}
             <div class="inner">
                 <header class="major">
                     <h2>About</h2>
                 </header>
                 <p>{{ content }}</p>
+        {% endif %}
+
+        <!-- skills section -->
+        {% if site.skills %}
+            <header class="major">
+                <h2>Skills</h2>
+            </header>
+            </div>
+            {% include skills.html %}
+        {% else %}
+            </div> <!-- close the inner div in case skills are not enabled -->
+        {% endif %}
+
+        <!-- recent posts tiles -->
+        {% if site.post-tiles == true %}
+            <div class="inner">
                 <header class="major">
-                    <h2>Skills</h2>
+                    <h2>Recent Posts</h2>
                 </header>
             </div>
-        </section>
+            {% include posts-tiles.html %}
+            <div class="extra">
+                <a href="{{ site.url }}/blog" class="button">View All posts</a>
+            </div>
+        {% endif %}
 
-        <!-- One -->
-        {% include skills.html %}
-
-        <div class="inner">
-            <header class="major">
-                <h2>Recent Posts</h2>
-            </header>
-        </div>
-        {% include posts-tiles.html %}
-        <div class="extra">
-            <a href="{{ site.url }}/blog" class="button">View All posts</a>
-        </div>
-
-        <div class="inner">
-            <header class="major">
-                <h2>Recent Projects</h2>
-            </header>
-        </div>
-        {% include projects-tiles.html %}
-        <div class="extra">
-            <a href="{{ site.url }}/projects" class="button">View All Projects</a>
-        </div>
+        <!-- recent projects tiles -->
+        {% if site.projects-tiles == true %}
+            <div class="inner">
+                <header class="major">
+                    <h2>Recent Projects</h2>
+                </header>
+            </div>
+            {% include projects-tiles.html %}
+            <div class="extra">
+                <a href="{{ site.url }}/projects" class="button">View All Projects</a>
+            </div>
+        {% endif %}
     </div>
 
     {% include footer.html %}
