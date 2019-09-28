@@ -1,8 +1,37 @@
-# Forty - Jekyll Theme
+# FortyPlus - Jekyll Theme
 
-A Jekyll version of the "Forty" theme by [HTML5 UP](https://html5up.net/).  
+A modified version of the Jekyll theme by [HTML5 UP](https://html5up.net/).  
+This is my personal fork which adds many important features and makes the theme highly modular and user customizable.
 
-![Forty Theme](assets/images/forty.jpg "Forty Theme")
+<p align="center">
+<img src="assets/images/forty.jpg" alt="Forty Theme">
+</p>
+
+# Added Features
+
+* very easy setup - fork the template and start posting
+* beautiful [material ocean](https://github.com/material-ocean/Material-Ocean) color pallete 
+* highly modularize the theme - most of the widgets and features are user togglable
+* better project structure - group all pages under the pages folder
+* seperation between projects and posts 
+* skills widget - add your skills under the skills key value pair in `config.yml`
+* tiles for both posts and projects - you can toggle them in `_config.yml`
+* go to top button
+* separate page for each post and project 
+* next and previous post navigation buttons 
+* read time for posts and projects
+* minimal syntax highlighting via [prism](https://prismjs.com/index.html)
+* site wide search via [lunr](https://lunrjs.com)
+* [disque](https://disqus.com/) comments integration for posts - add your disque forum name in `config.yml`
+* fork repository button on projects
+* better font awesome integration via fontawesome kit
+* fix font awesome issues on mobile devices
+* social media shareing icons for both projects and posts 
+* RSS feed support
+* separate contact page - add your details in `_config.yml`
+* **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
+* Add your **social profiles** easily in `_config.yml`. Only social profiles butons you enter in `config.yml` show up on the site footer, you can easily add your own social media's if they're not included by default
+
 
 # How to Use
 
@@ -13,20 +42,6 @@ and [creating pages](https://jekyllrb.com/docs/pages/).
 - **GitLab**: Simply fork this repository and start editing the `_config.yml` file!  
 - **GitHub**: Fork this reposity and create a branch named `gh-pages`, then start editing the `_config.yml` file.
 
-# Added Features
-
-* **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
-* Use `_config.yml` to **set whether the homepage tiles should pull pages or posts**, as well as how many to display.
-* Add your **social profiles** easily in `_config.yml`. Only social profiles buttons you enter in `config.yml` show up on the site footer!
-* Set **featured images** in front matter.
-
-# Issues
-
-If you would like to report a bug, ask a question, request a feature, feel free to do so on [the GitLab repository](https://gitlab.com/andrewbanchich/forty-jekyll-theme) and I will be more than happy to help!
-
-Alternatively, you can open an issue via email by emailing [incoming+andrewbanchich/forty-jekyll-theme@incoming.gitlab.com](mailto:incoming+andrewbanchich/forty-jekyll-theme@incoming.gitlab.com).
-
-The GitHub repository is simply a mirror of the GitLab repository.
 
 # Credits
 
