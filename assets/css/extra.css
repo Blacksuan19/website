@@ -7,6 +7,7 @@
 .single-chart {
   max-width: 20%;
   justify-content: center;
+  min-width: 18%;
 }
 
 .github {
@@ -47,7 +48,7 @@
   fill: #ffffffb2;
   font-weight: 600;
   font-family: sans-serif;
-  font-size: 0.16em;
+  font-size: 0.1em;
   text-anchor: middle;
 }
 
@@ -100,5 +101,8 @@
   }
   .single-chart {
     max-width: 30%;
+  }
+  .percentage {
+    font-size: 0.2em;
   }
 }
