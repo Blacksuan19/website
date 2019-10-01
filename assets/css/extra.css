@@ -20,6 +20,7 @@
   margin: 10px auto;
   max-width: 80%;
   max-height: 250px;
+  text-anchor: middle;
 }
 
 .circle-bg {
@@ -49,7 +50,6 @@
   font-weight: 600;
   font-family: sans-serif;
   font-size: 0.1em;
-  text-anchor: middle;
 }
 
 .extra {
@@ -83,7 +83,8 @@
   text-decoration: none !important;
   padding-bottom: 10px !important;
 }
-@media only screen and (max-width: 480px) {
+
+@media only screen and (max-width: 768px) {
   .read-time {
     text-align: left;
     float: none;
@@ -103,6 +104,6 @@
     max-width: 30%;
   }
   .percentage {
-    font-size: 0.2em;
+    font-size: 0.3em;
   }
 }
