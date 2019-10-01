@@ -34,7 +34,24 @@ This is my personal fork which adds many important features and makes the theme 
 * **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
 * Add your **social profiles** easily in `_config.yml`. Only social profiles butons you enter in `config.yml` show up on the site footer, you can easily add your own social media's if they're not included by default
 
-
+# Project Structure
+```
+.
+ ├── assets
+ │     ├── css
+ │     ├── fonts
+ │     ├── images
+ │     └── js
+ ├── _includes
+ ├── _layouts
+ ├── _pages
+ ├── _posts
+ └── _sass
+        ├── base
+        ├── components
+        ├── layout
+        └── libs
+```
 # How to Use
 
 For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details, 
