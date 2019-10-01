@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Adventures in Vim 
-description: Going Full time Cli 
+title: Adventures in Vim
+description: Going Full time Cli
 image: /assets/images/vim.png
 project: false
-Permalink: /blog/:title/
+Permalink: /projects/:title/
 ---
 
 
