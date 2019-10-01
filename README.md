@@ -12,6 +12,8 @@ This is my personal fork which adds many important features and makes the theme 
 * very easy setup - fork the template and start posting
 * beautiful [material ocean](https://github.com/material-ocean/Material-Ocean) color pallete 
 * highly modularize the theme - most of the widgets and features are user togglable
+* prope URl's for posts and projects
+* remove the annoying date on post URL's
 * better project structure - group all pages under the pages folder
 * seperation between projects and posts 
 * skills widget - add your skills under the skills key value pair in `config.yml`
