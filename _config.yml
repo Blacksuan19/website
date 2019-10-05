@@ -50,3 +50,6 @@ collections:
 
 permalink: pretty
 permalink: /:title/
+
+plugins:
+  - jekyll-asciinema
