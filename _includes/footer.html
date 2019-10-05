@@ -1,43 +1,49 @@
 <!-- Footer -->
 <footer id="footer">
-    <div class="inner" style="text-align: center">
-        <ul class="icons">
-            {% if site.instagram_url %}
-            <li>
-                <a href="{{ site.instagram_url }}" class="icon alt fa fa-instagram" target="_blank">
-                    <span class="label">Instagram</span>
-                </a>
-            </li>
-            {% endif %}
-            {% if site.github_url %}
-            <li>
-                <a href="{{ site.github_url }}" class="icon alt fa fa-github" target="_blank">
-                    <span class="label">GitHub</span>
-                </a>
-            </li>
-            {% endif %}
-            {% if site.telegram_url %}
-            <li>
-                <a href="{{ site.telegram_url }}" class="icon alt fa fa-telegram" target="_blank">
-                    <span class="label">Telegram</span>
-                </a>
-            </li>
-            {% endif %}
-            {% if site.xda_url %}
-            <li>
-                <a href="{{ site.xda_url }}" class="icon alt fa fa-android" target="_blank">
-                    <span class="label">Xda-Developers</span>
-                </a>
-            </li>
-            {% endif %}
-        </ul>
-        <ul class="copyright">
-            <li>&copy;{{ site.title }}</li>
-            <li>Original Design:
-                <a href="https://html5up.net" target="_blank">HTML5 UP</a>
-            </li>
-        </ul>
-    </div>
+  <div class="inner" style="text-align: center">
+    <ul class="icons">
+      {% if site.instagram_url %}
+        <li>
+          <a href="{{ site.instagram_url }}" class="icon alt fa fa-instagram" target="_blank">
+            <span class="label">Instagram</span>
+          </a>
+        </li>
+      {% endif %}
+      {% if site.github_url %}
+        <li>
+          <a href="{{ site.github_url }}" class="icon alt fa fa-github" target="_blank">
+            <span class="label">GitHub</span>
+          </a>
+        </li>
+      {% endif %}
+      {% if site.telegram_url %}
+        <li>
+          <a href="{{ site.telegram_url }}" class="icon alt fa fa-telegram" target="_blank">
+            <span class="label">Telegram</span>
+          </a>
+        </li>
+      {% endif %}
+      {% if site.xda_url %}
+        <li>
+          <a href="{{ site.xda_url }}" class="icon alt fa fa-android" target="_blank">
+            <span class="label">Xda-Developers</span>
+          </a>
+        </li>
+      {% endif %}
+      <li>
+        <a href="/feed.xml" class="icon alt fa fa-feed" target="_blank">
+          <span class="label">RSS-Feed</span>
+        </a>
+      </li>
+
+    </ul>
+    <ul class="copyright">
+      <li>&copy;{{ site.title }}</li>
+      <li>Original Design:
+        <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+      </li>
+    </ul>
+  </div>
 </footer>
 <!-- Scripts -->
 <script src="/assets/js/jquery.min.js"></script>
