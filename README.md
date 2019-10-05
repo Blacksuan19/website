@@ -32,6 +32,8 @@ This is my personal fork which adds many important features and makes the theme 
 * RSS feed support
 * SEO optimizations
 * Sitemap for better SEO
+* asciinema integration
+* automtically open external URL's in new tab
 * separate contact page - add your details in `_config.yml`
 * **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
 * Add your **social profiles** easily in `_config.yml`. Only social profiles butons you enter in `config.yml` show up on the site footer, you can easily add your own social media's if they're not included by default
