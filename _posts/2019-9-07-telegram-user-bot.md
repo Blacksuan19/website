@@ -10,7 +10,7 @@ permalink: /blog/:title/
 Heroku is a container-based cloud platform for deploying, managing and scaling modern apps. <br>
 A telegram user bot is not actually a bot (it can be), it uses commands to communicate with the user, for example you can do `.weather city` and it will send you the weather report for that location, it can convert currencies, translate text and do a lot more. <br>
 The setup process isn't that complicated but its not widely shared, you have to give it a go on your own, anyway i am about to change that here. <br>
-There are many forks of the userbot, but i personally use [this one](http://GitHub.com/Nick80835/Telegram-UserBot){:target="_blank"} because it doesn't use a database, which i don't need, however without a database some functions won't work.
+There are many forks of the userbot, but i personally use [this one](http://GitHub.com/Nick80835/Telegram-UserBot) because it doesn't use a database, which i don't need, however without a database some functions won't work.
 
 ### How To setup the bot:
 
@@ -20,7 +20,7 @@ There are many forks of the userbot, but i personally use [this one](http://GitH
 - first before editing rename the file `mv sample_config.env config.env`
 - how to obtain all the codes is explained in the env file
 - getting telegram API_KEY and API_HASH
-  - login to the [my.telegram.org](https://my.telegram.org){:target="_blank"}
+  - login to the [my.telegram.org](https://my.telegram.org)
   - select API development tools
   - create an app and fill out the details (you can put anything in url)
   - copy you codes to config.env
@@ -34,7 +34,7 @@ The bot uses the userbot.session file so you wont have to login again, add that 
 - create and account
 - create an app with any name
 - while selecting the git choose heroku git
-- download the [cli tool](https://devcenter.heroku.com/articles/heroku-cli){:target="_blank"}
+- download the [cli tool](https://devcenter.heroku.com/articles/heroku-cli)
 - login to cli tool `heroku login`
 - navigate to the bot folder you cloned earlier
 - switch to master branch or create it if it doesn't exist (heroku only runs apps from master branch) `git branch -m master`

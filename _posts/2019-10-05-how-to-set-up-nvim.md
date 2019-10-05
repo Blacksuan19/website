@@ -10,7 +10,7 @@ permalink: /blog/:title/
 In my last post i went over my history of editors and the good, the bad and the
 ugly about finally switching to vim, now its time to talk more about dem
 configs boi.
-My configs are a heavily modified version from [Optixal's Neovim Init.vim](https://github.com/Optixal/neovim-init.vim){:target="_blank"}, i have replaced some of the plugs and added my own bindings and autocompletion plugins.
+My configs are a heavily modified version from [Optixal's Neovim Init.vim](https://github.com/Optixal/neovim-init.vim), i have replaced some of the plugs and added my own bindings and autocompletion plugins.
 
 #### Plugin Management
 for plugins i left vim-plug as it is because well its great, gets the job done
@@ -102,7 +102,7 @@ mapping and other simple stuff which i could've used another plugin for.
 #### Visual changes:
 just as usual it has to be material ocean themed, and vim being a popular editor
 its already there and no need to reinvent the wheel, [kaicataldo's
-themes](https://github.com/kaicataldo/material.vim){:target="_blank"} include it
+themes](https://github.com/kaicataldo/material.vim) include it
 and you can easily set it up, other visual changes include a modified air line
 and a minimal NERDTree.
 
