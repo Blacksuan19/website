@@ -1,36 +1,36 @@
 <!-- Wrapper -->
 <div id="wrapper">
 
-    <!-- Header -->
-    <header id="header" {% if page.layout == "home" %} class="alt" {% endif %}>
-        <a href="{{ site.url }}/" class="logo" target="_self">
-            <strong>{{ site.title }}</strong>
-            <span>{{ site.subtitle }}</span>
-        </a>
-        <nav>
-            {%- if page.title != "Search" -%}
-            <a href="{{ site.url }}/search" class="icon fa fa-search"></a>
-            {%- endif -%}
-            <a href="#menu"></a>
-        </nav>
-    </header>
-
-    <!-- Menu -->
-    <nav id="menu">
-        <ul class="links">
-            {% for page in site.pages %}
-            {% if page.layout == "home" %}
-            <li>
-                <a href="{{ "" | absolute_url }}/">{{ page.title }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
-            {% for page in site.pages %}
-            {% if page.layout != "home" and page.nav-menu == true %}
-            <li>
-                <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
-        </ul>
+  <!-- Header -->
+  <header id="header" {% if page.layout == "home" %} class="alt" {% endif %}>
+    <a href="{{ site.url }}/" class="logo" target="_self">
+      <strong>{{ site.title }}</strong>
+      <span>{{ site.subtitle }}</span>
+    </a>
+    <nav>
+      {%- if page.title != "Search" -%}
+      <a href="{{ site.url }}/search" class="icon fa fa-search"></a>
+      {%- endif -%}
+      <a href="#menu"></a>
     </nav>
+  </header>
+
+  <!-- Menu -->
+  <nav id="menu">
+    <ul class="links">
+      {% for page in site.pages %}
+        {% if page.layout == "home" %}
+          <li>
+            <a href="{{ "" | absolute_url }}/">{{ page.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+      {% for page in site.pages %}
+        {% if page.layout != "home" and page.nav-menu == true %}
+          <li>
+            <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
