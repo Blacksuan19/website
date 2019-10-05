@@ -1,5 +1,5 @@
 /* PrismJS 1.17.1
-https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+bash+liquid+python */
+https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+c+bash+cpp+dart+git+java+latex+scss+python+sass+vim&plugins=match-braces */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -11,7 +11,7 @@ pre[class*="language-"] {
   color: #f8f8f2;
   background: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;
@@ -33,7 +33,7 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
-  margin: 0.5em 0;
+  margin: .5em 0;
   overflow: auto;
   border-radius: 0.3em;
 }
@@ -45,8 +45,8 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: 0.1em;
-  border-radius: 0.3em;
+  padding: .1em;
+  border-radius: .3em;
   white-space: normal;
 }
 
@@ -62,7 +62,7 @@ pre[class*="language-"] {
 }
 
 .namespace {
-  opacity: 0.7;
+  opacity: .7;
 }
 
 .token.property,
@@ -123,3 +123,34 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
+
+.token.punctuation.brace-hover,
+.token.punctuation.brace-selected {
+  outline: solid 1px;
+}
+
+.rainbow-braces .token.punctuation.brace-level-1,
+.rainbow-braces .token.punctuation.brace-level-5,
+.rainbow-braces .token.punctuation.brace-level-9 {
+  color: #E50;
+  opacity: 1;
+}
+.rainbow-braces .token.punctuation.brace-level-2,
+.rainbow-braces .token.punctuation.brace-level-6,
+.rainbow-braces .token.punctuation.brace-level-10 {
+  color: #0B3;
+  opacity: 1;
+}
+.rainbow-braces .token.punctuation.brace-level-3,
+.rainbow-braces .token.punctuation.brace-level-7,
+.rainbow-braces .token.punctuation.brace-level-11 {
+  color: #26F;
+  opacity: 1;
+}
+.rainbow-braces .token.punctuation.brace-level-4,
+.rainbow-braces .token.punctuation.brace-level-8,
+.rainbow-braces .token.punctuation.brace-level-12 {
+  color: #E0E;
+  opacity: 1;
+}
+
