@@ -98,8 +98,7 @@ snippets work as intended. the good thing is i didnt really need to do a very
 extensive setup because well this works by default i had to modify is the
 mapping and other simple stuff which i could've used another plugin for.
 
-{% asciicast 272608 %}
-<br>
+{% include asciinema.html id="272608" %}
 #### Visual changes:
 just as usual it has to be material ocean themed, and vim being a popular editor
 its already there and no need to reinvent the wheel, [kaicataldo's
@@ -225,7 +224,7 @@ others are scattered from the web.<br>
 i also fixed the annying block selection will copy the selected text to the
 clipboard by using the void register for delete operations, this way deleting a
 visual block will just delete it without adding it to the clipboard.
-```
+```vim
 " use a different buffer for dd
 nnoremap d "_d
 vnoremap d "_d
