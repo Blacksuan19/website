@@ -7,8 +7,8 @@ project: false
 permalink: /blog/:title/
 ---
 So few days ago i had to market my new instagram account, i needed to post every hour or so. and instagram doesn't exactly help with bulk posting especially from PC, and it was frustrating to do from mobile and instagram never suppoted uploading from desktop. so i got fed up and decided to write a simple script that will take a photo, caption and a timer.<br> <br>
-The script will sleep for the amount of specified time and after that post the photos,(yes i could've done this on an async way but ain't nobody got time for that), anyway i had to find a way to upload phots from pc and as a linux user i just googled instagram cli (works all the time) and boom here is [instapy](https://github.com/instagrambot/instapy-cli){:target="_blank"} a cli tool that uploads photos or videos with a caption.<br> <br>
-Exactly what the doctor ordered, now it was time to write a wrapper that will accept those argument's and foreword them to instapy. at first i thought bash will do the trick since i am a big bash fan (checkout my [scripts](https://github.com/Blacksuan19/Scripts){:target="_blank"} btw), but there was this weird issue with captions where only the first word will be posted (issue already opened).<br><br>
+The script will sleep for the amount of specified time and after that post the photos,(yes i could've done this on an async way but ain't nobody got time for that), anyway i had to find a way to upload phots from pc and as a linux user i just googled instagram cli (works all the time) and boom here is [instapy](https://github.com/instagrambot/instapy-cli) a cli tool that uploads photos or videos with a caption.<br> <br>
+Exactly what the doctor ordered, now it was time to write a wrapper that will accept those argument's and foreword them to instapy. at first i thought bash will do the trick since i am a big bash fan (checkout my [scripts](https://github.com/Blacksuan19/Scripts) btw), but there was this weird issue with captions where only the first word will be posted (issue already opened).<br><br>
 my only option now was python, i am not a fan of python (i am the java guy) but modern problems require modern solutions,
 i wrote the script in python and it was easy enough that i wrote some help documentation.<br>
 
@@ -19,7 +19,7 @@ i wrote the script in python and it was easy enough that i wrote some help docum
 - send phots to my self via telegram
 - copy and send description via telegram
 - open my phone and download the photos and copy caption
-- open up [preview](https://play.google.com/store/apps/details?id=com.sensio.instapreview&hl=en){:target="_blank"} and set up the posts with captions hashtags etc
+- open up [preview](https://play.google.com/store/apps/details?id=com.sensio.instapreview&hl=en) and set up the posts with captions hashtags etc
 - wait for the time notification and then manually post
 
 #### The thug life

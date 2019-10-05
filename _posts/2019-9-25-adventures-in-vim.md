@@ -37,10 +37,10 @@ it's by far the lightest i could find and easiest to understand and add to, with
 
 #### Setbacks:
 it ain't all sunshine and rainbows, there is always something that isnt quite as expected
-- Autocomplection across all file types and file system: vscode does this woundeerfully so i had to get it back i used the defaults but they weren't exactly vscode level so as usual i googled stuff and found [CoC](https://github.com/neoclide/coc.nvim){:target="_blank"} which is exactly what the doctor ordered, things worked as usual out of the box with this one the auto completion popup is even faster than vscode. <br>
+- Autocomplection across all file types and file system: vscode does this woundeerfully so i had to get it back i used the defaults but they weren't exactly vscode level so as usual i googled stuff and found [CoC](https://github.com/neoclide/coc.nvim) which is exactly what the doctor ordered, things worked as usual out of the box with this one the auto completion popup is even faster than vscode. <br>
 -  using Tab for completion: took me a while to get used to that but its not that bad, am used to just enter and boom it's there and that's all, with this Tab system its kinda safer because no accedential completions, it will take me a while to not press enter on a completion which will insert a new line.<br>
 - extentions managements: anotehr thing vscode excels at but vim isn't bad either with vim-plug its kinda easier becuse i like one file configs, the only issue for me is the lack of a packge registery like in vscode, so you have to google something everytime you are looking for extensions. <br>
-- Spell checking: yes i use that, on vscode ofc there is a pretty good extension for it, so i was looking for something similar which unfortunatly doesn't exist, i ended up using LanguageTool with [Grammarous](https://github.com/rhysd/vim-grammarous){:target="_blank"} which does the job adequetly but the fact that you have to run it manually is kinda annoying.
+- Spell checking: yes i use that, on vscode ofc there is a pretty good extension for it, so i was looking for something similar which unfortunatly doesn't exist, i ended up using LanguageTool with [Grammarous](https://github.com/rhysd/vim-grammarous) which does the job adequetly but the fact that you have to run it manually is kinda annoying.
 
 #### The Good Stuff:
 yeah there a good sides to this switch and vim in general
@@ -59,4 +59,4 @@ fuzzy searching blind folded and other ninja typa of shit, i have found
 substitues to most of the stuff i use daily and that's great even if they don't
 exactly dunction the same way, i will post an update in few months after i have
 mastered this(i still use arrow keys lmao).<br>
-i will just shamelessly plug my [dotfiles here](https://github.com/Blacksuan19/Dotfiles){:target="_blank"} just as usual.
+i will just shamelessly plug my [dotfiles here](https://github.com/Blacksuan19/Dotfiles) just as usual.
