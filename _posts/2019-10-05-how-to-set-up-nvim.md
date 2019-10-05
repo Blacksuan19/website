@@ -1,6 +1,6 @@
 ---
 layout: post
-title: setting up nvim as an IDE
+title: Setting up nvim as an IDE
 description: giving your text editor super powers
 image: /assets/images/nvim.png
 project: false
