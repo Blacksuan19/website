@@ -84,6 +84,11 @@
   padding-bottom: 10px !important;
 }
 
+.extra-tiles{
+  width: 25% !important;
+  height: 15em !important;
+  min-height: auto !important;
+}
 @media only screen and (max-width: 768px) {
   .read-time {
     text-align: left;
