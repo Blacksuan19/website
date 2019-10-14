@@ -1,4 +1,4 @@
-{% assign ps = site.posts | where: 'project', 'false' %}
+{% assign ps = site.posts | where: 'project', 'false' | where_exp:"post","post.url != page.url" %}
 <section class="tiles" id="one">
     {% for post in ps limit: site.tiles-count %}
     <article>
