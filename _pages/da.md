@@ -39,13 +39,13 @@ nav-menu: true
       </div>
       <div class="6u$ 12u$(medium)">
             <br><br><br>
-            <p><strong>File Name:</strong> Dark-Ages-El-Noveno-4.9-STABLE-13092019-0412.zip<br>
-            <strong>File Size:</strong> 13.1 MB<br>
-            <strong>MD5:</strong> 5af2227b74a62fe5fcc1e6db7cb0808e</p>
+            <p><strong>File Name:</strong> Dark-Ages-Decimo-4.9-STABLE-01112019-0634.zip<br>
+            <strong>File Size:</strong> 12.6 MB<br>
+            <strong>MD5:</strong> e35cb06d41295ea9d03af3c3ae3fed75</p>
             <h3>Downloads:</h3>
             <ul class="actions">
-                <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-El-Noveno-4.9-STABLE-13092019-0412.zip/download" class="button special">Sourceforge</a></li>
-                <li><a target="_blank"  href="https://t.me/da_ci/2358" class="button special">Telegram</a></li>
+                <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-Decimo-4.9-STABLE-01112019-0634.zip/download" class="button special">Sourceforge</a></li>
+                <li><a target="_blank"  href="https://t.me/da_ci/2600" class="button special">Telegram</a></li>
             </ul>
         </div>
 
