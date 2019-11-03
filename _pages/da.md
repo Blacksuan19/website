@@ -26,15 +26,40 @@ nav-menu: true
         </li>
     </ul>
     <h1>Latest Releases</h1>
-        <div class="row 200%">
+    <div class="row 200%">
+      <div class="6u 12u$(medium)">
+      <h2>Décimo</h2>
+          <li>Compiled with Clang 9 and GCC 9.2.0</li>
+          <li>Merge 4.9.189 kernel tags</li>
+          <li>Merge latest CAF kernel changes</li>
+          <li>Remove klapse (most roms have that by default now)</li>
+          <li>Fix stune boost not working sometimes</li>
+          <li>Cleanup unused configs</li>
+          <li>Should be more stable than noveno</li>
+      </div>
+      <div class="6u$ 12u$(medium)">
+            <br><br><br>
+            <p><strong>File Name:</strong> Dark-Ages-El-Noveno-4.9-STABLE-13092019-0412.zip<br>
+            <strong>File Size:</strong> 13.1 MB<br>
+            <strong>MD5:</strong> 5af2227b74a62fe5fcc1e6db7cb0808e</p>
+            <h3>Downloads:</h3>
+            <ul class="actions">
+                <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-El-Noveno-4.9-STABLE-13092019-0412.zip/download" class="button special">Sourceforge</a></li>
+                <li><a target="_blank"  href="https://t.me/da_ci/2358" class="button special">Telegram</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="row 200%">
         <div class="6u 12u$(medium)">
-            <h2>El Noveno</h2>
+        <br><br><br>
+          <h2>El Noveno</h2>
             <li> Upstream to latest 4.9.192 release </li>
             <li> Fixed issues with omni camera sensor </li>
             <li> Add Fingerprint boost driver  </li>
             <li> Add Wireguard driver</li>
             <li> silence spammy logs</li>
-            <li> TCP tweaks and enhancements</li> 
+            <li> TCP tweaks and enhancements</li>
             <li> Reduce block Queue overhead</li>
             <li> memory allocations fixes and optimizations</li>
             <li> ensure enough free memory on screen on (faster wake up)</li>
