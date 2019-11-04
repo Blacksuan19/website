@@ -26,7 +26,7 @@ telegram_url: https://t.me/blacksuan19
 xda_url: https://forum.xda-developers.com/member.php?u=5980272
 
 # skills widget
-skills: 
+skills:
   Linux: "90"
   Git: "90"
   Java: "80"
@@ -51,3 +51,6 @@ collections:
 permalink: pretty
 permalink: /:title/
 
+jekyll_admin:
+  hidden_links:
+    - datafiles
