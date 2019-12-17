@@ -35,7 +35,7 @@ nav-menu: true
         <div class="contact-method">
           <span class="icon alt fa-envelope"></span>
           <h3>Email</h3>
-          <a href="#">{{ site.email }}</a>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         </div>
       </section>
       <section>
