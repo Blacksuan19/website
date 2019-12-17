@@ -121,8 +121,8 @@ autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
 </pre>
 <br>
 ##### nifty tricks
-these are vim built in options that arre not set uo by default or are set to not
-so good defaults, i found most of these while trying to do a specfic task, i
+these are vim built in options that are not set up by default or are set to not
+so good defaults, i found most of these while trying to do a specific task, i
 used to use mswin behavior (makes nvim behave more like a regualr text editor)
 but now i don't think i need it anymore, still haven't mastered the moved as i did
 with good ol' plasma.
@@ -166,7 +166,7 @@ set lazyredraw                                          " faster scrolling
 these configs are the best, i kanged the icons from some repo
 which i can't remeber, it includes minimal ui (hides the top help text and other
 stuff), and ignores .git and jeykll build files by default. it also quites when
-you open a file so you can immediatly focus on the file
+you open a file so you can immediately focus on the file
 <pre>
 <code class="language-vim">
 let NERDTreeShowHidden=1
@@ -187,7 +187,7 @@ let g:NERDTreeIgnore = [
 
 #### Airline
 airline is a fantastic status bar that shows important information like the
-language, encoding and current mode youre in. my airline configs are pretty
+language, encoding and current mode you're in. my airline configs are pretty
 simple as well, the only big difference compared to the defaults is the added
 current line and percentage of the file at the right of the bar, also spellcheck
 <pre>
