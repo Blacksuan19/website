@@ -41,7 +41,7 @@ weather icons like bruh) so you have to get that font and install it.<br> <br>
 
 and with this all the documents i tried had full fonts and worked perfectly with
 no issues, if you face issues just check the missing fonts and you will probably
-find them online somewhere. lastly, i chose wps office (other than the font
+find them online somewhere. lastly, i choose wps office (other than the font
 checker) because it also does load your fonts, onlyoffice has a font folder that
 it loads from and it doesn't have not even half of the fonts included
 here.<br><br> With what microsoft is doing right now for linux i hope they'll
