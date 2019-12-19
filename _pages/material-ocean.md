@@ -23,7 +23,7 @@ currently anything that uses Xresources can use these colors, and there are many
 <li> Most gnome shell based DE's </li>
 </ul>
 
-<h4> Supported Applications:</h4> 
+<h4> Supported Applications:</h4>
 
 <li><a target="_blank" href= "https://github.com/material-ocean/Termite-theme">Termite Terminal</a></li>
 <li><a target="_blank" href="https://github.com/material-ocean/Plank-Theme">Plank Dock</a></li>
@@ -36,7 +36,7 @@ currently anything that uses Xresources can use these colors, and there are many
 <h4>3rd party themes:</h4>
 
 <li><a target="_blank"
-href="https://equinsuocha.io/projects/material-theme/">Visual Studio Code</a>
+href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme">Visual Studio Code</a>
 <li><a target="_blank" href="https://plugins.jetbrains.com/plugin/8006-material-theme-ui">Intellij IDE's</a>
 <br><br>
 <h4>Android Support:</h4>
