@@ -7,13 +7,13 @@ project: false
 permalink: /blog/:title/
 ---
 
-So the semster just started and i had to ditch my old note taking setup because
+So the semester just started and i had to ditch my old note taking setup because
 it didn't have any possible way of a 2-way sync and no mobile client, i had many
 options to choose from but in the end i narrowed it down to just a few, my
 criteria for a note taking setup was:
 
 - have a cli app (i am moving from GUI)
-- markdwon support (i just can't go back to evernote)
+- markdown support (i just can't go back to ever note)
 - full sync hosted by them or a simple way i could host it myself
 - a good android client
 
@@ -24,10 +24,10 @@ basic criteria but most of them lacked my first requirement which is a cli app
 the only app which fit that was simple notes with something called sncli
 
 ##### why not qualified?
-- inkdrop: no cli app, not entierly free and the desktop app is super heavy
+- inkdrop: no cli app, not entirely free and the desktop app is super heavy
     (damn you electron)
 - notable: no cli app, and no sync or android app.
-- notion: no cli app, again electron so heavier than the new planet 9 blackhole,
+- notion: no cli app, again electron so heavier than the new planet 9 black hole,
     although its very feature rich and i might use it if i had a better
     machine.
 
@@ -38,24 +38,24 @@ it and that's for few reasons:
     ago)
 - their sync model is simple(get it) and works on all platforms (you could also
     make your own client easily with their api)
-- simple interfacce that doesn't get in the way (i am looking at you notable)
+- simple interface that doesn't get in the way (i am looking at you notable)
 
 ##### why not host on Dropbox or anywhere else?
-well, that's a good question, but i wanted something native, something that has
-sync built in without e having to go and do the actual implementation also i dont use dropbox
+Well, that's a good question, but i wanted something native, something that has
+sync built in without having to go and do the actual implementation also i don't use Dropbox
 myself and i am not willing to switch to it just for notes, if i wanted to use
-Dropbox i would've just sused typora at this point.
+Dropbox i would've just used Typora at this point.
 
 #### Sncli
-This is it, the moment i saw the git repo of this i knew its gonnaa be good, and
+This is it, the moment i saw the git repo of this i knew its gonna be good, and
 it is, it keeps everything synced at all times, the changes are reflected at an
 instant, fully written in python with a simple tui that you don't actually edit
 on, this is everything i asked for, however it's not all rainbows and shine, the
 issues include but not limited to:
 
 - failure to sync at some occasions
-- somettimes newly created notes won't be uploaded and will be discarded so you
-    have to type it again (that's the stuidest bug i have ever seen)
+- sometimes newly created notes won't be uploaded and will be discarded so you
+    have to type it again (that's the stupidest bug i have ever seen)
 - the app hangs while its syncing the notes(the GUI and the sync backend are
     running on the same thread)
 - takes a while to start
@@ -63,19 +63,19 @@ issues include but not limited to:
 
 Editing notes work by copying the note to the temp folder and then opening it in
 your specified editor.
-The app itself doesnt have a notes editor it can just view a note, change tags
-rename an do other things, for editing you need to specificy an editor, this is
+The app itself doesn't have a notes editor it can just view a note, change tags
+rename an do other things, for editing you need to specify an editor, this is
 where nvim comes into the picture, i have configs that will set the file type
 and other stuff for all files that have the word sncli and are stored at tmp
 currently.
 
-The keybindings follow vim style so its easy to use and get used to, you can
-edit all the keybindings in the sncli config file.
+The key bindings follow vim style so its easy to use and get used to, you can
+edit all the key bindings in the sncli config file.
 
 <img src="/assets/images/bindings.png" alt="keyboard shortcuts">
 
 #### building my own simplenote client
-As i mentioned eariler simplenote is great, their api is great and some guy made
+As i mentioned earlier simplenote is great, their api is great and some guy made
 a [python API](https://github.com/mrtazz/simplenote.py) for their sync web services which makes it even better.
 i got my hands dirty by trying to do a simple cli client implementation, which
 didn't get much anywhere (python isn't exactly my favorite's language)
@@ -115,5 +115,4 @@ threads work, however i am going to be working on this for a while.
 in the end i kinda found what i am looking for, sncli will do for now but i am
 still on the search for something that's more stable while at the same time
 working on my own cli client which if actually becomes something big i might
-release otherewise lets pretend it didn't happened.
-
+release otherwise lets pretend it didn't happened.
