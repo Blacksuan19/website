@@ -25,7 +25,9 @@ permalink: /projects/:title/
 
 #### Calculations:
 
-the standard BMI formula is known and can ve found easily, the hard part is calculating the idea body weight, which i used [robinson's formula (1989)](https://www.calculator.net/ideal-weight-calculator.html) for it.
+the standard BMI formula is known and can ve found easily, the hard part is
+calculating the idea body weight, which i used [robinson's formula
+(1989)](https://www.calculator.net/ideal-weight-calculator.html) for it.
 
 #### Screenshots:
 

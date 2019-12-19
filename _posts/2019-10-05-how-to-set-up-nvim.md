@@ -10,7 +10,9 @@ permalink: /blog/:title/
 In my last post i went over my history of editors and the good, the bad and the
 ugly about finally switching to vim, now its time to talk more about dem
 configs boi.
-My configs are a heavily modified version from [Optixal's Neovim Init.vim](https://github.com/Optixal/neovim-init.vim), i have replaced some of the plugs and added my own bindings and autocompletion plugins.
+My configs are a heavily modified version from [Optixal's Neovim
+Init.vim](https://github.com/Optixal/neovim-init.vim), i have replaced some of
+the plugs and added my own bindings and auto completion plugins.
 
 #### Plugin Management
 for plugins i left vim-plug as it is because well its great, gets the job done
@@ -88,13 +90,13 @@ Plug 'mhinz/vim-startify'                               " cool start up screen
 </pre>
 <br>
 ### superior auto completion
-the original Optixal configs used deoplete for compeltion which is kinda heavy
+the original Optical configs used deoplete for completion which is kinda heavy
 and slow (this laptop is running an 10 APU) for this machine, i tried coc which
-was good and super responsive but also still heavy espeically with python files
-(jedi) i had many other options to pick from but i choose ncm2 becuase its fully
-written in vim script and was meant for neovim so its a native enviroment for
-it, and it works pretty good so far the popup comes up pretty fast and the
-snippets work as intended. the good thing is i didnt really need to do a very
+was good and super responsive but also still heavy especially with python files
+(jedi) i had many other options to pick from but i choose ncm2 because its fully
+written in vim script and was meant for Nvim so its a native environment for
+it, and it works pretty good so far the pop-up comes up pretty fast and the
+snippets work as intended. the good thing is i didn't really need to do a very
 extensive setup because well this works by default i had to modify is the
 mapping and other simple stuff which i could've used another plugin for.
 
@@ -121,9 +123,9 @@ autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
 </pre>
 <br>
 ##### nifty tricks
-these are vim built in options that arre not set uo by default or are set to not
-so good defaults, i found most of these while trying to do a specfic task, i
-used to use mswin behavior (makes nvim behave more like a regualr text editor)
+these are Vim built in options that are not set up by default or are set to not
+so good defaults, i found most of these while trying to do a specific task, i
+used to use mswin behavior (makes Nvim behave more like a regular text editor)
 but now i don't think i need it anymore, still haven't mastered the moved as i did
 with good ol' plasma.
 
@@ -164,9 +166,9 @@ set lazyredraw                                          " faster scrolling
 <br>
 ##### NERDTree
 these configs are the best, i kanged the icons from some repo
-which i can't remeber, it includes minimal ui (hides the top help text and other
-stuff), and ignores .git and jeykll build files by default. it also quites when
-you open a file so you can immediatly focus on the file
+which i can't remember, it includes minimal ui (hides the top help text and other
+stuff), and ignores .git and Jekyll build files by default. It also quites when
+you open a file so you can immediately focus on the file
 <pre>
 <code class="language-vim">
 let NERDTreeShowHidden=1
@@ -187,9 +189,9 @@ let g:NERDTreeIgnore = [
 
 #### Airline
 airline is a fantastic status bar that shows important information like the
-language, encoding and current mode youre in. my airline configs are pretty
+language, encoding and current mode you're in. my airline configs are pretty
 simple as well, the only big difference compared to the defaults is the added
-current line and percentage of the file at the right of the bar, also spellcheck
+current line and percentage of the file at the right of the bar, also spell check
 <pre>
 <code class="language-vim">
 " Airline
@@ -210,18 +212,18 @@ let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on
 - auto line indentation
 - display tags via tag bar
 - FZF integration
-- grammer checking via Grammerous
+- Grammer checking via Grammerous
 - Snippets via Ultisnips
 - startify when no buffer is open
 - open images via feh
 
 
 #### Key Mappings
-The default keymaps are ok but they're missing some essential things like block
+The default key maps are ok but they're missing some essential things like block
 selection without going back to visual mode, fast split switching and split
 rotation, so i made my own bindings for all these, some are from nvim help and
 others are scattered from the web.<br>
-i also fixed the annying block selection will copy the selected text to the
+i also fixed the annoying block selection will copy the selected text to the
 clipboard by using the void register for delete operations, this way deleting a
 visual block will just delete it without adding it to the clipboard.
 ```vim
