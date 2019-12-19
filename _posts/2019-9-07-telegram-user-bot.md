@@ -7,10 +7,16 @@ project: false
 permalink: /blog/:title/
 ---
 
-Heroku is a container-based cloud platform for deploying, managing and scaling modern apps. <br>
-A telegram user bot is not actually a bot (it can be), it uses commands to communicate with the user, for example you can do `.weather city` and it will send you the weather report for that location, it can convert currencies, translate text and do a lot more. <br>
-The setup process isn't that complicated but its not widely shared, you have to give it a go on your own, anyway i am about to change that here. <br>
-There are many forks of the userbot, but i personally use [this one](http://GitHub.com/Nick80835/Telegram-UserBot) because it doesn't use a database, which i don't need, however without a database some functions won't work.
+Heroku is a container-based cloud platform for deploying, managing and scaling
+modern apps. <br> A telegram user bot is not actually a bot (it can be), it uses
+commands to communicate with the user, for example you can do `.weather city`
+and it will send you the weather report for that location, it can convert
+currencies, translate text and do a lot more. <br> The setup process isn't that
+complicated but its not widely shared, you have to give it a go on your own,
+anyway i am about to change that here. <br> There are many forks of the userbot,
+but i personally use [this one](http://GitHub.com/Nick80835/Telegram-UserBot)
+because it doesn't use a database, which i don't need, however without a
+database some functions won't work.
 
 ### How To setup the bot:
 
@@ -27,7 +33,8 @@ There are many forks of the userbot, but i personally use [this one](http://GitH
 - now you can start the bot with `python3 -m userbot`
 - congrats! you have a bot but its hosted on your pc which you don't run all day (if you do then stop reading)
 
-The bot uses the userbot.session file so you wont have to login again, add that file to the repo first (do not push this file to github!).<br>
+The bot uses the userbot.session file so you wont have to login again, add that
+file to the repo first (do not push this file to github!).<br>
 
 ### How to deploy to heroku:
 
@@ -47,6 +54,10 @@ The bot uses the userbot.session file so you wont have to login again, add that 
 
 #### Note:
 
-app running on heroku is not a git repository so you cant use the .update command, to update the bot first stop the running bot process `heroku stop processid` (to get the id run `heroku ps` run.XXXX is the id), and then you can update normally with `git pull`.
-<br> <br>
-and thats all your bot should be kicking fine for now, heroku has a limited amount of hours for free accounts (550 hours), it will also kill all processes if there is no activity for more than 30min or so, don't worry you can just restart it again
+app running on heroku is not a git repository so you cant use the .update
+command, to update the bot first stop the running bot process `heroku stop
+processid` (to get the id run `heroku ps` run.XXXX is the id), and then you can
+update normally with `git pull`.  <br> <br> and thats all your bot should be
+kicking fine for now, heroku has a limited amount of hours for free accounts
+(550 hours), it will also kill all processes if there is no activity for more
+than 30min or so, don't worry you can just restart it again

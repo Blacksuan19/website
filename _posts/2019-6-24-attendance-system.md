@@ -14,7 +14,9 @@ permalink: /projects/:title/
 
 #### why?
 
-> this started as a school project when i was learning javaFX (i still am) and after the subject was over i decided to still continue working on it, and it has come soo far since then
+> this started as a school project when i was learning javaFX (i still am) and
+> after the subject was over i decided to still continue working on it, and it
+> has come soo far since then
 
 #### Features:
 
@@ -28,7 +30,7 @@ permalink: /projects/:title/
 
 #### Login Credentials:
 
-> Username: 1625897  
+> Username: 1625897
 > Password: blacksuan19
 
 #### Upcoming:

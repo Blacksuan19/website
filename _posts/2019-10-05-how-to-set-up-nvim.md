@@ -10,7 +10,7 @@ permalink: /blog/:title/
 In my last post i went over my history of editors and the good, the bad and the
 ugly about finally switching to vim, now its time to talk more about dem
 configs boi.
-My configs are a heavily modified version from [Optixal's Neovim Init.vim](https://github.com/Optixal/neovim-init.vim), i have replaced some of the plugs and added my own bindings and autocompletion plugins.
+My configs are a heavily modified version from [Optixal's Neovim Init.vim](https://github.com/Optixal/neovim-init.vim), i have replaced some of the plugs and added my own bindings and auto completion plugins.
 
 #### Plugin Management
 for plugins i left vim-plug as it is because well its great, gets the job done
@@ -210,18 +210,18 @@ let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on
 - auto line indentation
 - display tags via tag bar
 - FZF integration
-- grammer checking via Grammerous
+- Grammer checking via Grammerous
 - Snippets via Ultisnips
 - startify when no buffer is open
 - open images via feh
 
 
 #### Key Mappings
-The default keymaps are ok but they're missing some essential things like block
+The default key maps are ok but they're missing some essential things like block
 selection without going back to visual mode, fast split switching and split
 rotation, so i made my own bindings for all these, some are from nvim help and
 others are scattered from the web.<br>
-i also fixed the annying block selection will copy the selected text to the
+i also fixed the annoying block selection will copy the selected text to the
 clipboard by using the void register for delete operations, this way deleting a
 visual block will just delete it without adding it to the clipboard.
 ```vim
