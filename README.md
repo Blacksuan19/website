@@ -9,37 +9,38 @@ This is my personal fork which adds many important features and makes the theme 
 
 # Added Features
 
-* very easy setup - fork the template and start posting
-* beautiful [material ocean](https://github.com/material-ocean/Material-Ocean) color pallete
-* Jekyll Admin integration for easier use
-* highly modularize the theme - most of the widgets and features are user togglable
-* prope URl's for posts and projects
-* remove the annoying date on post URL's
-* better project structure - group all pages under the pages folder
-* seperation between projects and posts
-* skills widget - add your skills under the skills key value pair in `config.yml`
-* tiles for both posts and projects - you can toggle them in `_config.yml`
-* go to top button
-* separate page for each post and project
-* next and previous post navigation buttons
-* read time for posts and projects
-* minimal syntax highlighting via [prism](https://prismjs.com/index.html)
-* site wide search via [lunr](https://lunrjs.com)
-* [disque](https://disqus.com/) comments integration for posts - add your disque forum name in `config.yml`
-* fork repository button on projects
-* better font awesome integration via fontawesome kit
-* fix font awesome issues on mobile devices
-* social media shareing icons for both projects and posts
-* RSS feed support
-* SEO optimizations
-* Sitemap for better SEO
-* asciinema integration
-* automtically open external URL's in new tab
-* separate contact page - add your details in `_config.yml`
-* **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
-* Add your **social profiles** easily in `_config.yml`. Only social profiles butons you enter in `config.yml` show up on the site footer, you can easily add your own social media's if they're not included by default
+- very easy setup - fork the template and start posting
+- beautiful [material ocean](https://github.com/material-ocean/Material-Ocean) color pallete
+- Jekyll Admin integration for easier use
+- highly modularize the theme - most of the widgets and features are user togglable
+- proper URl's for posts and projects
+- remove the annoying date on post URL's
+- better project structure - group all pages under the pages folder
+- separation between projects and posts
+- skills widget - add your skills under the skills key value pair in `config.yml`
+- tiles for both posts and projects - you can toggle them in `_config.yml`
+- go to top button
+- separate page for each post and project
+- next and previous post navigation buttons
+- read time for posts and projects
+- minimal syntax highlighting via [prism](https://prismjs.com/index.html)
+- site wide search via [lunr](https://lunrjs.com)
+- [disque](https://disqus.com/) comments integration for posts - add your disque forum name in `config.yml`
+- fork repository button on projects
+- better font awesome integration via fontawesome kit
+- fix font awesome issues on mobile devices
+- social media shearing icons for both projects and posts
+- RSS feed support
+- SEO optimizations
+- Sitemap for better SEO
+- asciinema integration
+- automatically open external URL's in new tab
+- separate contact page - add your details in `_config.yml`
+- **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
+- Add your **social profiles** easily in `_config.yml`. Only social profiles buttons you enter in `config.yml` show up on the site footer, you can easily add your own social media's if they're not included by default
 
 # Project Structure
+
 ```
 .
 ├── assets
@@ -57,6 +58,7 @@ This is my personal fork which adds many important features and makes the theme 
       ├── layout
       └── libs
 ```
+
 # How to Use
 
 For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details,
@@ -70,7 +72,7 @@ and [creating pages](https://jekyllrb.com/docs/pages/).
 
 # Credits
 
-[andrewbanchich](https://github.com/andrewbanchich/forty-jekyll-theme) - Ported original template to jekyll
+[andrewbanchich](https://github.com/andrewbanchich/forty-jekyll-theme) - Ported original template to Jekyll
 
 Original README from HTML5 UP:
 
