@@ -30,7 +30,7 @@ currently anything that uses Xresources can use these colors, and there are many
 <li><a target="_blank" href="https://github.com/material-ocean/rofi-Theme">Rofi</a></li>
 <li><a target="_blank" href="https://github.com/material-ocean/Spotify-Theme">Spotify Music</a></li>
 <li><a target="_blank" href="https://github.com/material-ocean/Telegram-Theme">Telegram Messenger</a></li>
-<li><a target="_blank" href="(https://github.com/material-ocean/inkdrop-ui">InkDrop Notes</a></li>
+<li><a target="_blank" href="https://github.com/material-ocean/inkdrop-ui">InkDrop Notes</a></li>
 <li><a target="_blank" href="https://github.com/material-ocean/Typora-Theme">Typora Markdown</a></li>
 <br><br>
 <h4>3rd party themes:</h4>
