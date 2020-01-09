@@ -84,11 +84,27 @@
   padding-bottom: 10px !important;
 }
 
-.extra-tiles{
+.extra-tiles {
   width: 25% !important;
   height: 15em !important;
   min-height: auto !important;
 }
+
+.embed-youtube {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.embed-youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media only screen and (max-width: 768px) {
   .read-time {
     text-align: left;
