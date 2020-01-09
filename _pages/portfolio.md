@@ -138,7 +138,7 @@ nav-menu: true
           </p>
           <ul class="actions">
             <li>
-              <a href="https://github.com/material-ocean" class="button"
+              <a href="https://github.com/Blacksuan19/android_kernel_dark_ages" class="button"
                 >Learn more</a
               >
             </li>
@@ -166,7 +166,7 @@ nav-menu: true
           <ul class="actions">
             <li>
               <a
-                href="https://github.com/jsimplefx/Attendance-System"
+                href="https://github.com/Blacksuan19/Plasma-Themes"
                 class="button"
                 >Learn more</a
               >
