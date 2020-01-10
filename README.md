@@ -34,6 +34,7 @@ This is my personal fork which adds many important features and makes the theme 
 - SEO optimizations
 - Sitemap for better SEO
 - asciinema integration
+- YouTube integration
 - automatically open external URL's in new tab
 - separate contact page - add your details in `_config.yml`
 - **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
