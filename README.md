@@ -40,6 +40,24 @@ This is my personal fork which adds many important features and makes the theme 
 - **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
 - Add your **social profiles** easily in `_config.yml`. Only social profiles buttons you enter in `config.yml` show up on the site footer, you can easily add your own social media's if they're not included by default
 
+# Using Included Templates
+
+### YouTube
+
+Used to link to a YouTube video
+
+```liquid
+{% include YouTube.html id="video_id" %}
+```
+
+### Asciinema
+
+Used to link to an asciinema video
+
+```liquid
+{% include asciinema.html id="video_id" %}
+```
+
 # Project Structure
 
 ```
