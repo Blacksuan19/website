@@ -63,19 +63,21 @@ Used to link to an asciinema video
 ```
 .
 ├── assets
-│     ├── css
-│     ├── fonts
-│     ├── images
-│     └── js
+│   ├── css
+│   ├── fonts
+│   ├── images
+│   │   └── folio
+│   └── js
 ├── _includes
 ├── _layouts
 ├── _pages
 ├── _posts
-└── _sass
-      ├── base
-      ├── components
-      ├── layout
-      └── libs
+├── _sass
+│   ├── base
+│   ├── components
+│   ├── layout
+│   └── libs
+└── tag
 ```
 
 # How to Use
