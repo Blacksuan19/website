@@ -6,7 +6,7 @@ project: true
 image: /assets/images/attendance.png
 github: https://github.com/jsimplefx/Attendance-System
 permalink: /projects/:title/
-tags: project javaFX jfoenix jsimplefx advanced responsive
+tags: project javaFX jfoenix jsimplefx advanced
 ---
 
 #### Introduction:
