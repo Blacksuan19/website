@@ -17,10 +17,11 @@
         <div class="inner">
           <div class="row 200%">
             <header class="major">
-              <h2>{{ page.title }}</h2>
+                <h2>{{ page.title }}</h2>
               {% if page.project == false%} {{ page.date | date: '%B %d, %Y' }}
               {% endif %}
             </header>
+            {% include post-tags.html %}
           </div>
           <div class="row 200%">
             <div class="social-icons">
@@ -34,11 +35,11 @@
           <span class="image main"><img src="{{ page.image }}" alt=""/></span>
           {% endif %}
           <p>{{ content }}</p>
+            {% include post-tags.html %}
           {% if page.github %}
-          <a href="{{ page.github }}" target="_blank" class=" fit button"
-            >Fork on Github</a
-          >
-          {% endif %} {% if page.project == false %} {% include disque.html %}
+          <a href="{{ page.github }}" class=" fit button">Fork on Github</a>
+          {% endif %}
+          {% if page.project == false %} {% include disque.html %}
           <div class="actions" style="padding-top: 10px">
             {% if page.previous.url and page.previous.project != true %}
             <a class="button" href="{{ page.previous.url }}">
@@ -68,5 +69,5 @@
   $('article').addClass('extra-tiles');
   $('.extra-tiles h3').replaceWith(function () {
     return "<h4>" + $(this).html() + "</h4>";
-});
+  });
 </script>
