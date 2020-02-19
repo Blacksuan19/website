@@ -6,6 +6,7 @@ project: true
 image: /assets/images/bmi.png
 github: https://github.com/jsimplefx/bmicalculator
 permalink: /projects/:title/
+tags: project javaFX jfoenix jsimplefx
 ---
 
 #### Introduction:

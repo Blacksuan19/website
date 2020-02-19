@@ -5,6 +5,7 @@ description: But with a twist
 image: /assets/images/kde.jpg
 project: false
 permalink: /blog/:title/
+tags: linux plasma bspwm setup
 ---
 
 Plasma, a truly complete DE with everything you could ever dream of, you can

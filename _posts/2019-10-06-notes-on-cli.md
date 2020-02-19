@@ -5,6 +5,7 @@ description: how to minimal note taking setup
 image: /assets/images/sncli.png
 project: false
 permalink: /blog/:title/
+tags: notes cli simplenote linux
 ---
 
 So the semester just started and i had to ditch my old note taking setup because

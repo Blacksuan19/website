@@ -5,6 +5,7 @@ description: Extending your functionality
 image: /assets/images/heroku.png
 project: false
 permalink: /blog/:title/
+tags: telegram userbot heroku python
 ---
 
 Heroku is a container-based cloud platform for deploying, managing and scaling

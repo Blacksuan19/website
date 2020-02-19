@@ -5,6 +5,7 @@ description: Automating the Boring Stuff with Python
 image: /assets/images/instagram.png
 project: false
 permalink: /blog/:title/
+tags: python instagram auto API
 ---
 So few days ago i had to market my new instagram account, i needed to post every
 hour or so. and instagram doesn't exactly help with bulk posting especially from

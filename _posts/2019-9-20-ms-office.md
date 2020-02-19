@@ -5,6 +5,7 @@ description: How to get full office formats support on linux
 image: /assets/images/office.jpg
 project: false
 permalink: /blog/:title/
+tags: linux office fonts
 ---
 The semester just started and like other semesters and other universities in
 this whole planet they use proprietary Microsoft formats to distribute study
