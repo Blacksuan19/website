@@ -5,6 +5,7 @@ description: giving your text editor super powers
 image: /assets/images/nvim.png
 project: false
 permalink: /blog/:title/
+tags: nvim linux IDE cli setup
 ---
 
 In my last post i went over my history of editors and the good, the bad and the
