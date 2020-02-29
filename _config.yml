@@ -13,7 +13,8 @@ city: Kuala Lumpur
 state: Selangor
 zip_code: 53100
 country: Malaysia
-
+logo: 'assets/images/logo.jpg' # has to be a jpg image
+    
 # homepage tiles
 tiles-count: 4
 post-tiles: true
