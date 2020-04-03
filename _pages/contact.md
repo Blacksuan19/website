@@ -4,8 +4,6 @@ title: Contact
 nav-menu: true
 ---
 
-{% include head.html %}
-
 <!-- Contact -->
 <section id="contact">
   <div class="inner">
