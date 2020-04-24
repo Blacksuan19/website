@@ -46,7 +46,7 @@ On android you can use swift installer to set this theme on many apps that it su
 <h4>Notes:</h4>
 
 <li> To be able to use the colors globally copy .Xresources to ~/.Xresources
-<li> Website based on this theme: blacksuan19.me(this), <a target="_blank" href="https://prateekpunetha.me/">prateekpunetha.me</a></li>
+<li> Website based on this theme: blacksuan19.me(this), <a target="_blank" href="https://prateekpunetha.me/">prateekpunetha.me</a>, <a target="_blank" href="https://akospaha.tk/">akospaha.tk</a></li>
 <li> for more applications check out <a href="https://github.com/Blacksuan19/Dotfiles/" target="_blank">Dotfiles</a>
 <br><br>
 <h4>Installation:</h4>
