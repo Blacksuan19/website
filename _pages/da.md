@@ -14,7 +14,7 @@ nav-menu: true
         <li>Mainly focused on a balanced profile, getting the most performance without
         using the most amount of energy</li>
         <li>Easy installation with any kernel with support for both stock and custom roms</li>
-        <li>Enegery Aware Scheduling, use the most efficient CPU for the required task</li>
+        <li>Energy Aware Scheduling, use the most efficient CPU for the required task</li>
         <li>Less Fsync overhead by only syncing when the screen is off</li>
         <li>Various Memory, IO, and power realted optimizations to provide the best
         experience</li>
@@ -28,7 +28,7 @@ nav-menu: true
         <li>Dynamic Fsync Driver(enabled by default)</li>
         <li>Fsync On/Off toggle (Off by default)</li>
         <li>CRC check toggle (disabled by default)</li>
-        <li>Disabeled gentle fair sleepers (imporves performance)</li>
+        <li>Disabled gentle fair sleepers (imporves performance)</li>
         <li>Disable readahead by default (imporves power consumption and performance)</li>
         <li>Boeffla wakelock blocker</li>
         <li>Sound Control</li>
