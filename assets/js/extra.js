@@ -14,7 +14,7 @@ $(document).ready(function () {
 
   // logic for collpasable Headers
   $(".col_head").click(function () {
-    $(this).nextAll("div").first().slideToggle("fast");
+    $(this).nextAll("div .col_con").first().slideToggle("fast");
   });
 });
 
