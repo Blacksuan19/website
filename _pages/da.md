@@ -6,166 +6,202 @@ nav-menu: true
 
 <div id="main" class="alt">
     <div class="inner">
-    <h3>About:</h3>
-    <p> Efficiency and performance focused kernel for Xiaomi Redmi note 5, Based on latest stable sources with android-kernel-stable and CAF tags merged, automatically built via <a href="https://semaphoreci.com/blacksuan19/android_kernel_dark_ages/" target="_blank">semaphore ci.</a> <br> check out DA source code on github, continues integration channel on telegram and XDA thread. </p>
-    <ul class="icons">
-        <li>
-            <a href="https://github.com/Blacksuan19/android_kernel_dark_ages/" class="icon alt fa fa-github" target="_blank">
-            <span class="label">GitHub</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://t.me/da_ci" class="icon alt fa fa-telegram" target="_blank">
-            <span class="label">Telegram</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://bit.ly/2OqW75w" class="icon alt fa fa-android" target="_blank">
-            <span class="label">Xda-Developers</span>
-            </a>
-        </li>
-    </ul>
-    <h1>Latest Releases</h1>
-    <div class="row 200%">
-      <div class="6u 12u$(medium)">
-      <h2>Décimo</h2>
-          <li>Compiled with Clang 9 and GCC 9.2.0</li>
-          <li>Merge 4.9.189 kernel tags</li>
-          <li>Merge latest CAF kernel changes</li>
-          <li>Remove klapse (most roms have that by default now)</li>
-          <li>Fix stune boost not working sometimes</li>
-          <li>Cleanup unused configs</li>
-          <li>Should be more stable than noveno</li>
-      </div>
-      <div class="6u$ 12u$(medium)">
-            <br><br><br>
-            <p><strong>File Name:</strong> Dark-Ages-Decimo-4.9-STABLE-01112019-0634.zip<br>
-            <strong>File Size:</strong> 12.6 MB<br>
-            <strong>MD5:</strong> e35cb06d41295ea9d03af3c3ae3fed75</p>
-            <h3>Downloads:</h3>
-            <ul class="actions">
-                <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-Decimo-4.9-STABLE-01112019-0634.zip/download" class="button special">Sourceforge</a></li>
-                <li><a target="_blank"  href="https://t.me/da_ci/2600" class="button special">Telegram</a></li>
-            </ul>
-        </div>
+    <h3>About</h3>
+        <p> Battery and performance focused kernel for Xiaomi Redmi note 5, Based on latest stable sources with android-kernel-stable and CAF tags 
+        merged, automatically built via Drone CI and distributed via telegram.</p> 
 
-    </div>
-    <div class="row 200%">
-        <div class="6u 12u$(medium)">
-        <br><br><br>
-          <h2>El Noveno</h2>
-            <li> Upstream to latest 4.9.192 release </li>
-            <li> Fixed issues with omni camera sensor </li>
-            <li> Add Fingerprint boost driver  </li>
-            <li> Add Wireguard driver</li>
-            <li> silence spammy logs</li>
-            <li> TCP tweaks and enhancements</li>
-            <li> Reduce block Queue overhead</li>
-            <li> memory allocations fixes and optimizations</li>
-            <li> ensure enough free memory on screen on (faster wake up)</li>
-            <li> Optimize memcp, strcmp, memchr and strln routines</li>
-            <li> Optimize Console buffers</li>
-            <li> Faster boot up times</li>
-            <li> Improve 3x faster Integer sqrt</li>
-            <li> Replace LMK with new Simple LMK</li>
-            <li> Multiple other camera optimizations</li>
-            <li> faster boot times</li>
-            <li> Backport energy model for EAS</li>
-            <li> Backport features from newer kernels</li>
-            <li> General kernel tree cleanup</li>
-            <li> many other random small optimizations</li> <br>
-        </div>
-        <div class="6u$ 12u$(medium)">
-            <br><br><br>
-            <p><strong>File Name:</strong> Dark-Ages-El-Noveno-4.9-STABLE-13092019-0412.zip<br>
-            <strong>File Size:</strong> 13.1 MB<br>
-            <strong>MD5:</strong> 5af2227b74a62fe5fcc1e6db7cb0808e</p>
-            <h3>Downloads:</h3>
-            <ul class="actions">
-                <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-El-Noveno-4.9-STABLE-13092019-0412.zip/download" class="button special">Sourceforge</a></li>
-                <li><a target="_blank"  href="https://t.me/da_ci/2358" class="button special">Telegram</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="row 200%">
-        <div class="6u 12u$(medium)">
-            <h2>El Octavo</h2>
-            <li> First 4.9 release</li>
-            <li> Latest Linux-stable and caf tags </li>
-            <li> New profiles applied automatically on boot </li>
-            <li> OC GPU to 725 </li>
-            <li> Klapse 5.0 </li>
-            <li> BFQ IO scheduler </li>
-            <li> westwood TCP </li>
-            <li> Advanced TCP congestion algorithms </li>
-            <li> state notifier driver </li>
-            <li> pixel_smurfutil governor (from pixel 3 and smurf kernel) </li>
-            <li> Dynamic stune sched boost </li>
-            <li> DS Boost </li>
-            <li> Dynamic Fsync </li>
-            <li> CPU input boost </li>
-            <li> Adreno GPU input boost </li>
-            <li> Enable 19MHz idle GPU Frequency </li>
-            <li> adaptive low memory killer </li>
-            <li> Sound control </li>
-            <li> USB fast charge up to 900mAh </li>
-            <li> Power efficient workqueue enabled by default </li>
-            <li> F2FS and sdcardFS support </li>
-            <li> Latest wireguard </li>
-            <li> Boeffla wakelock blocker </li>
-            <li> Various IO Optimizations </li>
-            <li> magisk module for custom profiles coming soon </li><br>
-        </div>
-        <div class="6u$ 12u$(medium)">
-            <br><br><br>
-            <p><strong>File Name:</strong> Dark-Ages-El-Octavo-27062019-0437.zip<br>
-            <strong>File Size:</strong> 13.8 MB<br>
-            <strong>MD5:</strong> 986738af6540310a1ba6c6eec9d6b762</p>
-            <h3>Downloads:</h3>
-            <ul class="actions">
-                <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-El-Octavo-27062019-0437.zip/download" class="button special">Sourceforge</a></li>
-                <li><a target="_blank"  href="https://t.me/da_ci/1921" class="button special">Telegram</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="row 200%">
-        <div class="6u 12u$(medium)">
-            <h2>Séptimo</h2>
-            <li> Latest Linux-stable and caf tags </li>
-            <li> Compiled with dark-engine 2.0 </li>
-            <li> Add Electron governor </li>
-            <li> Add BFQ IO scheduler (set as default) </li>
-            <li> Enable power efficient work queue </li>
-            <li> Add fingerprint boost drive </li>
-            <li> Add state notifier driver </li>
-            <li> TTL fixation</li>
-            <li> Increase charging up to 2300mAh </li>
-            <li> Enable lz4 zram compression </li>
-            <li> Set default zram size to 510mb </li>
-            <li> enable AutoSMP by default </li>
-            <li> Disable LMK debugging by default </li>
-            <li> Upstream CPU boost drive </li>
-            <li> Tweak CPU boost values </li>
-            <li> Overall better ram management </li>
-            <li> Better frequency scaling (switch governor to electron) </li>
-            <li> Default read ahead as 2048(better for 32GB+ devices) </li>
-            <li> Add klpase drive(LiveDisplay Like) </li>
-            <li> this release is more focused on better ram management and smoother experience on default settings if you want to game switch governor to performance, etc </li>
-        </div>
-        <div class="6u$ 12u$(medium)">
-            <br><br><br>
-            <p><strong>File Name:</strong> Dark-Ages-Septimo-13032019-0503.zip<br>
-            <strong>File Size:</strong> 11.6 MB<br>
-            <strong>MD5:</strong> dfe3b334c4ed0c880ef36f7e6a1f650c</p>
-            <h3>Downloads:</h3>
-            <ul class="actions">
-                <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-Septimo-13032019-0503.zip/download" class="button special">Sourceforge</a></li>
-                <li><a target="_blank" href="https://t.me/da_ci/1757" class="button special">Telegram</a></li>
-            </ul>
+        <h3>General Features</h3>
+        <li>Mainly focused on a balanced profile, getting the most performance without
+        using the most amount of energy</li>
+        <li>Easy installation with any kernel with support for both stock and custom roms</li>
+        <li>Enegery Aware Scheduling, use the most efficient CPU for the required task</li>
+        <li>Less Fsync overhead by only syncing when the screen is off</li>
+        <li>Various Memory, IO, and power realted optimizations to provide the best
+        experience</li>
+        <li>And many more (check the technical features)</li><br>
+
+        <h3>Technical Features</h3>
+        <li>Always up to date with stable linux tags</li>
+        <li>Compiled with latest available compaitable toolchains</li>
+        <li>Use power-efficient workqueue by default</li>
+        <li>USB fast charging at 900mAh (USB 3 only)</li>
+        <li>Dynamic Fsync Driver(enabled by default)</li>
+        <li>Fsync On/Off toggle (Off by default)</li>
+        <li>CRC check toggle (disabled by default)</li>
+        <li>Disabeled gentle fair sleepers (imporves performance)</li>
+        <li>Disable readahead by default (imporves power consumption and performance)</li>
+        <li>Boeffla wakelock blocker</li>
+        <li>Sound Control</li>
+        <li>Vibration Control</li>
+        <li>Kcal Display control</li>
+        <li>Use lz4 algorithm for zram by default</li>
+        <li>Maple and BFQ IO Schedulers</li>
+        <li>BBR and westwood TCP congestion algorithms</li>
+        <li>Improved schedutil governor</li>
+        <li>PixelSmurf Utils governor (vince only)</li>
+        <li>Adreno Idler(vince only)</li>
+        <li>GPU boost driver</li>
+        <li>thermal profile control (phoenix only)</li>
+        <li>Simple Low Memory Killer</li><br>
+
+        <h4>Source Code on github</h4>
+        <li><a href="https://github.com/Blacksuan19/kernel_dark_ages_vince">Redmi 5 Plus/Note 5(Vince)</a></li>
+        <li><a href="https://github.com/Blacksuan19/kernel_dark_ages_phoenix">Redmi K30/Poco X2(Phoenix)</a></li><br>
+
+        <h4>Channels on Telegram</h4>
+        <li><a href="https://t.me/da_ci">Redmi 5 Plus/Note 5</a></li>
+        <li><a href="https://t.me/da_cip">Redmi K30/Poco X2</a></li><br>
+
+        <h4>XDA Threads</h4>
+        <li><a href="https://forum.xda-developers.com/redmi-note-5/development/kernel-dark-ages-primero-t3809803">Redmi 5 Plus/Note 5</a></li>
+        <li><a href="">Redmi K30/Poco X2</a></li><br>
+
+        <h1>Latest Releases</h1>
+        <button class="col_head">Phoenix</button><br><br>
+        <div class="col_con">
 
         </div>
-    </div>
+        <button class="col_head">Vince</button><br><br>
+        <div class="col_con">
+        <div class="row 200%">
+          <div class="6u 12u$(medium)">
+          <h2>Décimo</h2>
+              <li>Compiled with Clang 9 and GCC 9.2.0</li>
+              <li>Merge 4.9.189 kernel tags</li>
+              <li>Merge latest CAF kernel changes</li>
+              <li>Remove klapse (most roms have that by default now)</li>
+              <li>Fix stune boost not working sometimes</li>
+              <li>Cleanup unused configs</li>
+              <li>Should be more stable than noveno</li>
+          </div>
+          <div class="6u$ 12u$(medium)">
+                <br><br><br>
+                <p><strong>File Name:</strong> Dark-Ages-Decimo-4.9-STABLE-01112019-0634.zip<br>
+                <strong>File Size:</strong> 12.6 MB<br>
+                <strong>MD5:</strong> e35cb06d41295ea9d03af3c3ae3fed75</p>
+                <h3>Downloads:</h3>
+                <ul class="actions">
+                    <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-Decimo-4.9-STABLE-01112019-0634.zip/download" class="button special">Sourceforge</a></li>
+                    <li><a target="_blank"  href="https://t.me/da_ci/2600" class="button special">Telegram</a></li>
+                </ul>
+            </div>
 
-</div>
+        </div>
+        <div class="row 200%">
+            <div class="6u 12u$(medium)">
+            <br><br><br>
+              <h2>El Noveno</h2>
+                <li> Upstream to latest 4.9.192 release </li>
+                <li> Fixed issues with omni camera sensor </li>
+                <li> Add Fingerprint boost driver  </li>
+                <li> Add Wireguard driver</li>
+                <li> silence spammy logs</li>
+                <li> TCP tweaks and enhancements</li>
+                <li> Reduce block Queue overhead</li>
+                <li> memory allocations fixes and optimizations</li>
+                <li> ensure enough free memory on screen on (faster wake up)</li>
+                <li> Optimize memcp, strcmp, memchr and strln routines</li>
+                <li> Optimize Console buffers</li>
+                <li> Faster boot up times</li>
+                <li> Improve 3x faster Integer sqrt</li>
+                <li> Replace LMK with new Simple LMK</li>
+                <li> Multiple other camera optimizations</li>
+                <li> faster boot times</li>
+                <li> Backport energy model for EAS</li>
+                <li> Backport features from newer kernels</li>
+                <li> General kernel tree cleanup</li>
+                <li> many other random small optimizations</li> <br>
+            </div>
+            <div class="6u$ 12u$(medium)">
+                <br><br><br>
+                <p><strong>File Name:</strong> Dark-Ages-El-Noveno-4.9-STABLE-13092019-0412.zip<br>
+                <strong>File Size:</strong> 13.1 MB<br>
+                <strong>MD5:</strong> 5af2227b74a62fe5fcc1e6db7cb0808e</p>
+                <h3>Downloads:</h3>
+                <ul class="actions">
+                    <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-El-Noveno-4.9-STABLE-13092019-0412.zip/download" class="button special">Sourceforge</a></li>
+                    <li><a target="_blank"  href="https://t.me/da_ci/2358" class="button special">Telegram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row 200%">
+            <div class="6u 12u$(medium)">
+                <h2>El Octavo</h2>
+                <li> First 4.9 release</li>
+                <li> Latest Linux-stable and caf tags </li>
+                <li> New profiles applied automatically on boot </li>
+                <li> OC GPU to 725 </li>
+                <li> Klapse 5.0 </li>
+                <li> BFQ IO scheduler </li>
+                <li> westwood TCP </li>
+                <li> Advanced TCP congestion algorithms </li>
+                <li> state notifier driver </li>
+                <li> pixel_smurfutil governor (from pixel 3 and smurf kernel) </li>
+                <li> Dynamic stune sched boost </li>
+                <li> DS Boost </li>
+                <li> Dynamic Fsync </li>
+                <li> CPU input boost </li>
+                <li> Adreno GPU input boost </li>
+                <li> Enable 19MHz idle GPU Frequency </li>
+                <li> adaptive low memory killer </li>
+                <li> Sound control </li>
+                <li> USB fast charge up to 900mAh </li>
+                <li> Power efficient workqueue enabled by default </li>
+                <li> F2FS and sdcardFS support </li>
+                <li> Latest wireguard </li>
+                <li> Boeffla wakelock blocker </li>
+                <li> Various IO Optimizations </li>
+                <li> magisk module for custom profiles coming soon </li><br>
+            </div>
+            <div class="6u$ 12u$(medium)">
+                <br><br><br>
+                <p><strong>File Name:</strong> Dark-Ages-El-Octavo-27062019-0437.zip<br>
+                <strong>File Size:</strong> 13.8 MB<br>
+                <strong>MD5:</strong> 986738af6540310a1ba6c6eec9d6b762</p>
+                <h3>Downloads:</h3>
+                <ul class="actions">
+                    <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-El-Octavo-27062019-0437.zip/download" class="button special">Sourceforge</a></li>
+                    <li><a target="_blank"  href="https://t.me/da_ci/1921" class="button special">Telegram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row 200%">
+            <div class="6u 12u$(medium)">
+                <h2>Séptimo</h2>
+                <li> Latest Linux-stable and caf tags </li>
+                <li> Compiled with dark-engine 2.0 </li>
+                <li> Add Electron governor </li>
+                <li> Add BFQ IO scheduler (set as default) </li>
+                <li> Enable power efficient work queue </li>
+                <li> Add fingerprint boost drive </li>
+                <li> Add state notifier driver </li>
+                <li> TTL fixation</li>
+                <li> Increase charging up to 2300mAh </li>
+                <li> Enable lz4 zram compression </li>
+                <li> Set default zram size to 510mb </li>
+                <li> enable AutoSMP by default </li>
+                <li> Disable LMK debugging by default </li>
+                <li> Upstream CPU boost drive </li>
+                <li> Tweak CPU boost values </li>
+                <li> Overall better ram management </li>
+                <li> Better frequency scaling (switch governor to electron) </li>
+                <li> Default read ahead as 2048(better for 32GB+ devices) </li>
+                <li> Add klpase drive(LiveDisplay Like) </li>
+                <li> this release is more focused on better ram management and smoother experience on default settings if you want to game switch governor to performance, etc </li>
+            </div>
+            <div class="6u$ 12u$(medium)">
+                <br><br><br>
+                <p><strong>File Name:</strong> Dark-Ages-Septimo-13032019-0503.zip<br>
+                <strong>File Size:</strong> 11.6 MB<br>
+                <strong>MD5:</strong> dfe3b334c4ed0c880ef36f7e6a1f650c</p>
+                <h3>Downloads:</h3>
+                <ul class="actions">
+                    <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-Septimo-13032019-0503.zip/download" class="button special">Sourceforge</a></li>
+                    <li><a target="_blank" href="https://t.me/da_ci/1757" class="button special">Telegram</a></li>
+                </ul>
+
+            </div>
+        </div>
+        </div>
 
 </div>
