@@ -54,11 +54,50 @@ nav-menu: true
 
         <h4>XDA Threads</h4>
         <li><a href="https://forum.xda-developers.com/redmi-note-5/development/kernel-dark-ages-primero-t3809803">Redmi 5 Plus/Note 5</a></li>
-        <li><a href="">Redmi K30/Poco X2</a></li><br>
+        <li><a href="https://forum.xda-developers.com/poco-x2/development/kernel-dark-ages-primero-t4102929">Redmi K30/Poco X2</a></li><br>
 
         <h1>Latest Releases</h1>
         <button class="col_head">Phoenix</button><br><br>
         <div class="col_con">
+        <div class="row 200%">
+          <div class="6u 12u$(medium)">
+          <h2>Primero</h2>
+            <li>Latest kernel tags</li>
+            <li>Built with proton clang 11</li>
+            <li>Improved schedutil governor</li>
+            <li>Use Power-efficient workqueue</li>
+            <li>Use 300hz config</li>
+            <li>Add USB fast charging</li>
+            <li>Add GPU boost</li>
+            <li>Add dynamic fsync (enabled by default)</li>
+            <li>Add fsync switch (enabled by default)</li>
+            <li>Add and use Maple IO scheduler by default</li>
+            <li>Add and use BBR TCP Congestion by default</li>
+            <li>Dynamic stune boost v3</li>
+            <li>Upstreamed and optimize cpu boost</li>
+            <li>Disable readahead by default (imporves power consumption and performance)</li>
+            <li>Add CRC check toggle (disabled by default)</li>
+            <li>Add Boeffla wakelock blocker</li>
+            <li>Enable Thermal profile control</li>
+            <li>Enable Kcal control</li>
+            <li>Disable gentle fair sleepers</li>
+            <li>Use LZ4 compression for zram by default</li>
+            <li>Various memory, IO, and power optimizations</li>
+            <br>
+          </div>
+          <div class="6u$ 12u$(medium)">
+                <br><br><br>
+                <p><strong>File Name:</strong> Dark-Ages-Primero-20052020-0646.zip<br>
+                <strong>File Size:</strong> 16 MB<br>
+                <strong>MD5:</strong> 0175372a18d168f7c5c48e813fd19a1fc42372cb</p>
+                <h3>Downloads:</h3>
+                <ul class="actions">
+                    <li><a target="_blank" href="https://github.com/Blacksuan19/kernel_dark_ages_phoenix/releases/tag/Primero" class="button special">Github Releases</a></li>
+                    <li><a target="_blank"  href="https://t.me/da_cip/128" class="button special">Telegram</a></li>
+                </ul>
+            </div>
+
+        </div>
 
         </div>
         <button class="col_head">Vince</button><br><br>
