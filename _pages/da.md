@@ -60,6 +60,25 @@ nav-menu: true
         <button class="col_head">Phoenix</button><br><br>
         <div class="col_con">
         <div class="row 200%">
+        <div class="6u 12u$(medium)">
+        <h2>Primero Hot Fix</h2>
+        <li>Fix high idle battery drain</li>
+        <li>Fix device not going into deepsleep</li>
+        </div>
+        <div class="6u 12u$(medium)">
+            <br><br><br>
+            <p><strong>File Name:</strong> Dark-Ages-Primero-22052020-0313.zip <br>
+            <strong>File Size:</strong> 16 MB<br>
+            <strong>MD5:</strong> 50df5a995d9068429259004551ffb1d5e59e5bc7</p>
+            <h3>Downloads:</h3>
+            <ul class="actions">
+                <li><a target="_blank" href="https://github.com/Blacksuan19/kernel_dark_ages_phoenix/releases/tag/Primero-hot-fix" class="button special">Github Releases</a></li>
+                <li><a target="_blank"  href="https://t.me/da_cip/141" class="button special">Telegram</a></li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="row 200%">
           <div class="6u 12u$(medium)">
           <h2>Primero</h2>
             <li>Latest kernel tags</li>
