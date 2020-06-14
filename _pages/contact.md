@@ -8,7 +8,14 @@ nav-menu: true
 <section id="contact">
   <div class="inner">
     <section>
-    For any Questions, enquiries, Contact me via the form below or send me a direct email.<br/><br/>
+    {% if site.home-about == false %}
+                <header style="margin-top: -40px" class="major">
+                    <h2>About</h2>
+                </header>
+                <p>{{ site.about-text }}</p>
+    {% endif %}
+    
+    For any Questions, enquiries, Contact me via the form below or send me a direct email. you can also get in touch with me via telegram.<br/><br/>
       <form action="https://formspree.io/{{ site.email }}" method="POST">
         <div class="field half first">
           <label for="name">Name</label>

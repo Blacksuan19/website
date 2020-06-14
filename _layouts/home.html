@@ -31,18 +31,18 @@
                 <header class="major">
                     <h2>About</h2>
                 </header>
-                <p>{{ content }}</p>
+                <p style="margin-bottom: -20px">{{ site.about-text }}</p>
+            </div>
         {% endif %}
 
         <!-- skills section -->
         {% if site.skills %}
+            <div class="inner">
             <header class="major">
                 <h2>Skills</h2>
             </header>
             </div>
             {% include skills.html %}
-        {% else %}
-            </div> <!-- close the inner div in case skills are not enabled -->
         {% endif %}
 
         <!-- recent posts tiles -->
