@@ -32,7 +32,7 @@
     </title>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
-    <link href={{ site.logo }} rel="shortcut icon" type="image/jpg">
+    {% include logo.html %}
     <link href="/assets/css/main.css" rel="stylesheet" />
     <link href="/assets/css/extra.css" rel="stylesheet">
     <link href="/assets/css/back.to.top.css" rel="stylesheet">
@@ -41,9 +41,10 @@
     {% if site.tags != "" %}
         {% include collect-tags.html %}
     {% endif %}
-</head>
 
-<!-- back to top button -->
-<a href="#" id="scroll" style="display: none;">
-  <span></span>
-</a>
+    <!-- back to top button -->
+    <a href="#" id="scroll" style="display: none;">
+        <span></span>
+    </a>
+
+</head>
