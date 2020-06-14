@@ -40,7 +40,7 @@ nav-menu: true
         <div class="contact-method">
           <span class="icon alt fa-telegram"></span>
           <h3>Telegram</h3>
-          <span>{{ site.telegram_url }}</span>
+          <span><a href="{{ site.telegram_url }}">{{ site.telegram_url | split: '/' | last | capitalize }}</a></span>
         </div>
       </section>
       <section>
