@@ -1,0 +1,57 @@
+# site settings
+title: Blacksuan19
+subtitle:
+email: i@blacksuan19.me
+description: An Android and Linux Enthusiast, JavaFX developer and a gym fanatic
+landing-title: Hello, My Name is Abubakar Yagoub
+baseurl: "" # the subpath of your site, e.g. /blog
+url: # the base hostname & protocol for your site
+author: Blacksuan19
+street_address:
+city: Kuala Lumpur
+state: Selangor
+zip_code: 53100
+country: Malaysia
+logo: 'assets/images/logo.jpg' # has to be a jpg image
+    
+# homepage tiles
+tiles-count: 4
+post-tiles: true
+projects-tiles: true
+home-about: true
+# social settings
+disqus: 'blacksuan19-me'
+github_url: https://github.com/blacksuan19
+instagram_url: https://instagram.com/blacksuan19
+telegram_url: https://t.me/blacksuan19
+xda_url: https://forum.xda-developers.com/member.php?u=5980272
+
+# skills widget
+skills:
+  Linux: "90"
+  Git: "90"
+  Java: "80"
+  figma: "70"
+  C/C++: "60"
+
+# build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+
+sass:
+  style: compressed
+
+include: ["_pages"]
+collections:
+  pages:
+    output: true
+    permalink: :path
+
+permalink: pretty
+permalink: /:title/
+
+jekyll_admin:
+  hidden_links:
+    - datafiles
