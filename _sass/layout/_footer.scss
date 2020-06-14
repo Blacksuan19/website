@@ -27,6 +27,9 @@
       }
     }
   }
+  > .inner {
+	@include padding(4em, 0);
+  }
 
   @include breakpoint(xsmall) {
     .copyright {
