@@ -61,6 +61,42 @@ nav-menu: true
         <div class="col_con">
         <div class="row 200%">
         <div class="6u 12u$(medium)">
+        <h2>Segundo</h2>
+        <li>Upstream to latest 4.14.186</li>
+        <li>Built with O3 optimizations</li>
+        <li>Update touchscreen driver</li>
+        <li>Fix random bootloop issue</li>
+        <li>Fix white screen issue</li>
+        <li>Fix Fluctuation in power</li>
+        <li>Fix Unbalanced power supply</li>
+        <li>Various fixes and enhancements to thermal driver</li>
+        <li>Enable kernel ultra low power mode</li>
+        <li>Allow GPU to go to sleep</li>
+        <li>Improve Walt scheduler</li>
+        <li>Block more annoying wakelocks</li>
+        <li>Optimize memcpy and memmove</li>
+        <li>Use arm64 optimized memcmp</li>
+        <li>Use high priority workqueue for kgsl and devfreq</li>
+        <li>Disable unused temperature sensors</li>
+        <li>Remove Dynamic Fsync</li>
+        <li>Other fixes and performance improvements</li>
+        <br>
+        </div>
+        <div class="6u 12u$(medium)">
+            <br><br><br>
+            <p><strong>File Name:</strong> Dark-Ages-Segundo-27062020-1007.zip <br>
+            <strong>File Size:</strong> 16.4 MB<br>
+            <strong>MD5:</strong> e543a00d1b792b1274cf1386400bb740</p>
+            <h3>Downloads:</h3>
+            <ul class="actions">
+                <li><a target="_blank" href="https://github.com/Blacksuan19/kernel_dark_ages_phoenix/releases/download/Segundo/Dark-Ages-Segundo-27062020-1007.zip" class="button special">Github Releases</a></li>
+                <li><a target="_blank"  href="https://t.me/da_cip/269" class="button special">Telegram</a></li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="row 200%">
+        <div class="6u 12u$(medium)">
         <h2>Primero Hot Fix</h2>
         <li>Fix high idle battery drain</li>
         <li>Fix device not going into deepsleep</li>
