@@ -120,7 +120,7 @@ nav-menu: true
   <section>
       <a href="" class="image">
         <img
-          src="assets/images/da.jpg"
+          src="assets/images/corona.webp"
           alt=""
           data-position="center center"
         />
@@ -147,7 +147,7 @@ nav-menu: true
   <section>
       <a href="" class="image">
         <img
-          src="assets/images/da.jpg"
+          src="assets/images/lstm.png"
           alt=""
           data-position="center center"
         />
