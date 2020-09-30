@@ -32,21 +32,33 @@ currently anything that uses Xresources can use these colors, and there are many
 <li><a target="_blank" href="https://github.com/material-ocean/Telegram-Theme">Telegram Messenger</a></li>
 <li><a target="_blank" href="https://github.com/material-ocean/inkdrop-ui">InkDrop Notes</a></li>
 <li><a target="_blank" href="https://github.com/material-ocean/Typora-Theme">Typora Markdown</a></li>
+<li><a target="_blank" href="https://github.com/AkosPaha/Material-ocean-gboard-theme">Google Keyboard</a></li>
+<li><a target="_blank" href="https://github.com/material-ocean/Firefox-Theme">Firefox</a></li>
+<li><a target="_blank" href="https://github.com/material-ocean/Notion-Theme">Notion</a></li>
+<li><a target="_blank" href="https://github.com/material-ocean/Termux-Theme">Termux</a></li>
 <br><br>
 <h4>3rd party themes:</h4>
 
 <li><a target="_blank"
 href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme">Visual Studio Code</a>
 <li><a target="_blank" href="https://plugins.jetbrains.com/plugin/8006-material-theme-ui">Intellij IDE's</a>
+<li><a target="_blank" href="https://github.com/hzchirs/vim-material">Vim</a>
 <br><br>
 <h4>Android Support:</h4>
 
-On android you can use swift installer to set this theme on many apps that it supports, set the background to 0f111a and use the accent from colors below or mix with your own accent, for a preview check out <a target="_blank" href="https://prateekpunetha.me/material-ocean/">prateek's writeup</a> on it.
+On android you can use swift installer to set this theme on many apps that it supports, set the background to 0f111a and use the accent from colors below or mix with your own accent, for a preview check out <a target="_blank" href="https://prateekpunetha.dev/material-ocean/">prateek's writeup</a> on it.
+<br><br>
+<h4>Custom ROMs:</h4>
+<li><a target="_blank" href="https://github.com/legionRom">LegionOS</a>
+<li><a target="_blank" href="https://corvus-rom.github.io/">CorvusOS</a>
+<li><a target="_blank" href="https://msmxtended.me/">MSM-Xtended</a>
+<li><a target="_blank" href="https://github.com/ResurrectionRemix/">Resurrection Remix</a>
+<li><a target="_blank" href="http://fluidos.me/">Fluid OS</a>
 <br><br>
 <h4>Notes:</h4>
 
 <li> To be able to use the colors globally copy .Xresources to ~/.Xresources
-<li> Website based on this theme: blacksuan19.me(this), <a target="_blank" href="https://prateekpunetha.me/">prateekpunetha.me</a>, <a target="_blank" href="https://akospaha.tk/">akospaha.tk</a></li>
+<li> Website based on this theme: blacksuan19.tk(this), <a target="_blank" href="https://prateekpunetha.me/">prateekpunetha.dev</a>, <a target="_blank" href="https://akospaha.tk/">akospaha.tk</a></li>
 <li> for more applications check out <a href="https://github.com/Blacksuan19/Dotfiles/" target="_blank">Dotfiles</a>
 <br><br>
 <h4>Installation:</h4>
