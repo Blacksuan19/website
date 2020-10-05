@@ -7,8 +7,8 @@ nav-menu: true
 <div id="main" class="alt">
     <div class="inner">
     <h3>About</h3>
-        <p> Battery and performance focused kernel for Xiaomi Redmi note 5, Based on latest stable sources with android-kernel-stable and CAF tags 
-        merged, automatically built via Drone CI and distributed via telegram.</p> 
+        <p> Battery and performance focused kernel for Xiaomi Redmi note 5, Based on latest stable sources with android-kernel-stable and CAF tags
+        merged, automatically built via Drone CI and distributed via telegram.</p>
 
         <h3>General Features</h3>
         <li>Mainly focused on a balanced profile, getting the most performance without
@@ -59,27 +59,59 @@ nav-menu: true
         <h1>Latest Releases</h1>
         <button class="col_head">Phoenix</button><br><br>
         <div class="col_con">
+
         <div class="row 200%">
         <div class="6u 12u$(medium)">
-        <h2>Segundo</h2>
-        <li>Upstream to latest 4.14.186</li>
-        <li>Built with O3 optimizations</li>
-        <li>Update touchscreen driver</li>
-        <li>Fix random bootloop issue</li>
-        <li>Fix white screen issue</li>
-        <li>Fix Fluctuation in power</li>
-        <li>Fix Unbalanced power supply</li>
-        <li>Various fixes and enhancements to thermal driver</li>
-        <li>Enable kernel ultra low power mode</li>
-        <li>Allow GPU to go to sleep</li>
-        <li>Improve Walt scheduler</li>
-        <li>Block more annoying wakelocks</li>
-        <li>Optimize memcpy and memmove</li>
-        <li>Use arm64 optimized memcmp</li>
-        <li>Use high priority workqueue for kgsl and devfreq</li>
-        <li>Disable unused temperature sensors</li>
-        <li>Remove Dynamic Fsync</li>
-        <li>Other fixes and performance improvements</li>
+            <h2>Tercero</h2>
+            <li>Rebase to new sm6150-dev base</li>
+            <li>Bring on features from old Segundo release</li>
+            <li>Boots on Android 11</li>
+            <li>Upstream to the latest Linux stable</li>
+            <li>Upstream wireguard to latest version</li>
+            <li>Fixed boot issues on other roms with new trees</li>
+            <li>Fixed always on display (roms need to enable this to work)</li>
+            <li>Fixed slow charging while using phone</li>
+            <li>Improved charging stability</li>
+            <li>Improved fingerprint stability</li>
+            <li>Improved idle drain (almost 0% now overnight)</li>
+            <li>Disable a bunch of useless logging configs</li>
+            <li>Various power management enhancements</li>
+            <li>Many more improvements and performance enhancements</li>
+        <br>
+        </div>
+        <div class="6u 12u$(medium)">
+            <br><br><br>
+            <p><strong>File Name:</strong> Dark-Ages-Tercero-03102020-1236.zip <br>
+            <strong>File Size:</strong> 14.8 MB<br>
+            <strong>MD5:</strong> 221de8d8e8687da549576bd308d8e6f5</p>
+            <h3>Downloads:</h3>
+            <ul class="actions">
+                <li><a target="_blank" href="https://kutt.it/E0A1gO" class="button special">Github Releases</a></li>
+                <li><a target="_blank"  href="https://t.me/da_cip/505" class="button special">Telegram</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="row 200%">
+        <div class="6u 12u$(medium)">
+            <h2>Segundo</h2>
+            <li>Upstream to latest 4.14.186</li>
+            <li>Built with O3 optimizations</li>
+            <li>Update touchscreen driver</li>
+            <li>Fix random bootloop issue</li>
+            <li>Fix white screen issue</li>
+            <li>Fix Fluctuation in power</li>
+            <li>Fix Unbalanced power supply</li>
+            <li>Various fixes and enhancements to thermal driver</li>
+            <li>Enable kernel ultra low power mode</li>
+            <li>Allow GPU to go to sleep</li>
+            <li>Improve Walt scheduler</li>
+            <li>Block more annoying wakelocks</li>
+            <li>Optimize memcpy and memmove</li>
+            <li>Use arm64 optimized memcmp</li>
+            <li>Use high priority workqueue for kgsl and devfreq</li>
+            <li>Disable unused temperature sensors</li>
+            <li>Remove Dynamic Fsync</li>
+            <li>Other fixes and performance improvements</li>
         <br>
         </div>
         <div class="6u 12u$(medium)">
