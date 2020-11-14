@@ -189,8 +189,37 @@ nav-menu: true
         </div>
         <button class="col_head">Vince</button><br><br>
         <div class="col_con">
+
         <div class="row 200%">
           <div class="6u 12u$(medium)">
+          <h2>Último</h2>
+            <li> Supports Android 11</li>
+            <li> Upstream to latest Linux kernel tag</li>
+            <li> Upstream wireguard to latest release</li>
+            <li> Fix Ramdisk overlay not applying</li>
+            <li> Fix left headphoene sound gain being 1 by default</li>
+            <li> Fix top-app boosting issue</li>
+            <li> Improved DStune boost</li>
+            <li> General scheduler improvemenets</li>
+            <li> Add support for speaker gain</li>
+            <li> Many more changes i cant remember</li>
+          </div>
+          <div class="6u$ 12u$(medium)">
+                <br><br><br>
+                <p><strong>File Name:</strong> Dark-Ages-Ultimo-4.9-243-STABLE-14112020-0604.zip<br>
+                <strong>File Size:</strong> 13.3 MB<br>
+                <strong>MD5:</strong> 2f793e135677d56a9bcb29a9f6d4a0a8</p>
+                <h3>Downloads:</h3>
+                <ul class="actions">
+                    <li><a target="_blank" href="https://sourceforge.net/projects/dark-ages/files/Treble/Dark-Ages-Ultimo-4.9-243-STABLE-14112020-0604.zip/download" class="button special">Sourceforge</a></li>
+                    <li><a target="_blank"  href="https://t.me/da_ci/3445" class="button special">Telegram</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row 200%">
+          <div class="6u 12u$(medium)">
+            <br>
           <h2>Décimo</h2>
               <li>Compiled with Clang 9 and GCC 9.2.0</li>
               <li>Merge 4.9.189 kernel tags</li>
@@ -215,7 +244,7 @@ nav-menu: true
         </div>
         <div class="row 200%">
             <div class="6u 12u$(medium)">
-            <br><br><br>
+            <br>
               <h2>El Noveno</h2>
                 <li> Upstream to latest 4.9.192 release </li>
                 <li> Fixed issues with omni camera sensor </li>
