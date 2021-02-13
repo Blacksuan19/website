@@ -58,7 +58,8 @@
   text-align: center;
   font-size: 30%;
 }
-.extra {
+
+.view-all-button {
   margin: auto;
   display: flex;
   padding: 20px 0px 20px 0px;
