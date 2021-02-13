@@ -1,16 +1,18 @@
 {% assign projects = site.posts | where: 'project', 'true' %}
 <section class="tiles" id="one">
-    {% for post in projects limit: site.tiles-count %}
-    <article>
-        <span class="image">
-            <img src="{{ post.image }}" alt="{{ post.title }}" />
-        </span>
-        <header class="major">
-            <h3>
-                <a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a>
-            </h3>
-            <p>{{ post.description }}</p>
-        </header>
-    </article>
-    {% endfor %}
+  {% for post in projects limit: site.tiles-count %}
+  <article>
+    <span class="image">
+      <img src="{{ post.image }}" alt="{{ post.title }}" />
+    </span>
+    <header class="major">
+      <h3>
+        <a href="{{ post.url | relative_url }}" class="link"
+          >{{ post.title }}</a
+        >
+      </h3>
+      <p>{{ post.description }}</p>
+    </header>
+  </article>
+  {% endfor %}
 </section>
