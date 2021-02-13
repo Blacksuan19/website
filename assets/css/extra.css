@@ -1,12 +1,13 @@
 .flex-wrapper {
   display: flex;
   flex-flow: row wrap;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .single-chart {
-  max-width: 15%;
   min-width: 15%;
+  max-width: 15%;
   justify-content: center;
 }
 
@@ -56,7 +57,7 @@
   font-weight: 600;
   overflow-wrap: break-word;
   text-align: center;
-  font-size: 30%;
+  font-size: 20%;
 }
 
 .view-all-button {
@@ -128,8 +129,8 @@
 }
 @media only screen and (max-width: 750px) {
   .single-chart {
-    max-width: 30%;
-    min-width: 30%;
+    max-width: 25%;
+    min-width: 25%;
     justify-content: center;
   }
   .post-tags {
@@ -153,7 +154,7 @@
     float: none;
   }
   .skill-label {
-    font-size: 100%;
+    font-size: 60%;
   }
   .read-fork {
     display: none;
