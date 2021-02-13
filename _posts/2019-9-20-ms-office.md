@@ -5,11 +5,12 @@ description: How to get full office formats support on linux
 image: /assets/images/office.jpg
 project: false
 permalink: /blog/:title/
-tags: 
-- linux
-- office
-- fonts
+tags:
+  - linux
+  - office
+  - fonts
 ---
+
 The semester just started and like other semesters and other universities in
 this whole planet they use proprietary Microsoft formats to distribute study
 material like slides and documents, why cant you just use regular formats that
@@ -34,6 +35,7 @@ those replacements are usually not that good (this thing replaced MS Gothic with
 weather icons like bruh) so you have to get that font and install it.<br> <br>
 
 #### The main event:
+
 - Download and install [WPS office](https://www.wps.com/index.html) or install [from aur](https://aur.archlinux.org/packages/wps-office/) if you're on arch
 - Download the full Microsoft [fonts folder](https://drive.google.com/open?id=1UlIQRj837nHI7FgqEjzFy7wctaiR9Z3F) (yeah i pirated that basically, pls MS don't take this site down)
 - you might need to update your font cache `fc-cache -f -v`
@@ -50,4 +52,4 @@ checker) because it also does load your fonts, onlyoffice has a font folder that
 it loads from and it doesn't have not even half of the fonts included
 here.<br><br> With what microsoft is doing right now for linux i hope they'll
 bridge this gap one day and get us a full office suit that doesn't need any
-hacks  or emulation to function properly.
+hacks or emulation to function properly.

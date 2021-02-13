@@ -6,15 +6,15 @@ image: "/assets/images/virustotal.png"
 project: false
 permalink: "/blog/:title/"
 tags:
-- python
-- auto
-- virustotal
-- API
+  - python
+  - auto
+  - virustotal
+  - API
 ---
 
 VirusTotal, a truly great service, making it easier for anyone to check any
 file, hash or URL against multiple antivirus databases in a little to no time,
-their API is also an absolute gold, with it you don't need to deal with  browser
+their API is also an absolute gold, with it you don't need to deal with browser
 GUI, you can make simple requests and get results in most programming languages,
 hell you could even check a file using just curl or even wget, the only drawback
 is that the [public API](https://developers.virustotal.com/reference) has a limit
@@ -43,6 +43,7 @@ the json file also contains link to the report which we don't really need but
 worth mentioning.
 
 #### Preparing the file
+
 before we can scan the files we need to put them in a way that we can traverse
 them and that sounds like a simple list. We also need another file to which we
 can send the results or at least a simple summery if the results.
@@ -54,6 +55,7 @@ analysis = open("analysis.txt", "w") # the file to save to the result
 analysis.write("\t\t\tHash\t\t\t\t\t# of engines"
                "detected\n========================================================\n\n")
 ```
+
 in this case we are going to print the hash and the number of engines detected
 it as malicious, just to keep it simple.
 
@@ -75,6 +77,7 @@ for hashn in hashes:
 ```
 
 #### Checking the hashes
+
 Now we have the response as a json file, one of the reasons i chose python for
 this (beside it being easy and currently on my learning spectrum)
 is because you can easily manipulate json files without needing any hacks
@@ -95,6 +98,7 @@ if result['positives'] != 0:
 ```
 
 #### Going around the limit
+
 And that is basically all, we have a functional script that does what its
 supposed to and saves us time, except not really since it still just crashes on
 the 5th check (the public API limit), to counter this we can make the script
@@ -109,7 +113,6 @@ except:
     time.sleep(1 * 60)
 
 ```
-
 
 ### Final results
 

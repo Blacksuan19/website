@@ -6,11 +6,11 @@ image: "/assets/images/nvim.png"
 project: false
 permalink: "/blog/:title/"
 tags:
-- nvim
-- linux
-- IDE
-- cli
-- setup
+  - nvim
+  - linux
+  - IDE
+  - cli
+  - setup
 ---
 
 In my last post i went over my history of editors and the good, the bad and the
@@ -21,11 +21,13 @@ Init.vim](https://github.com/Optixal/neovim-init.vim), i have replaced some of
 the plugs and added my own bindings and auto completion plugins.
 
 #### Plugin Management
+
 for plugins i left vim-plug as it is because well its great, gets the job done
 and doesn't really interfere in any way, yes i do use a lot of plugins, however
 most of them i consider necessary for a great IDE experience, out of the box
 most of these functions are missing or hidden, i have added a comment for each
 plugin explaining what it does.
+
 <pre>
 <code class="language-vim">
 " ================= looks and GUI stuff ================== "
@@ -107,7 +109,9 @@ extensive setup because well this works by default i had to modify is the
 mapping and other simple stuff which i could've used another plugin for.
 
 {% include asciinema.liquid id="272608" %}
+
 #### Visual changes:
+
 just as usual it has to be material ocean themed, and vim being a popular editor
 its already there and no need to reinvent the wheel, [kaicataldo's
 themes](https://github.com/kaicataldo/material.vim) include it
@@ -194,10 +198,12 @@ let g:NERDTreeIgnore = [
 </pre>
 
 #### Airline
+
 airline is a fantastic status bar that shows important information like the
 language, encoding and current mode you're in. my airline configs are pretty
 simple as well, the only big difference compared to the defaults is the added
 current line and percentage of the file at the right of the bar, also spell check
+
 <pre>
 <code class="language-vim">
 " Airline
@@ -223,8 +229,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on
 - startify when no buffer is open
 - open images via feh
 
-
 #### Key Mappings
+
 The default key maps are ok but they're missing some essential things like block
 selection without going back to visual mode, fast split switching and split
 rotation, so i made my own bindings for all these, some are from nvim help and
@@ -232,6 +238,7 @@ others are scattered from the web.<br>
 i also fixed the annoying block selection will copy the selected text to the
 clipboard by using the void register for delete operations, this way deleting a
 visual block will just delete it without adding it to the clipboard.
+
 ```vim
 " use a different buffer for dd
 nnoremap d "_d
@@ -262,6 +269,7 @@ inoremap <C-S-right> <esc>ve
 ```
 
 #### Other shortcuts
+
 - F3 for nerdtree
 - f4 for tagbar
 - f5 to rotate splits

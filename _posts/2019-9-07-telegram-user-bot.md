@@ -5,11 +5,11 @@ description: Extending your functionality
 image: /assets/images/heroku.png
 project: false
 permalink: /blog/:title/
-tags: 
-- telegram
-- userbot
-- heroku
-- python
+tags:
+  - telegram
+  - userbot
+  - heroku
+  - python
 ---
 
 Heroku is a container-based cloud platform for deploying, managing and scaling
@@ -60,9 +60,8 @@ file to the repo first (do not push this file to github!).<br>
 #### Note:
 
 app running on heroku is not a git repository so you cant use the .update
-command, to update the bot first stop the running bot process `heroku stop
-processid` (to get the id run `heroku ps` run.XXXX is the id), and then you can
-update normally with `git pull`.  <br> <br> and thats all your bot should be
+command, to update the bot first stop the running bot process `heroku stop processid` (to get the id run `heroku ps` run.XXXX is the id), and then you can
+update normally with `git pull`. <br> <br> and thats all your bot should be
 kicking fine for now, heroku has a limited amount of hours for free accounts
 (550 hours), it will also kill all processes if there is no activity for more
 than 30min or so, don't worry you can just restart it again
