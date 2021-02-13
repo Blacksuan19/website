@@ -6,10 +6,10 @@
 -->
 
 <html>
-  {% include head.html %}
+  {% include head.liquid %}
 
   <body>
-    {% include header.html %}
+    {% include header.liquid %}
     <!-- Main -->
     <div class="alt" id="main">
       <!-- One -->
@@ -21,21 +21,21 @@
               {% if page.project == false%} {{ page.date | date: '%B %d, %Y' }}
               {% endif %}
             </header>
-            {% include post-tags.html %}
+            {% include post-tags.liquid %}
           </div>
           <div class="row 200%">
-            <div class="social-icons">{% include social-share.html %}</div>
+            <div class="social-icons">{% include social-share.liquid %}</div>
             <div class="read-time">
-              <h3>{% include read-time.html content=page.content %}</h3>
+              <h3>{% include read-time.liquid content=page.content %}</h3>
             </div>
           </div>
           {% if page.image %}
           <span class="image main"><img src="{{ page.image }}" alt="" /></span>
           {% endif %}
           <p>{{ content }}</p>
-          {% include post-tags.html %} {% if page.github %}
+          {% include post-tags.liquid %} {% if page.github %}
           <a href="{{ page.github }}" class="fit button">Fork on Github</a>
-          {% endif %} {% if page.project == false %} {% include disque.html %}
+          {% endif %} {% if page.project == false %} {% include disque.liquid %}
           <div class="actions" style="padding-top: 10px">
             {% if page.previous.url and page.previous.project != true %}
             <a class="button" href="{{ page.previous.url }}">
@@ -51,14 +51,14 @@
               <header class="major">
                 <h3>Similar Posts</h3>
               </header>
-              {% include similar-posts.html %}
+              {% include similar-posts.liquid %}
             </div>
           </div>
           {% endif %}
         </div>
       </section>
     </div>
-    {% include footer.html %}
+    {% include footer.liquid %}
   </body>
 </html>
 <script>

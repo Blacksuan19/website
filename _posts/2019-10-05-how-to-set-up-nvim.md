@@ -101,7 +101,7 @@ snippets work as intended. the good thing is i didn't really need to do a very
 extensive setup because well this works by default i had to modify is the
 mapping and other simple stuff which i could've used another plugin for.
 
-{% include asciinema.html id="272608" %}
+{% include asciinema.liquid id="272608" %}
 #### Visual changes:
 just as usual it has to be material ocean themed, and vim being a popular editor
 its already there and no need to reinvent the wheel, [kaicataldo's

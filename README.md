@@ -47,7 +47,7 @@ This is my personal fork which adds many important features and makes the theme 
 Used to link to a YouTube video
 
 ```liquid
-{% include YouTube.html id="video_id" %}
+{% include YouTube.liquid id="video_id" %}
 ```
 
 ### Asciinema
@@ -55,7 +55,7 @@ Used to link to a YouTube video
 Used to link to an asciinema video
 
 ```liquid
-{% include asciinema.html id="video_id" %}
+{% include asciinema.liquid id="video_id" %}
 ```
 
 # Project Structure
