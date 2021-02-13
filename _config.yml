@@ -19,7 +19,7 @@ about-text: 21 years old Android Developer, into the linux kernel, KDE plasma an
 tiles-count: 4
 post-tiles: true
 projects-tiles: true
-home-about: false 
+home-about: false
 
 # social settings
 disqus: 'blacksuan19-me'
@@ -32,9 +32,10 @@ xda_url: https://forum.xda-developers.com/member.php?u=5980272
 skills:
   Linux: "90"
   Git: "90"
-  Java: "80"
-  figma: "70"
   C/C++: "60"
+  Python: "90"
+  Data Science: "70"
+  Machine Learning: "70"
 
 # build settings
 markdown: kramdown
