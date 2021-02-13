@@ -39,7 +39,7 @@
     min-height: 23em;
     overflow: hidden;
     position: relative;
-    width: 40%;
+    width: 30%;
 
     .image {
       display: none;
@@ -160,7 +160,7 @@
 
   @include breakpoint(medium) {
     article {
-      width: 50% !important;
+      width: 45% !important;
     }
   }
 
@@ -170,7 +170,7 @@
       height: 16em;
       max-height: none;
       min-height: 0;
-
+      width: 100% !important;
       h3 {
         font-size: 1.5em;
       }
@@ -182,7 +182,7 @@
 
     article {
       height: 20em;
-      width: 100% !important;
+      width: 95% !important;
     }
   }
 }
