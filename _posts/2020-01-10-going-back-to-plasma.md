@@ -1,11 +1,15 @@
 ---
-layout: post
 title: Going Back To Plasma
+layout: post
 description: But with a twist
-image: /assets/images/kde.jpg
+image: "/assets/images/kde.jpg"
 project: false
-permalink: /blog/:title/
-tags: linux plasma bspwm setup
+permalink: "/blog/:title/"
+tags:
+- linux
+- plasma
+- bspwm
+- setup
 ---
 
 Plasma, a truly complete DE with everything you could ever dream of, you can

@@ -5,7 +5,10 @@ description: the 9th release of dark ages
 image: /assets/images/noveno.png
 project: false
 permalink: /blog/:title/
-tags: kernel da noveno
+tags: 
+- kernel
+- da
+- noveno
 ---
 
 Its been a while since the last release, exactly 2 months and 2 weeks and its

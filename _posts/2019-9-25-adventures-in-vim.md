@@ -5,7 +5,11 @@ description: Going Full time Cli
 image: /assets/images/vim.png
 project: false
 permalink: /blog/:title/
-tags: linux vim cli neovim
+tags: 
+- linux
+- vim
+- cli
+- neovim
 ---
 
 

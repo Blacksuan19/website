@@ -5,7 +5,10 @@ description: the 8th release of dark ages
 image: /assets/images/da.jpg
 project: false
 permalink: /blog/:title/
-tags: kernel da octavo
+tags: 
+- kernel
+- da
+- octavo
 ---
 
 today marks a whole year since the first DA release, and issa a special day, it
