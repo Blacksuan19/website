@@ -2,7 +2,16 @@
 <div id="wrapper">
 
   <!-- Header -->
-  <header id="header" {% if page.layout == "home" %} class="alt" {% endif %}>
+  <header 
+    id="header" 
+    style="
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      " 
+    {% if page.layout == "home" %} 
+      class="alt" 
+    {% endif %}
+  >
     <a href="{{ site.url }}/" class="logo" target="_self">
       <strong>{{ site.title }}</strong>
       <span>{{ site.subtitle }}</span>
