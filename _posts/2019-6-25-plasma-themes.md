@@ -6,7 +6,10 @@ project: true
 image: /assets/images/plasma.png
 github: https://github.com/blacksuan19/plasma-themes
 permalink: /projects/:title/
-tags: linux plasma themes
+tags: 
+- linux
+- plasma
+- themes
 ---
 
 #### Introduction:

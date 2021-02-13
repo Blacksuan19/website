@@ -1,11 +1,15 @@
 ---
-layout: post
 title: VirusTotal Bulk Checker
+layout: post
 description: Automating the Boring stuff with python
-image: /assets/images/virustotal.png
+image: "/assets/images/virustotal.png"
 project: false
-permalink: /blog/:title/
-tags: python auto virustotal API
+permalink: "/blog/:title/"
+tags:
+- python
+- auto
+- virustotal
+- API
 ---
 
 VirusTotal, a truly great service, making it easier for anyone to check any

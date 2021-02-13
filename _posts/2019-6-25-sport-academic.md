@@ -6,7 +6,11 @@ project: true
 image: /assets/images/spordemic.png
 github: https://github.com/jsimplefx/Sport-Academic
 permalink: /projects/:title/
-tags: project javaFX jfoenix jsimplefx
+tags: 
+- project
+- javaFX
+- jfoenix
+- jsimplefx
 ---
 
 #### Introduction:
