@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-    Forty by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-  -->
+
 <html>
   {% include head.liquid %}
 
@@ -15,9 +11,20 @@
       <!-- Two -->
       {% for post in site.posts %} {% if post.project != true %}
       <section class="spotlights" id="two" style="padding: 10px">
-        <section>
+        <section style="border-radius: 20px">
           <a href="{{ post.url }}" class="image">
-            <img src="{{ post.image }}" alt="" data-position="center center" />
+            <img
+              src="{{ post.image }}"
+              alt=""
+              data-position="center"
+              style="
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                height: 100%;
+              "
+            />
           </a>
           <div class="content">
             <div class="inner">
@@ -37,8 +44,10 @@
                 >
                 {% endfor %}
               </span>
-              <p style="padding-top: 20px">{{ post.description }}</p>
-              <ul class="actions">
+              <p style="padding-top: 20px">
+                {{ post.content | strip_html | truncatewords: 30 }}
+              </p>
+              <ul class="actions read-fork">
                 <li>
                   <a href="{{ post.url }}" class="button">Continue Reading</a>
                 </li>
