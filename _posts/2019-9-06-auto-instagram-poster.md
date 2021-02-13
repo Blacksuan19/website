@@ -5,12 +5,13 @@ description: Automating the Boring Stuff with Python
 image: /assets/images/instagram.png
 project: false
 permalink: /blog/:title/
-tags: 
-- python
-- instagram
-- auto 
-- API
+tags:
+  - python
+  - instagram
+  - auto
+  - API
 ---
+
 So few days ago i had to market my new instagram account, i needed to post every
 hour or so. and instagram doesn't exactly help with bulk posting especially from
 PC, and it was frustrating to do from mobile and instagram never suppoted
@@ -32,6 +33,7 @@ i wrote the script in python and it was easy enough that i wrote some help
 documentation.<br>
 
 #### Previous Way
+
 - find the product
 - download photos
 - if photos not high quality go back to supplier images
@@ -47,6 +49,7 @@ With this i just provide a photo a .txt with the caption and a number to post
 the photo after (60 min, 120 min etc), and now i can chill out and watch more
 random psychology stuff on Youtube.<br> the only caveat is you can only upload
 one photo per post but that should do fine for now.<br>
+
 <pre>
 <code class="language-python">
 import sys

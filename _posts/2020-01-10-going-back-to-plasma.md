@@ -6,10 +6,10 @@ image: "/assets/images/kde.jpg"
 project: false
 permalink: "/blog/:title/"
 tags:
-- linux
-- plasma
-- bspwm
-- setup
+  - linux
+  - plasma
+  - bspwm
+  - setup
 ---
 
 Plasma, a truly complete DE with everything you could ever dream of, you can
@@ -38,6 +38,7 @@ with bspwm(i kid you not that actually worked!), with the installation out of
 the way it was time to automate all this boring boot stuff.
 
 ### Setup
+
 A good resource i found for using plasma with other window managers is their own
 [guide](https://userbase.kde.org/Tutorials/Using_Other_Window_Managers_with_Plasma)
 it helped me with settings for plasma floating windows, also gave me a basic
@@ -49,6 +50,7 @@ it both of which were pretty easy (some changes to xprofile...etc.) since i
 don't use a display manager
 
 Here is my full xprofile
+
 ```bash
 #!/bin/sh
 
@@ -80,6 +82,7 @@ exec startx
 fi
 
 ```
+
 ### customizations
 
 ![plasma settings editor](/assets/images/plasma-settings.png)
@@ -97,26 +100,29 @@ using plasma.
 now for some tricks, the panel spacing always annoyed me since i was using it
 and it seems that hasn't changed, not a big deal since changing that is easy,
 just look for `spacing` in
+
 ```bash
 /usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/main.qml
 ```
+
 and you will find `spacing: 0` change that 0 to any number(i stick to 10 usually) and you're good.
 
 ### Benefits
+
 there was no apparent reason why i tried this but there are many reasons why i
 stayed. I made a list of things i have observed so far, there are probably more
 stuff and some things that are not that important after all.
 
 - Actually superior apps
-> cant compare dolphin with any other file manager and cant compare plasma
-settings with any other settings app, for me QT > GTK (quote me on that)
+  > cant compare dolphin with any other file manager and cant compare plasma
+  > settings with any other settings app, for me QT > GTK (quote me on that)
 - Actually faster and cleaner
-> maybe its just me but things seem faster especially app startups and
-shutdown(no more annoying 1:30 min waiting for network manager since plasma
-kills it automatically before shutdown)
+  > maybe its just me but things seem faster especially app startups and
+  > shutdown(no more annoying 1:30 min waiting for network manager since plasma
+  > kills it automatically before shutdown)
 - No CPU consuming polybar modules (thats the reason i tried this)
-> if there was a reason for this switch it was probably this. plasmashell is
-miles ahead.
+  > if there was a reason for this switch it was probably this. plasmashell is
+  > miles ahead.
 - Many things are automatically configured
   - the widgets
   - sleep and hibernate
@@ -137,8 +143,8 @@ miles ahead.
   - both toolkits can be themed from one central (plasma settings)
   - arguably better looking fonts (noticed in chrome)
 
-
 ### how to integration
+
 lastly, here are some good tips for anyone who wants to try this, just general
 things that make sense.
 
@@ -147,8 +153,6 @@ things that make sense.
 - [auto login to tty1](https://wiki.archlinux.org/index.php/Getty#Automatic_login_to_virtual_console)
 - export bspwm as the default WM from .xprofile(mentioned above)
 - startx from xprofile(mentioned above)
-
-
 
 #### using sxhkd with plasma shortcuts
 
@@ -191,7 +195,6 @@ the amount of progress plasma made in those 7-8 months i wasn't using it is
 astonishing and makes me look foreword to plasma in 2020, this is gonna be my
 setup for this year and maybe after, only major change i might consider is going
 the Wayland way that is only if there is a good bspwm alternative over there.
-
 
 Now here is a workflow video, enjoy!
 {% include YouTube.liquid id="lZbk-QEqSTM" %}

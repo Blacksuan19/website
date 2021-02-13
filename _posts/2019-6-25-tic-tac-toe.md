@@ -6,11 +6,11 @@ project: true
 image: /assets/images/tictac.jpg
 github: https://github.com/jsimplefx/Tic-Tac-Toe
 permalink: /projects/:title/
-tags: 
-- project
-- javaFX
-- jfoenix
-- jsimplefx
+tags:
+  - project
+  - javaFX
+  - jfoenix
+  - jsimplefx
 ---
 
 #### Introduction:
