@@ -6,8 +6,8 @@
 
 .single-chart {
   max-width: 15%;
-  justify-content: center;
   min-width: 15%;
+  justify-content: center;
 }
 
 .github {
@@ -17,9 +17,6 @@
 
 .circular-chart {
   display: block;
-  margin: 10px auto;
-  max-width: 100%;
-  max-height: 100%;
   text-anchor: middle;
   font-size: medium;
 }
@@ -47,12 +44,20 @@
 }
 .skill-label {
   text-transform: uppercase;
-  fill: #ffffffb2;
+  fill: #fff;
   font-weight: 600;
-  font-family: sans-serif;
-  font-size: 0.13em;
+  overflow-wrap: break-word;
+  text-align: center;
+  /* font-size: 30%; */
 }
 
+.percentage {
+  fill: #fff;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  text-align: center;
+  font-size: 30%;
+}
 .extra {
   margin: auto;
   display: flex;
@@ -121,6 +126,11 @@
   width: 100%;
 }
 @media only screen and (max-width: 750px) {
+  .single-chart {
+    max-width: 30%;
+    min-width: 30%;
+    justify-content: center;
+  }
   .post-tags {
     display: block;
     float: none;
@@ -141,10 +151,7 @@
   .github {
     float: none;
   }
-  .single-chart {
-    max-width: 30%;
-  }
   .skill-label {
-    font-size: 0.3em;
+    font-size: 100%;
   }
 }
