@@ -49,7 +49,7 @@
           <h2>Recent Posts</h2>
         </header>
       </div>
-      {% include posts-tiles.html %}
+      {% include tiles.html isProject='false' %}
       <div class="extra">
         <a href="{{ site.url }}/blog" class="button">View All posts</a>
       </div>
@@ -62,7 +62,7 @@
           <h2>Recent Projects</h2>
         </header>
       </div>
-      {% include projects-tiles.html %}
+      {% include tiles.html isProject='true' %}
       <div class="extra">
         <a href="{{ site.url }}/projects" class="button">View All Projects</a>
       </div>

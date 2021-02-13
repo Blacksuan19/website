@@ -1,6 +1,7 @@
-{% assign projects = site.posts | where: 'project', 'true' %}
+{% assign project = include.isProject %} {% assign ps = site.posts | where:
+'project', project | where_exp:"post","post.url != page.url" %}
 <section class="tiles" id="one">
-  {% for post in projects limit: site.tiles-count %}
+  {% for post in ps limit: site.tiles-count %}
   <article>
     <span class="image">
       <img src="{{ post.image }}" alt="{{ post.title }}" />
