@@ -4,6 +4,6 @@ title: Search
 ---
 <div id="main" class="alt">
     <div class="inner">
-{% include search.html %}
+{% include search.liquid %}
 </div>
 </div>

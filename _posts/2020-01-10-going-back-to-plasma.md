@@ -190,4 +190,4 @@ the Wayland way that is only if there is a good bspwm alternative over there.
 
 
 Now here is a workflow video, enjoy!
-{% include YouTube.html id="lZbk-QEqSTM" %}
+{% include YouTube.liquid id="lZbk-QEqSTM" %}
