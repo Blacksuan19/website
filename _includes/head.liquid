@@ -3,7 +3,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title and page.title != 'Home' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   {% assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 %}
   <meta name="description" content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}">
 
@@ -25,11 +24,6 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "/sitemap.xml" | prepend: site.baseurl | prepend: site.url }}" />
-    <title>
-      {{ page.title }}
-      |
-      {{ site.title }}
-    </title>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
     {% include logo.liquid %}
@@ -37,6 +31,9 @@
     <link href="/assets/css/extra.css" rel="stylesheet">
     <link href="/assets/css/back.to.top.css" rel="stylesheet">
     <link href="/assets/css/prism.css" rel="stylesheet">
+
+    <title>{% if page.title and page.title != 'Home' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  
     {% comment %} collect site tags if not defined {% endcomment %}
     {% if site.tags != "" %}
         {% include collect-tags.liquid %}
