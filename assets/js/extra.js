@@ -12,9 +12,8 @@ $(document).ready(function () {
     return false;
   });
 
-  // logic for collpasable Headers
+  // logic for collapsable Headers
   $(".col_head").click(function () {
     $(this).nextAll("div .col_con").first().slideToggle("fast");
   });
 });
-
