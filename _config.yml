@@ -11,17 +11,16 @@ city: Kuala Lumpur
 state: Selangor
 zip_code: 53100
 country: Malaysia
-logo: 'assets/images/logo.jpg' # has to be a jpg image
 about-text: 21 years old Android Developer, into the linux kernel, KDE plasma and tiling WM's, constantly learning and trying new stuff,<br> got fed up with how my apps look so i made this color scheme you seeing on this site and in all my desktops, currently maintaining HavocOS, and my own custom kernel Dark Ages, and doing a lot of scripting, Machine learning and AI.
 
 # homepage config
-tiles-count: 3
-post-tiles: true
-projects-tiles: true
-home-about: false
+tiles-count: 3 # number of tiles on home page
+post-tiles: true # whether to show post tiles
+projects-tiles: true # whether to show project tiles
+home-about: false # whether to show about-text in home page or contact page
 
 # social settings
-disqus: 'blacksuan19-me'
+disqus: 'blacksuan19-me' # comments on blog posts
 github_url: https://github.com/blacksuan19
 instagram_url: https://instagram.com/blacksuan19
 telegram_url: https://t.me/blacksuan19
@@ -38,22 +37,23 @@ skills:
 
 # build settings
 markdown: kramdown
-
 kramdown:
   input: GFM
-
 sass:
   style: compressed
 
+# custom directory to fetch pages from 
 include: ["_pages"]
 collections:
   pages:
     output: true
     permalink: :path
 
+# remove dates and prettify links
 permalink: pretty
 permalink: /:title/
 
+# jekyll admin settings
 jekyll_admin:
   hidden_links:
     - datafiles
