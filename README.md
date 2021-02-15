@@ -10,7 +10,7 @@ This is my personal fork which adds many important features and makes the theme 
 # Added Features
 
 - very easy setup - fork the template and start posting
-- beautiful [material ocean](https://github.com/material-ocean/Material-Ocean) color pallete
+- beautiful [material ocean](https://github.com/material-ocean/Material-Ocean) color pallette
 - Jekyll Admin integration for easier use
 - highly modularize the theme - most of the widgets and features are user togglable
 - proper URl's for posts and projects
@@ -25,7 +25,7 @@ This is my personal fork which adds many important features and makes the theme 
 - read time for posts and projects
 - minimal syntax highlighting via [prism](https://prismjs.com/index.html)
 - site wide search via [lunr](https://lunrjs.com)
-- [disque](https://disqus.com/) comments integration for posts - add your disque forum name in `config.yml`
+- [disqus](https://disqus.com/) comments integration for posts - add your disqus forum name in `config.yml`
 - fork repository button on projects
 - better font awesome integration via fontawesome kit
 - fix font awesome issues on mobile devices
@@ -93,7 +93,8 @@ and [creating pages](https://jekyllrb.com/docs/pages/).
 
 # Credits
 
-[andrewbanchich](https://github.com/andrewbanchich/forty-jekyll-theme) - Ported original template to Jekyll
+- [andrewbanchich](https://github.com/andrewbanchich/forty-jekyll-theme) - Ported original template to Jekyll.
+- [Jekyll without plugins](https://jekyllcodex.org/without-plugins/) - Feed, Site map, SEO and other things.
 
 Original README from HTML5 UP:
 
@@ -124,7 +125,7 @@ Demo Images:
 Unsplash (unsplash.com)
 
 Icons:
-Font Awesome (fortawesome.github.com/Font-Awesome)
+Font Awesome (fontawesome.github.com/Font-Awesome)
 
 Other:
 jQuery (jquery.com)
