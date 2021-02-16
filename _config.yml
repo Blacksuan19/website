@@ -21,6 +21,7 @@ home-about: false # whether to show about-text in home page or contact page
 
 # social settings
 disqus: 'blacksuan19-me' # comments on blog posts
+formspree: https://formspree.io/f/xpzoedna # contact form target
 github_url: https://github.com/blacksuan19
 instagram_url: https://instagram.com/blacksuan19
 telegram_url: https://t.me/blacksuan19

@@ -15,7 +15,7 @@ nav-menu: true
       <p>{{ site.about-text }}</p>
       {% endif %} For any Questions, enquiries, Contact me via the form below or
       send me a direct email. you can also get in touch with me via telegram.<br /><br />
-      <form action="https://formspree.io/{{ site.email }}" method="POST">
+      <form action="{{ site.formspree }}" id="contact-form" method="POST">
         <div class="field half first">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" />
@@ -29,7 +29,14 @@ nav-menu: true
           <textarea name="message" id="message" rows="6"></textarea>
         </div>
         <ul class="actions">
-          <li><input type="submit" value="Send Message" class="special" /></li>
+          <li>
+            <input
+              type="submit"
+              value="Send Message"
+              id="submit-button"
+              class="special"
+            />
+          </li>
           <li><input type="reset" value="Clear" /></li>
         </ul>
       </form>
