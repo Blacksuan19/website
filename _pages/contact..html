@@ -18,15 +18,25 @@ nav-menu: true
       <form action="{{ site.formspree }}" id="contact-form" method="POST">
         <div class="field half first">
           <label for="name">Name</label>
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" placeholder="John Doe" />
         </div>
         <div class="field half">
           <label for="email">Email</label>
-          <input type="text" name="_replyto" id="email" />
+          <input
+            type="email"
+            name="_replyto"
+            id="email"
+            placeholder="joe@doe.com"
+          />
         </div>
         <div class="field">
           <label for="message">Message</label>
-          <textarea name="message" id="message" rows="6"></textarea>
+          <textarea
+            name="message"
+            id="message"
+            rows="6"
+            placeholder="message goes here"
+          ></textarea>
         </div>
         <ul class="actions">
           <li>
