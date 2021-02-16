@@ -127,6 +127,14 @@
 .col_head {
   width: 100%;
 }
+#email-error,
+#name-error,
+#message-error {
+  font-size: 60%;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
 @media only screen and (max-width: 736px) {
   .single-chart {
     max-width: 25%;
