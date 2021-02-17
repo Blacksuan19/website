@@ -16,7 +16,7 @@ nav-menu: true
       {% endif %} For any Questions, enquiries, Contact me via the form below or
       send me a direct email. you can also get in touch with me via telegram.<br /><br />
       <form action="{{ site.formspree }}" id="contact-form" method="POST">
-        <div class="field half first">
+        <div style="margin-bottom: 0px" class="field half first">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" placeholder="John Doe" />
         </div>
@@ -36,6 +36,7 @@ nav-menu: true
             id="message"
             rows="6"
             placeholder="message goes here"
+            spellcheck="true"
           ></textarea>
         </div>
         <ul class="actions">
