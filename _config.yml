@@ -26,11 +26,14 @@ formspree: https://formspree.io/f/xpzoedna # contact form target
 # icon: url
 social_urls:
     github: https://github.com/blacksuan19
-    instagram: https://instagram.com/blacksuan19
     telegram: https://t.me/blacksuan19
     android: https://forum.xda-developers.com/member.php?u=5980272
+    kaggle: https://www.kaggle.com/abubakaryagob/
     # linkedin:
+    # instagram:
     # twitter:
+    # facebook:
+    # pinterest:
 
 # skills widget
 skills:
