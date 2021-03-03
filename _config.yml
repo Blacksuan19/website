@@ -22,10 +22,15 @@ home-about: false # whether to show about-text in home page or contact page
 # social settings
 disqus: 'blacksuan19-me' # comments on blog posts
 formspree: https://formspree.io/f/xpzoedna # contact form target
-github_url: https://github.com/blacksuan19
-instagram_url: https://instagram.com/blacksuan19
-telegram_url: https://t.me/blacksuan19
-xda_url: https://forum.xda-developers.com/member.php?u=5980272
+# add social media links here and they will show up in the footer
+# icon: url
+social_urls:
+    github: https://github.com/blacksuan19
+    instagram: https://instagram.com/blacksuan19
+    telegram: https://t.me/blacksuan19
+    android: https://forum.xda-developers.com/member.php?u=5980272
+    # linkedin:
+    # twitter:
 
 # skills widget
 skills:
@@ -43,7 +48,7 @@ kramdown:
 sass:
   style: compressed
 
-# custom directory to fetch pages from 
+# custom directory to fetch pages from
 include: ["_pages"]
 collections:
   pages:
