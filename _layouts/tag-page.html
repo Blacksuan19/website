@@ -25,7 +25,9 @@ layout: page
                     <a href="{{ post.url }}">{{ post.title }}</a>
                   </h3>
                 </header>
-                <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+                <a href="{{ post.url}}"
+                  ><p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+                </a>
                 <ul class="actions read-fork">
                   <li>
                     <a href="{{ post.url }}" class="button">Continue Reading</a>
