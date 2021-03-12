@@ -30,13 +30,11 @@
               <span>
                 {% for tag in post.tags %} {% capture tag_name %}{{ tag }}{%
                 endcapture %}
-                <div class="icon fa fa-tag fa-xs"></div>
-                <a
-                  href="/tag/{{ tag_name }}"
-                  class="icon"
-                  style="font-size: 1em"
-                  ><code><nobr>{{ tag_name }}</nobr></code
-                  >&nbsp;</a
+                <a href="/tag/{{ tag_name }}" class="icon">
+                  <code
+                    ><div class="icon fa fa-tag fa-xs"></div>
+                    <nobr>{{ tag_name }}</nobr></code
+                  ></a
                 >
                 {% endfor %}
               </span>
