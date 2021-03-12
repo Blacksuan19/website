@@ -27,17 +27,7 @@
                   <a href="{{ post.url }}">{{ post.title }}</a>
                 </h3>
               </header>
-              <span>
-                {% for tag in post.tags %} {% capture tag_name %}{{ tag }}{%
-                endcapture %}
-                <a href="/tag/{{ tag_name }}" class="icon">
-                  <code
-                    ><div class="icon fa fa-tag fa-xs"></div>
-                    <nobr>{{ tag_name }}</nobr></code
-                  ></a
-                >
-                {% endfor %}
-              </span>
+              {% include post-tags.liquid page=post %}
               <a href="{{ post.url}}"
                 ><p style="padding-top: 20px">
                   {{ post.content | strip_html | truncatewords: 30 }}

@@ -21,7 +21,9 @@
               {% if page.project == false%} {{ page.date | date: '%B %d, %Y' }}
               {% endif %}
             </header>
-            {% include post-tags.liquid %}
+            <div class="post-tags">
+              {% include post-tags.liquid page=post %}
+            </div>
           </div>
           <div class="row 200%">
             <div class="social-icons">{% include social-share.liquid %}</div>
@@ -33,7 +35,8 @@
           <span class="image main"><img src="{{ page.image }}" alt="" /></span>
           {% endif %}
           <p>{{ content }}</p>
-          {% include post-tags.liquid %} {% if page.github %}
+          <div class="post-tags">{% include post-tags.liquid page=post %}</div>
+          {% if page.github %}
           <a href="{{ page.github }}" class="fit button">Fork on Github</a>
           {% endif %} {% if page.project == false %} {% include disque.liquid %}
           <div class="actions" style="padding-top: 10px">

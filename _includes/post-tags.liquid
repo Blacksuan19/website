@@ -1,12 +1,11 @@
-<div class="post-tags">
-  <span>
-    {% for tag in page.tags %} {% capture tag_name %}{{ tag }}{% endcapture %}
-    <a href="/tag/{{ tag_name }}" class="icon">
-      <code
-        ><div class="icon fa fa-tag fa-xs"></div>
-        <nobr>{{ tag_name }}</nobr></code
-      ></a
-    >
-    {% endfor %}
-  </span>
-</div>
+{% for tag in include.page.tags %} {% capture tag_name %}{{ tag }}{% endcapture
+%}
+<span>
+  <a href="/tag/{{ tag_name }}" class="icon">
+    <code
+      ><div class="icon fa fa-tag fa-xs"></div>
+      <nobr>{{ tag_name }}</nobr></code
+    ></a
+  >
+</span>
+{% endfor %}
