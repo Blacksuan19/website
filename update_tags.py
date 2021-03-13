@@ -14,7 +14,7 @@ import glob
 import os
 
 post_dir = '_posts/'
-tag_dir = 'tag/'
+tag_dir = 'tags/'
 
 filenames = glob.glob(post_dir + '*md')
 
@@ -23,18 +23,18 @@ for filename in filenames:
     f = open(filename, 'r', encoding='utf8')
     crawl = False
     for line in f:
-        if crawl:
-            current_tags = line.strip().split()
-            if current_tags[0] == 'tags:':
-                total_tags.extend(current_tags[1:])
-                crawl = False
-                break
+        # check if we are in the front matter
         if line.strip() == '---':
             if not crawl:
                 crawl = True
             else:
                 crawl = False
                 break
+        if crawl:
+            current_tags = line.strip().split()
+            if current_tags[0] == '-':
+                total_tags.extend(current_tags[1:])
+
     f.close()
 total_tags = set(total_tags)
 
