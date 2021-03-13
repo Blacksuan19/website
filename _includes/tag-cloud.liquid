@@ -1,0 +1,10 @@
+{% assign tags = site.tags | sort %} {% for tag in tags %}
+<span>
+  <a href="/tags/{{ tag[0] }}" class="icon">
+    <code
+      ><div class="icon fa fa-tag fa-xs"></div>
+      {{ tag[0] }} ({{ tag | last | size }})</code
+    ></a
+  ><br /><br />
+</span>
+{% endfor %}
