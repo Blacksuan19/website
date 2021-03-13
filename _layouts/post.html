@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-
 <html lang="en">
   {% include head.liquid %}
 
@@ -22,7 +16,7 @@
               {% endif %}
             </header>
             <div class="post-tags">
-              {% include post-tags.liquid page=post %}
+              {% include post-tags.liquid page=page %}
             </div>
           </div>
           <div class="row 200%">
@@ -35,7 +29,7 @@
           <span class="image main"><img src="{{ page.image }}" alt="" /></span>
           {% endif %}
           <p>{{ content }}</p>
-          <div class="post-tags">{% include post-tags.liquid page=post %}</div>
+          <div class="post-tags">{% include post-tags.liquid page=page %}</div>
           {% if page.github %}
           <a href="{{ page.github }}" class="fit button">Fork on Github</a>
           {% endif %} {% if page.project == false %} {% include disque.liquid %}
