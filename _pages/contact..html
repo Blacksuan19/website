@@ -60,20 +60,20 @@ nav-menu: true
           <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         </div>
       </section>
+      {% for item in site.social_urls %} {% assign name = item[0] %} {% if name
+      == site.preferred_contact %}
       <section>
-        {% for item in site.social_urls %} {% assign name = item[0] %} {% if
-        name == "telegram" %}
         <div class="contact-method">
-          <span class="icon alt fa-telegram"></span>
-          <h3>Telegram</h3>
+          <span class="icon alt fa-{{ item[0] }}"></span>
+          <h3>{{ item[0] | capitalize }}</h3>
           <span>
             <a href="{{ item[1] }}"
               >{{ item[1] | split: "/" | last | capitalize }}</a
             ></span
           >
         </div>
-        {% endif %} {% endfor %}
       </section>
+      {% endif %} {% endfor %}
       <section>
         <div class="contact-method">
           <span class="icon alt fa-home"></span>

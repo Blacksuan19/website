@@ -22,6 +22,9 @@ home-about: false # whether to show about-text in home page or contact page
 # social settings
 disqus: 'blacksuan19-me' # comments on blog posts
 formspree: https://formspree.io/f/xpzoedna # contact form target
+# which social media to show on contact page (name needs to match that of social_urls)
+preferred_contact: telegram
+
 # add social media links here and they will show up in the footer
 # icon: url
 social_urls:
