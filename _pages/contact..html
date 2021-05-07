@@ -61,15 +61,18 @@ nav-menu: true
         </div>
       </section>
       <section>
+        {% for item in site.social_urls %} {% assign name = item[0] %} {% if
+        name == "telegram" %}
         <div class="contact-method">
           <span class="icon alt fa-telegram"></span>
           <h3>Telegram</h3>
-          <span
-            ><a href="{{ site.telegram_url }}"
-              >{{ site.telegram_url | split: "/" | last | capitalize }}</a
+          <span>
+            <a href="{{ item[1] }}"
+              >{{ item[1] | split: "/" | last | capitalize }}</a
             ></span
           >
         </div>
+        {% endif %} {% endfor %}
       </section>
       <section>
         <div class="contact-method">
