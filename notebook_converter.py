@@ -1,4 +1,16 @@
-# convert a jupyter notebook to markdown and move it and its files to the appropriate place
+#!/usr/bin/env python
+
+'''
+notebook_converter.py
+
+Copyright 2021 Abubakar Yagoub
+Contact: blacksuan19.tk
+
+This script converts a jupyter notebook to markdown
+and moves converted markdown to posts and images to assets.
+No plugins required.
+'''
+
 import glob
 import os
 from datetime import datetime
@@ -47,8 +59,8 @@ for file in filenames:
 
     f = open(new_name, "r+")
     content = f.readlines()
-    # fix assets path
     for i, line in enumerate(content):
+        # fix assets path
         content[i] = content[i].replace("![png](", "![png](/assets/images/")
     f.seek(0)
     f.write(front_matter.format(name.replace("-", " ").title()))
