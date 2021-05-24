@@ -38,6 +38,8 @@ title: {name.replace("-", " ").title()}
 layout: post
 project: true
 permalink: "/projects/:title/"
+image: /assets/images/ds.jpg
+source:
 tags:
   - data-science
   - machine-learning
