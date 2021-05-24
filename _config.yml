@@ -1,8 +1,8 @@
 # site settings
 title: Blacksuan19
 email: abubakaryagob@gmail.com
-description: An Android and Linux Enthusiast, JavaFX developer and a gym fanatic
-landing-title: Hello, My Name is Abubakar Yagoub
+description: Where i write about random things at random times in random intervals.
+landing-title: Hello, Welcome to my website.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
 author: Blacksuan19
@@ -11,7 +11,7 @@ city: Kuala Lumpur
 state: Selangor
 zip_code: 53100
 country: Malaysia
-about-text: 21 years old Android Developer, into the linux kernel, KDE plasma and tiling WM's, constantly learning and trying new stuff,<br> got fed up with how my apps look so i made this color scheme you seeing on this site and in all my desktops, currently maintaining HavocOS, and my own custom kernel Dark Ages, and doing a lot of scripting, Machine learning and AI.
+about-text: My name is Abubakar Yagoub, Computer Science Student and Machine learning developer with a focus on deep learning and neural networks, I have experience with both TensorFlow and PyTorch deep learning framework, I am also interested in flutter and Linux systems, looking for a job with a focus on creating novel neural networks that solve real-world problems. when I am not in front of my laptop coding something I am usually at the gym or enjoying some music.
 
 # homepage config
 tiles-count: 3 # number of tiles on home page
