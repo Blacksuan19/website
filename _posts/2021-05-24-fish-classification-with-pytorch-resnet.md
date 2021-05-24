@@ -4,6 +4,7 @@ description: classifying 9 different types of fish from images
 layout: post
 project: true
 permalink: "/projects/:title/"
+source: https://www.kaggle.com/abubakaryagob/fish-classification-with-pytorch-resnet
 tags:
   - data-science
   - machine-learning

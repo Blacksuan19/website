@@ -30,8 +30,8 @@
           {% endif %}
           <p>{{ content }}</p>
           <div class="post-tags">{% include post-tags.liquid page=page %}</div>
-          {% if page.github %}
-          <a href="{{ page.github }}" class="fit button">Fork on Github</a>
+          {% if page.source %}
+          <a href="{{ page.source }}" class="fit button">View Source Code</a>
           {% endif %} {% if page.project == false %} {% include disque.liquid %}
           <div class="actions" style="padding-top: 10px">
             {% if page.previous.url and page.previous.project != true %}

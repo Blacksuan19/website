@@ -4,7 +4,7 @@ title: KDE Plasma Themes
 description: Themes for KDE plasma
 project: true
 image: /assets/images/plasma.png
-github: https://github.com/blacksuan19/plasma-themes
+source: https://github.com/blacksuan19/plasma-themes
 permalink: /projects/:title/
 tags:
   - linux

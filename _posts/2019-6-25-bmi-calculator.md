@@ -4,7 +4,7 @@ title: BMI Calculator
 description: a simple BMI calculator build in javaFX
 project: true
 image: /assets/images/bmi.png
-github: https://github.com/jsimplefx/bmicalculator
+source: https://github.com/jsimplefx/bmicalculator
 permalink: /projects/:title/
 tags:
   - project
