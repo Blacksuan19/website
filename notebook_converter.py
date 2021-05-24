@@ -8,7 +8,9 @@ Contact: blacksuan19.tk
 
 This script converts a jupyter notebook to markdown
 and moves converted markdown to posts and images to assets.
-No plugins required.
+Requirements:
+- jupyter (for converting notebooks to md)
+- imagemagick (for adding background to images)
 '''
 
 import glob
@@ -66,6 +68,10 @@ for file in filenames:
     f.write(front_matter.format(name.replace("-", " ").title()))
     f.writelines(content)
     f.close()
+
+    # add background color so text is visible in images
+    os.system(
+        f"mogrify -background white -flatten {notebooks_dir}{name}_files/*")
 
     # move file and assets
     os.system(f"mv {new_name} {post_dir}")
