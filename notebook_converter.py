@@ -44,10 +44,12 @@ tags:
   - project
 ---\n\n"""
 
+    # add front matter
     f = open(new_name, "r+")
     content = f.readlines()
     # fix assets path
     for i, line in enumerate(content):
+        content[i] = content[i].replace(r"# *", "")
         content[i] = content[i].replace("![png](", "![png](/assets/images/")
     f.seek(0)
     f.write(front_matter)
