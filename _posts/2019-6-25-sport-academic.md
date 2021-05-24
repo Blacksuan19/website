@@ -4,7 +4,7 @@ title: Sport Academic
 description: a javaFX Quiz-like application
 project: true
 image: /assets/images/spordemic.png
-github: https://github.com/jsimplefx/Sport-Academic
+source: https://github.com/jsimplefx/Sport-Academic
 permalink: /projects/:title/
 tags:
   - project
