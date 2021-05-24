@@ -7,6 +7,18 @@ post_dir = "_posts/"
 notebooks_dir = "notebooks/"
 assets_dir = "assets/images/"
 current_date = datetime.today().strftime('%Y-%m-%d')
+front_matter = """---
+title: {}
+layout: post
+project: true
+permalink: "/projects/:title/"
+image: /assets/images/ds.jpg
+source:
+tags:
+  - data-science
+  - machine-learning
+  - project
+---\n\n"""
 
 # get all notebook files
 filenames = glob.glob(notebooks_dir + '*.ipynb')
@@ -33,28 +45,13 @@ for file in filenames:
     # rename with date
     os.system(f"mv {notebooks_dir}{name}.md {new_name}")
 
-    front_matter = f"""---
-title: {name.replace("-", " ").title()}
-layout: post
-project: true
-permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
-source:
-tags:
-  - data-science
-  - machine-learning
-  - project
----\n\n"""
-
-    # add front matter
     f = open(new_name, "r+")
     content = f.readlines()
     # fix assets path
     for i, line in enumerate(content):
-        content[i] = content[i].replace(r"# *", "")
         content[i] = content[i].replace("![png](", "![png](/assets/images/")
     f.seek(0)
-    f.write(front_matter)
+    f.write(front_matter.format(name.replace("-", " ").title()))
     f.writelines(content)
     f.close()
 
