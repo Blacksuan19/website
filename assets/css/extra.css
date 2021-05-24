@@ -140,6 +140,20 @@
   text-align: left !important;
 }
 
+/* scrollbars */
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: #0f111a;
+}
+::-webkit-scrollbar-thumb {
+  background: #181b26;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f1f1f1;
+}
+
 @media only screen and (max-width: 736px) {
   .single-chart {
     max-width: 25%;
