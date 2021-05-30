@@ -27,7 +27,7 @@ layout: post
 project: true
 permalink: "/projects/:title/"
 image: /assets/images/ds.jpg
-source:
+source: https://www.kaggle.com/abubakaryagob/{}
 tags:
   - data-science
   - machine-learning
@@ -65,7 +65,7 @@ for file in filenames:
         # fix assets path
         content[i] = content[i].replace("![png](", "![png](/assets/images/")
     f.seek(0)
-    f.write(front_matter.format(name.replace("-", " ").title()))
+    f.write(front_matter.format(name.replace("-", " ").title(), name))
     f.writelines(content)
     f.close()
 
