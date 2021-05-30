@@ -1,5 +1,6 @@
 ---
 title: Mobile Price Range Classification Via Lazy Predict
+description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
@@ -11,11 +12,14 @@ tags:
   - project
 ---
 
-lazy predict is a library that trains a large number of models on a given dataset to determine which one will work best for it
+lazy predict is a library that trains a large number of models on a given
+dataset to determine which one will work best for it
 
-the goal is to predict a price range for a smartphone based on its specifications.
+the goal is to predict a price range for a smartphone based on its
+specifications.
 
-the specifcations include a total of 20 columns ranging from 3g availability to touch screen and amount of ram so a very extensive feature set.
+the specifcations include a total of 20 columns ranging from 3g availability to
+touch screen and amount of ram so a very extensive feature set.
 
 ```python
 import numpy as np
@@ -761,9 +765,12 @@ abs(corr_mat).sort_values(by=['price_range'])['price_range']
 
 we can make a few observations from above
 
-- the ram is the most deciding factor in price range with the highest correlation.
+- the ram is the most deciding factor in price range with the highest
+  correlation.
 - the amount of pixels do matter after all.
-- number of cores does not correlate with the price much (could be due to the cores being weak, for example most midrangers nowadays have 8 cores while the Apple A series SoCs have at most 6 cores and still perform miles better).
+- number of cores does not correlate with the price much (could be due to the
+  cores being weak, for example most midrangers nowadays have 8 cores while the
+  Apple A series SoCs have at most 6 cores and still perform miles better).
 
 ```python
 # battery correlation plot
@@ -804,7 +811,12 @@ sns.heatmap(corr_mat, annot = True, fmt='.1g', cmap= 'coolwarm')
 
 # Modeling
 
-knowing which model to build for a dataset is not an easy task, specially when the columns that have a high correlation with the target variable are less than half the total columns, its also a task that is time consuming in making and tuning these models that is why we will use the LazyPredict library to show us the results of various models without any tuneing and we will implement the top 3 models.
+knowing which model to build for a dataset is not an easy task, specially when
+the columns that have a high correlation with the target variable are less than
+half the total columns, its also a task that is time consuming in making and
+tuning these models that is why we will use the LazyPredict library to show us
+the results of various models without any tuneing and we will implement the top
+3 models.
 
 ```python
 # extract target column
@@ -1117,9 +1129,12 @@ sns.lineplot(x=top.index, y="F1 Score", data=top)
 
 ![png](/assets/images/mobile-price-range-classification-via-lazy-predict_files/mobile-price-range-classification-via-lazy-predict_23_1.png)
 
-we are not really intrested in the predictions dataframe here because we already know those values and they're part of the training dataset
+we are not really intrested in the predictions dataframe here because we already
+know those values and they're part of the training dataset
 
-from above we can see that the best algorithm for this type of task is logistic regression followed by Discriminant Analysis models and followed closely by GB models.
+from above we can see that the best algorithm for this type of task is logistic
+regression followed by Discriminant Analysis models and followed closely by GB
+models.
 
 ### Implemented models
 
@@ -1127,7 +1142,9 @@ from above we can see that the best algorithm for this type of task is logistic 
 - Linear Discriminant Analysis
 - light GBM classifier
 
-the reason behing skipping on the Quadratic Discriminant Analysis model is because its of the same family as Linear Discriminant Analysis and produces similar results, we also want to implement a diverse range of models
+the reason behing skipping on the Quadratic Discriminant Analysis model is
+because its of the same family as Linear Discriminant Analysis and produces
+similar results, we also want to implement a diverse range of models
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -1437,4 +1454,6 @@ equal_rows
 
     628
 
-from all the 1000 rows the 3 models agree on 62% which means any of these 3 algorithms should be n overall good choice for predicting the price range of a smartphone based on its specifications
+from all the 1000 rows the 3 models agree on 62% which means any of these 3
+algorithms should be n overall good choice for predicting the price range of a
+smartphone based on its specifications

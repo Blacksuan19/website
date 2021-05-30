@@ -1,5 +1,6 @@
 ---
 title: Covid 19 Forecasting Lstms And Statistical Models
+description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
@@ -11,9 +12,9 @@ tags:
   - project
 ---
 
-# Introduction
-
-Since we have already analyzed all these datasets in the target countries section, we see that using the global dataset for all our modeling is the best option for a few reasons:
+Since we have already analyzed all these datasets in the target countries
+section, we see that using the global dataset for all our modeling is the best
+option for a few reasons:
 
 - it contains data for all the countries we are covering
 - it has up to date data that includes the whole lifetime of the pandemic
@@ -24,7 +25,9 @@ Since we have already analyzed all these datasets in the target countries sectio
 
 ### Objectives
 
-our main objective is to see which one of our chosen 4 countries have handled the virus in a way that can be generalized to everyone as simple guidelines, the targeted countries are
+our main objective is to see which one of our chosen 4 countries have handled
+the virus in a way that can be generalized to everyone as simple guidelines, the
+targeted countries are
 
 - United States
 - Germany
@@ -62,7 +65,8 @@ df_deaths = pd.read_csv("../input/covid-19/time_series_covid19_deaths_global.csv
 df_reco = pd.read_csv("../input/covid-19/time_series_covid19_recovered_global.csv")
 ```
 
-after reading in our dataset lets take a look at it by showing the first few countries for confirmed case, deaths, and recoveries
+after reading in our dataset lets take a look at it by showing the first few
+countries for confirmed case, deaths, and recoveries
 
 ```python
 df_confirmed.head()
@@ -580,7 +584,8 @@ df_reco.head()
 <p>5 rows × 288 columns</p>
 </div>
 
-after taking a look at the data as a whole lets now get our target countries each in their own dataframes
+after taking a look at the data as a whole lets now get our target countries
+each in their own dataframes
 
 ```python
 us_confirmed = df_confirmed[df_confirmed["Country/Region"] == "US"]
@@ -676,7 +681,8 @@ us_reco
 <p>1 rows × 288 columns</p>
 </div>
 
-with the current data structure shown above we cant do much so lets first convert it to a form that can used to make graphs or train a model
+with the current data structure shown above we cant do much so lets first
+convert it to a form that can used to make graphs or train a model
 
 ```python
 ## structuring timeseries data
@@ -844,11 +850,20 @@ us_df.plot(figsize=(14,7),title="United States confirmed, deaths and recoverd ca
 
 ![png](/assets/images/covid-19-forecasting-lstms-and-statistical-models_files/covid-19-forecasting-lstms-and-statistical-models_18_1.png)
 
-the number of confirmed cases started up slow until around April, it started to go up at a much faster rate and it kept that pace even during quarantine, in July the rate at which the cases are increasing got higher and the cases started increasing faster, this can be attributed to the recent protests and people's ignorance to the CDC guidelines.
+the number of confirmed cases started up slow until around April, it started to
+go up at a much faster rate and it kept that pace even during quarantine, in
+July the rate at which the cases are increasing got higher and the cases started
+increasing faster, this can be attributed to the recent protests and people's
+ignorance to the CDC guidelines.
 
-deaths are the only cases that have had a continuously increasing rate, all the way from April the number of deaths is increasing at an increasing rate, until august where the increase rate is slower despite the higher number of cases.
+deaths are the only cases that have had a continuously increasing rate, all the
+way from April the number of deaths is increasing at an increasing rate, until
+august where the increase rate is slower despite the higher number of cases.
 
-when it comes to the recoveries, the recovery starts at the same time as the confirmed cases with a very unstable increase rate, the highest increase rate is also from around July which is surprising considering the rate of confirmed cases also went up around that time.
+when it comes to the recoveries, the recovery starts at the same time as the
+confirmed cases with a very unstable increase rate, the highest increase rate is
+also from around July which is surprising considering the rate of confirmed
+cases also went up around that time.
 
 ```python
 us_cases_outcome = (us_df.tail(1)['deaths'] + us_df.tail(1)['recovered'])[0]
@@ -870,24 +885,37 @@ print(f"Currently Active cases: {us_active}")
     Recovery rate: 94.0%
     Currently Active cases: 5282456
 
-the percentage of cases that had an outcome is just 38.06% of the total cases, which is very low, the other 61.4 of the cases which are not accounted for have probably not been released officially by the government, however, the recovery rate is high at 91.79% while the death rate is at 8.21%
+the percentage of cases that had an outcome is just 38.06% of the total cases,
+which is very low, the other 61.4 of the cases which are not accounted for have
+probably not been released officially by the government, however, the recovery
+rate is high at 91.79% while the death rate is at 8.21%
 
-number of currently active cases is still very high, and it's going up if the current increase rates are to be quoted.
+number of currently active cases is still very high, and it's going up if the
+current increase rates are to be quoted.
 
 # Modeling
 
-for modeling and predicting the number of cases in the upcoming days the following types of models will be implemented:
+for modeling and predicting the number of cases in the upcoming days the
+following types of models will be implemented:
 
 - Bidrectional Long Short Term Memory (BiLSTM)
-  > LSTMs' are known and widely used in time sensitive data where a variable is increaing with time depending on the values from prior days.
+  > LSTMs' are known and widely used in time sensitive data where a variable is
+  > increaing with time depending on the values from prior days.
 - Autoregressive Integrated Moving Average (ARIMA)
-  > models the next step in the sequence as a linear function of the observations and resiudal errors at prior time steps.
+  > models the next step in the sequence as a linear function of the
+  > observations and resiudal errors at prior time steps.
 - Holt's Exponential Smoothing (HES)
-  > also referred to as holt's linear trend model or double exponential smoothing, models the next time step as an exponentially weighted linear function of observations at prior time step taking into account trends (the only difference from SES)
+  > also referred to as holt's linear trend model or double exponential
+  > smoothing, models the next time step as an exponentially weighted linear
+  > function of observations at prior time step taking into account trends (the
+  > only difference from SES)
 
-each country will have a total number of 3 models and the results will be compared accordingly.
+each country will have a total number of 3 models and the results will be
+compared accordingly.
 
-our data is in a daily format and we want to predict n days at a time so we will take out the last n days and use them to test and predict outcomes it 2 weeks time.
+our data is in a daily format and we want to predict n days at a time so we will
+take out the last n days and use them to test and predict outcomes it 2 weeks
+time.
 
 ```python
 n_input = 10  # number of steps
@@ -1852,11 +1880,14 @@ plot_results(us_hes_df, "USA", "incremental HES")
 # Effectiveness of mandated lockdown
 
 was the US lockdown effective in reducing the cases?  
-the US started their lockdwon in 2020-03-17 and it was ended by the erupting protests.
-tracking the lockdown might be tricky in the US at least because each state started their lockdown at their own pace and there was no federally mandated lockdown while some other states never went into lockdowns, taking that into account we will consider the end of the lockdown to be the end of may which was the start of the Gorge Floyed protests.
+the US started their lockdwon in 2020-03-17 and it was ended by the erupting
+protests. tracking the lockdown might be tricky in the US at least because each
+state started their lockdown at their own pace and there was no federally
+mandated lockdown while some other states never went into lockdowns, taking that
+into account we will consider the end of the lockdown to be the end of may which
+was the start of the Gorge Floyed protests.
 
-**Time frame**
-from 2020-03-17 until 2020-05-31
+**Time frame** from 2020-03-17 until 2020-05-31
 
 ```python
 us_lockdown = get_range_df('2020-03-17', '2020-05-31', us_con_series)
@@ -1873,8 +1904,13 @@ ax.legend()
 
 ![png](/assets/images/covid-19-forecasting-lstms-and-statistical-models_files/covid-19-forecasting-lstms-and-statistical-models_46_1.png)
 
-the actual values are above the moving average of each 7 days meaning the lockdown did not work as inteded and the number of cases was still very high when compared to the average of each 7 days, to make sure our previous model predictions are accurate we will use this period of time as a base and train the model on it and do prediction for the days after that which we already have the data on.
-we will use the ARIMA model becuase the amount of data we have will not train a neural network ideally.
+the actual values are above the moving average of each 7 days meaning the
+lockdown did not work as inteded and the number of cases was still very high
+when compared to the average of each 7 days, to make sure our previous model
+predictions are accurate we will use this period of time as a base and train the
+model on it and do prediction for the days after that which we already have the
+data on. we will use the ARIMA model becuase the amount of data we have will not
+train a neural network ideally.
 
 ```python
 scaler, train, test, scaled_train, scaled_test, generator, validation_gen = prepare_data(us_lockdown)
@@ -2116,17 +2152,33 @@ plot_results(us_arima_df, "USA", "incremental ARIMA")
 
 ![png](/assets/images/covid-19-forecasting-lstms-and-statistical-models_files/covid-19-forecasting-lstms-and-statistical-models_50_0.png)
 
-we can see that the predicted totals and predicted daily cases are fairly accurate thus our previous predictions can be taken with some degree of accuracy, and might be used for making decisions.
+we can see that the predicted totals and predicted daily cases are fairly
+accurate thus our previous predictions can be taken with some degree of
+accuracy, and might be used for making decisions.
 
 # Conclusion
 
-from all the graphs, functions and numbers above we can come to a simple conclusion that is, there is no single model that will perform best in all scenario even when the data is very similar (in trend not numbers), each model was best for a specific country and wasn’t so far behind in the others for example the HES model is the most accurate with the South Korean dataset but is almost the same as the ARIMA model in Italy.
+from all the graphs, functions and numbers above we can come to a simple
+conclusion that is, there is no single model that will perform best in all
+scenario even when the data is very similar (in trend not numbers), each model
+was best for a specific country and wasn’t so far behind in the others for
+example the HES model is the most accurate with the South Korean dataset but is
+almost the same as the ARIMA model in Italy.
 
 **whats the difference between ARIMA and HES?**  
-ARIMA uses a non-linear function for coefficient calculations, that’s why the graph does curve sometimes (Italy) while HES is a pure linear method that uses a linear function and is always a straight line
+ARIMA uses a non-linear function for coefficient calculations, that’s why the
+graph does curve sometimes (Italy) while HES is a pure linear method that uses a
+linear function and is always a straight line
 
-**Considering LSTM is usually the least accurate, is it worth the training time?**  
-here may be, however, deep learning has its place among machine learning algorithms and can perform tasks these other functions could never, also the LSTM model always predicts a wider interval compared to the other 2, in a practical scenario where range is important the other 2 models will not be ideal because their results are limited by the original value and don’t spread as much, the LSTM model could provide better estimates.
+**Considering LSTM is usually the least accurate, is it worth the training
+time?**  
+here may be, however, deep learning has its place among machine learning
+algorithms and can perform tasks these other functions could never, also the
+LSTM model always predicts a wider interval compared to the other 2, in a
+practical scenario where range is important the other 2 models will not be ideal
+because their results are limited by the original value and don’t spread as
+much, the LSTM model could provide better estimates.
 
 **ARIMA or HES?**  
-HES, because it takes much less time to train and is as accurate or even more accurate sometimes.
+HES, because it takes much less time to train and is as accurate or even more
+accurate sometimes.

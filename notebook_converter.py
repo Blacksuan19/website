@@ -23,6 +23,7 @@ assets_dir = "assets/images/"
 current_date = datetime.today().strftime('%Y-%m-%d')
 front_matter = """---
 title: {}
+description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
