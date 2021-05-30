@@ -2,13 +2,13 @@
 <footer id="footer">
   <div class="inner" style="text-align: center">
     <ul class="icons">
-      {% for social in site.social_urls %}
+      {%- for social in site.social_urls -%}
       <li>
         <a href="{{ social[1] }}" class="icon alt fa fa-{{ social[0] }}">
           <span class="label">{{ social[0] }}</span>
         </a>
       </li>
-      {% endfor %}
+      {%- endfor -%}
       <li>
         <a href="/feed.xml" class="icon alt fa fa-feed">
           <span class="label">RSS-Feed</span>
@@ -35,4 +35,4 @@
 <script src="/assets/js/extra.js"></script>
 <script src="https://kit.fontawesome.com/9f02ede189.js"></script>
 <script src="/assets/js/prism.js"></script>
-{% include new-window-fix.liquid %}
+{%- include new-window-fix.liquid -%}

@@ -1,4 +1,4 @@
-{% assign tags = site.tags | sort %} {% for tag in tags %}
+{%- assign tags = site.tags | sort -%} {%- for tag in tags -%}
 <span>
   <a href="/tags/{{ tag[0] }}" class="icon">
     <code
@@ -7,4 +7,4 @@
     ></a
   ><br /><br />
 </span>
-{% endfor %}
+{%- endfor -%}

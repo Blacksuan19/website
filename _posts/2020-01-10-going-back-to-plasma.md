@@ -20,12 +20,13 @@ fact editable (panel icons spacing).
 
 The first time i installed plasma was back in 2017 when i got my student's
 laptop and after waiting impatiently for budgie QT which never happened, used it
-all the way until the beginning of 2019 at which i got bored and decided to tile,
-enjoyed bspwm for the upcoming 7 months after that, even tho i wasn't using
-plasma i was closely following up with their changelogs and updates especially
-PointiestStick's [weekly posts](https://pointieststick.com/category/this-week-in-kde/),
-the thing i noticed is a lot of the issues i was facing prior were fixed and
-Wayland was coming up slowly but surely.
+all the way until the beginning of 2019 at which i got bored and decided to
+tile, enjoyed bspwm for the upcoming 7 months after that, even tho i wasn't
+using plasma i was closely following up with their changelogs and updates
+especially PointiestStick's
+[weekly posts](https://pointieststick.com/category/this-week-in-kde/), the thing
+i noticed is a lot of the issues i was facing prior were fixed and Wayland was
+coming up slowly but surely.
 
 I decided to install plasma again just of boredom(exams are pretty boring) but i
 had one issue, a significant one, since i have been tiling for the past few
@@ -42,12 +43,12 @@ the way it was time to automate all this boring boot stuff.
 A good resource i found for using plasma with other window managers is their own
 [guide](https://userbase.kde.org/Tutorials/Using_Other_Window_Managers_with_Plasma)
 it helped me with settings for plasma floating windows, also gave me a basic
-idea of how the boot process is going to work in this context.
-The specific process was pretty easy using a script to set the `KDEWM` variable
-which seemed redundant to me so i put that in my xprofile and it worked fine.
-The next important thing was auto login and auto starting X after auto logging
-it both of which were pretty easy (some changes to xprofile...etc.) since i
-don't use a display manager
+idea of how the boot process is going to work in this context. The specific
+process was pretty easy using a script to set the `KDEWM` variable which seemed
+redundant to me so i put that in my xprofile and it worked fine. The next
+important thing was auto login and auto starting X after auto logging it both of
+which were pretty easy (some changes to xprofile...etc.) since i don't use a
+display manager
 
 Here is my full xprofile
 
@@ -89,8 +90,8 @@ fi
 
 With the boot process automated it was time to theme this thing (my favorite
 part). Since i am using bspwm i can sxhkd with it so my keyboard shortcuts were
-fine(just few adjustments to not conflict with plasma's own shortcuts) and
-so were most of my bspwm settings. I cloned my good old
+fine(just few adjustments to not conflict with plasma's own shortcuts) and so
+were most of my bspwm settings. I cloned my good old
 [plasma themes repo](https://github.com/Blacksuan19/Plasma-Themes) and starting
 tinkering, to surprise there was now a built-in themes editor!! That made making
 an oceanized plasma theme pretty easy, only had to change colors on Aex nomad
@@ -105,7 +106,8 @@ just look for `spacing` in
 /usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/main.qml
 ```
 
-and you will find `spacing: 0` change that 0 to any number(i stick to 10 usually) and you're good.
+and you will find `spacing: 0` change that 0 to any number(i stick to 10
+usually) and you're good.
 
 ### Benefits
 
@@ -137,9 +139,11 @@ stuff and some things that are not that important after all.
   - highly customizable
 - Media widgets auto detects any player (even browsers!)
 - Automatic dynamic bar icons
-- I CAN HAVE THE AUDIO BE MORE THAN 100% WITHOUT FUCKING WITH PAMIXER(my speakers suck)
+- I CAN HAVE THE AUDIO BE MORE THAN 100% WITHOUT FUCKING WITH PAMIXER(my
+  speakers suck)
 - Better theming and apps integration
-  - gtk apps inside a QT environment are fine but the opposite is totally not true
+  - gtk apps inside a QT environment are fine but the opposite is totally not
+    true
   - both toolkits can be themed from one central (plasma settings)
   - arguably better looking fonts (noticed in chrome)
 
@@ -197,4 +201,4 @@ setup for this year and maybe after, only major change i might consider is going
 the Wayland way that is only if there is a good bspwm alternative over there.
 
 Now here is a workflow video, enjoy!
-{% include YouTube.liquid id="lZbk-QEqSTM" %}
+{%- include YouTube.liquid id="lZbk-QEqSTM" -%}

@@ -14,11 +14,11 @@ tags:
 ---
 
 In my last post i went over my history of editors and the good, the bad and the
-ugly about finally switching to vim, now its time to talk more about dem
-configs boi.
-My configs are a heavily modified version from [Optixal's Neovim
-Init.vim](https://github.com/Optixal/neovim-init.vim), i have replaced some of
-the plugs and added my own bindings and auto completion plugins.
+ugly about finally switching to vim, now its time to talk more about dem configs
+boi. My configs are a heavily modified version from
+[Optixal's Neovim Init.vim](https://github.com/Optixal/neovim-init.vim), i have
+replaced some of the plugs and added my own bindings and auto completion
+plugins.
 
 #### Plugin Management
 
@@ -108,15 +108,15 @@ snippets work as intended. the good thing is i didn't really need to do a very
 extensive setup because well this works by default i had to modify is the
 mapping and other simple stuff which i could've used another plugin for.
 
-{% include asciinema.liquid id="272608" %}
+{%- include asciinema.liquid id="272608" -%}
 
 #### Visual changes:
 
 just as usual it has to be material ocean themed, and vim being a popular editor
-its already there and no need to reinvent the wheel, [kaicataldo's
-themes](https://github.com/kaicataldo/material.vim) include it
-and you can easily set it up, other visual changes include a modified air line
-and a minimal NERDTree.
+its already there and no need to reinvent the wheel,
+[kaicataldo's themes](https://github.com/kaicataldo/material.vim) include it and
+you can easily set it up, other visual changes include a modified air line and a
+minimal NERDTree.
 
 <pre>
 <code class="language-vim">
@@ -202,7 +202,8 @@ let g:NERDTreeIgnore = [
 airline is a fantastic status bar that shows important information like the
 language, encoding and current mode you're in. my airline configs are pretty
 simple as well, the only big difference compared to the defaults is the added
-current line and percentage of the file at the right of the bar, also spell check
+current line and percentage of the file at the right of the bar, also spell
+check
 
 <pre>
 <code class="language-vim">
@@ -234,10 +235,10 @@ let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on
 The default key maps are ok but they're missing some essential things like block
 selection without going back to visual mode, fast split switching and split
 rotation, so i made my own bindings for all these, some are from nvim help and
-others are scattered from the web.<br>
-i also fixed the annoying block selection will copy the selected text to the
-clipboard by using the void register for delete operations, this way deleting a
-visual block will just delete it without adding it to the clipboard.
+others are scattered from the web.<br> i also fixed the annoying block selection
+will copy the selected text to the clipboard by using the void register for
+delete operations, this way deleting a visual block will just delete it without
+adding it to the clipboard.
 
 ```vim
 " use a different buffer for dd
@@ -277,5 +278,5 @@ inoremap <C-S-right> <esc>ve
 
 and thats all from me, these settings do almost everything i need from an IDE
 and keep me focused on the actual writing/coding part, and finally you can
-checkout the file configuration file in my [dotfiles
-repo](https://github.com/Blacksuan19/Dotfiles/blob/master/nvim/.config/nvim/init.vim).
+checkout the file configuration file in my
+[dotfiles repo](https://github.com/Blacksuan19/Dotfiles/blob/master/nvim/.config/nvim/init.vim).

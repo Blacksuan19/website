@@ -8,17 +8,17 @@
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
       " 
-    {% if page.layout == "home" %} 
+    {%- if page.layout == "home" -%} 
       class="alt" 
-    {% endif %}
+    {%- endif -%}
   >
     <a href="{{ site.url }}/" class="logo" target="_self">
       <strong>{{ site.title }}</strong>
     </a>
     <nav>
-      {%- if page.title != "Search" -%}
+      {%- if page.title != "Search" --%}
       <a href="{{ site.url }}/search" class="icon fa fa-search"></a>
-      {%- endif -%}
+      {%- endif --%}
       <a href="#menu"></a>
     </nav>
   </header>
@@ -26,20 +26,20 @@
   <!-- Menu -->
   <nav id="menu">
     <ul class="links">
-      {% for page in site.pages %}
-        {% if page.layout == "home" %}
+      {%- for page in site.pages -%}
+        {%- if page.layout == "home" -%}
           <li>
             <a href="{{ "" | absolute_url }}/">{{ page.title }}</a>
           </li>
-        {% endif %}
-      {% endfor %}
-      {% for page in site.pages %}
-        {% if page.layout != "home" and page.nav-menu == true %}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for page in site.pages -%}
+        {%- if page.layout != "home" and page.nav-menu == true -%}
           <li>
             <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
           </li>
-        {% endif %}
-      {% endfor %}
+        {%- endif -%}
+      {%- endfor -%}
       <li><a href="https://kutt.it/2eHpSy">Stanford ML Notes</a></li>
     </ul>
   </nav>

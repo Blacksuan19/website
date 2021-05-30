@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.liquid %}
+  {%- include head.liquid -%}
 
   <body>
-    {% include header.liquid %}
+    {%- include header.liquid -%}
     <!-- Main -->
     <div class="alt" id="main">
       <!-- One -->
@@ -12,50 +12,53 @@
           <div class="row 200%">
             <header class="major">
               <h2>{{ page.title }}</h2>
-              {% if page.project == false%} {{ page.date | date: '%B %d, %Y' }}
-              {% endif %}
+              {%- if page.project == false-%} {{ page.date | date: '%B %d, %Y'
+              }} {%- endif -%}
             </header>
             <div class="post-tags">
-              {% include post-tags.liquid page=page %}
+              {%- include post-tags.liquid page=page -%}
             </div>
           </div>
           <div class="row 200%">
-            <div class="social-icons">{% include social-share.liquid %}</div>
+            <div class="social-icons">{%- include social-share.liquid -%}</div>
             <div class="read-time">
-              <h3>{% include read-time.liquid content=page.content %}</h3>
+              <h3>{%- include read-time.liquid content=page.content -%}</h3>
             </div>
           </div>
-          {% if page.image %}
+          {%- if page.image -%}
           <span class="image main"><img src="{{ page.image }}" alt="" /></span>
-          {% endif %}
+          {%- endif -%}
           <p>{{ content }}</p>
-          <div class="post-tags">{% include post-tags.liquid page=page %}</div>
-          {% if page.source %}
+          <div class="post-tags">
+            {%- include post-tags.liquid page=page -%}
+          </div>
+          {%- if page.source -%}
           <a href="{{ page.source }}" class="fit button">View Source Code</a>
-          {% endif %} {% if page.project == false %} {% include disque.liquid %}
+          {%- endif -%} {%- if page.project == false -%} {%- include
+          disque.liquid -%}
           <div class="actions" style="padding-top: 10px">
-            {% if page.previous.url and page.previous.project != true %}
+            {%- if page.previous.url and page.previous.project != true -%}
             <a class="button" href="{{ page.previous.url }}">
               &laquo; Previous Post
             </a>
-            {% endif %} {% if page.next.url and page.next.project != true %}
+            {%- endif -%} {%- if page.next.url and page.next.project != true -%}
             <a style="float: right" class="button" href="{{ page.next.url }}">
               Next Post &raquo;
             </a>
-            {% endif %}
+            {%- endif -%}
             <br /><br />
             <div>
               <header class="major">
                 <h3>Similar Posts</h3>
               </header>
-              {% include similar-posts.liquid %}
+              {%- include similar-posts.liquid -%}
             </div>
           </div>
-          {% endif %}
+          {%- endif -%}
         </div>
       </section>
     </div>
-    {% include footer.liquid %}
+    {%- include footer.liquid -%}
   </body>
 </html>
 <script>

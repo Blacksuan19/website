@@ -7,7 +7,7 @@ layout: page
     <div class="inner">
       <div class="post">
         <h2>Tag: {{ page.tag }}</h2>
-        {% for post in site.tags[page.tag] %}
+        {%- for post in site.tags[page.tag] -%}
         <section class="spotlights" id="two" style="padding: 10px">
           <section action="" style="border-radius: 20px">
             <a href="{{ post.url }}" class="image">
@@ -32,14 +32,14 @@ layout: page
                   <li>
                     <a href="{{ post.url }}" class="button">Continue Reading</a>
                   </li>
-                  <li>{% include read-time.liquid content=post.content %}</li>
+                  <li>{%- include read-time.liquid content=post.content -%}</li>
                 </ul>
               </div>
             </div>
           </section>
         </section>
         <br />
-        {% endfor %}
+        {%- endfor -%}
       </div>
     </div>
   </section>

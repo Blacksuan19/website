@@ -1,7 +1,8 @@
 # FortyPlus - Jekyll Theme
 
-A modified version of the Jekyll theme by [HTML5 UP](https://html5up.net/).
-This is my personal fork which adds many important features and makes the theme highly modular and user customizable.
+A modified version of the Jekyll theme by [HTML5 UP](https://html5up.net/). This
+is my personal fork which adds many important features and makes the theme
+highly modular and user customizable.
 
 <p align="center">
 <img src="/assets/images/forty.jpg" alt="Forty Theme">
@@ -10,14 +11,17 @@ This is my personal fork which adds many important features and makes the theme 
 # Added Features
 
 - very easy setup - fork the template and start posting
-- beautiful [material ocean](https://github.com/material-ocean/Material-Ocean) color pallette
+- beautiful [material ocean](https://github.com/material-ocean/Material-Ocean)
+  color pallette
 - Jekyll Admin integration for easier use
-- highly modularize the theme - most of the widgets and features are user togglable
+- highly modularize the theme - most of the widgets and features are user
+  togglable
 - proper URl's for posts and projects
 - remove the annoying date on post URL's
 - better project structure - group all pages under the pages folder
 - separation between projects and posts
-- skills widget - add your skills under the skills key value pair in `config.yml`
+- skills widget - add your skills under the skills key value pair in
+  `config.yml`
 - tiles for both posts and projects - you can toggle them in `_config.yml`
 - go to top button
 - separate page for each post and project
@@ -25,7 +29,8 @@ This is my personal fork which adds many important features and makes the theme 
 - read time for posts and projects
 - minimal syntax highlighting via [prism](https://prismjs.com/index.html)
 - site wide search via [lunr](https://lunrjs.com)
-- [disqus](https://disqus.com/) comments integration for posts - add your disqus forum name in `config.yml`
+- [disqus](https://disqus.com/) comments integration for posts - add your disqus
+  forum name in `config.yml`
 - fork repository button on projects
 - better font awesome integration via fontawesome kit
 - fix font awesome issues on mobile devices
@@ -37,8 +42,11 @@ This is my personal fork which adds many important features and makes the theme 
 - YouTube integration
 - automatically open external URL's in new tab
 - separate contact page - add your details in `_config.yml`
-- **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
-- Add your **social profiles** easily in `_config.yml`. Only social profiles buttons you enter in `config.yml` show up on the site footer, you can easily add your own social media's if they're not included by default
+- **[Formspree.io](https://formspree.io/) contact form integration** - just add
+  your email to the `_config.yml` and it works!
+- Add your **social profiles** easily in `_config.yml`. Only social profiles
+  buttons you enter in `config.yml` show up on the site footer, you can easily
+  add your own social media's if they're not included by default
 
 # Using Included Templates
 
@@ -47,7 +55,7 @@ This is my personal fork which adds many important features and makes the theme 
 Used to link to a YouTube video
 
 ```liquid
-{% include YouTube.liquid id="video_id" %}
+{%- include YouTube.liquid id="video_id" -%}
 ```
 
 ### Asciinema
@@ -55,7 +63,7 @@ Used to link to a YouTube video
 Used to link to an asciinema video
 
 ```liquid
-{% include asciinema.liquid id="video_id" %}
+{%- include asciinema.liquid id="video_id" -%}
 ```
 
 # Project Structure
@@ -82,9 +90,11 @@ Used to link to an asciinema video
 
 # How to Use
 
-For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details,
-or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/),
-and [creating pages](https://jekyllrb.com/docs/pages/).
+For those unfamiliar with how Jekyll works, check out
+[jekyllrb.com](https://jekyllrb.com/) for all the details, or read up on just
+the basics of [front matter](https://jekyllrb.com/docs/frontmatter/),
+[writing posts](https://jekyllrb.com/docs/posts/), and
+[creating pages](https://jekyllrb.com/docs/pages/).
 
 - Fork this repository
 - run `bundle install` in the repo folder
@@ -93,8 +103,10 @@ and [creating pages](https://jekyllrb.com/docs/pages/).
 
 # Credits
 
-- [andrewbanchich](https://github.com/andrewbanchich/forty-jekyll-theme) - Ported original template to Jekyll.
-- [Jekyll without plugins](https://jekyllcodex.org/without-plugins/) - Feed, Site map, SEO and other things.
+- [andrewbanchich](https://github.com/andrewbanchich/forty-jekyll-theme) -
+  Ported original template to Jekyll.
+- [Jekyll without plugins](https://jekyllcodex.org/without-plugins/) - Feed,
+  Site map, SEO and other things.
 
 Original README from HTML5 UP:
 
@@ -136,4 +148,5 @@ Respond.js (j.mp/respondjs)
 Skel (skel.io)
 ```
 
-Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a [Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).
+Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a
+[Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).

@@ -1,5 +1,5 @@
 <div class="flex-wrapper">
-  {% for skill in site.skills %}
+  {%- for skill in site.skills -%}
   <div class="single-chart">
     <svg class="circular-chart" viewbox="0 0 38 38">
       <path
@@ -16,5 +16,5 @@
     <p class="skill-label">{{ skill[0] }}</p>
   </div>
 
-  {% endfor %}
+  {%- endfor -%}
 </div>
