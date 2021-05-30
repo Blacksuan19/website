@@ -80,7 +80,7 @@ f.writelines(content)
 f.close()
 ```
 
-- prevent regenerating posts for notebooks that have already been generated, the
+- prevent regenerating posts for notebooks that have already been generated: the
   conversion might take time with large notebooks so we want to prevent doing it
   twice for any of the notebooks, we check the posts directory if there is any
   file with a name that contains the current notebook name.
@@ -94,14 +94,29 @@ def check_exists(file):
     return False
 ```
 
-- fix transparent image backgrounds, most graphs have a transparent background
+- fix transparent image backgrounds: most graphs have a transparent background
   which is not ideal on the web specially on a site with a dark background,
   imagemagick can easily add a background to any image and remove its
-  transparency
+  transparency.
 
 ```python
 # add background color so text is visible in images
 os.system(f"mogrify -background white -flatten {notebooks_dir}{name}_files/*")
+```
+
+- Fix table header text alignment: by default the exported markdown tables are
+  in html with the table header being aligned to the right and the tables taking
+  the full width of the page, to fix these 2 issues set table display to block
+  to fix its width according to content and force the header text to be aligned
+  left.
+
+```css
+table {
+  display: block;
+}
+.dataframe thead th {
+  text-align: left !important;
+}
 ```
 
 and with that everything is set, the script will do all the work for us, what is
