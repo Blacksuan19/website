@@ -1,5 +1,5 @@
-{% for tag in include.page.tags %} {% capture tag_name %}{{ tag }}{% endcapture
-%}
+{%- for tag in include.page.tags -%} {%- capture tag_name -%}{{ tag }}{%-
+endcapture -%}
 <span>
   <a href="/tags/{{ tag_name }}" class="icon">
     <code
@@ -8,4 +8,4 @@
     ></a
   >
 </span>
-{% endfor %}
+{%- endfor -%}

@@ -5,10 +5,10 @@
     	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
     -->
 <html lang="en">
-  {% include head.liquid %}
+  {%- include head.liquid -%}
 
   <body>
-    {% include header.liquid %}
+    {%- include header.liquid -%}
 
     <!-- Banner -->
     <section class="major" id="banner">
@@ -24,51 +24,51 @@
 
     <!-- about section -->
     <div id="main">
-      {% if site.home-about == true %}
+      {%- if site.home-about == true -%}
       <div class="inner">
         <header class="major">
           <h2>About</h2>
         </header>
         <p style="margin-bottom: -20px">{{ site.about-text }}</p>
       </div>
-      {% endif %}
+      {%- endif -%}
 
       <!-- skills section -->
-      {% if site.skills %}
+      {%- if site.skills -%}
       <div class="inner">
         <header class="major">
           <h2>Skills</h2>
         </header>
       </div>
-      {% include skills.liquid %} {% endif %}
+      {%- include skills.liquid -%} {%- endif -%}
 
       <!-- recent posts tiles -->
-      {% if site.post-tiles == true %}
+      {%- if site.post-tiles == true -%}
       <div class="inner">
         <header class="major">
           <h2>Recent Posts</h2>
         </header>
       </div>
-      {% include tiles.liquid isProject='false' %}
+      {%- include tiles.liquid isProject='false' -%}
       <div class="view-all-button">
         <a href="{{ site.url }}/blog" class="button">View All posts</a>
       </div>
-      {% endif %}
+      {%- endif -%}
 
       <!-- recent projects tiles -->
-      {% if site.projects-tiles == true %}
+      {%- if site.projects-tiles == true -%}
       <div class="inner">
         <header class="major">
           <h2>Recent Projects</h2>
         </header>
       </div>
-      {% include tiles.liquid isProject='true' %}
+      {%- include tiles.liquid isProject='true' -%}
       <div class="view-all-button">
         <a href="{{ site.url }}/projects" class="button">View All Projects</a>
       </div>
-      {% endif %}
+      {%- endif -%}
     </div>
 
-    {% include footer.liquid %}
+    {%- include footer.liquid -%}
   </body>
 </html>

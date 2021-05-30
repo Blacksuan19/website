@@ -121,7 +121,7 @@ table {
 
 and with that everything is set, the script will do all the work for us, what is
 left is just to push the changes (not lazy enough to automate that yet). example
-[results]({% post_url 2021-05-24-sign-language-classification-with-pytorch-94 %}).
+[results]({%- post_url 2021-05-24-sign-language-classification-with-pytorch-94 -%}).
 
 ### Full script
 

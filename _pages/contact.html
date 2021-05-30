@@ -8,13 +8,14 @@ nav-menu: true
 <section id="contact">
   <div class="inner">
     <section>
-      {% if site.home-about == false %}
+      {%- if site.home-about == false -%}
       <header style="margin-top: -40px" class="major">
         <h2>About</h2>
       </header>
       <p>{{ site.about-text }}</p>
-      {% endif %} For any Questions, enquiries, Contact me via the form below or
-      send me a direct email. you can also get in touch with me via telegram.<br /><br />
+      {%- endif -%} For any Questions, enquiries, Contact me via the form below
+      or send me a direct email. you can also get in touch with me via
+      telegram.<br /><br />
       <form action="{{ site.formspree }}" id="contact-form" method="POST">
         <div style="margin-bottom: 0px" class="field half first">
           <label for="name">Name</label>
@@ -60,8 +61,8 @@ nav-menu: true
           <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         </div>
       </section>
-      {% for item in site.social_urls %} {% assign name = item[0] %} {% if name
-      == site.preferred_contact %}
+      {%- for item in site.social_urls -%} {%- assign name = item[0] -%} {%- if
+      name == site.preferred_contact -%}
       <section>
         <div class="contact-method">
           <span class="icon alt fa-{{ item[0] }}"></span>
@@ -73,17 +74,18 @@ nav-menu: true
           >
         </div>
       </section>
-      {% endif %} {% endfor %}
+      {%- endif -%} {%- endfor -%}
       <section>
         <div class="contact-method">
           <span class="icon alt fa-home"></span>
           <h3>Address</h3>
           <span>
-            {% if site.street_address %} {{ site.street_address }}<br />
-            {% endif %} {% if site.city %} {{ site.city }}, {% endif %} {% if
-            site.state %} {{ site.state }} {% endif %} {% if site.zip_code %} {{
-            site.zip_code }}<br />
-            {% endif %} {% if site.country %} {{ site.country }} {% endif %}
+            {%- if site.street_address -%} {{ site.street_address }}<br />
+            {%- endif -%} {%- if site.city -%} {{ site.city }}, {%- endif -%}
+            {%- if site.state -%} {{ site.state }} {%- endif -%} {%- if
+            site.zip_code -%} {{ site.zip_code }}<br />
+            {%- endif -%} {%- if site.country -%} {{ site.country }} {%- endif
+            -%}
           </span>
         </div>
       </section>
