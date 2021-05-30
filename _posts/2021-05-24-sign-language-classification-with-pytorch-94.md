@@ -1,5 +1,6 @@
 ---
 title: Sign Language Classification With Pytorch 94
+description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
@@ -13,7 +14,8 @@ tags:
 
 ### Data Info
 
-the dataset is saved as a csv containing pixel values for 784 pixels resulting in images of size 28 _ 28 _ 1 with one color channel.
+the dataset is saved as a csv containing pixel values for 784 pixels resulting
+in images of size 28 _ 28 _ 1 with one color channel.
 
 ```python
 !pip -q install torchsummary
@@ -52,7 +54,8 @@ train_df = pd.read_csv("../input/sign-language-mnist/sign_mnist_train/sign_mnist
 test_df = pd.read_csv("../input/sign-language-mnist/sign_mnist_test/sign_mnist_test.csv")
 ```
 
-each row in the data represents an image with the first column being the label for the image
+each row in the data represents an image with the first column being the label
+for the image
 
 ```python
 # checkout data

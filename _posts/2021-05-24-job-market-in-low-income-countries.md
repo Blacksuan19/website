@@ -1,5 +1,6 @@
 ---
 title: Job Market In Low Income Countries
+description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
@@ -13,7 +14,8 @@ tags:
 
 ## Questions
 
-the focus is to obtain some specific data on skill migration among low income countries, and to predict the skill migration trends in each country for 2020
+the focus is to obtain some specific data on skill migration among low income
+countries, and to predict the skill migration trends in each country for 2020
 
 - list of countries classified as low income by the world bank
 - which skill group category had positive migration in 2019
@@ -21,7 +23,8 @@ the focus is to obtain some specific data on skill migration among low income co
 - list of countries with positive skill migration in 2019
 - skill migration in countries with more the 1k per 10k in 2019 vs 2015
 - predict skill migration per 10k for 2020
-- which country will have the most skill migration in skills that had positive migration in 2019 for 2020
+- which country will have the most skill migration in skills that had positive
+  migration in 2019 for 2020
 
 ```python
 import pandas as pd
@@ -151,7 +154,9 @@ pos_2019[pos_2019["net_per_10K_2019"] == pos_2019["net_per_10K_2019"].max()]
 </table>
 </div>
 
-the automotive industry in afghanstan had the most growth in 2019 compared to other skill groups, from this we can also infer that the Specialized Industry Skills category had the most growth of all groups in 2019
+the automotive industry in afghanstan had the most growth in 2019 compared to
+other skill groups, from this we can also infer that the Specialized Industry
+Skills category had the most growth of all groups in 2019
 
 ```python
 # group rows by country
@@ -381,8 +386,8 @@ country_mg_2019[country_mg_2019["net_per_10K_2019"] > 1000].plot(y=["net_per_10K
 
 ![png](/assets/images/job-market-in-low-income-countries_files/job-market-in-low-income-countries_14_1.png)
 
-we can see that sengal had the most skill migration in 2019 compared to other countries
-now lets compare these numbers to 2015 for example
+we can see that sengal had the most skill migration in 2019 compared to other
+countries now lets compare these numbers to 2015 for example
 
 ```python
 country_mg_2019[country_mg_2019["net_per_10K_2019"] > 1000].plot(y=["net_per_10K_2019", "net_per_10K_2015"], style=".")
@@ -392,7 +397,12 @@ country_mg_2019[country_mg_2019["net_per_10K_2019"] > 1000].plot(y=["net_per_10K
 
 ![png](/assets/images/job-market-in-low-income-countries_files/job-market-in-low-income-countries_16_1.png)
 
-skill migration in countries with more than 1000 per 10k skill migration has drastically changes compared to 2015, for example in the Congo and Mali people are far less likely to migrate industries in 2019 compared to 2015 this could indicate a stability in the job market and that people are now settling to a specific field, in contrast more people are migrating to other industries in 2019 compared to 2015 in Senegal indicating a shift in the job market
+skill migration in countries with more than 1000 per 10k skill migration has
+drastically changes compared to 2015, for example in the Congo and Mali people
+are far less likely to migrate industries in 2019 compared to 2015 this could
+indicate a stability in the job market and that people are now settling to a
+specific field, in contrast more people are migrating to other industries in
+2019 compared to 2015 in Senegal indicating a shift in the job market
 
 ```python
 '''
@@ -452,6 +462,16 @@ countries_2020[countries_2020["net_per_10k_2020"] > 1000].plot(style=".")
 
 ![png](/assets/images/job-market-in-low-income-countries_files/job-market-in-low-income-countries_20_1.png)
 
-from the model predicitions we can see that the job market will have a major shift in 2020 in Mozambique, with almost all 10k shifting between skills, previous year's leading to a very unstable job market high, last years highest migration was in Senegal with over 5k migrants per 10k, for 2020 the market seems to be stabilizing and people are settling into jobs leading to less than 3k migrants.
+from the model predicitions we can see that the job market will have a major
+shift in 2020 in Mozambique, with almost all 10k shifting between skills,
+previous year's leading to a very unstable job market high, last years highest
+migration was in Senegal with over 5k migrants per 10k, for 2020 the market
+seems to be stabilizing and people are settling into jobs leading to less than
+3k migrants.
 
-in conclusion. the market has changed significantly for the past years in low income countries, some of the countries had positive skill migration meaning an unstable market where workers do not settle for a specific field, while other countries had negative migration compared to previous years leading to a more stable market which can be interpreted as a good measure of market stability and quality of work for those workers
+in conclusion. the market has changed significantly for the past years in low
+income countries, some of the countries had positive skill migration meaning an
+unstable market where workers do not settle for a specific field, while other
+countries had negative migration compared to previous years leading to a more
+stable market which can be interpreted as a good measure of market stability and
+quality of work for those workers

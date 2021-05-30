@@ -1,5 +1,6 @@
 ---
 title: Covid 19 Forecasting Malaysia Data Analysis
+description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
@@ -11,11 +12,10 @@ tags:
   - project
 ---
 
-# Introduction
-
 this notebook attempts to answer various data science question from 4 categories
 
-based on the COVID-19 daily cases, deaths, and recoveries, the focus is primarily on Malaysia.
+based on the COVID-19 daily cases, deaths, and recoveries, the focus is
+primarily on Malaysia.
 
 ## The Questions
 
@@ -30,17 +30,23 @@ based on the COVID-19 daily cases, deaths, and recoveries, the focus is primaril
 
 ### other details
 
-- the dataset is obtained from the center for system science and engineering (CSSE) https://github.com/CSSEGISandData/COVID-19
+- the dataset is obtained from the center for system science and engineering
+  (CSSE) https://github.com/CSSEGISandData/COVID-19
 
 - for predictive analysis, a LSTM model is used to predict the upcoming cases
 
   based on solely the previous day’s data considering no other factors,
 
-  still, LSTM are very popular for such task because of their accuracy and ability to generalize data.
+  still, LSTM are very popular for such task because of their accuracy and
+  ability to generalize data.
 
 - the used framework for the predictive model is TensorFlow 2.x
 
-- this notebook takes some code from a larger project i have been working on for a while, it’s a modular architecture that can predict cases for any country just given a timeseries of its previous cases using 3 different models, the project can be found here https://www.kaggle.com/abubakaryagob/covid-19-forecasting-automated-edition
+- this notebook takes some code from a larger project i have been working on for
+  a while, it’s a modular architecture that can predict cases for any country
+  just given a timeseries of its previous cases using 3 different models, the
+  project can be found here
+  https://www.kaggle.com/abubakaryagob/covid-19-forecasting-automated-edition
 
 ```python
 import pandas as pd
@@ -65,7 +71,8 @@ df_deaths = pd.read_csv("../input/covid-19/time_series_covid19_deaths_global.csv
 df_reco = pd.read_csv("../input/covid-19/time_series_covid19_recovered_global.csv")
 ```
 
-after reading in our dataset lets take a look at it by showing the first few countries for confirmed case, deaths, and recoveries
+after reading in our dataset lets take a look at it by showing the first few
+countries for confirmed case, deaths, and recoveries
 
 ```python
 df_confirmed.head()
@@ -239,8 +246,8 @@ df_confirmed.head()
 <p>5 rows × 329 columns</p>
 </div>
 
-each of the dataframes contains data for all countries,
-we only need malaysia so lets extract that from it
+each of the dataframes contains data for all countries, we only need malaysia so
+lets extract that from it
 
 ```python
 my_confirmed = df_confirmed[df_confirmed["Country/Region"] == "Malaysia"]
@@ -326,8 +333,9 @@ my_confirmed
 <p>1 rows × 329 columns</p>
 </div>
 
-our data is in a format that will not allow us to use it for graphing or predictions,
-first we should reshape the data to a format that is more friendly to our goal
+our data is in a format that will not allow us to use it for graphing or
+predictions, first we should reshape the data to a format that is more friendly
+to our goal
 
 ```python
 # convert passed dataframe to a timeseries (a format easy to graph and use for training models)
@@ -430,8 +438,8 @@ my_con_series
 <p>325 rows × 1 columns</p>
 </div>
 
-now that we have our data as a time series, lets join all the differnet cases (confirmed, deaths, recovred)
-together so its easier to graph them
+now that we have our data as a time series, lets join all the differnet cases
+(confirmed, deaths, recovred) together so its easier to graph them
 
 ```python
 # join all 3 data frames
@@ -542,7 +550,8 @@ my_df
 <p>325 rows × 3 columns</p>
 </div>
 
-we can see that its now in a format that is easy to interpret, graph and use for predictions with all columns included
+we can see that its now in a format that is easy to interpret, graph and use for
+predictions with all columns included
 
 # Descriptive and Diagnostic Analysis
 
@@ -556,13 +565,14 @@ my_df.plot(figsize=(14,7),title="Malysia confirmed, deaths, and recoverd cases")
 
 ### Question 1: when did the second wave start?
 
-from the above graph we can make several remarks, one of which
-is that the second wave started at the beginning of September and its still going as the time of writing this (13-12-2020)
+from the above graph we can make several remarks, one of which is that the
+second wave started at the beginning of September and its still going as the
+time of writing this (13-12-2020)
 
-to calculate the percentage of cases that led to death,
-we first need to know the number of cases that led to an outcome,
-from that we can easily extract the number of cases that led to death
-and from that we can calculate the percentage against all the cases that had an outcome
+to calculate the percentage of cases that led to death, we first need to know
+the number of cases that led to an outcome, from that we can easily extract the
+number of cases that led to death and from that we can calculate the percentage
+against all the cases that had an outcome
 
 ```python
 my_cases_outcome = (my_df.tail(1)['deaths'] + my_df.tail(1)['recovered'])[0]
@@ -586,13 +596,16 @@ print(f"Currently Active cases: {my_active}")
 
 ### Question 2: what is the percentage of cases that led to death (death rate)?
 
-we can see from the above results that the percentage of cases that led to death is 0.59%
-which is very miniscule in the grand scheme of things, this tells us that although Malaysia has had a considerable number of cases most of them did not end in deaths, in simpler terms, for every 200 cases only 1 death occured.
+we can see from the above results that the percentage of cases that led to death
+is 0.59% which is very miniscule in the grand scheme of things, this tells us
+that although Malaysia has had a considerable number of cases most of them did
+not end in deaths, in simpler terms, for every 200 cases only 1 death occured.
 
 # Predective and Prescriptive Analaysis
 
-this is where we train an LSTM RNN to predict upcoming cases, we will make predictions for the next 20 days,
-for testing the accuracy of our model, we will take the last 20 days from the dataset and use them for testing
+this is where we train an LSTM RNN to predict upcoming cases, we will make
+predictions for the next 20 days, for testing the accuracy of our model, we will
+take the last 20 days from the dataset and use them for testing
 
 ```python
 n_input = 20  # number of steps (days to predict)
@@ -803,7 +816,9 @@ plot_lstm_losses(my_lstm_model)
 
 ![png](/assets/images/covid-19-forecasting-malaysia-data-analysis_files/covid-19-forecasting-malaysia-data-analysis_35_0.png)
 
-We can see that the number of losses is tiny at the end of our training. This tells us the model has successfully learned the data and can - to some degree of accuracy - make predictions based on it.
+We can see that the number of losses is tiny at the end of our training. This
+tells us the model has successfully learned the data and can - to some degree of
+accuracy - make predictions based on it.
 
 lets first calculate the accuracy for our testing dataset
 
@@ -1295,9 +1310,14 @@ my_lstm_df
 </table>
 </div>
 
-from the above results we can see that our model predicts the total number of confirmed cases with an accuracy of 97.99%,
+from the above results we can see that our model predicts the total number of
+confirmed cases with an accuracy of 97.99%,
 
-On the 11th of December the model predicted 77603 cases which is off compared to the actual number of cases on that day (80k). Based on this, we can conclude that there is always going to be some difference between the prediction and actual data, so we try to extract a range in which the number of cases will fall. Below is the graph for predicted daily cases range.
+On the 11th of December the model predicted 77603 cases which is off compared to
+the actual number of cases on that day (80k). Based on this, we can conclude
+that there is always going to be some difference between the prediction and
+actual data, so we try to extract a range in which the number of cases will
+fall. Below is the graph for predicted daily cases range.
 
 ```python
 plot_results(my_lstm_df, "Malaysia", "LSTM")
@@ -1307,16 +1327,24 @@ plot_results(my_lstm_df, "Malaysia", "LSTM")
 
 ### Question 3: how many cases will Malaysia have by the end of 2020?
 
-based on the above graph and previous dataframe output, we can conclude that by the end of 2020 Malaysia will have a total number of confirmed cases between 82k and 88k.
-We should take the predicted daily cases with a grain of salt since the model is linear, it cannot predict non-linear values.
+based on the above graph and previous dataframe output, we can conclude that by
+the end of 2020 Malaysia will have a total number of confirmed cases between 82k
+and 88k. We should take the predicted daily cases with a grain of salt since the
+model is linear, it cannot predict non-linear values.
 
 ### Question 4: how can we make the number of daily cases go down before the end of 2020?
 
-To answer this question, we have to look back at how did we reduce the number of daily cases and stabilize the number of total confirmed cases in the first wave; the answer is mandated lockdowns.
+To answer this question, we have to look back at how did we reduce the number of
+daily cases and stabilize the number of total confirmed cases in the first wave;
+the answer is mandated lockdowns.
 
 # Effectiveness of mandated lockdown
 
-Malaysia lockdown started from mid march and some might argue its still ongoing, however the currently ongoing variations of the lockdown are not as strict as the first lockdown and are less effective, here I try to show the effect the first strict lockdown had on the total number of cases, to further support the answer to question 4.
+Malaysia lockdown started from mid march and some might argue its still ongoing,
+however the currently ongoing variations of the lockdown are not as strict as
+the first lockdown and are less effective, here I try to show the effect the
+first strict lockdown had on the total number of cases, to further support the
+answer to question 4.
 
 **restricted lockdown Time frame**
 
@@ -1348,4 +1376,7 @@ plt.show()
 
 ![png](/assets/images/covid-19-forecasting-malaysia-data-analysis_files/covid-19-forecasting-malaysia-data-analysis_45_0.png)
 
-from the graph we can see that the number of total cases stabilized after the lockdown, meaning the number of daily cases was so low its not even visible on a graph, and this shows the effect the restricted lockdown had on the cases further proving the answer to question 4 to be correct.
+from the graph we can see that the number of total cases stabilized after the
+lockdown, meaning the number of daily cases was so low its not even visible on a
+graph, and this shows the effect the restricted lockdown had on the cases
+further proving the answer to question 4 to be correct.

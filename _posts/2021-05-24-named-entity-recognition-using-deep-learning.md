@@ -1,5 +1,6 @@
 ---
 title: Named Entity Recognition Using Deep Learning
+description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
@@ -11,7 +12,11 @@ tags:
   - project
 ---
 
-The goal of this project is to implement a bi-directional LSTM functional neural network that can classify named entities. the dataset has been extracted from GMB corpus and it is structured in a way that makes it easier to train a model for named entity recognition or part of speech tagging, however, we will be making use of only the named entity recognition part.
+The goal of this project is to implement a bi-directional LSTM functional neural
+network that can classify named entities. the dataset has been extracted from
+GMB corpus and it is structured in a way that makes it easier to train a model
+for named entity recognition or part of speech tagging, however, we will be
+making use of only the named entity recognition part.
 
 included entities:
 
@@ -118,14 +123,18 @@ data.head()
 </table>
 </div>
 
-the data has some na values, those values should be the number of the sentese, lets fix that
+the data has some na values, those values should be the number of the sentese,
+lets fix that
 
 ```python
 # Fill na
 data = data.fillna(method = 'ffill')
 ```
 
-seperate the words and tags into their own lists, later on this will be used for various actions including making the training and testing datasets and also when doing the prediction, another important number we need is the total number of tags which will be used for output sizes
+seperate the words and tags into their own lists, later on this will be used for
+various actions including making the training and testing datasets and also when
+doing the prediction, another important number we need is the total number of
+tags which will be used for output sizes
 
 ```python
 words = list(set(data["Word"].values))
@@ -148,7 +157,8 @@ print(f"Total Number of tags {num_tags}")
     List of tags: B-nat, B-tim, I-org, B-art, B-org, I-eve, B-eve, B-per, I-per, I-geo, I-tim, B-gpe, I-gpe, I-nat, I-art, B-geo, O
     Total Number of tags 17
 
-lets make a class that will get get us a full sentense from our data, this is just for data exploration
+lets make a class that will get get us a full sentense from our data, this is
+just for data exploration
 
 ```python
 class Get_sentence(object):
@@ -210,7 +220,8 @@ sentence[10]
 
 # Data Visualization
 
-lets take a look at the distrbution of our words and tags in graphs which are easier to understand
+lets take a look at the distrbution of our words and tags in graphs which are
+easier to understand
 
 ```python
 plt.figure(figsize=(14,7))
@@ -221,7 +232,8 @@ plt.show()
 
 ![png](/assets/images/named-entity-recognition-using-deep-learning_files/named-entity-recognition-using-deep-learning_15_0.png)
 
-most of our sentenses have a length of 20 words, the longest sentense is around 63 words
+most of our sentenses have a length of 20 words, the longest sentense is around
+63 words
 
 ```python
 plt.figure(figsize=(14, 7))
@@ -233,11 +245,21 @@ data.Tag[data.Tag != 'O']\
 
 ![png](/assets/images/named-entity-recognition-using-deep-learning_files/named-entity-recognition-using-deep-learning_17_0.png)
 
-from the tags graph, we can observe that B-geo places are overrepresented, that might confuse the model, and also I-nat and I-gpe are almost non-existent in the dataset, we can already predict that the model might have issues classifying these 2 tags because of not enough training data for them.
+from the tags graph, we can observe that B-geo places are overrepresented, that
+might confuse the model, and also I-nat and I-gpe are almost non-existent in the
+dataset, we can already predict that the model might have issues classifying
+these 2 tags because of not enough training data for them.
 
 # Preparing Data
 
-When training a machine learning model we need to use sentences of an equal length, we are going to pad each of our sentences to a total length of 50 words, this might cut some sentences short but I believe thats fine since those are only a very few. an index mapping is a way we can link the tags and words numerically, each word has an index number and each tag has an index number as well, we can pass these number to our neural network and it will be able to learn with it efficiently, when we are doing prediction we use the predicted number as an index in our tags, words index list and get the actual tag, word.
+When training a machine learning model we need to use sentences of an equal
+length, we are going to pad each of our sentences to a total length of 50 words,
+this might cut some sentences short but I believe thats fine since those are
+only a very few. an index mapping is a way we can link the tags and words
+numerically, each word has an index number and each tag has an index number as
+well, we can pass these number to our neural network and it will be able to
+learn with it efficiently, when we are doing prediction we use the predicted
+number as an index in our tags, words index list and get the actual tag, word.
 
 ```python
 word_idx = {w : i + 1 for i ,w in enumerate(words)}
@@ -278,7 +300,8 @@ y = pad_sequences(maxlen = max_len, sequences = y, padding = 'post', value = tag
 y = [to_categorical(i, num_classes = num_tags) for i in  y]
 ```
 
-now lets split the data into training and testing, we will use a testing dataset size of 10%, i belive that should be enough
+now lets split the data into training and testing, we will use a testing dataset
+size of 10%, i belive that should be enough
 
 ```python
 x_train,x_test,y_train,y_test = train_test_split(X, y,test_size = 0.1, random_state = 1)
@@ -286,9 +309,18 @@ x_train,x_test,y_train,y_test = train_test_split(X, y,test_size = 0.1, random_st
 
 # Building the Model
 
-We will implement a functional model rather than a sequential one, the reason behind this is a functional model provided us with better accuracy in the current situation, we should always use the model that works best for the job, for example, a sequential Max Pooled LSTM did give me better results when doing a project about predicting COVID-19 cases, another reason is that a functional model is more flexible and allows us to have multiple inputs or output layers (thats more of a Keras API thing).
+We will implement a functional model rather than a sequential one, the reason
+behind this is a functional model provided us with better accuracy in the
+current situation, we should always use the model that works best for the job,
+for example, a sequential Max Pooled LSTM did give me better results when doing
+a project about predicting COVID-19 cases, another reason is that a functional
+model is more flexible and allows us to have multiple inputs or output layers
+(thats more of a Keras API thing).
 
-our loss measurement is categorical cross-entropy due to the prediction output and input being categorical labels in the end, for the optimizer, we will stick with adam because it works in most cases, we could adjust the learning rate for it but I don’t think that's necessary.
+our loss measurement is categorical cross-entropy due to the prediction output
+and input being categorical labels in the end, for the optimizer, we will stick
+with adam because it works in most cases, we could adjust the learning rate for
+it but I don’t think that's necessary.
 
 ```python
 input_word = Input(shape = (max_len,))
@@ -321,7 +353,9 @@ model.summary()
     Non-trainable params: 0
     _________________________________________________________________
 
-after building the model, the summary function shows us all the layers of the model and their parameters, inputs, and outputs, a better way to show such information is by using the plot_model method
+after building the model, the summary function shows us all the layers of the
+model and their parameters, inputs, and outputs, a better way to show such
+information is by using the plot_model method
 
 we can see the final TimeDistributed layer outputs 50 tags of 17 types
 
@@ -333,11 +367,19 @@ plot_model(model, show_shapes = True)
 
 Finally, we now train our model with these parameters
 
-- batch size: the number of words the model will train on at each time, the reason we chose 64 is sort of arbitrary, however, 64 \* 540(total number of batches) = 34560 which is very close to our total number of words and tags, a higher batch number might speed up the training but will also reduce the accuracy.
+- batch size: the number of words the model will train on at each time, the
+  reason we chose 64 is sort of arbitrary, however, 64 \* 540(total number of
+  batches) = 34560 which is very close to our total number of words and tags, a
+  higher batch number might speed up the training but will also reduce the
+  accuracy.
 
-- epochs: the number of times the model will train through all the data, a higher number of epochs will not necessarily improve the accuracy. in fact, it might cause overfitting that is why we will stick to only 3 epochs.
+- epochs: the number of times the model will train through all the data, a
+  higher number of epochs will not necessarily improve the accuracy. in fact, it
+  might cause overfitting that is why we will stick to only 3 epochs.
 
-- validation split: the amount of data which will be used to validate the model during training, we will use 20% of our training dataset (do not confuse validation with testing, both are totally different things)
+- validation split: the amount of data which will be used to validate the model
+  during training, we will use 20% of our training dataset (do not confuse
+  validation with testing, both are totally different things)
 
 ```python
 model.fit(x_train, np.array(y_train), batch_size = 64, verbose = 1, epochs = 3, validation_split = 0.2)
@@ -350,8 +392,10 @@ model.fit(x_train, np.array(y_train), batch_size = 64, verbose = 1, epochs = 3, 
     Epoch 3/3
     540/540 [==============================] - 74s 136ms/step - loss: 0.0496 - accuracy: 0.9855 - val_loss: 0.0531 - val_accuracy: 0.9842
 
-after the model has been trained the final loss is 0.439, and the final accuracy is 0.9845 which is 98.45%
-very high accuracy, I don’t think the model is overfitted because as we will see later on while predicting it has no problem working with foreign data.
+after the model has been trained the final loss is 0.439, and the final accuracy
+is 0.9845 which is 98.45% very high accuracy, I don’t think the model is
+overfitted because as we will see later on while predicting it has no problem
+working with foreign data.
 
 Finally, let’s evaluate the model using our testing dataset
 
@@ -369,7 +413,10 @@ model.evaluate(x_test, np.array(y_test))
 
     [0.05543701350688934, 0.9840325117111206]
 
-as you can see the testing dataset accuracy is very high as well, confirming that the model is not overfitted, now let’s try to tag random sentences from our training dataset and printing the original values compared to the values predicted by our model
+as you can see the testing dataset accuracy is very high as well, confirming
+that the model is not overfitted, now let’s try to tag random sentences from our
+training dataset and printing the original values compared to the values
+predicted by our model
 
 ```python
 rand_sent = np.random.randint(0, x_test.shape[0]) # get a random sentense
@@ -439,7 +486,8 @@ for (w, t, pred) in zip(x_test[rand_sent], y_true, p[0]):
     lenient             O                   	O
     lenient             O                   	O
 
-now lets create a function so anyone can input their data and the model will do entity recognition on it!
+now lets create a function so anyone can input their data and the model will do
+entity recognition on it!
 
 ```python
 def create_test_input_from_text(text):

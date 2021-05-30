@@ -1,5 +1,6 @@
 ---
 title: Fish Classification With Pytorch Resnet
+description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
@@ -11,7 +12,8 @@ tags:
   - project
 ---
 
-this project makes use of a residual network to classify different classes of fish based on images.
+this project makes use of a residual network to classify different classes of
+fish based on images.
 
 ### dataset classes
 
@@ -174,7 +176,8 @@ plt.show()
 
 ![png](/assets/images/fish-classification-with-pytorch-resnet_files/fish-classification-with-pytorch-resnet_7_0.png)
 
-there are 2000 images of each class, which means our model won't be biased towereds a particular class because it has a larger sample size
+there are 2000 images of each class, which means our model won't be biased
+towereds a particular class because it has a larger sample size
 
 ```python
 # the images are already augumented so no need to do any transforms
@@ -385,7 +388,9 @@ for epoch in range(epochs):
     Epoch 9: 100%|██████████| 225/225 [02:56<00:00,  1.28batch/s, accuracy=89, loss=0.343]
     Epoch 10: 100%|██████████| 225/225 [02:56<00:00,  1.28batch/s, accuracy=91, loss=0.186]
 
-we can see that the batch loss is decreasing on each epoch meaning the model is learning effectively, the accuracy also keeps raising the longer we train, to make the loss easier to understand lets plot it
+we can see that the batch loss is decreasing on each epoch meaning the model is
+learning effectively, the accuracy also keeps raising the longer we train, to
+make the loss easier to understand lets plot it
 
 ```python
 # plot losses
@@ -484,9 +489,12 @@ plt.show()
 
 ## Conclusion
 
-in this project we classified 9 different classes of fish at an decent accuracy of 87% with most of the classes having good percision and recall, however the model can be improved further by employing some techniques such as:
+in this project we classified 9 different classes of fish at an decent accuracy
+of 87% with most of the classes having good percision and recall, however the
+model can be improved further by employing some techniques such as:
 
 - Transfer learning: using pre-trained models.
-- Learning rate scheduling: chaging the learning rate throughout the training process.
+- Learning rate scheduling: chaging the learning rate throughout the training
+  process.
 - Gradient clipping: setting threshold for gradient values.
 - using Dropout layers.

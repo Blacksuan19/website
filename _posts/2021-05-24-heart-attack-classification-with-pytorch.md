@@ -1,5 +1,6 @@
 ---
 title: Heart Attack Classification With Pytorch
+description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
