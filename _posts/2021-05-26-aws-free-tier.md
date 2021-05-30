@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Don't Be Fooled By AWS "free tier"
+title: Don't Be Fooled By AWS free tier
 description: it's a trap
 image: /assets/images/aws.jpg
 project: false
