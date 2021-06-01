@@ -8,7 +8,7 @@ highly modular and user customizable.
 <img src="/assets/images/forty.jpg" alt="Forty Theme">
 </p>
 
-# Added Features
+## Added Features
 
 - very easy setup - fork the template and start posting
 - beautiful [material ocean](https://github.com/material-ocean/Material-Ocean)
@@ -48,14 +48,14 @@ highly modular and user customizable.
   buttons you enter in `config.yml` show up on the site footer, you can easily
   add your own social media's if they're not included by default
 
-# Using Included Templates
+## Using Included Templates
 
 ### YouTube
 
 Used to link to a YouTube video
 
 ```liquid
-{%- include YouTube.liquid id="video_id" -%}
+{% include YouTube.liquid id="video_id" -%}
 ```
 
 ### Asciinema
@@ -63,12 +63,12 @@ Used to link to a YouTube video
 Used to link to an asciinema video
 
 ```liquid
-{%- include asciinema.liquid id="video_id" -%}
+{% include asciinema.liquid id="video_id" -%}
 ```
 
-# Project Structure
+## Project Structure
 
-```
+```bash
 .
 ├── assets
 │   ├── css
@@ -88,7 +88,7 @@ Used to link to an asciinema video
 └── tag
 ```
 
-# How to Use
+## How to Use
 
 For those unfamiliar with how Jekyll works, check out
 [jekyllrb.com](https://jekyllrb.com/) for all the details, or read up on just
@@ -101,7 +101,7 @@ the basics of [front matter](https://jekyllrb.com/docs/frontmatter/),
 - run `jekyll serve`
 - go to `http://localhost:4000/admin` and start blogging!
 
-# Credits
+## Credits
 
 - [andrewbanchich](https://github.com/andrewbanchich/forty-jekyll-theme) -
   Ported original template to Jekyll.
