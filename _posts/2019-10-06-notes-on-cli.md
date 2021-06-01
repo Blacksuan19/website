@@ -8,7 +8,6 @@ permalink: "/blog/:title/"
 tags:
   - notes
   - cli
-  - simplenote
   - linux
 ---
 
@@ -22,19 +21,20 @@ criteria for a note taking setup was:
 - full sync hosted by them or a simple way i could host it myself
 - a good android client
 
-There are few apps which fit this description including, [inkdrop notes](https://inkdrop.app/),
-[simplenotes](https://simplenote.com/), [notable](https://github.com/notable/notable) and [notion](https://www.notion.so/), i have tried most of
-these and these apps fit the
-basic criteria but most of them lacked my first requirement which is a cli app
-the only app which fit that was simple notes with something called sncli
+There are few apps which fit this description including,
+[inkdrop notes](https://inkdrop.app/), [simplenotes](https://simplenote.com/),
+[notable](https://github.com/notable/notable) and
+[notion](https://www.notion.so/), i have tried most of these and these apps fit
+the basic criteria but most of them lacked my first requirement which is a cli
+app the only app which fit that was simple notes with something called sncli
 
 ##### why not qualified?
 
 - inkdrop: no cli app, not entirely free and the desktop app is super heavy
   (damn you electron)
 - notable: no cli app, and no sync or android app.
-- notion: no cli app, again electron so heavier than the new planet 9 black hole,
-  although its very feature rich and i might use it if i had a better
+- notion: no cli app, again electron so heavier than the new planet 9 black
+  hole, although its very feature rich and i might use it if i had a better
   machine.
 
 as you can see most of these apps have their strengths and flaws, but for me
@@ -50,9 +50,9 @@ it and that's for few reasons:
 ##### why not host on Dropbox or anywhere else?
 
 Well, that's a good question, but i wanted something native, something that has
-sync built in without having to go and do the actual implementation also i don't use Dropbox
-myself and i am not willing to switch to it just for notes, if i wanted to use
-Dropbox i would've just used Typora at this point.
+sync built in without having to go and do the actual implementation also i don't
+use Dropbox myself and i am not willing to switch to it just for notes, if i
+wanted to use Dropbox i would've just used Typora at this point.
 
 #### Sncli
 
@@ -70,12 +70,11 @@ issues include but not limited to:
 - takes a while to start
 
 Editing notes work by copying the note to the temp folder and then opening it in
-your specified editor.
-The app itself doesn't have a notes editor it can just view a note, change tags
-rename an do other things, for editing you need to specify an editor, this is
-where nvim comes into the picture, i have configs that will set the file type
-and other stuff for all files that have the word sncli and are stored at tmp
-currently.
+your specified editor. The app itself doesn't have a notes editor it can just
+view a note, change tags rename an do other things, for editing you need to
+specify an editor, this is where nvim comes into the picture, i have configs
+that will set the file type and other stuff for all files that have the word
+sncli and are stored at tmp currently.
 
 The key bindings follow vim style so its easy to use and get used to, you can
 edit all the key bindings in the sncli config file.
@@ -85,9 +84,10 @@ edit all the key bindings in the sncli config file.
 #### building my own simplenote client
 
 As i mentioned earlier simplenote is great, their api is great and some guy made
-a [python API](https://github.com/mrtazz/simplenote.py) for their sync web services which makes it even better.
-i got my hands dirty by trying to do a simple cli client implementation, which
-didn't get much anywhere (python isn't exactly my favorite's language)
+a [python API](https://github.com/mrtazz/simplenote.py) for their sync web
+services which makes it even better. i got my hands dirty by trying to do a
+simple cli client implementation, which didn't get much anywhere (python isn't
+exactly my favorite's language)
 
 ```python
 import simplenote

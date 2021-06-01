@@ -6,7 +6,6 @@ image: /assets/images/heroku.png
 project: false
 permalink: /blog/:title/
 tags:
-  - telegram
   - userbot
   - heroku
   - python
@@ -25,7 +24,8 @@ database some functions won't work.
 
 ### How To setup the bot:
 
-- First of course we need to clone the repo `git clone http://GitHub.com/Nick80835/Telegram-UserBot`
+- First of course we need to clone the repo
+  `git clone http://GitHub.com/Nick80835/Telegram-UserBot`
 - then install the required packages `pip3 install -r requirements.txt`
 - next you need to add your username and other stuff to the config file
 - first before editing rename the file `mv sample_config.env config.env`
@@ -36,7 +36,8 @@ database some functions won't work.
   - create an app and fill out the details (you can put anything in url)
   - copy you codes to config.env
 - now you can start the bot with `python3 -m userbot`
-- congrats! you have a bot but its hosted on your pc which you don't run all day (if you do then stop reading)
+- congrats! you have a bot but its hosted on your pc which you don't run all day
+  (if you do then stop reading)
 
 The bot uses the userbot.session file so you wont have to login again, add that
 file to the repo first (do not push this file to github!).<br>
@@ -49,19 +50,25 @@ file to the repo first (do not push this file to github!).<br>
 - download the [cli tool](https://devcenter.heroku.com/articles/heroku-cli)
 - login to cli tool `heroku login`
 - navigate to the bot folder you cloned earlier
-- switch to master branch or create it if it doesn't exist (heroku only runs apps from master branch) `git branch -m master`
-- push the source to your heroku app `git push heroku master`(force push if you got any errors `git push -f heroku master`)
-- now your bot source and session file are on heroku git you can start it `heroku run python3 -m userbot`
+- switch to master branch or create it if it doesn't exist (heroku only runs
+  apps from master branch) `git branch -m master`
+- push the source to your heroku app `git push heroku master`(force push if you
+  got any errors `git push -f heroku master`)
+- now your bot source and session file are on heroku git you can start it
+  `heroku run python3 -m userbot`
 - your bot should run fine now!
-- if the bot doesnt start, maybe the environment isn't getting set up so add your config to heroku env variables `heroku config:set CONFIG=value`
-- to run the bot in the heroku background use `heroku run:detached python3 -m userbot`
+- if the bot doesnt start, maybe the environment isn't getting set up so add
+  your config to heroku env variables `heroku config:set CONFIG=value`
+- to run the bot in the heroku background use
+  `heroku run:detached python3 -m userbot`
 - congrats! your bot is now running on heroku.
 
 #### Note:
 
 app running on heroku is not a git repository so you cant use the .update
-command, to update the bot first stop the running bot process `heroku stop processid` (to get the id run `heroku ps` run.XXXX is the id), and then you can
-update normally with `git pull`. <br> <br> and thats all your bot should be
-kicking fine for now, heroku has a limited amount of hours for free accounts
-(550 hours), it will also kill all processes if there is no activity for more
-than 30min or so, don't worry you can just restart it again
+command, to update the bot first stop the running bot process
+`heroku stop processid` (to get the id run `heroku ps` run.XXXX is the id), and
+then you can update normally with `git pull`. <br> <br> and thats all your bot
+should be kicking fine for now, heroku has a limited amount of hours for free
+accounts (550 hours), it will also kill all processes if there is no activity
+for more than 30min or so, don't worry you can just restart it again
