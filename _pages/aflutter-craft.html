@@ -1,0 +1,81 @@
+---
+layout: page
+title: Aflutter Craft
+nav-menu: true
+---
+
+<div id="main" class="alt">
+  <div class="inner">
+    <p align="center">
+      <img
+        width="350"
+        height="300"
+        src="/assets/images/aflutter-craft/aflutter_craft.png"
+        alt="logo"
+      />
+    </p>
+    <p align="center">
+      <a href="https://github.com/Aflutter-Craft/" class="button"
+        >View On Github</a
+      >
+    </p>
+    <p>
+      Image Style transfer is a neural network algorithm that copies the style
+      of an existing image into another image while preserving the image’s
+      content, there have been multiple algorithms to perform style transfer one
+      of which is using style attentional networks. attention is a modern
+      algorithm that helps neural networks distinguish important parts of speech
+      or an image, in this instance we use attention to identify the important
+      parts of image features to properly apply an overall style rather than
+      just a mask and to conserve parts of the content that are deemed
+      important.
+    </p>
+
+    <h3>Workflow</h3>
+    <p>
+      the general workflow of the application is the API will receive the
+      content and style images, run them through the model and return the
+      resulting image as base64 encoded.
+    </p>
+    <img src="/assets/images/aflutter-craft/workflow.png" alt="workflow" />
+    <h3>Components</h3>
+    <ul>
+      <li><a href="#model">Model</a></li>
+      <li><a href="#api">API</a></li>
+      <li><a href="#app">Cross Platform Application</a></li>
+    </ul>
+    <h3 id="model">Model</h3>
+    <p>
+      The model uses a modified version of
+      <a href="http://arxiv.org/abs/1812.02342">style attentional networks</a>,
+      with the main changes being the identity loss coefficients, the
+      architecture consists of 3 separate models, an encoder, a style network
+      and a decoder, the encoder used here is VGG-16.
+    </p>
+    <img src="/assets/images/aflutter-craft/network.png" alt="network arch" />
+    <h3 id="api">API</h3>
+    <p>
+      The API is implemented using flask and flasgger for openAPI
+      documentations, FloydHub is used to deploy the API in the cloud for
+      general availability.
+    </p>
+    <ul>
+      <li>Allow changing style-content tradeoff during inference</li>
+      <li>
+        Accept style images as a base64 encoded image or a path to a style in
+        the project S3 bucket
+      </li>
+    </ul>
+    <h3 id="app">Cross Platform Application</h3>
+    <p>The application is build using flutter with support for:</p>
+    <ul>
+      <li>Android</li>
+      <li>IOS</li>
+      <li>Windows</li>
+      <li>Web</li>
+      <li>MacOS</li>
+    </ul>
+    <img src="/assets/images/aflutter-craft/mobile.jpg" alt="mobile" />
+    <img src="/assets/images/aflutter-craft/desktop.png" alt="desktop" />
+  </div>
+</div>
