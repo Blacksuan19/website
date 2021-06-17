@@ -34,25 +34,16 @@
           </div>
           {%- if page.source -%}
           <a href="{{ page.source }}" class="fit button">View Source Code</a>
-          {%- endif -%} {%- if page.project == false -%} {%- include
-          disque.liquid -%}
-          <div class="actions" style="padding-top: 10px">
-            {%- if page.previous.url and page.previous.project != true -%}
-            <a class="button" href="{{ page.previous.url }}">
-              &laquo; Previous Post
-            </a>
-            {%- endif -%} {%- if page.next.url and page.next.project != true -%}
-            <a style="float: right" class="button" href="{{ page.next.url }}">
-              Next Post &raquo;
-            </a>
-            {%- endif -%}
-            <br /><br />
-            <div>
-              <header class="major">
-                <h3>Similar Posts</h3>
-              </header>
-              {%- include similar-posts.liquid -%}
-            </div>
+          {%- endif -%} 
+          {%- if page.project == false -%} 
+            {%- include disque.liquid -%}
+            <div class="actions" style="padding-top: 10px"> 
+              {%- include post-navigation.liquid post=page -%} 
+              <br /><br />
+            <header class="major">
+              <h3>Similar Posts</h3>
+            </header>
+            {%- include similar-posts.liquid -%}
           </div>
           {%- endif -%}
         </div>
