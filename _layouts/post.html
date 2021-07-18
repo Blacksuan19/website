@@ -1,57 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-  {%- include head.liquid -%}
+---
+layout: page
+---
 
-  <body>
-    {%- include header.liquid -%}
-    <!-- Main -->
-    <div class="alt" id="main">
-      <!-- One -->
-      <section id="one">
-        <div class="inner">
-          <div class="row 200%">
-            <header class="major">
-              <h2>{{ page.title }}</h2>
-              {%- if page.project == false-%} {{ page.date | date: '%B %d, %Y'
-              }} {%- endif -%}
-            </header>
-            <div class="post-tags">
-              {%- include post-tags.liquid page=page -%}
-            </div>
-          </div>
-          <div class="row 200%">
-            <div class="social-icons">{%- include social-share.liquid -%}</div>
-            <div class="read-time">
-              <h3>{%- include read-time.liquid content=page.content -%}</h3>
-            </div>
-          </div>
-          {%- if page.image -%}
-          <span class="image main"><img src="{{ page.image }}" alt="" /></span>
-          {%- endif -%}
-          <p>{{ content }}</p>
-          <div class="post-tags">
-            {%- include post-tags.liquid page=page -%}
-          </div>
-          {%- if page.source -%}
-          <a href="{{ page.source }}" class="fit button">View Source Code</a>
-          {%- endif -%} 
-          {%- if page.project == false -%} 
-            {%- include disque.liquid -%}
-            <div class="actions" style="padding-top: 10px"> 
-              {%- include post-navigation.liquid post=page -%} 
-              <br /><br />
-            <header class="major">
-              <h3>You might also like</h3>
-            </header>
-            {%- include similar-posts.liquid -%}
-          </div>
-          {%- endif -%}
+<!-- Main -->
+<div class="alt" id="main">
+  <!-- One -->
+  <section id="one">
+    <div class="inner">
+      <div class="row 200%">
+        <header class="major">
+          <h2>{{ page.title }}</h2>
+          {%- if page.project == false-%} {{ page.date | date: '%B %d, %Y'
+          }} {%- endif -%}
+        </header>
+        <div class="post-tags">
+          {%- include post-tags.liquid page=page -%}
         </div>
-      </section>
+      </div>
+      <div class="row 200%">
+        <div class="social-icons">{%- include social-share.liquid -%}</div>
+        <div class="read-time">
+          <h3>{%- include read-time.liquid content=page.content -%}</h3>
+        </div>
+      </div>
+      {%- if page.image -%}
+      <span class="image main"><img src="{{ page.image }}" alt="" /></span>
+      {%- endif -%}
+      <p>{{ content }}</p>
+      <div class="post-tags">
+        {%- include post-tags.liquid page=page -%}
+      </div>
+      {%- if page.source -%}
+      <a href="{{ page.source }}" class="fit button">View Source Code</a>
+      {%- endif -%} 
+      {%- if page.project == false -%} 
+        {%- include disque.liquid -%}
+        <div class="actions" style="padding-top: 10px"> 
+          {%- include post-navigation.liquid post=page -%} 
+          <br /><br />
+        <header class="major">
+          <h3>You might also like</h3>
+        </header>
+        {%- include similar-posts.liquid -%}
+      </div>
+      {%- endif -%}
     </div>
-    {%- include footer.liquid -%}
-  </body>
-</html>
+  </section>
+</div>
 <script>
   $("article").addClass("extra-tiles");
   $(".extra-tiles h3").replaceWith(function () {
