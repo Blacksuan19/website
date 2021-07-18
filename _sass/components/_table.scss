@@ -6,15 +6,12 @@
 
 /* Table */
 
-.table-wrapper {
-  -webkit-overflow-scrolling: touch;
-  overflow-x: auto;
-}
-
 table {
   margin: 0 0 _size(element-margin) 0;
   width: 100%;
   display: block;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 
   tbody {
     tr {
