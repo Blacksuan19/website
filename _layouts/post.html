@@ -38,19 +38,9 @@ layout: page
         <div class="actions" style="padding-top: 10px"> 
           {%- include post-navigation.liquid post=page -%} 
           <br /><br />
-        <header class="major">
-          <h3>You might also like</h3>
-        </header>
+      {%- endif -%}
         {%- include similar-posts.liquid -%}
       </div>
-      {%- endif -%}
     </div>
   </section>
 </div>
-<script>
-  $("article").addClass("extra-tiles");
-  $(".extra-tiles h3").replaceWith(function () {
-    return "<h4>" + $(this).html() + "</h4>";
-  });
-  $("div:has(table)").css({ "overflow-x": "auto" });
-</script>
