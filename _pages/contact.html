@@ -14,8 +14,8 @@ nav-menu: true
       </header>
       <p>{{ site.about-text }}</p>
       {%- endif -%} For any Questions, enquiries, Contact me via the form below
-      or send me a direct email. you can also get in touch with me via
-      telegram.<br /><br />
+      or send me a direct email. you can also get in touch with me via {{
+      site.preferred_contact }} <br /><br />
       <form action="{{ site.formspree }}" id="contact-form" method="POST">
         <div style="margin-bottom: 0px" class="field half first">
           <label for="name">Name</label>
@@ -61,20 +61,22 @@ nav-menu: true
           <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         </div>
       </section>
-      {%- for item in site.social_urls -%} {%- assign name = item[0] -%} {%- if
-      name == site.preferred_contact -%}
-      <section>
-        <div class="contact-method">
-          <span class="icon alt fa-{{ item[0] }}"></span>
-          <h3>{{ item[0] | capitalize }}</h3>
-          <span>
-            <a href="{{ item[1] }}"
-              >{{ item[1] | split: "/" | last | capitalize }}</a
-            ></span
-          >
-        </div>
-      </section>
-      {%- endif -%} {%- endfor -%}
+      {%- for item in site.social_urls -%} 
+        {%- assign name = item[0] -%} 
+        {%- if name == site.preferred_contact -%}
+          <section>
+            <div class="contact-method">
+              <span class="icon alt fa-{{ item[0] }}"></span>
+              <h3>{{ item[0] | capitalize }}</h3>
+              <span>
+                <a href="{{ item[1] }}"
+                  >{{ item[1] | split: "/" | last | capitalize }}</a
+                ></span
+              >
+            </div>
+          </section>
+        {%- endif -%} 
+      {%- endfor -%}
       <section>
         <div class="contact-method">
           <span class="icon alt fa-home"></span>
