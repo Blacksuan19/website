@@ -55,7 +55,7 @@ highly modular and user customizable.
 Used to link to a YouTube video
 
 ```liquid
-{% include YouTube.liquid id="video_id" -%}
+{% include youtube.liquid id="video_id" -%}
 ```
 
 ### Asciinema
