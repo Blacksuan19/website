@@ -8,7 +8,7 @@ url: # the base hostname & protocol for your site
 author: Blacksuan19
 street_address:
 city: Kuala Lumpur
-state: Selangor
+state:
 zip_code: 53100
 country: Malaysia
 about-text: My name is Abubakar Yagoub, Computer Science Student and Machine learning developer with a focus on deep learning and neural networks, I have experience with both TensorFlow and PyTorch deep learning framework, I am also interested in flutter and Linux systems, looking for a job with a focus on creating novel neural networks that solve real-world problems. when I am not in front of my laptop coding something I am usually at the gym or enjoying some music.
