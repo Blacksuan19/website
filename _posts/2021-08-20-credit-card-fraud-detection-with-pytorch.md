@@ -405,7 +405,7 @@ train_model(model, epochs, loss, optim)
 
 ```python
 model.eval()
-preds = model(X_test.to("cuda")).argmax(dim=1)
+preds = model(X_test.to(device)).argmax(dim=1)
 print(classification_report(y_test, preds.cpu()))
 ```
 
