@@ -28,11 +28,11 @@ preferred_contact: telegram
 # add social media links here and they will show up in the footer
 # icon: url
 social_urls:
+    linkedin: https://www.linkedin.com/in/blacksuan19/
     github: https://github.com/blacksuan19
+    kaggle: https://www.kaggle.com/abubakaryagob/
     telegram: https://t.me/blacksuan19
     android: https://forum.xda-developers.com/member.php?u=5980272
-    kaggle: https://www.kaggle.com/abubakaryagob/
-    # linkedin:
     # instagram:
     # twitter:
     # facebook:
