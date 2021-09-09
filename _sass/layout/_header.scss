@@ -201,12 +201,6 @@
     }
   }
 
-  body.is-loading & {
-    &.alt {
-      opacity: 0;
-    }
-  }
-
   @include breakpoint(xlarge) {
     nav {
       a {

@@ -138,18 +138,6 @@
     }
   }
 
-  body.is-loading & {
-    &:after {
-      opacity: 1;
-    }
-
-    > .inner {
-      @include vendor("filter", "blur(0.125em)");
-      @include vendor("transform", "translateX(-0.5em)");
-      opacity: 0;
-    }
-  }
-
   @include breakpoint(large) {
     background-attachment: scroll;
   }
