@@ -31,6 +31,7 @@
           <li>
             <a href="{{ "" | absolute_url }}/">{{ page.title }}</a>
           </li>
+          {% break %}
         {%- endif -%}
       {%- endfor -%}
       {%- for page in site.pages -%}
