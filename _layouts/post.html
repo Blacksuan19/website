@@ -6,6 +6,11 @@ layout: page
 <div class="alt" id="main">
   <!-- One -->
   <section id="one">
+    {%- if page.source -%}
+      <div class="source" title="View Source Code">
+      <a href="{{ page.source }}" class="icon alt fa fa-lg fa-code"></a>
+      </div>
+    {%- endif -%} 
     <div class="inner">
       <div class="row 200%">
         <header class="major">
@@ -30,9 +35,6 @@ layout: page
       <div class="post-tags">
         {%- include post-tags.liquid page=page -%}
       </div>
-      {%- if page.source -%}
-      <a href="{{ page.source }}" class="fit button">View Source Code</a>
-      {%- endif -%} 
       {%- if page.project == false -%} 
         {%- include disque.liquid -%}
         <div class="actions" style="padding-top: 10px"> 
