@@ -1,5 +1,17 @@
 <div class="flex-wrapper">
   {%- for skill in site.skills -%}
+    {% assign num = skill[1] | plus: 0 %}
+    {% if num >= 0 and num < 25 %}
+      {% assign level = "Poor" %}
+    {% elsif num >= 25 and num < 50 %}
+      {% assign level = "Adequate" %}
+    {% elsif num >= 50 and num < 75 %}
+      {% assign level = "Good" %}
+    {% elsif num >= 75 and num < 90 %}
+      {% assign level = "Very Good" %}
+    {% elsif num >= 90 and num <= 100 %}
+      {% assign level = "Excellent" %}
+    {% endif %}
   <div class="single-chart">
     <svg class="circular-chart" viewbox="0 0 38 38">
       <path
@@ -11,7 +23,7 @@
         d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
         stroke-dasharray="{{ skill[1] }}, 100"
       />
-      <text class="percentage" x="18" y="20.35">{{ skill[1] }}%</text>
+      <text class="percentage" x="18" y="20.35">{{ level }}</text>
     </svg>
     <p class="skill-label">{{ skill[0] }}</p>
   </div>
