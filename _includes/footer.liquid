@@ -4,15 +4,16 @@
     <ul class="icons">
       {%- for social in site.social_urls -%}
       <li>
-        <a href="{{ social[1] }}" class="icon alt fa fa-{{ social[0] }}">
-          <span class="label">{{ social[0] }}</span>
+        <a
+          href="{{ social[1] }}"
+          class="icon alt fa fa-{{ social[0] }}"
+          title="{{ social[0] | capitalize }}"
+        >
         </a>
       </li>
       {%- endfor -%}
       <li>
-        <a href="/feed.xml" class="icon alt fa fa-feed">
-          <span class="label">RSS-Feed</span>
-        </a>
+        <a href="/feed.xml" class="icon alt fa fa-feed" title="RSS Feed"> </a>
       </li>
     </ul>
     <ul class="copyright">
