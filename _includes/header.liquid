@@ -26,6 +26,7 @@
   <!-- Menu -->
   <nav id="menu">
     <ul class="links">
+      <!-- find the home page and add it first -->
       {%- for page in site.pages -%}
         {%- if page.layout == "home" -%}
           <li>
@@ -34,6 +35,9 @@
           {% break %}
         {%- endif -%}
       {%- endfor -%}
+
+      <!-- when groups are disabled -->
+      {% if site.group_pages != true %}
       {%- for page in site.pages -%}
         {%- if page.layout != "home" and page.nav-menu == true -%}
           <li>
@@ -41,6 +45,51 @@
           </li>
         {%- endif -%}
       {%- endfor -%}
-      <li><a href="https://kutt.it/2eHpSy">Stanford ML Notes</a></li>
+      {% endif %}
+
+      <!-- when groups are enabled -->
+      <!-- add links not part of group -->
+      {% if site.group_pages == true %}
+      {%- for page in site.pages -%}
+        {%- if page.layout != "home" and page.nav-menu == true and page.group != true -%}
+          <li>
+            <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+      
+      <!-- add group -->
+      <br>
+      <button class="col_head fit">{{ site.group_name }}</button>
+      <div class="col_con">
+        <ul class="links">
+          {%- for page in site.pages -%}
+            <!-- assume all pages with group = true also have nav-menu = true -->
+            {%- if page.group == true -%}
+              <li>
+                <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+      {% endif %}
+      
+      <!-- add external urls if any -->
+      {% if site.extern_urls %}
+          <br>
+          <button class="col_head fit special">{{ site.extern_name }}</button>
+          <div class="col_con">
+            <ul class="links">
+              {% for url in site.extern_urls %} 
+              <li>
+                <a href="{{ url[1] }}">{{ url[0] }}</a>
+              </li>
+            
+              {% endfor %}
+            </ul>
+          </div>            
+      {% endif %}
+      
     </ul>
   </nav>

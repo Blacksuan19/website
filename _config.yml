@@ -47,6 +47,17 @@ skills:
   Data Science: "70"
   Machine Learning: "70"
 
+# page groups settings (groups pages with group = true in nav menu)
+group_pages: true
+group_name: Significant Projects
+
+# external links to be added to the bottom of the menu
+# label for the header
+extern_name: Notes
+# URLs, format name:url
+extern_urls:
+  Stanford ML Notes: https://kutt.it/u7MfXU
+  Deep Learning Notes: https://kutt.it/kJ5UOf
 # build settings
 markdown: kramdown
 kramdown:

@@ -14,7 +14,17 @@ $(document).ready(function () {
 
   // logic for collapsable Headers
   $(".col_head").click(function () {
-    $(this).nextAll("div .col_con").first().slideToggle("fast");
+    var current = $(this).nextAll("div .col_con").first();
+    $(this)
+      .parent()
+      .find(".col_con")
+      .each(function () {
+        if (current.is(this)) {
+          $(this).slideToggle("fast");
+        } else {
+          $(this).slideUp("fast");
+        }
+      });
   });
 
   // contact form validation
