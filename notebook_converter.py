@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-'''
+"""
 notebook_converter.py
 
 Copyright 2021 Abubakar Yagoub
@@ -11,7 +11,7 @@ and moves converted markdown to posts and images to assets.
 Requirements:
 - jupyter (for converting notebooks to md)
 - imagemagick (for adding background to images)
-'''
+"""
 
 import glob
 import os
@@ -20,7 +20,7 @@ from datetime import datetime
 post_dir = "_posts/"
 notebooks_dir = "notebooks/"
 assets_dir = "assets/images/"
-current_date = datetime.today().strftime('%Y-%m-%d')
+current_date = datetime.today().strftime("%Y-%m-%d")
 front_matter = """---
 title: {}
 description: Data Science Project
@@ -36,7 +36,7 @@ tags:
 ---\n\n"""
 
 # get all notebook files
-filenames = glob.glob(notebooks_dir + '*.ipynb')
+filenames = glob.glob(notebooks_dir + "*.ipynb")
 
 
 def check_exists(file):
@@ -71,8 +71,7 @@ for file in filenames:
     f.close()
 
     # add background color so text is visible in images
-    os.system(
-        f"mogrify -background white -flatten {notebooks_dir}{name}_files/*")
+    os.system(f"mogrify -background white -flatten {notebooks_dir}{name}_files/*")
 
     # move file and assets
     os.system(f"mv {new_name} {post_dir}")
