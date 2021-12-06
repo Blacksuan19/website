@@ -11,28 +11,27 @@ tags:
 ---
 
 Data is one of the most important parts of machine learning, the available data
-can tell you how the model will generalize over a task, if it will have any
+can tell you how the model will generalize over a task if it will have any
 biases and if it will fail with some specific data, in computer vision the data
-used is mostly images (the vision part). Some times you want to train a new
-model on data that is not available on the internet, for example a model to
-classify the faces of people you know, in that case a new dataset has to be
-created with those faces, however, in some instances the target is an object
-that you don't have a data for and need to create a dataset to train a model to
-recognize it.
+used is mostly images (the vision part). Sometimes you want to train a new model
+on data that is not available on the internet, for example, a model to classify
+the faces of people you know, in that case, a new dataset has to be created with
+those faces, however, in some instances, the target is an object that you don't
+have data for and need to create a dataset to train a model to recognize it.
 
-Creating computer vision datasets is not a very hard task, there are many
-applications that make the process very easy and simply make the task about
-drawing boxes, segmentation masks or video timestamps. image annotations tools
-have came a long way, some currently even support collaborative annotations
-where a team could work on the same dataset. for a list of the most used data
-annotation tools
+Creating computer vision datasets is not a very hard task, many applications
+make the process very easy and simply make the task about drawing boxes,
+segmentation masks, or video timestamps. image annotations tools have come a
+long way, some currently even support collaborative annotations where a team
+could work on the same dataset. for a list of the most used data annotation
+tools
 [check here](https://medium.com/data-folks-indonesia/5-best-free-image-annotation-tools-80919a4e49a8).
 
 Another technology that makes image annotation much simpler is augmentation,
 data augmentation is the process of generating new data from present data by
 applying various augmentations to the present data such as random rotations,
 brightness and contrast changes, the presence of libraries made for
-augmentations makes the process much easier, most of these libraries update the
+augmentations make the process much easier, most of these libraries update the
 annotation files as well after applying the augmentations.
 
 There are many formats for annotations, each used by different models and maps
@@ -43,27 +42,28 @@ and [YOLO](https://roboflow.com/formats/yolo-darknet-txt).
 ## Workflow
 
 Let's have a scenario where you want to train a classification model on a single
-image you have, if a model is trained with a single image it'll usually perform
-very poorly, the solution in this case would be to acquire more data, since it's
-a novel task, the data needs to be created manually, the steps I usually follow
-in creating datasets are:
+the image you have, if a model is trained with a single image it'll usually
+perform very poorly, the solution, in this case, would be to acquire more data,
+since it's a novel task, the data needs to be created manually, the steps I
+usually follow in creating datasets are:
 
-- If the image has many objects, split it to a grid of 4 images.
-- Annotate the resulting images from first step.
+- If the image has many objects, split it into a grid of 4 images.
+- Annotate the resulting images from the first step.
 - Set up directory structure according to model format (YOLO usually).
-- Use albumentations library to apply various augmentations to annotated images.
+- Use the albumentations library to apply various augmentations to annotated
+  images.
 
 ### Image Splitting
 
 This step is only possible when there is an image that contains many instances
-of an object, for example an image of a highway, with the target class being
+of an object, for example, an image of a highway, with the target class being
 cars.
 
 ![Frame 1.png](/assets/images/creating-datasets/Frame_1.png)
 
 This will automatically double or quadruple the amount of data we have, now that
-we have more images we can proceed to annotating them. To automate this process,
-I have written a script, that given an image folder, will take any images there
+we have more images we can proceed to annotate them. To automate this process, I
+have written a script, that given an image folder, will take any images there
 are split them into a grid of 4 images.
 
 ```python
@@ -108,23 +108,23 @@ if __name__ == "__main__":
 
 ### Image Annotation
 
-The image annotation tool I personally use is LabelImg, it's very light and
-simple and does the task as expected. LabelImg supports mainly classification
-datasets, where you draw a box around an object and select it's class from a set
-predefined prior.
+The image annotation tool I use is LabelImg, it's very light and simple and does
+the task as expected. LabelImg supports mainly classification datasets, where
+you draw a box around an object and select its class from a set predefined
+prior.
 
 The annotation process is as simple as drawing boxes around the images and
-choosing the class, LabelImg has the ability to export to yolo format which
-saves us time by not having to convert to yolo format.
+choosing the class, LabelImg can export to yolo format which saves us time by
+not having to convert to yolo format.
 
 ![Untitled](/assets/images/creating-datasets/labelimg.png)
 
 #### Notes
 
 - the order of the classes here needs to be the same in data.yaml later on.
-- labelImg has an issue where the labels order would be messed up sometimes
-  across different images, to fix this, change the order in the annotations file
-  manually.
+- labelImg has an issue where the order of the labels would be messed up
+  sometimes across different images, to fix this, change the order in the
+  annotations file manually.
 
 ### Image Augumentation
 
@@ -136,7 +136,7 @@ classification and semantic segmentation. With augmentation, we can go from 1-10
 images to 100s or 1000s with most of them retaining some objects thus usable for
 training. I wrote another script for this (as usual), the script will apply a
 predefined set of augmentations to images present in the folder with it, we can
-edit the script to change the augmentations and run it again.
+edit the script to change the augmentations and run the script again.
 
 The script applies augmentations to the images then saves new images and
 annotations txt file in YOLO format to the appropriate places (train, test or
@@ -168,26 +168,26 @@ def apply_augs(input: str, bboxes: List):
     Parameters
     ----------
     image: PIL.Image
-        the image to agument.
+        the image to augment.
     bbox: List[int]
-        List of bouding boxes coordinates in yolo format.
+        List of bounding boxes coordinates in yolo format.
 
     Returns
     -------
     Dict:
-        dictionary containng the agumented image and bouding boxes.
+        dictionary containing the augmented image and bounding boxes.
     None:
-        Returned when an error is encountred.
+        Returned when an error is encountered.
     """
     # albumentations expects the image to be an np array
     image = np.asarray(Image.open(input))
-    # change these and run the script again to keep augumenting the images
+    # change these and run the script again to keep augmenting the images
     transforms = A.Compose(
         [A.RandomRotate90(p=0.3), A.RandomToneCurve()],
         bbox_params=A.BboxParams(format="yolo"),
     )
     # wrap in a try catch to avoid error
-    # when specificed crop size is larger than image size
+    # when specified crop size is larger than image size
     try:
         return transforms(image=image, bboxes=bboxes)
     except ValueError:
@@ -196,7 +196,7 @@ def apply_augs(input: str, bboxes: List):
 
 def main() -> None:
     # get all images in all 3 folders
-    # (replace the first * with a folder name to only augument that specific folder)
+    # (replace the first * with a folder name to only augment that specific folder)
     images = glob.glob("*/**/*.png") + glob.glob("*/**/*.jpg")
     for image in images:
         path_list = image.split("/")
@@ -222,7 +222,7 @@ def main() -> None:
             # albumentations returns the image as a numpy array so convert accordingly
             Image.fromarray(np.uint8(transformed["image"])).save(f"{aug_name}.jpg")
             # convert returned coordinates list to string
-            # and move the class back to the begining of the line (yolo format)
+            # and move the class back to the beginning of the line (yolo format)
             trans_labels = list(
                 map(
                     lambda x: "".join(str(int(x[-1])))
