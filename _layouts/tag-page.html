@@ -3,44 +3,40 @@ layout: page
 ---
 
 <div class="alt" id="main">
-  <section id="one">
-    <div class="inner">
-      <div class="post">
-        <h2>Tag: {{ page.tag }}</h2>
-        {%- for post in site.tags[page.tag] -%}
-        <section class="spotlights" id="two" style="padding: 10px">
-          <section action="" style="border-radius: 20px">
-            <a href="{{ post.url }}" class="image">
-              <img
-                src="{{ post.image }}"
-                alt=""
-                data-position="center"
-                style="border-radius: 20px; object-fit: cover; height: 100%"
-              />
-            </a>
-            <div class="content">
-              <div class="inner">
-                <header class="major">
-                  <h3>
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                  </h3>
-                </header>
-                <a href="{{ post.url}}"
-                  ><p>{{ post.content | strip_html | truncatewords: 30 }}</p>
-                </a>
-                <ul class="actions read-fork">
-                  <li>
-                    <a href="{{ post.url }}" class="button">Continue Reading</a>
-                  </li>
-                  <li>{%- include read-time.liquid content=post.content -%}</li>
-                </ul>
-              </div>
+    <section id="one">
+        <div class="inner">
+            <div class="post">
+                <h2>Tag:
+                    {{ page.tag }}</h2>
+                {%- for post in site.tags[page.tag] -%}
+                    <section class="spotlights" id="two" style="padding: 10px">
+                        <section action="" style="border-radius: 20px">
+                            <a href="{{ post.url }}" class="image">
+                                <img src="{{ post.image }}" alt="" data-position="center" style="border-radius: 20px; object-fit: cover; height: 100%"/>
+                            </a>
+                            <div class="content">
+                                <div class="inner">
+                                    <header class="major">
+                                        <h3>
+                                            <a href="{{ post.url }}">{{ post.title }}</a>
+                                        </h3>
+                                    </header>
+                                    <a href="{{ post.url}}">
+                                        <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+                                    </a>
+                                    <ul class="actions read-fork">
+                                        <li>
+                                            <a href="{{ post.url }}" class="button">Continue Reading</a>
+                                        </li>
+                                        <li>{%- include read-time.liquid content=post.content -%}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                    <br/>
+                {%- endfor -%}
             </div>
-          </section>
-        </section>
-        <br />
-        {%- endfor -%}
-      </div>
-    </div>
-  </section>
+        </div>
+    </section>
 </div>

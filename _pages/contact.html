@@ -6,88 +6,87 @@ nav-menu: true
 
 <!-- Contact -->
 <section id="contact">
-  <div class="inner">
-    <section>
-      {%- if site.home-about == false -%}
-      <header style="margin-top: -40px" class="major">
-        <h2>About</h2>
-      </header>
-      <p>{{ site.about-text }}</p>
-      {%- endif -%} For any Questions, enquiries, Contact me via the form below
-      or send me a direct email. you can also get in touch with me via {{
-      site.preferred_contact }} <br /><br />
-      <form action="{{ site.formspree }}" id="contact-form" method="POST">
-        <div style="margin-bottom: 0px" class="field half first">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" placeholder="John Doe" />
-        </div>
-        <div class="field half">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            name="_replyto"
-            id="email"
-            placeholder="joe@doe.com"
-          />
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea
-            name="message"
-            id="message"
-            rows="6"
-            placeholder="message goes here"
-            spellcheck="true"
-          ></textarea>
-        </div>
-        <ul class="actions">
-          <li>
-            <input
-              type="submit"
-              value="Send Message"
-              id="submit-button"
-              class="special"
-            />
-          </li>
-          <li><input type="reset" value="Clear" /></li>
-        </ul>
-      </form>
-    </section>
-    <section class="split">
-      <section>
-        <div class="contact-method">
-          <span class="icon alt fa-envelope"></span>
-          <h3>Email</h3>
-          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        </div>
-      </section>
-      {%- for item in site.social_urls -%} {%- assign name = item[0] -%} {%- if
-      name == site.preferred_contact -%}
-      <section>
-        <div class="contact-method">
-          <span class="icon alt fa-{{ item[0] }}"></span>
-          <h3>{{ item[0] | capitalize }}</h3>
-          <span>
-            <a href="{{ item[1] }}"
-              >{{ item[1] | split: "/" | last | capitalize }}</a
-            ></span
-          >
-        </div>
-      </section>
-      {% break %} {%- endif -%} {%- endfor -%}
-      <section>
-        <div class="contact-method">
-          <span class="icon alt fa-home"></span>
-          <h3>Address</h3>
-          <span>
-            {%- if site.street_address -%} {{ site.street_address }}<br />
-            {%- endif -%} {%- if site.city -%} {{ site.city }}, &nbsp; {%- endif
-            -%} {%- if site.state -%} {{ site.state }} {%- endif -%} <br />
-            {%- if site.zip_code -%} {{ site.zip_code }} &nbsp; {%- endif -%}
-            {%- if site.country -%} {{ site.country }} {%- endif -%}
-          </span>
-        </div>
-      </section>
-    </section>
-  </div>
+    <div class="inner">
+        <section>
+            {%- if site.home-about == false -%}
+                <header class="major" style="margin-top: -40px">
+                    <h2>About</h2>
+                </header>
+                <p>{{ site.about-text }}</p>
+            {%- endif -%}
+            For any Questions, enquiries, Contact me via the form below
+                              or send me a direct email. you can also get in touch with me via
+            {{ site.preferred_contact }}
+            <br/><br/>
+            <form action="{{ site.formspree }}" id="contact-form" method="POST">
+                <div class="field half first" style="margin-bottom: 0px">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" placeholder="John Doe" type="text"/>
+                </div>
+                <div class="field half">
+                    <label for="email">Email</label>
+                    <input id="email" name="_replyto" placeholder="joe@doe.com" type="email"/>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="message goes here" rows="6" spellcheck="true"></textarea>
+                </div>
+                <ul class="actions">
+                    <li>
+                        <input class="special" id="submit-button" type="submit" value="Send Message"/>
+                    </li>
+                    <li><input type="reset" value="Clear"/></li>
+                </ul>
+            </form>
+        </section>
+        <section class="split">
+            <section>
+                <div class="contact-method">
+                    <span class="icon alt fa-envelope"></span>
+                    <h3>Email</h3>
+                    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+                </div>
+            </section>
+            {%- for item in site.social_urls -%}
+                {%- assign name = item[0] -%}
+                {%- if name == site.preferred_contact -%}
+                    <section>
+                        <div class="contact-method">
+                            <span class="icon alt fa-{{ item[0] }}"></span>
+                            <h3>{{ item[0] | capitalize }}</h3>
+                            <span>
+                                <a href="{{ item[1] }}">{{ item[1] | split: "/" | last | capitalize }}</a>
+                            </span>
+                        </div>
+                    </section>
+                    {% break %}
+                {%- endif -%}
+            {%- endfor -%}
+            <section>
+                <div class="contact-method">
+                    <span class="icon alt fa-home"></span>
+                    <h3>Address</h3>
+                    <span>
+                        {%- if site.street_address -%}
+                            {{ site.street_address }}<br/>
+                        {%- endif -%}
+                        {%- if site.city -%}
+                            {{ site.city }}, &nbsp;
+                        {%- endif -%}
+                        {%- if site.state -%}
+                            {{ site.state }}
+                        {%- endif -%}
+                        <br/>
+                        {%- if site.zip_code -%}
+                            {{ site.zip_code }}
+                            &nbsp;
+                        {%- endif -%}
+                        {%- if site.country -%}
+                            {{ site.country }}
+                        {%- endif -%}
+                    </span>
+                </div>
+            </section>
+        </section>
+    </div>
 </section>

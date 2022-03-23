@@ -4,59 +4,60 @@ layout: page
 
 <!-- Banner -->
 <section class="major" id="banner">
-  <div class="inner">
-    <header class="major">
-      <h1>{{ site.landing-title }}</h1>
-    </header>
-    <div class="content">
-      <p style="text-transform: uppercase">{{ site.description }}</p>
+    <div class="inner">
+        <header class="major">
+            <h1>{{ site.landing-title }}</h1>
+        </header>
+        <div class="content">
+            <p style="text-transform: uppercase">{{ site.description }}</p>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- about section -->
 <div id="main">
-  {%- if site.home-about == true -%}
-  <div class="inner">
-    <header class="major">
-      <h2>About</h2>
-    </header>
-    <p style="margin-bottom: -20px">{{ site.about-text }}</p>
-  </div>
-  {%- endif -%}
+    {%- if site.home-about == true -%}
+        <div class="inner">
+            <header class="major">
+                <h2>About</h2>
+            </header>
+            <p style="margin-bottom: -20px">{{ site.about-text }}</p>
+        </div>
+    {%- endif -%}
 
-  <!-- skills section -->
-  {%- if site.skills -%}
-  <div class="inner">
-    <header class="major">
-      <h2>Skills</h2>
-    </header>
-  </div>
-  {%- include skills.liquid -%} {%- endif -%}
+    <!-- skills section -->
+    {%- if site.skills -%}
+        <div class="inner">
+            <header class="major">
+                <h2>Skills</h2>
+            </header>
+        </div>
+        {%- include skills.liquid -%}
+    {%- endif -%}
 
-  <!-- recent posts tiles -->
-  {%- if site.post-tiles == true -%}
-  <div class="inner">
-    <header class="major">
-      <h2>Recent Posts</h2>
-    </header>
-  </div>
-  {%- include tiles.liquid isProject='false' -%}
-  <div class="view-all-button">
-    <a href="{{ site.url }}/blog" class="button">View All posts</a>
-  </div>
-  {%- endif -%}
+    <!-- recent posts tiles -->
+    {%- if site.post-tiles == true -%}
+        <div class="inner">
+            <header class="major">
+                <h2>Recent Posts</h2>
+            </header>
+        </div>
+        {%- include tiles.liquid isProject='false' -%}
+        <div class="view-all-button">
+            <a href="{{ site.url }}/blog" class="button">View All posts</a>
+        </div>
+    {%- endif -%}
 
-  <!-- recent projects tiles -->
-  {%- if site.projects-tiles == true -%}
-  <div class="inner">
-    <header class="major">
-      <h2>Recent Projects</h2>
-    </header>
-  </div>
-  {%- include tiles.liquid isProject='true' -%}
-  <div class="view-all-button">
-    <a href="{{ site.url }}/projects" class="button">View All Projects</a>
-  </div>
-  {%- endif -%}
+    <!-- recent projects tiles -->
+    {%- if site.projects-tiles == true -%}
+        <div class="inner">
+            <header class="major">
+                <h2>Recent Projects</h2>
+            </header>
+        </div>
+        {%- include tiles.liquid isProject='true' -%}
+        <div class="view-all-button">
+            <a href="{{ site.url }}/projects" class="button">View All Projects</a>
+        </div>
+    {%- endif -%}
 </div>
