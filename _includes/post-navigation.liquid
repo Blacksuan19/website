@@ -2,7 +2,7 @@
 {%- assign posts = site.posts | where_exp: "post", "post.project != true" | reverse -%}
 {% assign current = include.post %}
 
-{% for post in posts %} 
+{% for post in posts %}
     {% if post == current %}
         {%- assign currIndex = forloop.index0 -%}
         {%- assign prevIndex = currIndex | minus: 1 -%}
@@ -10,14 +10,14 @@
         <!-- check if there is a previous post -->
         {% if prevIndex != -1 %}
             <a class="button" href="{{ posts[prevIndex].url }}">
-              &laquo; Previous Post
+                &laquo; Previous Post
             </a>
         {% endif %}
 
         <!-- check if there is a next post -->
         {% if forloop.last == false %}
             <a style="float: right" class="button" href="{{ posts[nextIndex].url }}">
-              Next Post &raquo;
+                Next Post &raquo;
             </a>
         {% endif %}
         {% break %}

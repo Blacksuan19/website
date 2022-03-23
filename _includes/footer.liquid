@@ -1,29 +1,25 @@
 <!-- Footer -->
 <footer id="footer">
-  <div class="inner" style="text-align: center">
-    <ul class="icons">
-      {%- for social in site.social_urls -%}
-      <li>
-        <a
-          href="{{ social[1] }}"
-          class="icon alt fa fa-{{ social[0] }}"
-          title="{{ social[0] | capitalize }}"
-        >
-        </a>
-      </li>
-      {%- endfor -%}
-      <li>
-        <a href="/feed.xml" class="icon alt fa fa-feed" title="RSS Feed"> </a>
-      </li>
-    </ul>
-    <ul class="copyright">
-      <li>&copy; {{ site.title }}</li>
-      <li>
-        Original Design:
-        <a href="https://html5up.net/forty">HTML5 UP</a>
-      </li>
-    </ul>
-  </div>
+    <div class="inner" style="text-align: center">
+        <ul class="icons">
+            {%- for social in site.social_urls -%}
+                <li>
+                    <a href="{{ social[1] }}" class="icon alt fa fa-{{ social[0] }}" title="{{ social[0] | capitalize }}"></a>
+                </li>
+            {%- endfor -%}
+            <li>
+                <a class="icon alt fa fa-feed" href="/feed.xml" title="RSS Feed"></a>
+            </li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy;
+                {{ site.title }}</li>
+            <li>
+                Original Design:
+                <a href="https://html5up.net/forty">HTML5 UP</a>
+            </li>
+        </ul>
+    </div>
 </footer>
 <!-- Scripts -->
 <script src="/assets/js/jquery.min.js"></script>
@@ -34,6 +30,6 @@
 <script src="/assets/js/util.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/extra.js"></script>
-<script src="https://kit.fontawesome.com/9f02ede189.js" defer></script>
+<script defer src="https://kit.fontawesome.com/9f02ede189.js"></script>
 <script src="/assets/js/prism.js"></script>
 {%- include new-window-fix.liquid -%}
