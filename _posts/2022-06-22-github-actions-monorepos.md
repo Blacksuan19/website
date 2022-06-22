@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Continuos Integration/Delivery on Monorepos
+title: Continuos Integration and Delivery on Monorepos
 description: simplifying workflow management for github actions on monorepos.
 image: /assets/images/monorepo.jpeg
 project: false
