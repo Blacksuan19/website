@@ -10,13 +10,12 @@ This script creates tags for your Jekyll blog hosted by Github page.
 No plugins required.
 """
 
-import glob
-import os
+from pathlib import Path
 
-post_dir = "_posts/"
-tag_dir = "tags/"
+post_dir = Path("_posts/")
+tag_dir = Path("tags/")
 
-filenames = glob.glob(post_dir + "*md")
+filenames = list(post_dir.glob("*.md"))
 
 total_tags = []
 for filename in filenames:
@@ -38,16 +37,13 @@ for filename in filenames:
     f.close()
 total_tags = set(total_tags)
 
-old_tags = glob.glob(tag_dir + "*.md")
-for tag in old_tags:
-    os.remove(tag)
+old_tags = list(tag_dir.glob("*.md"))
+list(map(lambda tag: tag.unlink(missing_ok=True), old_tags))
 
-if not os.path.exists(tag_dir):
-    os.makedirs(tag_dir)
+tag_dir.mkdir(exist_ok=True)
 
 for tag in total_tags:
-    tag_filename = tag_dir + tag + ".md"
-    f = open(tag_filename, "a")
+    tag_filename = tag_dir / Path(f"{tag}.md")
     write_str = (
         '---\nlayout: tag-page\ntitle: "Tag: '
         + tag
@@ -55,6 +51,5 @@ for tag in total_tags:
         + tag
         + "\nrobots: noindex\n---\n"
     )
-    f.write(write_str)
-    f.close()
-print("Tags generated, count", total_tags.__len__())
+    tag_filename.write_text(write_str)
+print("Tags generated, count", len(total_tags))
