@@ -13,13 +13,13 @@ Requirements:
 - imagemagick (for adding background to images)
 """
 
-import glob
 import os
 from datetime import datetime
+from pathlib import Path
 
-post_dir = "_posts/"
-notebooks_dir = "notebooks/"
-assets_dir = "assets/images/"
+post_dir = Path("_posts/")
+notebooks_dir = Path("notebooks/")
+assets_dir = Path("assets/images/")
 current_date = datetime.today().strftime("%Y-%m-%d")
 front_matter = """---
 title: {}
@@ -36,12 +36,12 @@ tags:
 ---\n\n"""
 
 # get all notebook files
-filenames = glob.glob(notebooks_dir + "*.ipynb")
+filenames = list(notebooks_dir.glob("*.ipynb"))
 
 
 def check_exists(file):
     """check if a post from a notebook has already been created"""
-    for post in glob.glob(post_dir + "/*.md"):
+    for post in map(lambda file: file.name, post_dir.glob("*.md")):
         if file in post:
             return True
     return False
@@ -49,8 +49,8 @@ def check_exists(file):
 
 for file in filenames:
     # get filename without directory prefix and extension
-    name = file.split("/")[1].split(".")[0]
-    new_name = f"{notebooks_dir}{current_date}-{name}.md"
+    name = file.stem
+    new_name = f"{str(notebooks_dir)}{current_date}-{name}.md"
     if check_exists(name):
         print(f"post for {name} has already been created.")
         continue
