@@ -50,7 +50,7 @@ group_name: Significant Projects
 extern_name: External Links
 # URLs, format name:url
 extern_urls:
-  Redash-Python library: https://kutt.it/HsPkPE
+  Redash-Python library: https://www.blacksuan19.dev/redash-python/
   Stanford ML Notes: https://kutt.it/u7MfXU
   Deep Learning Notes: https://kutt.it/kJ5UOf
 # build settings
