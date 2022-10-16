@@ -74,16 +74,17 @@ nav-menu: true
                             {{ site.city }}, &nbsp;
                         {%- endif -%}
                         {%- if site.state -%}
-                            {{ site.state }}
+                            {{ site.state }}, &nbsp;
                         {%- endif -%}
                         <br/>
                         {%- if site.zip_code -%}
-                            {{ site.zip_code }}
+                            {{ site.zip_code }},
                             &nbsp;
                         {%- endif -%}
                         {%- if site.country -%}
                             {{ site.country }}
                         {%- endif -%}
+                        .
                     </span>
                 </div>
             </section>
