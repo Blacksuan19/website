@@ -4,7 +4,7 @@ email: hi@blacksuan19.dev
 landing-title: Hello, Welcome to my website.
 description: Where I post projects, linux-related blogs, and occasionally solutions.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site
+url: https://blacksuan19.dev
 author: Blacksuan19
 street_address:
 city: Earth
