@@ -1,18 +1,18 @@
 {%- assign project = include.isProject -%}
-{%- assign ps = site.posts | where: 'project', project | where_exp:"post","post.url != page.url" -%}
+{%- assign ps = site.posts | where: 'project', project | where_exp: "post", "post.url != page.url" -%}
 {%- assign lim = site.tiles-count -%}
 <section class="tiles" id="one">
-    {%- for post in ps limit: lim -%}
-        <article>
-            <span class="image">
-                <img src="{{ post.image }}" alt="{{ post.title }}"/>
-            </span>
-            <header class="major">
-                <h3>
-                    <a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a>
-                </h3>
-                <p>{{ post.description }}</p>
-            </header>
-        </article>
-    {%- endfor -%}
+  {%- for post in ps limit: lim -%}
+    <article>
+      <span class="image">
+        <img src="{{ post.image }}" alt="{{ post.title }}" />
+      </span>
+      <header class="major">
+        <h3>
+          <a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a>
+        </h3>
+        <p>{{ post.description }}</p>
+      </header>
+    </article>
+  {%- endfor -%}
 </section>

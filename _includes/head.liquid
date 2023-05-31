@@ -1,59 +1,70 @@
 <head>
-    <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    {%- include logo.liquid -%}
-    <title>
-        {%- if page.title and page.title != 'Home' -%}
-            {{ page.title }}
-            |
-        {% endif -%}
-        {{ site.title }}
-    </title>
+  {%- include logo.liquid -%}
+  <title>
+    {%- if page.title and page.title != 'Home' -%}
+      {{ page.title }}
+      |
+    {% endif -%}
+    {{ site.title }}
+  </title>
 
-    {%- assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 -%}
-    <meta name="description" content="{%- if pagecontent_description.size > 10 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}">
+  {%- assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 -%}
+  <meta name="description" content="{%- if pagecontent_description.size > 10 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}">
 
-    <description>
-        {%- if post.image -%}&lt;p&gt;&lt;img src="{{ post.image | prepend: site.baseurl | prepend: site.url }}" alt="{{ post.title }}" class="webfeedsFeaturedVisual"&gt;&lt;/p&gt;
-        {%- endif -%}
-        {{ post.content | xml_escape }}</description>
-
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content="{{ page.title }}"/>
-    {%- if page.image -%}<meta property="og:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}"/>
+  <description>
+    {%- if post.image -%}&lt;p&gt;&lt;img src="{{ post.image | prepend: site.baseurl | prepend: site.url }}" alt="{{ post.title }}" class="webfeedsFeaturedVisual"&gt;&lt;/p&gt;
     {%- endif -%}
-    <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}"/>
-    <meta content="article" property="og:type">
-    <meta property="og:site_name" content="{{ site.title }}"/>
-    <meta property="og:description" content="{%- if pagecontent_description.size > 10 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}"/>
+    {{ post.content | xml_escape }}</description>
 
-    <meta content="summary" name="twitter:card">
-    <meta name="twitter:site" content="{{ site.twitter_url }}">
-    <meta name="twitter:title" content="{{ page.title }}"/>
-    {%- if page.image -%}<meta name="twitter:image" content="{{ site.url }}{{ page.image }}"/>
-    {%- endif -%}
-    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}"/>
-    <meta name="twitter:description" content="{%- if pagecontent_description.size > 10 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}"/>
+  <!-- Facebook and Twitter integration -->
+  <meta property="og:title" content="{{ page.title }}" />
+  {%- if page.image -%}<meta property="og:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}" />
+  {%- endif -%}
+  <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" />
+  <meta content="article" property="og:type">
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:description" content="{%- if pagecontent_description.size > 10 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}" />
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "/sitemap.xml" | prepend: site.baseurl | prepend: site.url }}"/>
+  <meta content="summary" name="twitter:card">
+  <meta name="twitter:site" content="{{ site.twitter_url }}">
+  <meta name="twitter:title" content="{{ page.title }}" />
+  {%- if page.image -%}<meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />
+  {%- endif -%}
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+  <meta name="twitter:description" content="{%- if pagecontent_description.size > 10 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}" />
 
-    <link href="/assets/css/main.css" rel="stylesheet"/>
-    <link href="/assets/css/extra.css" rel="stylesheet">
-    <link href="/assets/css/back.to.top.css" rel="stylesheet">
-    <link href="/assets/css/prism.css" rel="stylesheet">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="{{ site.title }}"
+    href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link
+    rel="sitemap"
+    type="application/xml"
+    title="Sitemap"
+    href="{{ "/sitemap.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
-    {%- comment -%} collect site tags if not defined {%- endcomment -%}
-    {%- if site.tags != "" -%}
-        {%- include collect-tags.liquid -%}
-    {%- endif -%}
+  <link href="/assets/css/main.css" rel="stylesheet" />
+  <link href="/assets/css/extra.css" rel="stylesheet">
+  <link href="/assets/css/back.to.top.css" rel="stylesheet">
+  <link href="/assets/css/prism.css" rel="stylesheet">
 
-    <!-- back to top button -->
-    <a href="#" id="scroll" style="display: none;">
-        <span></span>
-    </a>
+  {%- comment -%} collect site tags if not defined {%- endcomment -%}
+  {%- if site.tags != "" -%}
+    {%- include collect-tags.liquid -%}
+  {%- endif -%}
+
+  <!-- back to top button -->
+  <a
+    href="#"
+    id="scroll"
+    style="display: none;">
+    <span></span>
+  </a>
 
 </head>

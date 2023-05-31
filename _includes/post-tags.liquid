@@ -1,14 +1,13 @@
 {%- for tag in include.page.tags -%}
-    {%- capture tag_name -%}
-        {{ tag }}
-    {%-
-endcapture -%}
-    <span>
-        <a class="icon" href="/tags/{{ tag_name }}">
-            <code>
-                <div class="icon fa fa-tag fa-xs"></div>
-                <nobr>{{ tag_name }}</nobr>
-            </code>
-        </a>
-    </span>
+  {%- capture tag_name -%}
+    {{ tag }}
+  {%- endcapture -%}
+  <span>
+    <a class="icon" href="/tags/{{ tag_name }}">
+      <code>
+        <div class="icon fa fa-tag fa-xs"></div>
+        <nobr>{{ tag_name }}</nobr>
+      </code>
+    </a>
+  </span>
 {%- endfor -%}
