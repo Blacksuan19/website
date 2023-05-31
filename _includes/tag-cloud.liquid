@@ -1,11 +1,12 @@
 {%- assign tags = site.tags | sort -%}
 {%- for tag in tags -%}
-    <span>
-        <a class="icon" href="/tags/{{ tag[0] }}">
-            <code>
-                <div class="icon fa fa-tag fa-xs"></div>
-                {{ tag[0] }}
-                ({{ tag | last | size }})</code>
-        </a><br/><br/>
-    </span>
+  <span>
+    <a
+      class="icon fa fa-tag fa-xs"
+      href="/tags/{{ tag[0] }}"
+      style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%;padding: 10px;font-weight: 300">
+      &ThickSpace;{{ tag[0] }}
+      ({{ tag | last | size }})
+    </a>
+  </span>
 {%- endfor -%}
