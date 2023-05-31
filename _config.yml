@@ -1,17 +1,18 @@
 # site settings
-title: Blacksuan19
-email: hi@blacksuan19.dev
-landing-title: Hello, Welcome to my website.
-description: Where I post projects, linux-related blogs, and occasionally solutions.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://blacksuan19.dev
+title: Blacksuan19
+landing-title: Hello, Welcome to my website.
 author: Blacksuan19
+description: Where I post projects, linux-related blogs, and occasionally solutions.
+about-text: My name is Abubakar Yagoub, I am a data scientist by day and a developer by night, I am passionate about open source and linux, I also like to write about my experiences, projects and occasionally solutions.
+
+# address settings
 street_address:
 city: Earth
 state: G2V star
-zip_code: 
+zip_code:
 country: Milky Way
-about-text: My name is Abubakar Yagoub, Computer Science Student and Machine learning developer with a focus on deep learning and neural networks, I have experience with both TensorFlow and PyTorch deep learning framework, I am also interested in flutter and Linux systems, looking for a job with a focus on creating novel neural networks that solve real-world problems. when I am not in front of my laptop coding something I am usually at the gym or enjoying some music.
 
 # homepage config
 tiles-count: 3 # number of tiles on home page
@@ -20,23 +21,23 @@ projects-tiles: true # whether to show project tiles
 home-about: false # whether to show about-text in home page or contact page
 
 # social settings
-disqus: 'blacksuan19-me' # comments on blog posts
+email: abu@blacksuan19.dev
+disqus: "blacksuan19-me" # comments on blog posts
 formspree: https://formspree.io/f/xpzoedna # contact form target
-# which social media to show on contact page (name needs to match that of social_urls)
-preferred_contact: telegram
+preferred_contact: telegram # social media to show on contact page
 
 # add social media links here and they will show up in the footer
 # icon: url
 social_urls:
-    linkedin: https://www.linkedin.com/in/blacksuan19/
-    github: https://github.com/blacksuan19
-    kaggle: https://www.kaggle.com/abubakaryagob/
-    telegram: https://t.me/blacksuan19
-    android: https://forum.xda-developers.com/member.php?u=5980272
-    # instagram:
-    # twitter:
-    # facebook:
-    # pinterest:
+  linkedin: https://www.linkedin.com/in/blacksuan19/
+  github: https://github.com/blacksuan19
+  kaggle: https://www.kaggle.com/abubakaryagob/
+  telegram: https://t.me/blacksuan19
+  android: https://forum.xda-developers.com/member.php?u=5980272
+  # instagram:
+  # twitter:
+  # facebook:
+  # pinterest:
 
 # skills widget
 skills:
@@ -48,11 +49,13 @@ group_name: Significant Projects
 # external links to be added to the bottom of the menu
 # label for the header
 extern_name: External Links
+
 # URLs, format name:url
 extern_urls:
   Redash-Python library: https://redash.blacksuan19.dev/
   Stanford ML Notes: https://kutt.it/u7MfXU
   Deep Learning Notes: https://kutt.it/kJ5UOf
+
 # build settings
 markdown: kramdown
 kramdown:
