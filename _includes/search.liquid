@@ -2,18 +2,22 @@
 
 <script>
   {%- assign counter = 0 -%}
-  var documents = [{%- for page in site.pages -%}{%- if page.url contains '.xml' or page.url contains 'assets' or page.title == "Home" or page.title == 404 -%}{%- else -%}{
-      "id": {{ counter }},
-      "url": "{{ site.url }}{{ page.url }}",
-      "title": "{{ page.title }}",
-      "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"
-      {%- assign counter = counter | plus: 1 -%}
-      }, {%- endif -%}{%- endfor -%}{%- for page in site.posts -%}{
-      "id": {{ counter }},
-      "url": "{{ site.url }}{{ page.url }}",
-      "title": "{{ page.title }}",
-      "body": "{{ page.date | date: "%Y/%m/%d" }} - {{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{%- assign counter = counter | plus: 1 -%}
-      }{%- if forloop.last -%}{%- else -%}, {%- endif -%}{%- endfor -%}];
+  {% assign allPages = site.pages | concat: site.posts %}
+  var documents = [
+    {% for page in allPages %}
+      {%- if page.url contains '.xml' or page.url contains 'assets' or page.title == "Home" or page.title == 404 -%}
+        {%- else -%}{
+        "id": {{ counter }},
+        "url": "{{ site.url }}{{ page.url }}",
+        "description": "{{ page.description }}",
+        "title": "{{ page.title }}",
+        "image": "{{ page.image | default: "/assets/images/logo.jpg" | prepend: site.url | prepend: site.baseurl }}",
+        "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"
+        {%- assign counter = counter | plus: 1 -%}
+        },
+      {%- endif -%}
+    {% endfor %}
+  ];
 
   var idx = lunr(function () {
       this.ref('id')
@@ -25,24 +29,36 @@
       }, this)
   });
   function lunr_search(term) {
-      document.getElementById('lunrsearchresults').innerHTML = '<ul></ul>';
+    console.log(documents);
+      document.getElementById('lunrsearchresults').innerHTML = '<section class="tiles" id="one"></section>';
       if(term) {
           document.getElementById('lunrsearchresults').innerHTML = "<p>Search results for '" + term + "'</p>" + document.getElementById('lunrsearchresults').innerHTML;
           //put results on the screen.
           var results = idx.search(term);
           if(results.length>0){
-              //console.log(idx.search(term));
-              //if results
               for (var i = 0; i < results.length; i++) {
                   // more statements
                   var ref = results[i]['ref'];
                   var url = documents[ref]['url'];
                   var title = documents[ref]['title'];
+                  var image = documents[ref]['image'];
                   var body = documents[ref]['body'].substring(0,160)+'...';
-                  document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><br /><span class='body'>"+ body +"</span><br /><br /></a></li>";
+                  document.querySelector('#lunrsearchresults section').innerHTML = document.querySelector('#lunrsearchresults section').innerHTML + `
+                  <article>
+                    <span class="image">
+                        <img src="${image}" alt="${title}"/>
+                    </span>
+                    <header class="major">
+                        <h4>
+                            <a href="${url}" class="link">${title}</a>
+                        </h4>
+                        <p>${body}</p>
+                    </header>
+                </article>
+        `;
               }
           } else {
-              document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>No results found...</li>";
+              document.querySelector('#lunrsearchresults section').innerHTML = "<li class='lunrsearchresult'>No results found...</li>";
           }
       }
       return false;
@@ -65,5 +81,5 @@
   </p>
 </form>
 <div id="lunrsearchresults">
-  <ul></ul>
+  <ul style="list-style-type: none;"></ul>
 </div>
