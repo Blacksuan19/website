@@ -9,10 +9,10 @@ about-text:
 
 # address settings
 street_address:
-city: Earth
-state: G2V star
+city: Greater Chicago Area
+state: IL
 zip_code:
-country: Milky Way
+country: United States
 
 # homepage config
 tiles-count: 3 # number of tiles on home page
@@ -24,7 +24,7 @@ home-about: false # whether to show about-text in home page or contact page
 email: abu@blacksuan19.dev
 disqus: "blacksuan19-me" # comments on blog posts
 formspree: https://formspree.io/f/xpzoedna # contact form target
-preferred_contact: telegram # social media to show on contact page
+preferred_contact: linkedin # social media to show on contact page
 
 # add social media links here and they will show up in the footer
 # icon: url
