@@ -135,6 +135,16 @@ pieced together the following requirements for a SageMaker-compatible container:
    custom inference script by specifying its name as an environment variable
    when creating the `Model` object.
 
+   ```python
+    from sagemaker.model import Model
+    model = Model(
+        image_uri='224534533583.dkr.ecr.us-east-1.amazonaws.com/custom-image:tag',
+        role='arn:aws:iam::224534533583:role/service-role/AmazonSageMaker-ExecutionRole-20211224T123456',
+        model_data='s3://bucket/model.tar.gz',
+        env={'SAGEMAKER_PROGRAM': 'inference.py'} # Custom inference script
+    )
+   ```
+
 These requirements led us to create the following files:
 
 ### entrypoint.sh
