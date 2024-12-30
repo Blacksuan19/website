@@ -283,6 +283,119 @@ RUN chmod +x entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
 ```
 
+## Building and Pushing the Image to ECR
+
+With the Dockerfile and associated files in place, we were ready to build and
+push the image to Amazon ECR. The final directory structure looked like this,
+with each file serving a specific purpose:
+
+```bash
+.
+├── Dockerfile         # Contains all the build instructions and environment setup
+├── entrypoint.sh     # Script that handles container startup and server initialization
+├── inference.py      # FastAPI application with SageMaker-required endpoints
+└── requirements.txt  # Python package dependencies needed for the model
+```
+
+To build and push our image to ECR, we used an EC2 instance with sufficient
+resources. make sure you have docker and AWS cli installed and configured on the
+instance, Here's the step-by-step build process:
+
+- create an ECR repository if you haven't already:
+
+```bash
+aws ecr create-repository --repository-name custom-image --region us-east-1
+```
+
+- Build the Docker image:
+
+```bash
+docker build -t 224534533583.dkr.ecr.us-east-1.amazonaws.com/custom-image:tag .
+```
+
+- Authenticate Docker to ECR:
+
+```bash
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 224534533583.dkr.ecr.us-east-1.amazonaws.com
+```
+
+- Push the image to ECR:
+
+```bash
+docker push 224534533583.dkr.ecr.us-east-1.amazonaws.com/custom-image:tag
+```
+
+Make sure to replace the account ID (`224534533583`) and region with your own.
+The process might take a while depending on the image size and network speed
+(very long for cuda based images).
+
+## Deploying the Model
+
+With the image successfully pushed to ECR, we were ready to deploy the model to
+SageMaker. We used the following Python code to create the `Model` object and
+deploy it:
+
+```python
+
+from sagemaker.model import Model
+
+# Define your Docker image URI and S3 path to model artifacts
+docker_image_uri = '224534533583.dkr.ecr.us-east-1.amazonaws.com/custom-image:tag'
+model_artifacts = f"s3://bucket_name/path/to/model.tar.gz"
+role_arn = "arn:aws:iam::224534533583:role/service-role/AmazonSageMaker-ExecutionRole-20211224T123456"
+
+# Create a SageMaker model
+model = Model(
+    image_uri=docker_image_uri,
+    model_data=model_artifacts,
+    role=role_arn,
+    sagemaker_session=sagemaker_session,
+    env={'SAGEMAKER_PROGRAM': 'inference.py'}
+)
+
+# Deploy the model to an endpoint
+model.deploy(
+    initial_instance_count=1,
+    instance_type='ml.p3.2xlarge' # cuda 11.4
+)
+```
+
+### Testing the Deployment
+
+With the model deployed, we can finally test it by sending a sample request to
+the endpoint. We used the following Python code to send a sample request to the
+deployed endpoint:
+
+```python
+import boto3
+import json
+
+# Create a SageMaker runtime client
+client = boto3.client('sagemaker-runtime')
+
+# Define the endpoint name (can be found in the SageMaker console)
+# generally in the form of 'custom-image-endpoint-20211224123456'
+endpoint_name = 'custom-image-endpoint'
+
+# Define the sample request
+request = {
+    'text': ['This is a sample text']
+}
+
+# Send the request to the endpoint
+response = client.invoke_endpoint(
+    EndpointName=endpoint_name,
+    Body=json.dumps(request),
+    ContentType='application/json'
+)
+
+# Parse the response
+response_body = json.loads(response['Body'].read().decode())
+print(json.dumps(response_body, indent=2))
+```
+
+## Conclusion
+
 This journey through the intricacies of custom SageMaker deployment has been
 both challenging and enlightening. It underscores the complexity of deploying
 sophisticated machine learning models in cloud environments and the importance
