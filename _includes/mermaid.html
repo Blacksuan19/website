@@ -1,0 +1,80 @@
+<style>
+    .mermaid {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        margin: 20px auto;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: visible;
+        text-align: center;
+        display: block;
+        width: fit-content;
+        max-width: 95%;
+        min-width: 600px;
+    }
+
+    .mermaid svg {
+        max-width: 100%;
+        height: auto;
+        min-height: 400px;
+    }
+</style>
+
+<script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: "default",
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                nodeSpacing: 150,
+                rankSpacing: 200,
+                curve: 'basis'
+            },
+            classDiagram: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                nodeSpacing: 150,
+                rankSpacing: 200
+            },
+            fontSize: 18,
+            fontFamily: 'Arial, sans-serif',
+            themeCSS: `
+                .node rect, .node circle, .node ellipse, .node polygon {
+                    stroke-width: 2px;
+                }
+                .edgePath .path {
+                    stroke-width: 2px;
+                }
+                .classBox {
+                    fill: #f9f9f9;
+                    stroke: #333;
+                    stroke-width: 2px;
+                }
+                .label {
+                    font-size: 18px;
+                }
+            `
+        });
+
+        // Target both .language-mermaid (Kramdown) and .highlight .language-mermaid (Rouge)
+        const mermaidElements = document.querySelectorAll('pre code.language-mermaid, .language-mermaid code, code.language-mermaid');
+
+        mermaidElements.forEach((element, index) => {
+            // Create a div to replace the code element
+            const mermaidDiv = document.createElement('div');
+            mermaidDiv.className = 'mermaid';
+            mermaidDiv.textContent = element.textContent;
+            mermaidDiv.id = 'mermaid-' + index;
+
+            // Replace the code element with the div
+            element.closest('pre').replaceWith(mermaidDiv);
+        });
+
+        // Initialize mermaid after DOM manipulation
+        mermaid.init();
+    });
+</script>
