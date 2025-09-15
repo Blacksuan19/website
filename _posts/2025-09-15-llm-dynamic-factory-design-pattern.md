@@ -12,6 +12,7 @@ image: /assets/images/dynamic-factory-pattern/dynamic-factory-pattern.jpg
 project: false
 permalink: "/blog/:title/"
 mermaid: true
+source: https://github.com/Blacksuan19/llm-factory-pattern
 tags:
   - design-patterns
   - software-engineering
@@ -503,3 +504,8 @@ common AI development problem. This post is the first in a series dedicated to
 bridging this gap. We aim to explore how established software engineering
 practices can elevate AI projects from successful experiments to reliable,
 enterprise-grade applications.
+
+View the full source code for the dynamic factory pattern on github by clicking
+on the source button on the bottom left. the github repo is an installable
+python package so you can simply pip install it into your projects and start
+using any LLM implemented in the factory.
