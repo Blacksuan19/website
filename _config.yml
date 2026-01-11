@@ -1,7 +1,7 @@
 # site settings
 baseurl: "" # the subpath of your site, e.g. /blog
-url: https://blacksuan19.dev
-title: Blacksuan19
+url: https://aolabs.dev
+title: AO Labs
 landing-title: Hello, Welcome to my website.
 author: Blacksuan19
 description: I'm a data scientist by day and an all around tech enthusiast by night. I write about my experiences, projects and occasionally solutions.
@@ -52,7 +52,7 @@ extern_name: External Links
 
 # URLs, format name:url
 extern_urls:
-  Redash-Python library: https://redash.blacksuan19.dev/
+  Redash-Python library: https://redash.aolabs.dev/
   Stanford ML Notes: https://kutt.it/u7MfXU
   Deep Learning Notes: https://kutt.it/kJ5UOf
 
