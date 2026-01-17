@@ -113,10 +113,15 @@ catches anyone visiting the bare domain.
 **Configuration:**
 
 - **Filter:** Hostname equals `blacksuan19.dev`
-- **Target:**
-  `https://aolabs.dev${http.request.uri.path}${http.request.uri.query}`
+- **Then:**
+- **Target:** Dynamic expression:
+
+```javascript
+concat("https://aolabs.dev", http.request.uri.path, http.request.uri.query);
+```
+
 - **Status Code:** 301 (Permanent Redirect)
-- **Preserve Query String:** Yes
+- **Preserve Query String:** No (handled in the expression)
 
 ![cloudflare redirect rule for root domain](/assets/images/aolabs-migration/cloudflare-redirect-root.png)
 
