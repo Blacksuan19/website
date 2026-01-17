@@ -4,7 +4,7 @@
 notebook_converter.py
 
 Copyright 2021 Abubakar Yagoub
-Contact: blacksuan19.dev
+Contact: aolabs.dev
 
 This script converts a jupyter notebook to markdown
 and moves converted markdown to posts and images to assets.

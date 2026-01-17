@@ -337,21 +337,3 @@ here are the lessons I learned:
    catch issues early.
 7. **Update external references** – While redirects handle old links, updating
    your social profiles and documentation improves professionalism.
-
-## Closing Thoughts
-
-Cloudflare's infrastructure made this migration surprisingly painless. The
-combination of Redirect Rules, automatic SSL provisioning, and instant DNS
-propagation meant I could swap domains without losing my digital footprint or
-spending days on configuration.
-
-The URL shortener improvement alone made this worth it. Every tweet, every
-README, every shared link is now 8 characters shorter. In an era where character
-counts matter (looking at you, Twitter/X), that's a tangible win.
-
-If you're considering a similar migration, I hope this guide helps you avoid the
-pitfalls and execute it smoothly. Feel free to reach out if you have questions
-about the implementation—I'm always happy to help fellow developers navigate
-infrastructure challenges.
-
-**Welcome to AOLabs.** 🚀
