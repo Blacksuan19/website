@@ -4,6 +4,8 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use 'sass:color';
+
 /* Tiles */
 
 .tiles {
@@ -84,7 +86,7 @@
     }
 
     &:after {
-      background-color: transparentize(_palette(bg), 0.75);
+      background-color: color.adjust(_palette(bg), $alpha: -0.75);
       content: "";
       display: block;
       height: 100%;

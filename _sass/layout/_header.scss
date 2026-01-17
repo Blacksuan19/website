@@ -4,6 +4,8 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use 'sass:color';
+
 /* Header */
 
 @include keyframes("reveal-header") {
@@ -67,7 +69,7 @@
 
     &:active {
       strong {
-        background-color: desaturate(darken(_palette(highlight), 15), 5);
+        background-color: color.adjust(color.scale(_palette(highlight), $lightness: -15%), $saturation: -5%);
       }
     }
   }

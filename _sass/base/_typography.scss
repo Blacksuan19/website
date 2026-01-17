@@ -4,6 +4,9 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use 'sass:color';
+@use 'sass:math';
+
 /* Type */
 
 body,
@@ -48,7 +51,7 @@ a {
   }
 
   &:active {
-    color: desaturate(darken(_palette(highlight), 15), 5) !important;
+    color: color.adjust(color.scale(_palette(highlight), $lightness: -15%), $saturation: -5%) !important;
   }
 }
 
@@ -138,7 +141,7 @@ blockquote {
   border-left: solid 4px _palette(border);
   font-style: italic;
   margin: 0 0 _size(element-margin) 0;
-  padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4)
+  padding: math.div(_size(element-margin), 4) 0 math.div(_size(element-margin), 4)
     _size(element-margin);
 }
 

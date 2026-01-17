@@ -4,6 +4,8 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use 'sass:color';
+
 /* Button */
 
 input[type="submit"],
@@ -45,9 +47,9 @@ button,
   }
 
   &:active {
-    background-color: transparentize(_palette(highlight), 0.9);
-    box-shadow: inset 0 0 0 2px desaturate(darken(_palette(highlight), 15), 5);
-    color: desaturate(darken(_palette(highlight), 15), 5);
+    background-color: color.adjust(_palette(highlight), $alpha: -0.9);
+    box-shadow: inset 0 0 0 2px color.adjust(color.scale(_palette(highlight), $lightness: -15%), $saturation: -5%);
+    color: color.adjust(color.scale(_palette(highlight), $lightness: -15%), $saturation: -5%);
   }
 
   &.icon {
@@ -133,7 +135,7 @@ button,
     }
 
     &:active {
-      background-color: desaturate(darken(_palette(highlight), 15), 5);
+      background-color: color.adjust(color.scale(_palette(highlight), $lightness: -15%), $saturation: -5%);
     }
   }
 
