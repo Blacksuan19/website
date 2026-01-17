@@ -21,7 +21,7 @@ projects-tiles: true # whether to show project tiles
 home-about: false # whether to show about-text in home page or contact page
 
 # social settings
-email: abu@blacksuan19.dev
+email: me@aolabs.dev
 disqus: "blacksuan19-me" # comments on blog posts
 formspree: https://formspree.io/f/xpzoedna # contact form target
 preferred_contact: linkedin # social media to show on contact page
