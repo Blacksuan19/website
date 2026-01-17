@@ -53,6 +53,7 @@ extern_name: External Links
 # URLs, format name:url
 extern_urls:
   Redash-Python library: https://redash.aolabs.dev/
+  StructX Library: https://structx.aolabs.dev
   Stanford ML Notes: https://kutt.it/u7MfXU
   Deep Learning Notes: https://kutt.it/kJ5UOf
 
