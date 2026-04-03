@@ -72,6 +72,33 @@
     }
   }
 
+  &.card-list {
+    padding: 10px;
+
+    > section {
+      border-radius: 20px;
+      height: clamp(24rem, 34vw, 28rem);
+      overflow: hidden;
+    }
+
+    > section > .image {
+      overflow: hidden;
+      width: 34%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1.04);
+        width: 100%;
+      }
+    }
+
+    > section > .content {
+      width: 66%;
+    }
+  }
+
   @include breakpoint(xlarge) {
     > section {
       > .image {
@@ -79,6 +106,16 @@
       }
 
       > .content {
+        width: 60%;
+      }
+    }
+
+    &.card-list {
+      > section > .image {
+        width: 40%;
+      }
+
+      > section > .content {
         width: 60%;
       }
     }
@@ -92,6 +129,20 @@
 
       > .content {
         width: 55%;
+      }
+    }
+
+    &.card-list {
+      > section {
+        height: clamp(22rem, 38vw, 25rem);
+      }
+
+      > section > .image {
+        width: 42%;
+      }
+
+      > section > .content {
+        width: 58%;
       }
     }
   }
@@ -109,12 +160,29 @@
         width: 100%;
       }
     }
+
+    &.card-list {
+      > section {
+        height: auto;
+      }
+
+      > section > .image {
+        height: 18em;
+        width: 100%;
+      }
+    }
   }
 
   @include breakpoint(small) {
     > section {
       > .content {
         @include padding(3em, 1.5em);
+      }
+    }
+
+    &.card-list {
+      > section > .image {
+        height: 15em;
       }
     }
   }
