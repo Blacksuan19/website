@@ -2,7 +2,7 @@
 layout: post
 title: Dark Ages El Noveno
 description: the 9th release of dark ages
-image: /assets/images/noveno.png
+image: /assets/images/da-el-noveno/noveno.png
 project: false
 permalink: /blog/:title/
 tags:
@@ -34,8 +34,8 @@ labels don't matter either ways, this is lit so enjoy it!.
 
 Still there are no actual profiles because i didn't get the time to learn how
 magisk modules work, some people have created their own profiles which is good,
-if you want custom profiles check out nibba [Ken's
-channel](https://t.me/KenVerse).<br>
+if you want custom profiles check out nibba
+[Ken's channel](https://t.me/KenVerse).<br>
 
 #### Full changelog and download here:
 

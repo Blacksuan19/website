@@ -2,7 +2,7 @@
 title: Going Back To Plasma
 layout: post
 description: But with a twist
-image: "/assets/images/kde.jpg"
+image: "/assets/images/going-back-to-plasma/kde.jpg"
 project: false
 permalink: "/blog/:title/"
 tags:
@@ -86,7 +86,7 @@ fi
 
 ### customizations
 
-![plasma settings editor](/assets/images/plasma-settings.png)
+![plasma settings editor](/assets/images/going-back-to-plasma/plasma-settings.png)
 
 With the boot process automated it was time to theme this thing (my favorite
 part). Since i am using bspwm i can sxhkd with it so my keyboard shortcuts were

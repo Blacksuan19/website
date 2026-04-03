@@ -2,7 +2,7 @@
 title: VirusTotal Bulk Checker
 layout: post
 description: Automating the Boring stuff with python
-image: "/assets/images/virustotal.png"
+image: "/assets/images/virustotal-bulk-checker/virustotal.png"
 project: false
 permalink: "/blog/:title/"
 tags:
@@ -17,9 +17,9 @@ file, hash or URL against multiple antivirus databases in a little to no time,
 their API is also an absolute gold, with it you don't need to deal with browser
 GUI, you can make simple requests and get results in most programming languages,
 hell you could even check a file using just curl or even wget, the only drawback
-is that the [public API](https://developers.virustotal.com/reference) has a limit
-of 5 checks per minute (maybe its less?), after which you
-need to wait another minute to check anything again.
+is that the [public API](https://developers.virustotal.com/reference) has a
+limit of 5 checks per minute (maybe its less?), after which you need to wait
+another minute to check anything again.
 
 ### Scenario
 
@@ -29,18 +29,19 @@ in which you could be doing something else more productive or just chilling.
 
 ### Available solutions
 
-The [API scripts page](https://support.virustotal.com/hc/en-us/articles/115002146469-API-Scripts)
-has examples of implementations in different languages and non of
-which supports bulk checking and or even reads hashes from a list. That leaves
-me hanging and in search of a solution.
+The
+[API scripts page](https://support.virustotal.com/hc/en-us/articles/115002146469-API-Scripts)
+has examples of implementations in different languages and non of which supports
+bulk checking and or even reads hashes from a list. That leaves me hanging and
+in search of a solution.
 
 ### Building the script
 
-It is very simple to deal with the API, you send it a file, hash or a URL and it returns
-a json file with the results of the scan, the json file contains the number of
-engines detecting the file as malicious and list of all their 56 antiviruses,
-the json file also contains link to the report which we don't really need but
-worth mentioning.
+It is very simple to deal with the API, you send it a file, hash or a URL and it
+returns a json file with the results of the scan, the json file contains the
+number of engines detecting the file as malicious and list of all their 56
+antiviruses, the json file also contains link to the report which we don't
+really need but worth mentioning.
 
 #### Preparing the file
 
@@ -59,9 +60,10 @@ analysis.write("\t\t\tHash\t\t\t\t\t# of engines"
 in this case we are going to print the hash and the number of engines detected
 it as malicious, just to keep it simple.
 
-For dealing with the API, we need an API key which you can easily obtain by signing up
-we send a request with the hash to `https://www.virustotal.com/vtapi/v2/file/report`
-which replays with status 200 and sends back the json file if all is fine.
+For dealing with the API, we need an API key which you can easily obtain by
+signing up we send a request with the hash to
+`https://www.virustotal.com/vtapi/v2/file/report` which replays with status 200
+and sends back the json file if all is fine.
 
 Now we need to traverse all hashes and appropriately pass them one by one to the
 api to get some results!
@@ -79,9 +81,8 @@ for hashn in hashes:
 #### Checking the hashes
 
 Now we have the response as a json file, one of the reasons i chose python for
-this (beside it being easy and currently on my learning spectrum)
-is because you can easily manipulate json files without needing any hacks
-or extra libraries
+this (beside it being easy and currently on my learning spectrum) is because you
+can easily manipulate json files without needing any hacks or extra libraries
 
 The `positives` filed in the json indicates the number of positives, that makes
 it super easy to just grab that, but grabbing all files would just bloat the
@@ -116,11 +117,11 @@ except:
 
 ### Final results
 
-And now we are done, although this checks 5 hashes every minute which means it is
-going to do 1000 hashes in 200 minutes (3.3 hours) adding the sleep time means
-it will take 6.6 hours in total, not too bad if you don't really need the data
-right now, a better option would be just to get the private API and break the
-limit.
+And now we are done, although this checks 5 hashes every minute which means it
+is going to do 1000 hashes in 200 minutes (3.3 hours) adding the sleep time
+means it will take 6.6 hours in total, not too bad if you don't really need the
+data right now, a better option would be just to get the private API and break
+the limit.
 
 The final script
 

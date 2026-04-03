@@ -2,7 +2,7 @@
 layout: post
 title: Don't Be Fooled By AWS free tier
 description: it's a trap
-image: /assets/images/aws.jpg
+image: /assets/images/aws-free-tier/aws.jpg
 project: false
 permalink: /blog/:title/
 tags:
@@ -102,7 +102,7 @@ mention it only accounted for $0.73 of my bill. I only noticed this charge at
 the beginning of may and raised a ticket which did not get me anywhere and they
 of course pointed all fingers at me.
 
-![april bill](/assets/images/bill1.png)
+![april bill](/assets/images/aws-free-tier/bill1.png)
 
 in the month of May I was done with my project and wanted to test the training
 scripts on an environment other than a notebook, so I fired up a `ml.t2.medium`
@@ -119,7 +119,7 @@ alone create an instance there, all the replies just included their "agreement"
 quoting the part about the user being responsible of everything done with their
 account even if it wasn't them who did it.
 
-![may bill](/assets/images/bill2.png)
+![may bill](/assets/images/aws-free-tier/bill2.png)
 
 they kept sending me the agreement as a response for all my questions and
 explanations, I figured this was going no where and I was not getting my money

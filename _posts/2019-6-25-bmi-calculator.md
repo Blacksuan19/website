@@ -3,7 +3,7 @@ layout: post
 title: BMI Calculator
 description: a simple BMI calculator build in javaFX
 project: true
-image: /assets/images/bmi.png
+image: /assets/images/bmi-calculator/bmi.png
 source: https://github.com/jsimplefx/bmicalculator
 permalink: /projects/:title/
 tags:
@@ -31,8 +31,9 @@ tags:
 #### Calculations:
 
 the standard BMI formula is known and can ve found easily, the hard part is
-calculating the idea body weight, which i used [robinson's formula
-(1989)](https://www.calculator.net/ideal-weight-calculator.html) for it.
+calculating the idea body weight, which i used
+[robinson's formula (1989)](https://www.calculator.net/ideal-weight-calculator.html)
+for it.
 
 #### Screenshots:
 

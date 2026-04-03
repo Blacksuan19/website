@@ -3,7 +3,7 @@ layout: post
 title: Sport Academic
 description: a javaFX Quiz-like application
 project: true
-image: /assets/images/spordemic.png
+image: /assets/images/sport-academic/spordemic.png
 source: https://github.com/jsimplefx/Sport-Academic
 permalink: /projects/:title/
 tags:
@@ -19,7 +19,8 @@ tags:
 
 #### why:
 
-> there is an yearly event an uni, it involves both sports and academics, hence the naming
+> there is an yearly event an uni, it involves both sports and academics, hence
+> the naming
 
 #### Features:
 

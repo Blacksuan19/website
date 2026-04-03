@@ -2,7 +2,7 @@
 title: Note Taking on the CLI
 layout: post
 description: how to minimal note taking setup
-image: "/assets/images/sncli.png"
+image: "/assets/images/notes-on-cli/sncli.png"
 project: false
 permalink: "/blog/:title/"
 tags:
@@ -79,7 +79,7 @@ sncli and are stored at tmp currently.
 The key bindings follow vim style so its easy to use and get used to, you can
 edit all the key bindings in the sncli config file.
 
-<img src="/assets/images/bindings.png" alt="keyboard shortcuts">
+<img src="/assets/images/notes-on-cli/bindings.png" alt="keyboard shortcuts">
 
 #### building my own simplenote client
 

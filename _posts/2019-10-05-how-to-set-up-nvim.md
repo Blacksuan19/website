@@ -2,7 +2,7 @@
 title: Setting up nvim as an IDE
 layout: post
 description: giving your text editor super powers
-image: "/assets/images/nvim.png"
+image: "/assets/images/how-to-set-up-nvim/nvim.png"
 project: false
 permalink: "/blog/:title/"
 tags:

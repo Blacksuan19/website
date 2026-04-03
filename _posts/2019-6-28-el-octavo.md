@@ -2,7 +2,7 @@
 layout: post
 title: Dark Ages El Octavo
 description: the 8th release of dark ages
-image: /assets/images/da.jpg
+image: /assets/images/el-octavo/da.jpg
 project: false
 permalink: /blog/:title/
 tags:
@@ -39,13 +39,9 @@ the default profile as mentioned before leans towered the balanced side, i
 personally don't play games and find them a waste of time so don't expect a
 gaming profile from me.
 
-> governor: pixel_smurfutils (tweaked)<br>
-> Min CPU frequency: 652<br>
-> cpu stune boost: on (tweaked)<br>
-> read_ahed: 512kb<br>
-> dynamic fsync: on<br>
-> usb fast charge: on<br>
-> tcp: westwood<br>
+> governor: pixel_smurfutils (tweaked)<br> Min CPU frequency: 652<br> cpu stune
+> boost: on (tweaked)<br> read_ahed: 512kb<br> dynamic fsync: on<br> usb fast
+> charge: on<br> tcp: westwood<br>
 
 ###### Battery life:
 
@@ -56,10 +52,10 @@ so).
 
 <div class="row 200%">
     <div class="6u 12u$(medium)">
-    <img src="/assets/images/bat1.jpg">
+    <img src="/assets/images/el-octavo/bat1.jpg">
     </div>
     <div class="6u 12u$(medium)">
-    <img src="/assets/images/bat2.jpg">
+    <img src="/assets/images/el-octavo/bat2.jpg">
     </div>
 </div>
 as you can see those are solid af stats (which also uses material ocean theme

@@ -4,7 +4,7 @@ description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
+image: /assets/images/Knowledge_Graphs_files/cover.svg
 source: https://www.kaggle.com/abubakaryagob/Knowledge_Graphs
 tags:
   - data-science

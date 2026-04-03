@@ -4,7 +4,7 @@ description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
+image: /assets/images/fish-classification-with-pytorch-resnet_files/cover.svg
 source: https://www.kaggle.com/abubakaryagob/fish-classification-with-pytorch-resnet
 tags:
   - data-science

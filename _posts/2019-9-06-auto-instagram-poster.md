@@ -2,7 +2,7 @@
 layout: post
 title: Auto Instagram Poster
 description: Automating the Boring Stuff with Python
-image: /assets/images/instagram.png
+image: /assets/images/auto-instagram-poster/instagram.png
 project: false
 permalink: /blog/:title/
 tags:
@@ -40,7 +40,9 @@ documentation.<br>
 - send phots to my self via telegram
 - copy and send description via telegram
 - open my phone and download the photos and copy caption
-- open up [preview](https://play.google.com/store/apps/details?id=com.sensio.instapreview&hl=en) and set up the posts with captions hashtags etc
+- open up
+  [preview](https://play.google.com/store/apps/details?id=com.sensio.instapreview&hl=en)
+  and set up the posts with captions hashtags etc
 - wait for the time notification and then manually post
 
 #### The thug life

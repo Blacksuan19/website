@@ -2,7 +2,7 @@
 layout: post
 title: Jupyter Notebooks in Jekyll
 description: Converting Jupyter notebooks to jekyll posts
-image: /assets/images/jupyter.jpeg
+image: /assets/images/notebooks-in-jekyll/jupyter.jpeg
 project: false
 permalink: /blog/:title/
 tags:
@@ -123,13 +123,15 @@ and with that everything is set, the script will do all the work for us, what is
 left is just to push the changes (not lazy enough to automate that yet). example
 [results]({%- post_url 2021-05-24-sign-language-classification-with-pytorch-94 -%}).
 
+The script now lives under `scripts/notebook_converter.py` in this repo.
+
 ### Full script
 
 ```python
 #!/usr/bin/env python
 
 '''
-notebook_converter.py
+scripts/notebook_converter.py
 
 Copyright 2021 Abubakar Yagoub
 Contact: blacksuan19.tk

@@ -2,7 +2,7 @@
 layout: post
 title: Adventures in Vim
 description: Going Full time Cli
-image: /assets/images/vim.png
+image: /assets/images/adventures-in-vim/vim.png
 project: false
 permalink: /blog/:title/
 tags:
@@ -83,7 +83,7 @@ yeah there a good sides to this switch and vim in general
   markdown and its great and has Mathjs integration but that has limited latex
   support and very limited, so Vim looked like the best solution, i am going to
   also switch my markdown editing here because again integration. <br><br><br>
-  <img src="/assets/images/goyo.png">
+  <img src="/assets/images/adventures-in-vim/goyo.png">
 - Goyo: vscode did have a focus mode and it worked similarly, this allows me to
   completely focus on a file and not get distracted by other things like the
   cool NerdTree with icons or the tagBar.

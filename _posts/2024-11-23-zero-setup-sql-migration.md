@@ -2,7 +2,7 @@
 layout: post
 title: Zero Setup SQL Migration in production
 description: because we all hate migrations
-image: /assets/images/sql-migrations.png
+image: /assets/images/zero-setup-sql-migration/cover.png
 project: false
 permalink: "/blog/:title/"
 source: https://github.com/Blacksuan19/sqlmigrately

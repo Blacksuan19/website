@@ -3,7 +3,7 @@ layout: post
 title: Tic Tac Toe
 description: Tic Tac Toe game in javafx
 project: true
-image: /assets/images/tictac.jpg
+image: /assets/images/tic-tac-toe/tictac.jpg
 source: https://github.com/jsimplefx/Tic-Tac-Toe
 permalink: /projects/:title/
 tags:

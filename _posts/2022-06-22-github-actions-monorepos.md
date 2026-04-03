@@ -2,7 +2,7 @@
 layout: post
 title: Continuos Integration and Delivery on Monorepos
 description: simplifying workflow management for github actions on monorepos.
-image: /assets/images/monorepo.jpeg
+image: /assets/images/github-actions-monorepos/cover.jpeg
 project: false
 permalink: "/blog/:title/"
 tags:

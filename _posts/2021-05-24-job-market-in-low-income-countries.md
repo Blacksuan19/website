@@ -4,7 +4,7 @@ description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
+image: /assets/images/job-market-in-low-income-countries_files/cover.svg
 source: https://www.kaggle.com/abubakaryagob/job-market-in-low-income-countries
 tags:
   - data-science

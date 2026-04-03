@@ -4,7 +4,7 @@ description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
+image: /assets/images/covid-19-forecasting-malaysia-data-analysis_files/cover.svg
 source: https://www.kaggle.com/abubakaryagob/covid-19-forecasting-malaysia-data-analysis
 tags:
   - data-science

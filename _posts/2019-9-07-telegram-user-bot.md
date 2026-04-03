@@ -2,7 +2,7 @@
 layout: post
 title: How to Set up a Telegram Userbot on heroku
 description: Extending your functionality
-image: /assets/images/heroku.png
+image: /assets/images/telegram-user-bot/heroku.png
 project: false
 permalink: /blog/:title/
 tags:

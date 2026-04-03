@@ -4,7 +4,7 @@ description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
+image: /assets/images/heart-attack-classification-with-pytorch_files/cover.svg
 source: https://www.kaggle.com/abubakaryagob/heart-attack-classification-with-pytorch
 tags:
   - data-science

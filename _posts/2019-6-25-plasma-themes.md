@@ -3,7 +3,7 @@ layout: post
 title: KDE Plasma Themes
 description: Themes for KDE plasma
 project: true
-image: /assets/images/plasma.png
+image: /assets/images/plasma-themes/plasma.png
 source: https://github.com/blacksuan19/plasma-themes
 permalink: /projects/:title/
 tags:
@@ -23,23 +23,29 @@ tags:
 
 #### Themes:
 
-- Aex Nomad: half transparent rounded corners shadowed macOS looking like theme (personal favorite).
-- Aex Nomad Dark: half transparent rounded corners Dark shadowed macOS looking like theme (Made cuz people kept asking for dark variant).
-- Breeze No Shadow Antu: default kde breeze theme without panel shadows and with icons from antu icon theme (i had a thing for antu icons).
-- Breeze Transparent Nomad: default kde breeze theme without shadows and a lil bit of transparency and nomad project icons (until i found Nitrux).
+- Aex Nomad: half transparent rounded corners shadowed macOS looking like theme
+  (personal favorite).
+- Aex Nomad Dark: half transparent rounded corners Dark shadowed macOS looking
+  like theme (Made cuz people kept asking for dark variant).
+- Breeze No Shadow Antu: default kde breeze theme without panel shadows and with
+  icons from antu icon theme (i had a thing for antu icons).
+- Breeze Transparent Nomad: default kde breeze theme without shadows and a lil
+  bit of transparency and nomad project icons (until i found Nitrux).
 
 #### Installation:
 
 ##### Arch users:
 
-all the themes are available in the aur (thanks to omni). <br> <br>
-<code>yay -S theme-name</code><br><br>
-this will install the desired theme and then you can choose them in plasma settings
+all the themes are available in the aur (thanks to omni). <br> <br> <code>yay -S
+theme-name</code><br><br> this will install the desired theme and then you can
+choose them in plasma settings
 
 ##### From source:
 
-- clone the repo <code>git clone https://github.com/Blacksuan19/Plasma-Themes.git</code>
-- copy the desired theme folder to <code>$HOME/.local/share/plasma/desktoptheme/</code>
+- clone the repo <code>git clone
+  https://github.com/Blacksuan19/Plasma-Themes.git</code>
+- copy the desired theme folder to
+  <code>$HOME/.local/share/plasma/desktoptheme/</code>
 - select theme from plasma settings
 
 #### Screenshots:

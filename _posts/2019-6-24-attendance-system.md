@@ -3,7 +3,7 @@ layout: post
 title: Attendance System
 description: a javaFX and SQlite based app for tracking attendance
 project: true
-image: /assets/images/attendance.png
+image: /assets/images/attendance-system/attendance.png
 source: https://github.com/jsimplefx/Attendance-System
 permalink: /projects/:title/
 tags:
@@ -36,8 +36,7 @@ tags:
 
 #### Login Credentials:
 
-> Username: 1625897
-> Password: blacksuan19
+> Username: 1625897 Password: blacksuan19
 
 #### Upcoming:
 

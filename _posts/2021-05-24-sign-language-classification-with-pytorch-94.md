@@ -4,7 +4,7 @@ description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
+image: /assets/images/sign-language-classification-with-pytorch-94_files/cover.svg
 source: https://www.kaggle.com/abubakaryagob/sign-language-classification-with-pytorch-94
 tags:
   - data-science

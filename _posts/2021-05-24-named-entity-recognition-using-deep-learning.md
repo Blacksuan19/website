@@ -4,7 +4,7 @@ description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
+image: /assets/images/named-entity-recognition-using-deep-learning_files/cover.svg
 source: https://www.kaggle.com/abubakaryagob/named-entity-recognition-using-deep-learning
 tags:
   - data-science

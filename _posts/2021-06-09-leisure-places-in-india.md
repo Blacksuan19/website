@@ -4,7 +4,7 @@ description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
+image: /assets/images/leisure-places-in-india_files/cover.svg
 source: https://www.kaggle.com/abubakaryagob/leisure-places-in-india
 tags:
   - data-science

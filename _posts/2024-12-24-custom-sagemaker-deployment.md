@@ -4,7 +4,7 @@ title: "Mastering Custom SageMaker Deployment: A Comprehensive Guide"
 description:
   "A deep dive into the intricacies of deploying custom models to Amazon
   SageMaker"
-image: /assets/images/custom-sagemaker.jpg
+image: /assets/images/custom-sagemaker-deployment/cover.jpg
 project: false
 permalink: "/blog/:title/"
 tags:
@@ -121,7 +121,6 @@ Through further research and experimentation (mostly bugging Q about it), we
 pieced together the following requirements for a SageMaker-compatible container:
 
 1. **API Endpoints**: The container must expose two specific endpoints:
-
    - `/invocations` for handling prediction requests
    - `/ping` for health checks
 

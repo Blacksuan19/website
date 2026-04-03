@@ -4,7 +4,7 @@ description: Data Science Project
 layout: post
 project: true
 permalink: "/projects/:title/"
-image: /assets/images/ds.jpg
+image: /assets/images/mobile-price-range-classification-via-lazy-predict_files/cover.svg
 source: https://www.kaggle.com/abubakaryagob/mobile-price-range-classification-via-lazy-predict
 tags:
   - data-science
