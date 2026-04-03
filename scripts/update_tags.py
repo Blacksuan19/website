@@ -12,29 +12,28 @@ No plugins required.
 
 from pathlib import Path
 
-post_dir = Path("_posts/")
-tag_dir = Path("tags/")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+post_dir = REPO_ROOT / "_posts"
+tag_dir = REPO_ROOT / "tags"
 
 filenames = list(post_dir.glob("*.md"))
 
 total_tags = []
 for filename in filenames:
-    f = open(filename, "r", encoding="utf8")
-    crawl = False
-    for line in f:
-        # check if we are in the front matter
-        if line.strip() == "---":
-            if not crawl:
-                crawl = True
-            else:
-                crawl = False
-                break
-        if crawl:
-            current_tags = line.strip().split()
-            if current_tags[0] == "-":
-                total_tags.extend(current_tags[1:])
+    with open(filename, "r", encoding="utf8") as file_handle:
+        crawl = False
+        for line in file_handle:
+            if line.strip() == "---":
+                if not crawl:
+                    crawl = True
+                else:
+                    crawl = False
+                    break
+            if crawl:
+                current_tags = line.strip().split()
+                if current_tags and current_tags[0] == "-":
+                    total_tags.extend(current_tags[1:])
 
-    f.close()
 total_tags = set(total_tags)
 
 old_tags = list(tag_dir.glob("*.md"))
@@ -51,5 +50,6 @@ for tag in total_tags:
         + tag
         + "\nrobots: noindex\n---\n"
     )
-    tag_filename.write_text(write_str)
+    tag_filename.write_text(write_str, encoding="utf8")
+
 print("Tags generated, count", len(total_tags))
