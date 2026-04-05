@@ -5,7 +5,12 @@
     {%- for post in ps -%}
       <article>
         <span class="image">
-          <img src="{{ post.image }}" alt="{{ post.title }}" />
+          {%- include responsive-image.liquid
+            path=post.image
+            alt=post.title
+            class='tile-image'
+            sizes='(max-width: 736px) calc(100vw - 3em), (max-width: 1280px) 50vw, 33vw'
+          -%}
         </span>
         <a href="{{ post.url | relative_url }}" class="link primary" aria-label="{{ post.title }}"></a>
         <header class="major">
@@ -20,7 +25,12 @@
     {%- for post in ps limit: tile_limit -%}
       <article>
         <span class="image">
-          <img src="{{ post.image }}" alt="{{ post.title }}" />
+          {%- include responsive-image.liquid
+            path=post.image
+            alt=post.title
+            class='tile-image'
+            sizes='(max-width: 736px) calc(100vw - 3em), (max-width: 1280px) 50vw, 33vw'
+          -%}
         </span>
         <a href="{{ post.url | relative_url }}" class="link primary" aria-label="{{ post.title }}"></a>
         <header class="major">
@@ -35,7 +45,12 @@
     {%- for post in ps limit: tile_limit -%}
       <article>
         <span class="image">
-          <img src="{{ post.image }}" alt="{{ post.title }}" />
+          {%- include responsive-image.liquid
+            path=post.image
+            alt=post.title
+            class='tile-image'
+            sizes='(max-width: 736px) calc(100vw - 3em), (max-width: 1280px) 50vw, 33vw'
+          -%}
         </span>
         <a href="{{ post.url | relative_url }}" class="link primary" aria-label="{{ post.title }}"></a>
         <header class="major">

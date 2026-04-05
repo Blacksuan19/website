@@ -2,11 +2,24 @@
   <meta charset="utf-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  {%- assign banner_manifest = site.data.optimized_images['/assets/images/banner.jpg'] -%}
+  {%- assign banner_preload_variant = nil -%}
+  {%- if page.layout == 'home' and banner_manifest and banner_manifest.variants and banner_manifest.variants != empty -%}
+    {%- assign banner_preload_variant = banner_manifest.variants | last -%}
+  {%- endif -%}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap">
+  {%- if banner_preload_variant -%}
+  <link
+    rel="preload"
+    as="image"
+    href="{{ banner_preload_variant.path }}"
+    imagesrcset="{%- for variant in banner_manifest.variants -%}{{ variant.path }} {{ variant.width }}w{% unless forloop.last %}, {% endunless %}{%- endfor -%}"
+    imagesizes="100vw">
+  {%- endif -%}
   <style>
     html {
       background: #0f111a;
@@ -41,10 +54,34 @@
     }
 
     #banner {
-      background: #181b26 url("/assets/images/banner.jpg") center / cover no-repeat;
+      background: #181b26;
       min-height: 22em;
+      overflow: hidden;
       position: relative;
       top: -3.25em;
+    }
+
+    .banner__media,
+    .banner__picture,
+    .banner__image {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    .banner__media {
+      inset: 0;
+      position: absolute;
+    }
+
+    .banner__picture {
+      inset: 0;
+      position: absolute;
+    }
+
+    .banner__image {
+      object-fit: cover;
+      object-position: center;
     }
 
     #banner::after {

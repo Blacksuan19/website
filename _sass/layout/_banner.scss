@@ -10,21 +10,42 @@
 
 #banner {
   @include vendor("align-items", "center");
-  @include vendor("background-image", 'url("/assets/images/banner.jpg")');
   @include vendor("display", "flex");
   @include padding(4em, 0, (2em, 0, 0, 0));
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: palette(bg-alt);
   border-bottom: 0 !important;
   cursor: default;
   height: 60vh;
   margin-bottom: -3.25em;
   max-height: 32em;
   min-height: 22em;
+  overflow: hidden;
   position: relative;
   top: -3.25em;
+
+  .banner__media,
+  .banner__picture,
+  .banner__image {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .banner__media {
+    inset: 0;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .banner__picture {
+    inset: 0;
+    position: absolute;
+  }
+
+  .banner__image {
+    object-fit: cover;
+    object-position: center;
+  }
 
   &:after {
     @include vendor("transition", "opacity #{duration(banner)} ease");
@@ -138,10 +159,6 @@
     &:after {
       background-color: palette(accent6);
     }
-  }
-
-  @include breakpoint(large) {
-    background-attachment: scroll;
   }
 
   @include breakpoint(small) {

@@ -4,6 +4,18 @@ layout: page
 
 <!-- Banner -->
 <section class="major" id="banner">
+    <div class="banner__media" aria-hidden="true">
+        {%- include responsive-image.liquid
+        path='/assets/images/banner.jpg'
+        alt=''
+        class='banner__image'
+        picture_class='banner__picture'
+        sizes='100vw'
+        loading='eager'
+        fetchpriority='high'
+        decoding='async'
+        -%}
+    </div>
     <div class="inner">
         <header class="major">
             <h1>{{ site.landing-title }}</h1>
