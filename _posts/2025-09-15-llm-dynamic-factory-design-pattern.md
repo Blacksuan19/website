@@ -88,7 +88,7 @@ get_llm function, it triggers a series of steps that read from an external
 source to make a decision at runtime.
 
 ```mermaid
-graph TD
+graph LR
     A["Client calls get_llm()"] --> B{Is this request cached?};
     B -- No --> C["Initialize Factory"];
     C --> D["Load Custom Provider Code from S3"];
