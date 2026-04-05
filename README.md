@@ -1,50 +1,28 @@
-# FortyPlus - Jekyll Theme
+# AO Labs Personal Site
 
-A modified version of the Jekyll theme by [HTML5 UP](https://html5up.net/). This
-is my personal fork which adds many important features and makes the theme
-highly modular and user customizable.
+This repository contains my personal website built with Jekyll and based on a
+heavily customized version of the Forty theme by
+[HTML5 UP](https://html5up.net/). It has evolved well beyond the original
+template into the version of the site I use for blog posts, project write-ups,
+notes, and experiments.
 
 <p align="center">
   <img src="/assets/images/forty.jpg" alt="Forty Theme">
 </p>
 
-## Added Features
+## Site Highlights
 
-- very easy setup - fork the template and start posting
-- beautiful [material ocean](https://github.com/material-ocean/Material-Ocean)
-  color pallette
-- Jekyll Admin integration for easier use
-- highly modularize the theme - most of the widgets and features are user
-  togglable
-- proper URl's for posts and projects
-- remove the annoying date on post URL's
-- better project structure - group all pages under the pages folder
-- separation between projects and posts
-- tiles for both posts and projects - you can toggle them in `_config.yml`
-- go to top button
-- separate page for each post and project
-- next and previous post navigation buttons
-- read time for posts and projects
-- minimal syntax highlighting via [prism](https://prismjs.com/index.html)
-- site wide search via [lunr](https://lunrjs.com)
-- [disqus](https://disqus.com/) comments integration for posts - add your disqus
-  forum name in `config.yml`
-- fork repository button on projects
-- better font awesome integration via fontawesome kit
-- fix font awesome issues on mobile devices
-- social media shearing icons for both projects and posts
-- RSS feed support
-- SEO optimizations
-- Sitemap for better SEO
-- asciinema integration
-- YouTube integration
-- automatically open external URL's in new tab
-- separate contact page - add your details in `_config.yml`
-- **[Formspree.io](https://formspree.io/) contact form integration** - just add
-  your email to the `_config.yml` and it works!
-- Add your **social profiles** easily in `_config.yml`. Only social profiles
-  buttons you enter in `config.yml` show up on the site footer, you can easily
-  add your own social media's if they're not included by default
+- Material Ocean-inspired visual design
+- separate blog and project archives
+- tile-based landing, archive, and tag pages
+- site-wide search powered by [lunr](https://lunrjs.com)
+- syntax highlighting via [prism](https://prismjs.com/index.html)
+- tag archive pages generated from post front matter
+- Mermaid diagram rendering support
+- embeds for YouTube and Asciinema
+- read-time metadata and post navigation
+- RSS feed, sitemap, and SEO metadata
+- contact form and social profile links
 
 ## Using Included Templates
 
@@ -82,21 +60,32 @@ Used to link to an asciinema video
 │   ├── components
 │   ├── layout
 │   └── libs
-└── tag
+├── scripts
+└── tags
 ```
 
-## How to Use
+## Local Development
 
-For those unfamiliar with how Jekyll works, check out
-[jekyllrb.com](https://jekyllrb.com/) for all the details, or read up on just
-the basics of [front matter](https://jekyllrb.com/docs/frontmatter/),
-[writing posts](https://jekyllrb.com/docs/posts/), and
-[creating pages](https://jekyllrb.com/docs/pages/).
+- run `bundle install`
+- run `bundle exec jekyll serve`
+- open `http://localhost:4000`
 
-- Fork this repository
-- run `bundle install` in the repo folder
-- run `jekyll serve`
-- go to `http://localhost:4000/admin` and start blogging!
+Useful commands:
+
+```bash
+bundle exec jekyll serve
+bundle exec jekyll build
+python scripts/update_tags.py
+python scripts/notebook_converter.py
+```
+
+## Content Notes
+
+- posts live in `_posts/` and use `YYYY-MM-DD-slug.md`
+- blog posts use `/blog/:title/`
+- project posts use `/projects/:title/`
+- tags should stay kebab-case
+- `tags/` is generated content and should not be edited manually
 
 ## Credits
 
