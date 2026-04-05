@@ -27,8 +27,6 @@ to Plasma 6.
 is my port and significant extension of that original plugin, adding enough new
 features that it has largely become its own thing.
 
-![Wallhaven Wallpaper Reborn](/assets/images/plasma-wallpaper-wallhaven-reborn/cover.png)
-
 ## What the Plugin Actually Solves
 
 The original plugin already covered the basics of wallpaper rotation, filtering,

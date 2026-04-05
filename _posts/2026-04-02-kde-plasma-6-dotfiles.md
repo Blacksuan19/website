@@ -34,8 +34,6 @@ The core idea is simple:
 - keep the desktop tiling-focused without giving up Plasma's hardware support,
   Wayland support, notifications, portals, and general ecosystem
 
-![Dotfiles Preview](/assets/images/kde-plasma-6-dotfiles/preview.png)
-
 ## Philosophy
 
 KDE Plasma already solves a lot of the hard problems that standalone tiling
