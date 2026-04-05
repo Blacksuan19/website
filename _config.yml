@@ -15,7 +15,7 @@ zip_code:
 country: United States
 
 # homepage config
-tiles-count: 3 # number of tiles on home page
+tiles-count: 8 # number of tiles on home page
 post-tiles: true # whether to show post tiles
 projects-tiles: true # whether to show project tiles
 home-about: false # whether to show about-text in home page or contact page
@@ -38,9 +38,6 @@ social_urls:
   # twitter:
   # facebook:
   # pinterest:
-
-# skills widget
-skills:
 
 # page groups settings (groups pages with group = true in nav menu)
 group_pages: true

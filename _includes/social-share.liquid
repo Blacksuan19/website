@@ -1,42 +1,12 @@
-<ul class="icons">
-  <li>
-    <a
-      onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"
-      href="#"
-      class="icon alt fa fa-facebook"
-      target="_blank"
-      title="Share on facebook"></a>
-  </li>
-  <li>
-    <a
-      onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"
-      href="#"
-      class="icon alt fa fa-twitter"
-      target="_blank"
-      title="Share on twitter"></a>
-  </li>
-  <li>
-    <a
-      onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' +  encodeURIComponent(document.title)); return false;"
-      href="#"
-      class="icon alt fa fa-pinterest"
-      target="_blank"
-      title="Share on pinterest"></a>
-  </li>
-  <li>
-    <a
-      onclick="window.open('https://getpocket.com/save?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"
-      href="#"
-      class="icon alt fa fa-get-pocket"
-      target="_blank"
-      title="Share on getpocket"></a>
-  </li>
-  <li>
-    <a
-      onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"
-      href="#"
-      class="icon alt fa fa-envelope"
-      target="_blank"
-      title="Share via email"></a>
-  </li>
-</ul>
+{%- assign share_url = page.url | replace:'index.html','' | absolute_url -%}
+{%- assign share_title = page.title | default: site.title -%}
+
+<div
+  class="post-share"
+  data-share
+  data-share-url="{{ share_url | escape }}"
+  data-share-title="{{ share_title | escape }}">
+  <button type="button" class="button small post-share__button" data-share-trigger hidden>
+    Share
+  </button>
+</div>

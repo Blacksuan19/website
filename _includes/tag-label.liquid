@@ -1,0 +1,33 @@
+{%- assign raw_tag_label = include.tag | replace: '-', ' ' | strip -%}
+{%- assign tag_words = raw_tag_label | split: ' ' -%}
+{%- assign display_tag_label = '' -%}
+{%- for word in tag_words -%}
+  {%- assign normalized_word = word | downcase -%}
+  {%- capture rendered_word -%}
+  {%- case normalized_word -%}
+    {%- when 'api' -%}
+      API
+    {%- when 'aws' -%}
+      AWS
+    {%- when 'cli' -%}
+      CLI
+    {%- when 'dns' -%}
+      DNS
+    {%- when 'ide' -%}
+      IDE
+    {%- when 'llm' -%}
+      LLM
+    {%- when 'sql' -%}
+      SQL
+    {%- when 'kde' -%}
+      KDE
+    {%- else -%}
+      {{ normalized_word | capitalize }}
+  {%- endcase -%}
+  {%- endcapture -%}
+  {%- if display_tag_label != '' -%}
+    {%- assign display_tag_label = display_tag_label | append: ' ' -%}
+  {%- endif -%}
+  {%- assign display_tag_label = display_tag_label | append: rendered_word | strip -%}
+{%- endfor -%}
+{{ display_tag_label }}

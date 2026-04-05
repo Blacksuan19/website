@@ -3,43 +3,34 @@ layout: page
 ---
 
 <div class="alt" id="main">
-    <section id="one">
-        <div class="inner">
-            <div class="post">
-                <a href="/tags" class="button small">← Back to Tags</a>
-                <h2>Tag:
-                    {{ page.tag }}
-                </h2>
-                {%- for post in site.tags[page.tag] -%}
-                <section class="spotlights" id="two" style="padding: 10px">
-                    <section action="" style="border-radius: 20px">
-                        <a href="{{ post.url }}" class="image">
-                            <img src="{{ post.image }}" alt="" data-position="center"
-                                style="border-radius: 20px; object-fit: cover; height: 100%" />
-                        </a>
-                        <div class="content">
-                            <div class="inner">
-                                <header class="major">
-                                    <h3>
-                                        <a href="{{ post.url }}">{{ post.title }}</a>
-                                    </h3>
-                                </header>
-                                <a href="{{ post.url}}">
-                                    <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
-                                </a>
-                                <ul class="actions read-fork">
-                                    <li>
-                                        <a href="{{ post.url }}" class="button">Continue Reading</a>
-                                    </li>
-                                    <li>{%- include read-time.liquid content=post.content -%}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-                <br />
-                {%- endfor -%}
+    <div class="tiles-page-group tag-page-group">
+        {%- assign tag_count = site.tags[page.tag] | size -%}
+        {%- capture display_tag_name -%}{%- include tag-label.liquid tag=page.tag -%}{%- endcapture -%}
+        <div class="tag-page-group__hero">
+            <a href="{{ '/tags' | relative_url }}" class="tag-page-group__back-link">← Back to Tags</a>
+            <div class="tag-page-group__meta">
+                <header class="major tag-page-group__header">
+                    <h2>{{ display_tag_name | strip }}</h2>
+                </header>
+                <p class="tag-page-group__intro">
+                    {{ tag_count }} post{% if tag_count != 1 %}s{% endif %}
+                </p>
             </div>
         </div>
-    </section>
+        <section class="tiles" id="one">
+            {%- for post in site.tags[page.tag] -%}
+            <article>
+                <span class="image">
+                    <img src="{{ post.image }}" alt="{{ post.title }}" />
+                </span>
+                <a href="{{ post.url | relative_url }}" class="link primary" aria-label="{{ post.title }}"></a>
+                <header class="major">
+                    <h3>
+                        <a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a>
+                    </h3>
+                </header>
+            </article>
+            {%- endfor -%}
+        </section>
+    </div>
 </div>

@@ -20,8 +20,6 @@ highly modular and user customizable.
 - remove the annoying date on post URL's
 - better project structure - group all pages under the pages folder
 - separation between projects and posts
-- skills widget - add your skills under the skills key value pair in
-  `config.yml`
 - tiles for both posts and projects - you can toggle them in `_config.yml`
 - go to top button
 - separate page for each post and project

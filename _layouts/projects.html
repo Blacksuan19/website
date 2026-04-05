@@ -4,39 +4,10 @@ layout: page
 
 <!-- Main -->
 <div class="alt" id="main">
-    <!-- Two -->
-    {%- for post in site.posts -%}
-    {%- if post.project == true -%}
-    <section class="spotlights card-list" id="two">
-        <section>
-            <a href="{{ post.url }}" class="image">
-                <img src="{{ post.image }}" alt="" data-position="center" />
-            </a>
-            <div class="content">
-                <div class="inner">
-                    <header class="major">
-                        <h3>
-                            <a href="{{ post.url }}">{{ post.title }}</a>
-                        </h3>
-                    </header>
-                    {%- include post-tags.liquid page=post -%}
-                    <a href="{{ post.url}}">
-                        <p style="padding-top: 20px">
-                            {{ post.content | strip_html | truncatewords: 30 }}
-                        </p>
-                    </a>
-                    <ul class="actions read-fork">
-                        <li>
-                            <a href="{{ post.url }}" class="button">Continue Reading</a>
-                        </li>
-                        <li>
-                            <a href="{{ post.source }}" class="fork button special">View Source Code</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </section>
-    {%- endif -%}
-    {%- endfor -%}
+    <div class="tiles-page-group">
+        <header class="major">
+            <h2>{{ page.landing-title | default: page.title }}</h2>
+        </header>
+        {%- include tiles.liquid isProject='true' showAll='true' -%}
+    </div>
 </div>

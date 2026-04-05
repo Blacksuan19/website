@@ -1,0 +1,22 @@
+{%- assign tag_slug = include.tag | strip -%}
+{%- capture default_tag_label -%}{%- include tag-label.liquid tag=tag_slug -%}{%- endcapture -%}
+{%- assign tag_label = include.label | default: default_tag_label | strip -%}
+{%- assign chip_class = include.class | default: '' -%}
+{%- assign tag_count = include.count -%}
+{%- assign is_linked = include.linked | default: true -%}
+
+{%- if is_linked == false or is_linked == 'false' -%}
+  <span class="tag-chip {{ chip_class | strip }}">
+    <span class="tag-chip__label">{{ tag_label }}</span>
+    {%- if tag_count -%}
+      <span class="tag-chip__count">{{ tag_count }}</span>
+    {%- endif -%}
+  </span>
+{%- else -%}
+  <a class="tag-chip {{ chip_class | strip }}" href="{{ '/tags/' | append: tag_slug | relative_url }}">
+    <span class="tag-chip__label">{{ tag_label }}</span>
+    {%- if tag_count -%}
+      <span class="tag-chip__count">{{ tag_count }}</span>
+    {%- endif -%}
+  </a>
+{%- endif -%}

@@ -5,7 +5,7 @@
 <header class="major">
   <h3>You might also like</h3>
 </header>
-<section class="tiles" id="one">
+<section class="tiles similar-posts-tiles" id="one">
   {%- for post in site.posts -%}
     {%- assign sameTagCount = 0 -%}
     {%- assign
@@ -26,11 +26,11 @@
         <span class="image">
           <img src="{{ post.image }}" alt="{{ post.title }}" />
         </span>
+        <a href="{{ post.url | relative_url }}" class="link primary" aria-label="{{ post.title }}"></a>
         <header class="major">
           <h4>
             <a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a>
           </h4>
-          <p>{{ post.description }}</p>
         </header>
       </article>
       {%- assign maxRelatedCounter = maxRelatedCounter | plus: 1 -%}

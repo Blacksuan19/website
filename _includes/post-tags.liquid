@@ -1,13 +1,27 @@
-{%- for tag in include.page.tags -%}
-  {%- capture tag_name -%}
-    {{ tag }}
-  {%- endcapture -%}
-  <span>
-    <a class="icon" href="/tags/{{ tag_name }}">
-      <code>
-        <div class="icon fa fa-tag fa-xs"></div>
-        <nobr>{{ tag_name }}</nobr>
-      </code>
-    </a>
-  </span>
-{%- endfor -%}
+{%- assign mobile_limit = include.mobile_limit | default: 4 | plus: 0 -%}
+{%- assign total_tags = include.page.tags | size -%}
+{%- assign overflow_count = total_tags | minus: mobile_limit -%}
+
+<div class="post-tag-stack" aria-label="Tags">
+  <div class="tag-list tag-list--post">
+    {%- for tag in include.page.tags limit: mobile_limit -%}
+      {%- include tag-chip.liquid tag=tag -%}
+    {%- endfor -%}
+  </div>
+
+  {%- if overflow_count > 0 -%}
+    <details class="tag-list__overflow">
+      <summary class="tag-list__summary">
+        <span class="tag-chip tag-chip--summary">
+          <span class="tag-chip__label tag-list__summary-text tag-list__summary-text--collapsed">+{{ overflow_count }} more</span>
+          <span class="tag-chip__label tag-list__summary-text tag-list__summary-text--expanded">Show fewer</span>
+        </span>
+      </summary>
+      <div class="tag-list tag-list--overflow">
+        {%- for tag in include.page.tags offset: mobile_limit -%}
+          {%- include tag-chip.liquid tag=tag -%}
+        {%- endfor -%}
+      </div>
+    </details>
+  {%- endif -%}
+</div>

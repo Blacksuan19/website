@@ -1,12 +1,12 @@
 {%- assign tags = site.tags | sort -%}
-{%- for tag in tags -%}
-  <span>
-    <a
-      class="icon fa fa-tag fa-xs"
-      href="/tags/{{ tag[0] }}"
-      style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%;padding: 10px;font-weight: 300">
-      &ThickSpace;{{ tag[0] | replace: '-', ' ' | capitalize }}
-      ({{ tag | last | size }})
-    </a>
-  </span>
-{%- endfor -%}
+
+<div class="tags-archive">
+  <p class="tags-archive__intro">Browse all topics across posts and project write-ups. Each tag links to its own archive page.</p>
+  <div class="tag-list tag-list--archive" aria-label="All tags">
+    {%- for tag in tags -%}
+      {%- assign tag_slug = tag[0] -%}
+      {%- assign tag_count = tag | last | size -%}
+      {%- include tag-chip.liquid tag=tag_slug count=tag_count -%}
+    {%- endfor -%}
+  </div>
+</div>
