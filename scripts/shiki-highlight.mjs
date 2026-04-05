@@ -101,6 +101,9 @@ function wrapHighlightedBlock(highlightedHtml, { kind, lang, label }) {
         .replace(/background-color:[^;]+;/, `background-color:${CODE_BACKGROUND};`)
         .replace(/color:#babed8/g, `color:${CODE_FOREGROUND}`)
         .replace(/color:#BABED8/g, `color:${CODE_FOREGROUND}`)
+        // Remove separator text nodes between Shiki line spans.
+        // Actual blank lines are already represented by empty `.line` spans.
+        .replace(/<\/span>\r?\n(?=<span class="line">)/g, '</span>')
 
     return [
         `<div class="code-block" data-code-block data-code-kind="${kind}" data-code-language="${lang}">`,

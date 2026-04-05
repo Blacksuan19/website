@@ -98,7 +98,7 @@
   padding: size(code-padding);
   text-align: left;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  white-space: pre;
+  white-space: normal;
   word-break: normal;
   word-spacing: normal;
   word-wrap: normal;
@@ -114,17 +114,23 @@
 
 .shiki code {
   background: transparent;
-  display: grid;
+  display: block;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   margin: 0;
   padding: 0;
+  white-space: normal;
 }
 
 .shiki .line {
-  display: inline-block;
+  display: block;
   min-width: 100%;
+  white-space: pre;
+}
+
+.shiki .line:empty::before {
+  content: " ";
 }
 
 @media screen and (max-width: 736px) {
