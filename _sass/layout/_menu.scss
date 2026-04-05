@@ -4,163 +4,201 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-@use 'sass:color';
+@use "sass:color";
+@use "../libs" as *;
 
 /* Menu */
 
-	#menu {
-		@include vendor('transition', (
-			'transform #{_duration(menu)} ease',
-			'opacity #{_duration(menu)} ease',
-			'visibility #{_duration(menu)}'
-		));
-		@include vendor('align-items', 'center');
-		@include vendor('display', 'flex');
-		@include vendor('justify-content', 'center');
-		@include vendor('pointer-events', 'none');
-		background: color.adjust(_palette(bg), $alpha: -0.1);
-		box-shadow: none;
-		height: 100%;
-		left: 0;
-		opacity: 0;
-		overflow: hidden;
-		padding: 3em 2em;
-		position: fixed;
-		top: 0;
-		visibility: hidden;
-		width: 100%;
-		z-index: _misc(z-index-base) + 2;
+#menu {
+  @include vendor(
+    "transition",
+    (
+      "transform #{duration(menu)} ease",
+      "opacity #{duration(menu)} ease",
+      "visibility #{duration(menu)}"
+    )
+  );
+  @include vendor("align-items", "center");
+  @include vendor("display", "flex");
+  @include vendor("justify-content", "center");
+  @include vendor("pointer-events", "none");
+  background: color.adjust(palette(bg), $alpha: -0.1);
+  box-shadow: none;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 3em 2em;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: misc(z-index-base) + 10;
 
-		.inner {
-			@include vendor('transition', (
-				'transform #{_duration(menu)} ease-out',
-				'opacity #{_duration(menu)} ease',
-				'visibility #{_duration(menu)}'
-			));
-			@include vendor('transform', 'rotateX(20deg)');
-			-webkit-overflow-scrolling: touch;
-			max-width: 100%;
-			max-height: 100vh;
-			opacity: 0;
-			overflow: auto;
-			text-align: center;
-			visibility: hidden;
-			width: 18em;
+  .inner {
+    @include vendor(
+      "transition",
+      (
+        "transform #{duration(menu)} ease-out",
+        "opacity #{duration(menu)} ease",
+        "visibility #{duration(menu)}"
+      )
+    );
+    @include vendor("transform", "rotateX(20deg)");
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    max-height: 100vh;
+    opacity: 0;
+    overflow: auto;
+    text-align: center;
+    visibility: hidden;
+    width: 18em;
 
-			> :first-child {
-				margin-top: _size(element-margin);
-			}
+    > :first-child {
+      margin-top: size(element-margin);
+    }
 
-			> :last-child {
-				margin-bottom: (_size(element-margin) * 1.5);
-			}
-		}
+    > :last-child {
+      margin-bottom: (size(element-margin) * 1.5);
+    }
+  }
 
-		ul {
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
+  ul {
+    margin: 0 0 (size(element-margin) * 0.5) 0;
 
-			&.links {
-				list-style: none;
-				padding: 0;
+    &.links {
+      list-style: none;
+      padding: 0;
 
-				> li {
-					padding: 0;
+      > li {
+        padding: 0;
 
-					> a:not(.button) {
-						border: 0;
-						border-top: solid 1px _palette(border);
-						display: block;
-						font-size: 0.8em;
-						font-weight: _font(weight-bold);
-						letter-spacing: _font(letter-spacing-alt);
-						line-height: 4em;
-						text-decoration: none;
-						text-transform: uppercase;
-					}
+        > a:not(.button) {
+          border: 0;
+          border-top: solid 1px palette(border);
+          display: block;
+          font-size: 0.8em;
+          font-weight: font(weight-bold);
+          letter-spacing: font(letter-spacing-alt);
+          line-height: 4em;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
 
-					> .button {
-						display: block;
-						margin: 0.5em 0 0 0;
-					}
+        > .button {
+          display: block;
+          margin: 0.5em 0 0 0;
+        }
 
-					&:first-child {
-						> a:not(.button) {
-							border-top: 0 !important;
-						}
-					}
-				}
-			}
-		}
+        &:first-child {
+          > a:not(.button) {
+            border-top: 0 !important;
+          }
+        }
+      }
+    }
+  }
 
-		.close {
-			@include vendor('transition', 'color #{_duration(transition)} ease-in-out');
-			-webkit-tap-highlight-color: rgba(0,0,0,0);
-			border: 0;
-			cursor: pointer;
-			display: block;
-			height: 4em;
-			line-height: 4em;
-			overflow: hidden;
-			padding-right: 1.25em;
-			position: absolute;
-			right: 0;
-			text-align: right;
-			text-indent: 8em;
-			top: 0;
-			vertical-align: middle;
-			white-space: nowrap;
-			width: 8em;
+  .close {
+    @include vendor("transition", "color #{duration(transition)} ease-in-out");
+    @include vendor("align-items", "center");
+    @include vendor("display", "flex");
+    @include vendor("justify-content", "center");
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: 0;
+    color: transparent;
+    cursor: pointer;
+    height: var(--header-height);
+    line-height: 1;
+    overflow: hidden;
+    padding-right: 0;
+    position: fixed;
+    right: var(--header-menu-toggle-offset);
+    text-align: center;
+    text-indent: 0;
+    top: calc(var(--header-height) / 2);
+    transform: translateY(-50%);
+    vertical-align: middle;
+    white-space: nowrap;
+    width: var(--header-menu-toggle-width);
+    z-index: 1;
 
-			&:before, &:after {
-				@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
-				background-position: center;
-				background-repeat: no-repeat;
-				content: '';
-				display: block;
-				height: 4em;
-				position: absolute;
-				right: 0;
-				top: 0;
-				width: 4em;
-			}
+    &:before,
+    &:after {
+      @include vendor(
+        "transition",
+        (
+          "background-color #{duration(transition)} ease-in-out",
+          "transform #{duration(transition)} ease-in-out"
+        )
+      );
+      background-color: palette(fg-bold);
+      border-radius: 999px;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      width: var(--header-menu-icon-width);
+    }
 
-			&:before {
-				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(fg-bold)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
-			}
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
 
-			&:after {
-				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(highlight)}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>');
-				opacity: 0;
-			}
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
 
-			&:hover, &:active {
-				&:after {
-					opacity: 1;
-				}
-			}
-		}
-	}
+    &:hover,
+    &:active {
+      &:before,
+      &:after {
+        background-color: palette(highlight);
+      }
+    }
+  }
 
-	body.is-ie {
-		#menu {
-			background: color.adjust(_palette(bg-alt), $alpha: -0.025);
-		}
-	}
+  @include breakpoint(small) {
+    .close {
+      line-height: 1;
+      right: var(--header-menu-toggle-offset);
+      top: calc(var(--header-height) / 2);
+      width: var(--header-menu-toggle-width);
+    }
+  }
 
-	body.is-menu-visible {
-		#wrapper {
-			@include vendor('filter', 'blur(0.5em)');
-		}
+  @include breakpoint(xsmall) {
+    .close {
+      width: var(--header-menu-toggle-width);
+    }
+  }
+}
 
-		#menu {
-			@include vendor('pointer-events', 'auto');
-			opacity: 1;
-			visibility: visible;
+body.is-ie {
+  #menu {
+    background: color.adjust(palette(bg-alt), $alpha: -0.025);
+  }
+}
 
-			.inner {
-				@include vendor('transform', 'none');
-				opacity: 1;
-				visibility: visible;
-			}
-		}
-	}
+body.is-menu-visible {
+  #header {
+    .site-menu-toggle {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  #menu {
+    @include vendor("pointer-events", "auto");
+    opacity: 1;
+    visibility: visible;
+
+    .inner {
+      @include vendor("transform", "none");
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

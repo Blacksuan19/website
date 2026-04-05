@@ -4,7 +4,8 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-@use 'sass:color';
+@use "sass:color";
+@use "../libs" as *;
 
 /* Icon */
 
@@ -19,9 +20,9 @@
 
   &.alt {
     &:before {
-      background-color: _palette(fg-bold);
+      background-color: palette(fg-bold);
       border-radius: 100%;
-      color: _palette(bg);
+      color: palette(bg);
       display: inline-block;
       height: 2em;
       line-height: 2em;
@@ -36,19 +37,22 @@ a.icon {
     &:before {
       @include vendor(
         "transition",
-        "background-color #{_duration(transition)} ease-in-out"
+        "background-color #{duration(transition)} ease-in-out"
       );
     }
 
     &:hover {
       &:before {
-        background-color: _palette(accent1);
+        background-color: palette(accent1);
       }
     }
 
     &:active {
       &:before {
-        background-color: color.adjust(color.scale(_palette(accent1), $lightness: -15%), $saturation: -5%);
+        background-color: color.adjust(
+          color.scale(palette(accent1), $lightness: -15%),
+          $saturation: -5%
+        );
       }
     }
   }

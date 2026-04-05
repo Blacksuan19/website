@@ -1,0 +1,213 @@
+@use "sass:color";
+@use "../libs" as *;
+
+/* Tags */
+
+.tag-list {
+  @include vendor("display", "flex");
+  @include vendor("align-items", "center");
+  @include vendor("flex-wrap", "wrap");
+  gap: 0.65rem;
+  margin: 0;
+
+  &--archive {
+    gap: 0.85rem;
+  }
+
+  &--overflow {
+    margin-top: 0.65rem;
+  }
+}
+
+.tag-chip {
+  @include vendor(
+    "transition",
+    (
+      "background-color #{duration(transition)} ease-in-out",
+      "border-color #{duration(transition)} ease-in-out",
+      "color #{duration(transition)} ease-in-out"
+    )
+  );
+  @include vendor("align-items", "center");
+  @include vendor("display", "inline-flex");
+  background: color.adjust(palette(bg-alt), $lightness: 5%);
+  border: solid 1px color.adjust(palette(border), $alpha: -0.035);
+  border-radius: 999px;
+  color: palette(fg-bold);
+  font-family: font(family);
+  font-size: 0.84em;
+  font-weight: font(weight-bold);
+  gap: 0.55em;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  margin: 0;
+  min-height: 2.35rem;
+  padding: 0.52rem 0.85rem;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus-visible {
+    background: color.adjust(palette(bg-alt), $lightness: 7%);
+    border-color: palette(highlight);
+    color: palette(highlight) !important;
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__count {
+    @include vendor("align-items", "center");
+    @include vendor("display", "inline-flex");
+    background: color.adjust(palette(bg), $lightness: 4%);
+    border: solid 1px color.adjust(palette(border), $alpha: -0.03);
+    border-radius: 999px;
+    color: inherit;
+    font-size: 0.82em;
+    font-weight: font(weight-bold);
+    justify-content: center;
+    line-height: 1;
+    min-width: 1.8em;
+    padding: 0.28em 0.5em;
+  }
+
+  &--active {
+    background: color.adjust(palette(border-bg), $alpha: 0.035);
+    border-color: palette(highlight);
+    color: palette(highlight);
+  }
+
+  &--summary {
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: palette(fg-bold) !important;
+    }
+  }
+}
+
+.post-tag-stack {
+  display: block;
+}
+
+.tag-list__overflow {
+  display: block;
+  margin: 0.65rem 0 0 0;
+
+  > summary {
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &[open] {
+    .tag-list__summary-text--collapsed {
+      display: none;
+    }
+
+    .tag-list__summary-text--expanded {
+      display: block;
+    }
+
+    .tag-chip--summary {
+      background: color.adjust(palette(highlight), $alpha: -0.84);
+      border-color: palette(highlight);
+      color: palette(highlight);
+      box-shadow: inset 0 0 0 1px color.adjust(palette(highlight), $alpha: -0.7);
+    }
+  }
+}
+
+.tag-list__summary {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.tag-list__summary-text {
+  &--expanded {
+    display: none;
+  }
+}
+
+.tags-archive {
+  &__intro {
+    color: color.adjust(palette(fg), $alpha: -0.15);
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin: 0 0 1.4rem 0;
+    max-width: 38rem;
+  }
+}
+
+.tag-list--archive {
+  .tag-chip {
+    font-size: 0.86em;
+    min-height: 2.5rem;
+    padding: 0.58rem 0.92rem;
+  }
+}
+
+@include breakpoint(small) {
+  .tag-list {
+    gap: 0.55rem;
+
+    &--post {
+      align-items: flex-start;
+    }
+
+    &--archive {
+      gap: 0.65rem;
+    }
+  }
+
+  .tag-chip {
+    font-size: 0.78em;
+    min-height: 2.2rem;
+    padding: 0.5rem 0.78rem;
+  }
+
+  .tag-list--archive {
+    .tag-chip {
+      font-size: 0.8em;
+      min-height: 2.3rem;
+    }
+  }
+
+  .tag-list__overflow {
+    margin-top: 0.7rem;
+  }
+
+  .tag-list--post .tag-list__overflow > .tag-list--overflow {
+    display: none;
+    margin-top: 0.7rem;
+  }
+
+  .tag-list--post .tag-list__overflow[open] > .tag-list--overflow {
+    display: flex;
+  }
+}
+
+@include breakpoint(medium) {
+  .tag-list__overflow {
+    margin-top: 0;
+  }
+
+  .tag-list--post {
+    margin-bottom: 0.65rem;
+  }
+
+  details.tag-list__overflow:not([open]) > .tag-list--overflow,
+  .tag-list--post .tag-list__overflow > .tag-list--overflow {
+    display: flex !important;
+    margin-top: 0;
+  }
+
+  .tag-list--post .tag-list__summary {
+    display: none;
+  }
+}

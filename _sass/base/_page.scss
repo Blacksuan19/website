@@ -4,6 +4,8 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use "../libs" as *;
+
 /* Basic */
 
 // MSIE: Required for IEMobile.
@@ -16,6 +18,11 @@ body {
   -ms-overflow-style: scrollbar;
 }
 
+:root {
+  --floating-control-offset: 20px;
+  --floating-control-size: 3rem;
+}
+
 // Ensures page width is always >=320px.
 @include breakpoint(xsmall) {
   html,
@@ -25,5 +32,21 @@ body {
 }
 
 body {
-  background: _palette(bg);
+  background: palette(bg);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: palette(bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: palette(bg-alt);
+
+  &:hover {
+    background: palette(fg-bold);
+  }
 }

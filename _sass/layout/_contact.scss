@@ -4,10 +4,12 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use "../libs" as *;
+
 /* Contact */
 
 #contact {
-  border-bottom: solid 1px _palette(border);
+  border-bottom: solid 1px palette(border);
   overflow-x: hidden;
 
   > .inner {
@@ -16,7 +18,7 @@
 
     > :nth-child(2n - 1) {
       @include padding(4em, 0, (0, 3em, 0, 0));
-      border-right: solid 1px _palette(border);
+      border-right: solid 1px palette(border);
       width: 60%;
       z-index: 1;
     }
@@ -34,7 +36,7 @@
         position: relative;
 
         &:before {
-          border-top: solid 1px _palette(border);
+          border-top: solid 1px palette(border);
           content: "";
           display: block;
           margin-left: -3em;

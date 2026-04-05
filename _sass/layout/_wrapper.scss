@@ -4,25 +4,23 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use "../libs" as *;
+
 /* Wrapper */
 
-	#wrapper {
-		@include vendor('transition', (
-			'filter #{_duration(menu)} ease',
-			'-webkit-filter #{_duration(menu)} ease',
-			'opacity 0.375s ease-out'
-		));
-		padding-top: 3.25em;
+#wrapper {
+  @include vendor("transition", "opacity 0.375s ease-out");
+  padding-top: 3.25em;
 
-		&.is-transitioning {
-			opacity: 0;
-		}
+  &.is-transitioning {
+    opacity: 0;
+  }
 
-		> * {
-			@include inner;
-		}
+  > * {
+    @include inner;
+  }
 
-		@include breakpoint(small) {
-			padding-top: 2.75em;
-		}
-	}
+  @include breakpoint(small) {
+    padding-top: 2.75em;
+  }
+}

@@ -4,6 +4,8 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use "../libs" as *;
+
 /* Section/Article */
 
 section,
@@ -20,7 +22,7 @@ header {
     width: -ms-max-content;
     width: max-content;
     max-width: 100%;
-    margin-bottom: _size(element-margin);
+    margin-bottom: size(element-margin);
 
     > :first-child {
       margin-bottom: 0;
@@ -28,7 +30,7 @@ header {
 
       &:after {
         content: "";
-        background-color: _palette(fg-bold);
+        background-color: palette(fg-bold);
         display: block;
         height: 2px;
         margin: 0.325em 0 0.5em 0;
@@ -38,8 +40,8 @@ header {
 
     > p {
       font-size: 0.7em;
-      font-weight: _font(weight-bold);
-      letter-spacing: _font(letter-spacing-alt);
+      font-weight: font(weight-bold);
+      letter-spacing: font(letter-spacing-alt);
       margin-bottom: 0;
       text-transform: uppercase;
     }
@@ -68,4 +70,12 @@ header {
       }
     }
   }
+}
+
+.col_con {
+  display: none;
+}
+
+.col_head {
+  width: 100%;
 }

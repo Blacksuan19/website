@@ -1,0 +1,160 @@
+///
+/// Search UI
+///
+
+@use "sass:color";
+@use "../libs" as *;
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.search-page {
+  margin: 0 auto;
+  max-width: none;
+  padding: 0.15em 0 0;
+
+  &__form {
+    margin-bottom: 0.55em;
+  }
+
+  &__controls {
+    @include vendor("display", "flex");
+    @include vendor("align-items", "center");
+    background: color.adjust(palette(bg-alt), $lightness: 1%);
+    border: solid 1px color.adjust(palette(border), $alpha: -0.03);
+    border-radius: 16px;
+    box-shadow: 0 10px 24px color.adjust(palette(bg), $alpha: -0.78);
+    gap: 0.65em;
+    padding: 0.65em;
+  }
+
+  &__input {
+    background: color.adjust(palette(bg), $lightness: 5%) !important;
+    border: solid 1px color.adjust(palette(border), $alpha: -0.02) !important;
+    box-shadow: inset 0 0 0 1px color.adjust(palette(border), $alpha: -0.05);
+    color: palette(fg-bold) !important;
+    font-size: 0.95em;
+    height: 3.05em;
+    margin: 0;
+  }
+
+  .button {
+    border-radius: 14px;
+    height: 3em;
+    line-height: 3em;
+    padding: 0 1.4em;
+  }
+
+  &__status {
+    @include vendor("align-items", "center");
+    @include vendor("display", "flex");
+    border-bottom: solid 1px color.adjust(palette(border), $alpha: -0.03);
+    color: color.adjust(palette(fg), $alpha: -0.18);
+    font-size: 0.82em;
+    margin-bottom: 0.85em;
+    min-height: 2.25em;
+    padding: 0.15em 0 0.7em;
+  }
+
+  &__status-copy {
+    margin: 0;
+
+    strong {
+      color: palette(fg-bold);
+    }
+  }
+
+  &__results {
+    min-height: 0;
+
+    .tiles {
+      gap: 1em;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 16.5em), 1fr));
+      margin-top: 0.35em;
+    }
+
+    .tiles article {
+      border-radius: 16px;
+      height: 15.5em;
+      min-height: 15.5em;
+
+      header.major {
+        padding: 0.75em 0.9em;
+      }
+
+      h4 {
+        font-size: 1em;
+        line-height: 1.25;
+      }
+    }
+  }
+
+  &__empty {
+    background: color.adjust(palette(bg-alt), $lightness: 1%);
+    border: 1px dashed color.adjust(palette(border), $alpha: -0.02);
+    border-radius: 12px;
+    color: color.adjust(palette(fg), $alpha: -0.1);
+    margin: 0;
+    padding: 0.8em 0.95em;
+  }
+
+  @include breakpoint(medium) {
+    &__results .tiles article {
+      height: 14.5em;
+      min-height: 14.5em;
+    }
+  }
+
+  @include breakpoint(small) {
+    &__controls {
+      @include vendor("flex-direction", "column");
+      @include vendor("align-items", "stretch");
+      padding: 0.75em;
+    }
+
+    &__status {
+      margin-bottom: 0.7em;
+      min-height: 0;
+      padding-bottom: 0.6em;
+    }
+
+    &__results .tiles {
+      margin-top: 0.7em;
+    }
+
+    &__results .tiles article {
+      height: 13.75em;
+      min-height: 13.75em;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+}
+
+#main.alt > .inner.search-page-shell {
+  max-width: size(inner) + 24em;
+  padding-top: 2.5em;
+  width: calc(100% - 3.5em);
+
+  @include breakpoint(large) {
+    max-width: size(inner) + 18em;
+    width: calc(100% - 3em);
+  }
+
+  @include breakpoint(small) {
+    padding-top: 2em;
+    width: calc(100% - 2em);
+  }
+}

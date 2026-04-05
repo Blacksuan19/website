@@ -4,44 +4,46 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use "../libs" as *;
+
 /* Form */
 
 form {
-  margin: 0 0 _size(element-margin) 0;
+  margin: 0 0 size(element-margin) 0;
 
   .field {
-    margin: 0 0 (_size(element-margin) * 1) 0;
+    margin: 0 0 (size(element-margin) * 1) 0;
 
     &.half {
       width: 50%;
       float: left;
-      padding: 0 0 0 (_size(element-margin) * 1 * 0.5);
+      padding: 0 0 0 (size(element-margin) * 1 * 0.5);
 
       &.first {
-        padding: 0 (_size(element-margin) * 1 * 0.5) 0 0;
+        padding: 0 (size(element-margin) * 1 * 0.5) 0 0;
       }
     }
   }
 
   > .actions {
-    margin: (_size(element-margin) * 1.25) 0 0 0 !important;
+    margin: (size(element-margin) * 1.25) 0 0 0 !important;
   }
 
   @include breakpoint(small) {
     .field {
-      margin: 0 0 (_size(element-margin) * 0.75) 0;
+      margin: 0 0 (size(element-margin) * 0.75) 0;
 
       &.half {
-        padding: 0 0 0 (_size(element-margin) * 0.75 * 0.5);
+        padding: 0 0 0 (size(element-margin) * 0.75 * 0.5);
 
         &.first {
-          padding: 0 (_size(element-margin) * 0.75 * 0.5) 0 0;
+          padding: 0 (size(element-margin) * 0.75 * 0.5) 0 0;
         }
       }
     }
 
     > .actions {
-      margin: (_size(element-margin) * 1) 0 0 0 !important;
+      margin: (size(element-margin) * 1) 0 0 0 !important;
     }
   }
 
@@ -61,12 +63,12 @@ form {
 }
 
 label {
-  color: _palette(fg-bold);
+  color: palette(fg-bold);
   display: block;
   font-size: 0.8em;
-  font-weight: _font(weight-bold);
-  letter-spacing: _font(letter-spacing-alt);
-  margin: 0 0 (_size(element-margin) * 0.5) 0;
+  font-weight: font(weight-bold);
+  letter-spacing: font(letter-spacing-alt);
+  margin: 0 0 (size(element-margin) * 0.5) 0;
   text-transform: uppercase;
 }
 
@@ -77,7 +79,7 @@ input[type="tel"],
 select,
 textarea {
   @include vendor("appearance", "none");
-  background: _palette(border-bg);
+  background: palette(border-bg);
   border: none;
   border-radius: 20px;
   color: inherit;
@@ -93,8 +95,8 @@ textarea {
   }
 
   &:focus {
-    border-color: _palette(highlight);
-    box-shadow: 0 0 0 2px _palette(highlight);
+    border-color: palette(highlight);
+    box-shadow: 0 0 0 2px palette(highlight);
   }
 }
 
@@ -104,17 +106,17 @@ textarea {
   position: relative;
 
   &:before {
-    color: _palette(border);
+    color: palette(border);
     content: "\f078";
     display: block;
-    height: _size(element-height);
-    line-height: _size(element-height);
+    height: size(element-height);
+    line-height: size(element-height);
     pointer-events: none;
     position: absolute;
     right: 0;
     text-align: center;
     top: 0;
-    width: _size(element-height);
+    width: size(element-height);
   }
 
   select::-ms-expand {
@@ -126,7 +128,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 select {
-  height: _size(element-height);
+  height: size(element-height);
 }
 
 textarea {
@@ -145,41 +147,41 @@ input[type="radio"] {
 
   & + label {
     @include icon;
-    color: _palette(fg);
+    color: palette(fg);
     cursor: pointer;
     display: inline-block;
-    font-weight: _font(weight);
-    padding-left: (_size(element-height) * 0.6) + 1em;
+    font-weight: font(weight);
+    padding-left: (size(element-height) * 0.6) + 1em;
     padding-right: 0.75em;
     position: relative;
 
     &:before {
-      background: _palette(border-bg);
+      background: palette(border-bg);
       content: "";
       display: inline-block;
-      height: (_size(element-height) * 0.6);
+      height: (size(element-height) * 0.6);
       left: 0;
       letter-spacing: 0;
-      line-height: (_size(element-height) * 0.575);
+      line-height: (size(element-height) * 0.575);
       position: absolute;
       text-align: center;
       top: 0;
-      width: (_size(element-height) * 0.6);
+      width: (size(element-height) * 0.6);
     }
   }
 
   &:checked + label {
     &:before {
-      background: _palette(fg-bold);
-      border-color: _palette(highlight);
+      background: palette(fg-bold);
+      border-color: palette(highlight);
       content: "\f00c";
-      color: _palette(bg);
+      color: palette(bg);
     }
   }
 
   &:focus + label {
     &:before {
-      box-shadow: 0 0 0 2px _palette(highlight);
+      box-shadow: 0 0 0 2px palette(highlight);
     }
   }
 }
@@ -200,26 +202,34 @@ input[type="radio"] {
 }
 
 ::-webkit-input-placeholder {
-  color: _palette(fg-light) !important;
+  color: palette(fg-light) !important;
   opacity: 1;
 }
 
 :-moz-placeholder {
-  color: _palette(fg-light) !important;
+  color: palette(fg-light) !important;
   opacity: 1;
 }
 
 ::-moz-placeholder {
-  color: _palette(fg-light) !important;
+  color: palette(fg-light) !important;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: _palette(fg-light) !important;
+  color: palette(fg-light) !important;
   opacity: 1;
 }
 
 .formerize-placeholder {
-  color: _palette(fg-light) !important;
+  color: palette(fg-light) !important;
   opacity: 1;
+}
+
+#email-error,
+#name-error,
+#message-error {
+  font-size: 0.6em;
+  padding-left: 10px;
+  padding-top: 10px;
 }

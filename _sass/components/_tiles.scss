@@ -4,61 +4,206 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-@use 'sass:color';
+@use "sass:color";
+@use "sass:math";
+@use "../libs" as *;
 
 /* Tiles */
 
-.tiles {
+$tile-gap: math.div(size(element-margin), 2.25);
+$home-tile-gap: math.div(size(element-margin), 2.25);
+$tile-min-width: 20em;
+
+.home-tiles-group {
+  margin: 0 auto;
+  max-width: size(inner) + 26em;
+  padding: 3em 0 0;
+  width: calc(100% - 2.5em);
+
+  .tiles {
+    gap: $home-tile-gap;
+    margin-top: math.div(size(element-margin), 1.35);
+  }
+
+  .view-all-button {
+    padding-bottom: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 2.5em;
+  }
+
+  @include breakpoint(large) {
+    max-width: size(inner) + 20em;
+    width: calc(100% - 2em);
+  }
+
+  @include breakpoint(small) {
+    width: calc(100% - 3em);
+
+    .tiles {
+      gap: math.div(size(element-margin), 3);
+    }
+
+    &:last-child {
+      padding-bottom: 2em;
+    }
+  }
+}
+
+.tiles-page-group {
+  margin: 0 auto;
+  max-width: size(inner) + 26em;
+  padding: 3em 0;
+  width: calc(100% - 3em);
+
+  .tiles {
+    margin-top: math.div(size(element-margin), 1.35);
+  }
+
+  @include breakpoint(large) {
+    max-width: size(inner) + 20em;
+    width: calc(100% - 2.5em);
+  }
+
+  @include breakpoint(small) {
+    width: calc(100% - 2em);
+  }
+}
+
+.view-all-button {
   @include vendor("display", "flex");
-  @include vendor("flex-wrap", "wrap");
+  @include vendor("justify-content", "center");
+  margin: auto;
+  padding: 1.25em 0;
+}
+
+.tag-page-group {
+  &__hero {
+    margin-bottom: 1.35rem;
+  }
+
+  &__back-link {
+    border: 0;
+    color: color.adjust(palette(fg), $alpha: -0.1);
+    display: inline-block;
+    font-size: 0.72em;
+    font-weight: font(weight-bold);
+    letter-spacing: font(letter-spacing-alt);
+    margin-bottom: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  &__header {
+    margin-bottom: 0;
+  }
+
+  &__meta {
+    @include vendor("display", "flex");
+    @include vendor("align-items", "center");
+    @include vendor("justify-content", "space-between");
+    @include vendor("flex-wrap", "wrap");
+    gap: 0.8rem 1rem;
+  }
+
+  &__intro {
+    color: color.adjust(palette(fg), $alpha: -0.15);
+    margin: 0;
+    text-align: right;
+  }
+
+  @include breakpoint(small) {
+    &__meta {
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0.75rem;
+    }
+
+    &__intro {
+      text-align: left;
+    }
+  }
+}
+
+.tiles {
   border-top: 0 !important;
+  display: grid;
+  gap: $tile-gap;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, $tile-min-width), 1fr)
+  );
+  margin-top: math.div(size(element-margin), 2);
 
   & + * {
     border-top: 0 !important;
   }
 
   article {
-    @include vendor("align-items", "center");
+    @include padding(0, 0);
     @include vendor("display", "flex");
+    @include vendor("flex-direction", "column");
     @include vendor(
       "transition",
       (
         "transform 0.25s ease",
         "opacity 0.25s ease",
         "filter 1s ease",
-        "-webkit-filter 1s ease"
+        "-webkit-filter 1s ease",
+        "background-color 0.25s ease",
+        "border-color 0.25s ease"
       )
     );
-    @include padding(4em, 4em);
+    @include vendor("justify-content", "flex-end");
+    background-color: palette(bg-alt);
+    background-image: none !important;
+    border: solid 1px palette(border);
     border-radius: 20px;
-    margin: 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     cursor: default;
-    height: 40vh;
-    max-height: 40em;
-    min-height: 23em;
+    height: 18.5em;
+    margin: 0;
+    min-height: 18.5em;
+    min-width: 0;
     overflow: hidden;
     position: relative;
-    width: 30%;
 
     .image {
-      display: none;
-    }
+      background-color: palette(bg-alt);
+      color: transparent;
+      display: block !important;
+      font-size: 0;
+      height: 100%;
+      left: 0;
+      line-height: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
 
-    header {
-      position: relative;
-      z-index: 3;
-    }
+      &:before {
+        background: linear-gradient(
+          to top,
+          color.adjust(palette(bg), $alpha: -0.15) 0%,
+          color.adjust(palette(bg), $alpha: -1) 45%
+        );
+        content: "";
+        display: block;
+        inset: 0;
+        position: absolute;
+        z-index: 1;
+      }
 
-    h3 {
-      font-size: 1.75em;
-
-      a {
-        &:hover {
-          color: inherit !important;
-        }
+      img {
+        @include vendor("transition", "transform 0.35s ease");
+        color: transparent;
+        display: block;
+        font-size: 0;
+        height: 100%;
+        line-height: 0;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1.08);
+        width: 100%;
       }
     }
 
@@ -69,37 +214,19 @@
       position: absolute;
       top: 0;
       width: 100%;
-      z-index: 4;
-    }
-
-    &:before {
-      @include vendor("transition", "opacity 0.5s ease");
-      bottom: 0;
-      content: "";
-      display: block;
-      height: 100%;
-      left: 0;
-      opacity: 0.85;
-      position: absolute;
-      width: 100%;
-      z-index: 2;
-    }
-
-    &:after {
-      background-color: color.adjust(_palette(bg), $alpha: -0.75);
-      content: "";
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 1;
+      z-index: 5;
     }
 
     &:hover {
-      &:before {
-        opacity: 0;
+      @include vendor("transform", "translateY(-0.2em)");
+
+      .image img {
+        transform: scale(1.14);
+      }
+
+      header.major {
+        background-color: palette(highlight);
+        color: palette(bg);
       }
     }
 
@@ -109,82 +236,112 @@
       opacity: 0;
     }
 
-    &:nth-child(4n - 1),
-    &:nth-child(4n - 2) {
-      flex: 1 auto;
-    }
+    header.major {
+      background-color: palette(fg-bold);
+      color: palette(bg);
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      max-width: none;
+      padding: 0.95em 1.1em;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      z-index: 3;
 
-    &:nth-child(6n - 5) {
-      &:before {
-        background-color: _palette(accent1);
+      > :first-child {
+        line-height: 1.3;
+        margin-bottom: 0;
+        width: 100%;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      a {
+        color: inherit;
+        display: block;
+
+        &:hover {
+          color: inherit !important;
+        }
       }
     }
 
-    &:nth-child(6n - 4) {
-      &:before {
-        background-color: _palette(accent2);
-      }
+    h3 {
+      color: inherit;
+      font-size: 1.2em;
+      margin: 0;
     }
 
-    &:nth-child(6n - 3) {
-      &:before {
-        background-color: _palette(accent3);
-      }
-    }
-
-    &:nth-child(6n - 2) {
-      &:before {
-        background-color: _palette(accent4);
-      }
-    }
-
-    &:nth-child(6n - 1) {
-      &:before {
-        background-color: _palette(accent5);
-      }
-    }
-
-    &:nth-child(6n) {
-      &:before {
-        background-color: _palette(accent6);
-      }
+    h4 {
+      color: inherit;
+      font-size: 1.05em;
+      margin: 0;
     }
   }
 
   @include breakpoint(large) {
     article {
-      @include padding(4em, 3em);
-      height: 30vh;
-      max-height: 30em;
-      min-height: 20em;
-    }
-  }
-
-  @include breakpoint(medium) {
-    article {
-      width: 45% !important;
+      height: 16.5em;
+      min-height: 16.5em;
     }
   }
 
   @include breakpoint(small) {
+    gap: math.div(size(element-margin), 3);
+
     article {
-      @include padding(3em, 1.5em);
-      height: 16em;
-      max-height: none;
-      min-height: 0;
-      width: 100% !important;
+      height: 14.5em;
+      min-height: 14.5em;
+
+      header.major {
+        padding: 0.9em 1em;
+      }
+
       h3 {
-        font-size: 1.5em;
+        font-size: 1.1em;
       }
     }
   }
 
   @include breakpoint(xsmall) {
-    display: block;
-
     article {
-      height: 20em;
-      width: 95% !important;
+      height: 13.5em;
+      min-height: 13.5em;
+    }
+  }
+
+  &.similar-posts-tiles {
+    article {
+      height: 15.5em;
+      min-height: 15.5em;
+    }
+
+    @include breakpoint(large) {
+      article {
+        height: 14.5em;
+        min-height: 14.5em;
+      }
+    }
+
+    @include breakpoint(small) {
+      article {
+        height: 13em;
+        min-height: 13em;
+
+        h4 {
+          font-size: 1em;
+        }
+      }
+    }
+
+    @include breakpoint(xsmall) {
+      article {
+        height: 12.5em;
+        min-height: 12.5em;
+      }
     }
   }
 }

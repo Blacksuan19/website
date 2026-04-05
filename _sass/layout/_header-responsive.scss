@@ -1,0 +1,186 @@
+@use "../libs" as *;
+
+#header {
+  @include breakpoint(xlarge) {
+    nav {
+      .site-nav-links {
+        margin-left: 1em;
+
+        > li > a,
+        > li > .nav-dropdown > .nav-dropdown-trigger,
+        > li > .nav-dropdown-trigger {
+          padding-left: 0.75em;
+          padding-right: 0.75em;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    nav {
+      padding-right: 1.25em;
+
+      .site-nav-links {
+        margin-left: 0.6em;
+
+        > li > a,
+        > li > .nav-dropdown > .nav-dropdown-trigger,
+        > li > .nav-dropdown-trigger {
+          font-size: 0.68em;
+          padding-left: 0.6em;
+          padding-right: 0.6em;
+        }
+      }
+
+      .site-search-form {
+        input[type="text"] {
+          min-width: 14em;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    nav {
+      padding-right: calc(
+        var(--header-menu-toggle-offset) + var(--header-menu-toggle-width) +
+          var(--header-toggle-gap)
+      );
+      position: relative;
+
+      .site-nav-links {
+        display: none;
+      }
+
+      .site-search-shell {
+        margin-left: auto;
+      }
+
+      .site-search-form {
+        left: 1em;
+        max-width: none;
+        position: fixed;
+        right: 1em;
+        top: calc(3.25em + 0.7em);
+        width: auto;
+      }
+
+      .site-menu-toggle {
+        display: flex;
+        @include vendor("justify-content", "center");
+        height: var(--header-height);
+        margin-right: 0;
+        padding-right: 0 !important;
+        position: fixed;
+        right: var(--header-menu-toggle-offset);
+        top: calc(var(--header-height) / 2);
+        transform: translateY(-50%);
+        width: var(--header-menu-toggle-width);
+      }
+    }
+  }
+
+  @include breakpoint(small) {
+    :root {
+      --header-height: 2.75em;
+      --header-menu-toggle-width: 2.35em;
+      --header-menu-icon-width: 18px;
+      --header-search-toggle-width: 2.35em;
+      --header-toggle-gap: 0.65em;
+    }
+
+    height: 2.75em;
+    line-height: 2.75em;
+
+    .logo {
+      padding: 0 1em;
+    }
+
+    nav {
+      gap: 0.25em;
+      padding-right: calc(
+        var(--header-menu-toggle-offset) + var(--header-menu-toggle-width) +
+          var(--header-toggle-gap)
+      );
+
+      .site-search-shell {
+        gap: 0.35em;
+        margin-left: auto;
+      }
+
+      .site-search-form {
+        @include vendor("flex-wrap", "wrap");
+        gap: 0.35em;
+        left: 0.75em;
+        right: 0.75em;
+        top: calc(2.75em + 0.55em);
+        width: auto;
+
+        input[type="text"] {
+          min-width: 100%;
+        }
+
+        .button {
+          @include vendor("flex", "1 1 auto");
+          padding: 0 0.9em;
+        }
+      }
+
+      .site-search-toggle,
+      .site-menu-toggle {
+        padding: 0;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      .site-search-toggle {
+        width: var(--header-search-toggle-width);
+      }
+
+      .site-menu-toggle {
+        @include vendor("justify-content", "center");
+        height: var(--header-height);
+        margin-right: 0;
+        padding-right: 0 !important;
+        right: var(--header-menu-toggle-offset);
+        top: calc(var(--header-height) / 2);
+        width: var(--header-menu-toggle-width);
+      }
+    }
+  }
+
+  @include breakpoint(xsmall) {
+    :root {
+      --header-menu-toggle-width: 2.2em;
+      --header-search-toggle-width: 2.2em;
+      --header-toggle-gap: 0.55em;
+    }
+
+    .logo {
+      span {
+        display: none;
+      }
+    }
+
+    nav {
+      .site-menu-toggle {
+        @include vendor("justify-content", "center");
+        height: var(--header-height);
+        overflow: visible;
+        padding: 0 !important;
+        padding-right: 0 !important;
+        right: var(--header-menu-toggle-offset);
+        text-indent: 0;
+        top: calc(var(--header-height) / 2);
+        white-space: normal;
+        width: var(--header-menu-toggle-width);
+
+        &:before {
+          width: var(--header-menu-icon-width);
+        }
+      }
+    }
+  }
+}

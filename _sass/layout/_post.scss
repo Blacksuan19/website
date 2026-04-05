@@ -1,0 +1,97 @@
+@use "../libs" as *;
+
+/* Post */
+
+.post-header {
+  margin-bottom: 1.5rem;
+
+  &__title {
+    margin-bottom: 1.1rem;
+  }
+}
+
+.post-tags {
+  margin-bottom: 1rem;
+}
+
+.post-meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-share {
+  display: flex;
+  margin-right: auto;
+
+  &__button {
+    margin-bottom: 0;
+  }
+}
+
+.read-time {
+  margin-left: auto;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.source {
+  backface-visibility: hidden;
+  bottom: var(--floating-control-offset);
+  left: var(--floating-control-offset);
+  position: fixed;
+  transform: translateZ(0);
+  will-change: transform;
+  z-index: misc(z-index-base) - 1;
+
+  a.icon.alt {
+    display: block;
+
+    &:before {
+      height: var(--floating-control-size);
+      line-height: var(--floating-control-size);
+      width: var(--floating-control-size);
+    }
+  }
+}
+
+body.is-menu-visible {
+  .source {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@include breakpoint(small) {
+  .post-header {
+    margin-bottom: 1.1rem;
+
+    &__title {
+      margin-bottom: 0.85rem;
+    }
+  }
+
+  .post-tags {
+    margin-bottom: 1.15rem;
+  }
+
+  .post-meta {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .post-share {
+    width: 100%;
+  }
+
+  .read-time {
+    margin-bottom: 0;
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+  }
+}

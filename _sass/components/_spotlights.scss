@@ -4,7 +4,8 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-@use 'sass:color';
+@use "sass:color";
+@use "../libs" as *;
 
 /* Spotlights */
 
@@ -18,7 +19,10 @@
   > section {
     @include vendor("display", "flex");
     @include vendor("flex-direction", "row");
-    background-color: color.adjust(color.scale(_palette(bg-alt), $lightness: 2%), $saturation: -1%);
+    background-color: color.adjust(
+      color.scale(palette(bg-alt), $lightness: 2%),
+      $saturation: -1%
+    );
 
     > .image {
       background-position: center center;
@@ -35,7 +39,7 @@
       }
 
       &:before {
-        background: color.adjust(_palette(bg), $alpha: -0.1);
+        background: color.adjust(palette(bg), $alpha: -0.1);
         content: "";
         display: block;
         height: 100%;
@@ -58,13 +62,16 @@
       > .inner {
         margin: 0 auto;
         max-width: 100%;
-        width: _size(inner);
+        width: size(inner);
       }
     }
 
     &:nth-child(2n) {
       @include vendor("flex-direction", "row-reverse");
-      background-color: color.adjust(color.scale(_palette(bg-alt), $lightness: 4%), $saturation: -2%);
+      background-color: color.adjust(
+        color.scale(palette(bg-alt), $lightness: 4%),
+        $saturation: -2%
+      );
 
       > .content {
         @include vendor("align-items", "flex-end");

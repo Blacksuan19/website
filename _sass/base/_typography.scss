@@ -4,8 +4,9 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-@use 'sass:color';
-@use 'sass:math';
+@use "sass:color";
+@use "sass:math";
+@use "../libs" as *;
 
 /* Type */
 
@@ -13,11 +14,11 @@ body,
 input,
 select,
 textarea {
-  color: _palette(fg);
-  font-family: _font(family);
+  color: palette(fg);
+  font-family: font(family);
   font-size: 17pt;
-  font-weight: _font(weight);
-  letter-spacing: _font(letter-spacing);
+  font-weight: font(weight);
+  letter-spacing: font(letter-spacing);
   line-height: 1.65;
 
   @include breakpoint(xlarge) {
@@ -37,8 +38,8 @@ a {
   @include vendor(
     "transition",
     (
-      "color #{_duration(transition)} ease-in-out",
-      "border-bottom-color #{_duration(transition)} ease-in-out"
+      "color #{duration(transition)} ease-in-out",
+      "border-bottom-color #{duration(transition)} ease-in-out"
     )
   );
   border-bottom: dotted 1px;
@@ -47,18 +48,21 @@ a {
 
   &:hover {
     border-bottom-color: transparent;
-    color: _palette(highlight) !important;
+    color: palette(highlight) !important;
   }
 
   &:active {
-    color: color.adjust(color.scale(_palette(highlight), $lightness: -15%), $saturation: -5%) !important;
+    color: color.adjust(
+      color.scale(palette(highlight), $lightness: -15%),
+      $saturation: -5%
+    ) !important;
   }
 }
 
 strong,
 b {
-  color: _palette(fg-bold);
-  font-weight: _font(weight-bold);
+  color: palette(fg-bold);
+  font-weight: font(weight-bold);
 }
 
 em,
@@ -67,7 +71,7 @@ i {
 }
 
 p {
-  margin: 0 0 _size(element-margin) 0;
+  margin: 0 0 size(element-margin) 0;
 }
 
 h1,
@@ -76,10 +80,10 @@ h3,
 h4,
 h5,
 h6 {
-  color: _palette(fg-bold);
-  font-weight: _font(weight-bold);
+  color: palette(fg-bold);
+  font-weight: font(weight-bold);
   line-height: 1.65;
-  margin: 0 0 (_size(element-margin) * 0.5) 0;
+  margin: 0 0 (size(element-margin) * 0.5) 0;
 
   a {
     color: inherit;
@@ -138,16 +142,16 @@ sup {
 }
 
 blockquote {
-  border-left: solid 4px _palette(border);
+  border-left: solid 4px palette(border);
   font-style: italic;
-  margin: 0 0 _size(element-margin) 0;
-  padding: math.div(_size(element-margin), 4) 0 math.div(_size(element-margin), 4)
-    _size(element-margin);
+  margin: 0 0 size(element-margin) 0;
+  padding: math.div(size(element-margin), 4) 0 math.div(size(element-margin), 4)
+    size(element-margin);
 }
 
 code {
-  background: _palette(border-bg);
-  font-family: _font(family-fixed);
+  background: palette(border-bg);
+  font-family: font(family-fixed);
   font-size: 0.9em;
   margin: 0 0.25em;
   padding: 0.25em 0.65em;
@@ -155,9 +159,9 @@ code {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: _font(family-fixed);
+  font-family: font(family-fixed);
   font-size: 0.9em;
-  margin: 0 0 _size(element-margin) 0;
+  margin: 0 0 size(element-margin) 0;
 
   code {
     display: block;
@@ -169,11 +173,11 @@ pre {
 
 hr {
   border: 0;
-  border-bottom: solid 1px _palette(border);
-  margin: _size(element-margin) 0;
+  border-bottom: solid 1px palette(border);
+  margin: size(element-margin) 0;
 
   &.major {
-    margin: (_size(element-margin) * 1.5) 0;
+    margin: (size(element-margin) * 1.5) 0;
   }
 }
 
