@@ -59,12 +59,13 @@ async function getHighlighter() {
 
 async function highlightBlock(highlighter, rougeLanguage, className, encodedCode, previousBlockLanguage, fallbackLanguage) {
     const detectedLanguage = getLanguage(rougeLanguage, className)
-    const kind = detectedLanguage === 'text' && previousBlockLanguage && previousBlockLanguage !== 'text'
-        ? 'output'
-        : 'code'
-    const language = kind === 'code' && detectedLanguage === 'text' && fallbackLanguage
+    const explicitLanguage = hasExplicitLanguage(rougeLanguage, className)
+    const language = detectedLanguage === 'text' && !explicitLanguage && fallbackLanguage
         ? fallbackLanguage
         : detectedLanguage
+    const kind = language === 'text' && previousBlockLanguage && previousBlockLanguage !== 'text'
+        ? 'output'
+        : 'code'
     const normalizedCode = rougeLanguage
         ? encodedCode.replace(/<\/?span[^>]*>/g, '')
         : encodedCode
@@ -144,7 +145,8 @@ async function main() {
     for (const match of matches) {
         const [fullMatch, rougeLanguage, className = '', encodedCode] = match
         const detectedLanguage = getLanguage(rougeLanguage, className)
-        const fallbackLanguage = detectedLanguage === 'text' && (!previousBlockLanguage || previousBlockLanguage === 'text')
+        const explicitLanguage = hasExplicitLanguage(rougeLanguage, className)
+        const fallbackLanguage = detectedLanguage === 'text' && !explicitLanguage
             ? languages.shift()
             : undefined
         highlighted.push(html.slice(lastIndex, match.index))
