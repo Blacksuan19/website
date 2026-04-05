@@ -1,0 +1,9 @@
+{
+    "name": "forty-site",
+    "private": true,
+    "type": "module",
+    "devDependencies": {
+        "he": "^1.2.0",
+        "shiki": "^3.2.1"
+    }
+}

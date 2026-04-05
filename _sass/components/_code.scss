@@ -1,0 +1,139 @@
+@use "../libs" as *;
+
+.code-block {
+  margin: 0 0 size(element-margin) 0;
+  position: relative;
+}
+
+.code-block[data-code-kind="output"] .shiki {
+  background-color: palette(bg-alt) !important;
+  border-color: rgba(palette(accent5), 0.28);
+  box-shadow:
+    inset 3px 0 0 rgba(palette(accent5), 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.code-block[data-code-kind="output"] .code-block__copy {
+  color: rgba(palette(accent5), 0.75);
+}
+
+.code-block[data-code-kind="output"] .code-block__copy:hover,
+.code-block[data-code-kind="output"] .code-block__copy:focus-visible {
+  color: palette(accent5);
+}
+
+.code-block__copy {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: palette(fg-light);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.6rem;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0;
+  min-width: 0;
+  opacity: 0.75;
+  overflow: visible;
+  padding: 0;
+  position: absolute;
+  right: size(code-padding);
+  top: size(code-padding);
+  text-transform: none;
+  transition:
+    color duration(transition) ease,
+    opacity duration(transition) ease;
+  width: 1.6rem;
+  z-index: 2;
+}
+
+.code-block__copy::before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  content: "\f0c5";
+  display: block;
+  font-family: FontAwesome;
+  font-size: 0.92rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+.code-block__copy:hover,
+.code-block__copy:focus-visible {
+  background: transparent;
+  box-shadow: none;
+  color: palette(fg);
+  opacity: 1;
+}
+
+.code-block__copy.is-copied {
+  background: transparent;
+  box-shadow: none;
+  color: palette(accent6);
+  opacity: 1;
+}
+
+.code-block__copy.is-copied::before {
+  content: "\f00c";
+}
+
+.shiki {
+  border: 1px solid palette(border);
+  border-radius: size(panel-radius);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  color: #f8f8f2 !important;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 0;
+  overflow-x: auto;
+  padding: size(code-padding);
+  text-align: left;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+
+  -moz-hyphens: none;
+  -moz-tab-size: 4;
+  -ms-hyphens: none;
+  -o-tab-size: 4;
+  -webkit-hyphens: none;
+  hyphens: none;
+  tab-size: 4;
+}
+
+.shiki code {
+  background: transparent;
+  display: grid;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.shiki .line {
+  display: inline-block;
+  min-width: 100%;
+}
+
+@media screen and (max-width: 736px) {
+  .code-block__copy {
+    right: size(code-padding);
+    top: size(code-padding);
+  }
+
+  .shiki {
+    padding: size(code-padding);
+  }
+}

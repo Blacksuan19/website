@@ -31,6 +31,33 @@ $(document).ready(function () {
     });
   });
 
+  $("[data-code-copy]").each(function () {
+    var button = this;
+    var resetTimer;
+    var defaultLabel = button.getAttribute("aria-label") || "Copy code";
+
+    button.addEventListener("click", function () {
+      var root = button.closest("[data-code-block]");
+      var code = root ? root.querySelector(".shiki code") : null;
+
+      if (!code || !navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
+        return;
+      }
+
+      navigator.clipboard.writeText(code.textContent || "").then(function () {
+        window.clearTimeout(resetTimer);
+        button.setAttribute("aria-label", "Copied");
+        button.setAttribute("title", "Copied");
+        button.classList.add("is-copied");
+        resetTimer = window.setTimeout(function () {
+          button.setAttribute("aria-label", defaultLabel);
+          button.setAttribute("title", defaultLabel);
+          button.classList.remove("is-copied");
+        }, 1800);
+      });
+    });
+  });
+
   // back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {

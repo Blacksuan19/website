@@ -16,7 +16,7 @@ notes, and experiments.
 - separate blog and project archives
 - tile-based landing, archive, and tag pages
 - site-wide search powered by [lunr](https://lunrjs.com)
-- syntax highlighting via [prism](https://prismjs.com/index.html)
+- compile-time syntax highlighting via [Shiki](https://shiki.style)
 - tag archive pages generated from post front matter
 - Mermaid diagram rendering support
 - embeds for YouTube and Asciinema
@@ -67,12 +67,14 @@ Used to link to an asciinema video
 ## Local Development
 
 - run `bundle install`
+- run `npm install`
 - run `bundle exec jekyll serve`
 - open `http://localhost:4000`
 
 Useful commands:
 
 ```bash
+npm install
 bundle exec jekyll serve
 bundle exec jekyll build
 python scripts/update_tags.py

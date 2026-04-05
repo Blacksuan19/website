@@ -13,6 +13,8 @@ $duration: (
 // Size.
 $size: (
   border-radius: 4px,
+  code-padding: 1.5em,
+  panel-radius: 20px,
   element-height: 2.75em,
   element-margin: 2em,
   inner: 65em,
@@ -26,6 +28,10 @@ $font: (
     sans-serif,
   ),
   family-fixed: (
+    Consolas,
+    Monaco,
+    "Andale Mono",
+    "Ubuntu Mono",
     "Courier New",
     monospace,
   ),

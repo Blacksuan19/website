@@ -153,19 +153,26 @@ code {
   background: palette(border-bg);
   font-family: font(family-fixed);
   font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 0;
   margin: 0 0.25em;
   padding: 0.25em 0.65em;
+  text-transform: none;
 }
 
 pre {
   -webkit-overflow-scrolling: touch;
   font-family: font(family-fixed);
   font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 0;
   margin: 0 0 size(element-margin) 0;
+  text-transform: none;
 
   code {
     display: block;
     line-height: 1.75;
+    margin: 0;
     padding: 1em 1.5em;
     overflow-x: auto;
   }
