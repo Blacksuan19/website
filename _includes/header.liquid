@@ -1,6 +1,30 @@
 <!-- Wrapper -->
 <div id="wrapper">
 
+  {%- capture grouped_nav_links -%}
+    {%- for page in site.pages -%}
+      {%- if page.group == true -%}
+        <li>
+          <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign grouped_nav_links = grouped_nav_links | strip -%}
+
+  {%- capture external_nav_links -%}
+    {%- if site.extern_urls -%}
+      {%- for url in site.extern_urls -%}
+        <li>
+          <a href="{{ url[1] }}">{{ url[0] }}</a>
+        </li>
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- assign external_nav_links = external_nav_links | strip -%}
+
+  {%- assign contact_page_title = 'Contact' -%}
+
   <!-- Header -->
   <header 
     id="header" 
@@ -12,14 +36,99 @@
       class="alt" 
     {%- endif -%}
   >
-    <a href="{{ site.url }}/" class="logo" target="_self">
+    <a href="{{ '/' | relative_url }}" class="logo" target="_self">
       <strong>{{ site.title }}</strong>
     </a>
     <nav>
-      {%- if page.title != "Search" --%}
-      <a href="{{ site.url }}/search" class="icon fa fa-search"></a>
-      {%- endif --%}
-      <a href="#menu"></a>
+      <ul class="site-nav-links" aria-label="Primary">
+        {% if site.group_pages != true %}
+          {%- for page in site.pages -%}
+            {%- if page.layout != "home" and page.nav-menu == true and page.title == contact_page_title -%}
+              <li>
+                <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- for page in site.pages -%}
+            {%- if page.layout != "home" and page.nav-menu == true and page.title != contact_page_title -%}
+              <li>
+                <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        {% endif %}
+
+        {% if site.group_pages == true %}
+          {%- for page in site.pages -%}
+            {%- if page.layout != "home" and page.nav-menu == true and page.group != true and page.title == contact_page_title -%}
+              <li>
+                <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- for page in site.pages -%}
+            {%- if page.layout != "home" and page.nav-menu == true and page.group != true and page.title != contact_page_title -%}
+              <li>
+                <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if grouped_nav_links != "" -%}
+            <li class="nav-dropdown">
+                <button
+                  type="button"
+                  class="nav-dropdown-trigger"
+                  aria-expanded="false"
+                  aria-controls="header-projects-dropdown">
+                  <span class="nav-dropdown-label">{{ site.group_name }}</span>
+                  <span class="nav-dropdown-caret" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-dropdown-panel" id="header-projects-dropdown">
+                  {{ grouped_nav_links }}
+                </ul>
+            </li>
+          {%- endif -%}
+        {% endif %}
+
+        {%- if external_nav_links != "" -%}
+          <li class="nav-dropdown">
+              <button
+                type="button"
+                class="nav-dropdown-trigger"
+                aria-expanded="false"
+                aria-controls="header-external-dropdown">
+                <span class="nav-dropdown-label">{{ site.extern_name }}</span>
+                <span class="nav-dropdown-caret" aria-hidden="true"></span>
+              </button>
+              <ul class="nav-dropdown-panel" id="header-external-dropdown">
+                {{ external_nav_links }}
+              </ul>
+          </li>
+        {%- endif -%}
+      </ul>
+
+      <div class="site-search-shell">
+        <a
+          href="{{ '/search' | relative_url }}"
+          class="icon fa fa-search site-search-toggle"
+          data-search-toggle="true"
+          aria-controls="site-search-form"
+          aria-expanded="false"
+          aria-label="Open site search"></a>
+        <form action="{{ '/search' | relative_url }}" class="site-search-form" id="site-search-form" method="get" role="search">
+          <label class="visually-hidden" for="site-search-input">Search the site</label>
+          <input
+            type="text"
+            id="site-search-input"
+            name="q"
+            maxlength="255"
+            placeholder="Search posts, projects, and pages"
+            autocomplete="off" />
+          <button type="submit" class="button small">Search</button>
+        </form>
+      </div>
+      <a href="#menu" class="site-menu-toggle" aria-label="Open site menu"></a>
     </nav>
   </header>
 
@@ -30,7 +139,7 @@
       {%- for page in site.pages -%}
         {%- if page.layout == "home" -%}
           <li>
-            <a href="{{ "" | absolute_url }}/">{{ page.title }}</a>
+            <a href="{{ '/' | relative_url }}">{{ page.title }}</a>
           </li>
           {% break %}
         {%- endif -%}
@@ -39,9 +148,16 @@
       <!-- when groups are disabled -->
       {% if site.group_pages != true %}
       {%- for page in site.pages -%}
-        {%- if page.layout != "home" and page.nav-menu == true -%}
+        {%- if page.layout != "home" and page.nav-menu == true and page.title == contact_page_title -%}
           <li>
-            <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
+            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for page in site.pages -%}
+        {%- if page.layout != "home" and page.nav-menu == true and page.title != contact_page_title -%}
+          <li>
+            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
           </li>
         {%- endif -%}
       {%- endfor -%}
@@ -51,9 +167,16 @@
       <!-- add links not part of group -->
       {% if site.group_pages == true %}
       {%- for page in site.pages -%}
-        {%- if page.layout != "home" and page.nav-menu == true and page.group != true -%}
+        {%- if page.layout != "home" and page.nav-menu == true and page.group != true and page.title == contact_page_title -%}
           <li>
-            <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
+            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for page in site.pages -%}
+        {%- if page.layout != "home" and page.nav-menu == true and page.group != true and page.title != contact_page_title -%}
+          <li>
+            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
           </li>
         {%- endif -%}
       {%- endfor -%}
@@ -67,7 +190,7 @@
             <!-- assume all pages with group = true also have nav-menu = true -->
             {%- if page.group == true -%}
               <li>
-                <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
+                <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
               </li>
             {%- endif -%}
           {%- endfor -%}

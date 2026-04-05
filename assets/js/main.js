@@ -1,7 +1,7 @@
 /*
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Forty by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 (function ($) {
@@ -21,72 +21,77 @@
   $.fn._parallax =
     skel.vars.browser == "ie" || skel.vars.browser == "edge" || skel.vars.mobile
       ? function () {
-          return $(this);
-        }
+        return $(this);
+      }
       : function (intensity) {
-          var $window = $(window),
-            $this = $(this);
+        var $window = $(window),
+          $this = $(this);
 
-          if (this.length == 0 || intensity === 0) return $this;
+        if (this.length == 0 || intensity === 0) return $this;
 
-          if (this.length > 1) {
-            for (var i = 0; i < this.length; i++)
-              $(this[i])._parallax(intensity);
+        if (this.length > 1) {
+          for (var i = 0; i < this.length; i++)
+            $(this[i])._parallax(intensity);
 
-            return $this;
-          }
+          return $this;
+        }
 
-          if (!intensity) intensity = 0.25;
+        if (!intensity) intensity = 0.25;
 
-          $this.each(function () {
-            var $t = $(this),
-              on,
-              off;
+        $this.each(function () {
+          var $t = $(this),
+            on,
+            off;
 
-            on = function () {
+          on = function () {
+            $t.css(
+              "background-position",
+              "center 100%, center 100%, center 0px"
+            );
+
+            $window.on("scroll._parallax", function () {
+              var pos =
+                parseInt($window.scrollTop()) - parseInt($t.position().top);
+
               $t.css(
                 "background-position",
-                "center 100%, center 100%, center 0px"
+                "center " + pos * (-1 * intensity) + "px"
               );
-
-              $window.on("scroll._parallax", function () {
-                var pos =
-                  parseInt($window.scrollTop()) - parseInt($t.position().top);
-
-                $t.css(
-                  "background-position",
-                  "center " + pos * (-1 * intensity) + "px"
-                );
-              });
-            };
-
-            off = function () {
-              $t.css("background-position", "");
-
-              $window.off("scroll._parallax");
-            };
-
-            skel.on("change", function () {
-              if (skel.breakpoint("medium").active) off();
-              else on();
             });
+          };
+
+          off = function () {
+            $t.css("background-position", "");
+
+            $window.off("scroll._parallax");
+          };
+
+          skel.on("change", function () {
+            if (skel.breakpoint("medium").active) off();
+            else on();
+          });
+        });
+
+        $window
+          .off("load._parallax resize._parallax")
+          .on("load._parallax resize._parallax", function () {
+            $window.trigger("scroll");
           });
 
-          $window
-            .off("load._parallax resize._parallax")
-            .on("load._parallax resize._parallax", function () {
-              $window.trigger("scroll");
-            });
-
-          return $(this);
-        };
+        return $(this);
+      };
 
   $(function () {
     var $window = $(window),
       $body = $("body"),
       $wrapper = $("#wrapper"),
       $header = $("#header"),
-      $banner = $("#banner");
+      $banner = $("#banner"),
+      $navDropdowns = $("#header .nav-dropdown"),
+      $navDropdownTriggers = $("#header .nav-dropdown-trigger"),
+      $searchToggle = $('[data-search-toggle="true"]'),
+      $searchForm = $("#site-search-form"),
+      $searchInput = $("#site-search-input");
 
     // Clear transitioning state on unload/hide.
     $window.on("unload pagehide", function () {
@@ -124,7 +129,9 @@
       var $this = $(this),
         $image = $this.find(".image"),
         $img = $image.find("img"),
-        $link = $this.find(".link"),
+        $titleLink = $this.find(".link").not(".primary").first(),
+        $primaryLink = $this.find(".link.primary").first(),
+        $link,
         x;
 
       // Image.
@@ -139,13 +146,21 @@
       $image.hide();
 
       // Link.
-      if ($link.length > 0) {
-        $x = $link.clone().text("").addClass("primary").appendTo($this);
+      if ($titleLink.length > 0) {
+        if ($primaryLink.length === 0) {
+          $primaryLink = $titleLink
+            .clone()
+            .text("")
+            .addClass("primary")
+            .attr("aria-label", $titleLink.text().trim())
+            .appendTo($this);
+        }
 
-        $link = $link.add($x);
+        $link = $titleLink.add($primaryLink);
 
         $link.on("click", function (event) {
-          var href = $link.attr("href");
+          var href = $titleLink.attr("href");
+          var target = $titleLink.attr("target");
 
           // Prevent default.
           event.stopPropagation();
@@ -157,7 +172,7 @@
 
           // Redirect.
           window.setTimeout(function () {
-            if ($link.attr("target") == "_blank") window.open(href);
+            if (target == "_blank") window.open(href);
             else location.href = href;
           }, 500);
         });
@@ -271,9 +286,41 @@
 
         $body.removeClass("is-menu-visible");
       })
-      .append('<a class="close" href="#menu">Close</a>');
+      .append('<a class="close" href="#menu" aria-label="Close menu"></a>');
+
+    $navDropdownTriggers.on("click", function (event) {
+      var $dropdown = $(this).closest(".nav-dropdown");
+      var isOpen = $dropdown.hasClass("is-open");
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      $navDropdowns.removeClass("is-open");
+      $navDropdownTriggers.attr("aria-expanded", "false");
+
+      if (!isOpen) {
+        $dropdown.addClass("is-open");
+        $(this).attr("aria-expanded", "true");
+      }
+    });
 
     $body
+      .on("click", '[data-search-toggle="true"]', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!$header.hasClass("is-search-visible")) {
+          $header.addClass("is-search-visible");
+          $searchToggle.attr("aria-expanded", "true");
+
+          window.setTimeout(function () {
+            $searchInput.trigger("focus");
+          }, 125);
+        } else {
+          $header.removeClass("is-search-visible");
+          $searchToggle.attr("aria-expanded", "false");
+        }
+      })
       .on("click", 'a[href="#menu"]', function (event) {
         event.stopPropagation();
         event.preventDefault();
@@ -282,12 +329,44 @@
         $menu._toggle();
       })
       .on("click", function (event) {
+        if (
+          $header.hasClass("is-search-visible") &&
+          $(event.target).closest(".site-search-shell").length === 0
+        ) {
+          $header.removeClass("is-search-visible");
+          $searchToggle.attr("aria-expanded", "false");
+        }
+
+        if ($(event.target).closest("#header .nav-dropdown").length === 0) {
+          $navDropdowns.removeClass("is-open");
+          $navDropdownTriggers.attr("aria-expanded", "false");
+        }
+
         // Hide.
         $menu._hide();
       })
       .on("keydown", function (event) {
         // Hide on escape.
-        if (event.keyCode == 27) $menu._hide();
+        if (event.keyCode == 27) {
+          $menu._hide();
+          $header.removeClass("is-search-visible");
+          $searchToggle.attr("aria-expanded", "false");
+          $navDropdowns.removeClass("is-open");
+          $navDropdownTriggers.attr("aria-expanded", "false");
+        }
       });
+
+    $searchForm.on("click", function (event) {
+      event.stopPropagation();
+    });
+
+    if (window.location.pathname.indexOf("/search") !== -1) {
+      var searchParams = new URLSearchParams(window.location.search);
+      var initialSearchQuery = searchParams.get("q");
+
+      if (initialSearchQuery) {
+        $searchInput.val(initialSearchQuery);
+      }
+    }
   });
 })(jQuery);

@@ -8,10 +8,10 @@
       {%- if page.url contains '.xml' or page.url contains 'assets' or page.title == "Home" or page.title == 404 -%}
         {%- else -%}{
         "id": {{ counter }},
-        "url": "{{ site.url }}{{ page.url }}",
+        "url": "{{ page.url | relative_url }}",
         "description": "{{ page.description }}",
         "title": "{{ page.title }}",
-        "image": "{{ page.image | default: "/assets/images/logo.jpg" | prepend: site.url | prepend: site.baseurl }}",
+        "image": "{{ page.image | default: '/assets/images/logo.jpg' | relative_url }}",
         "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"
         {%- assign counter = counter | plus: 1 -%}
         },
@@ -28,57 +28,141 @@
           this.add(doc)
       }, this)
   });
-  function lunr_search(term) {
-    console.log(documents);
-      document.getElementById('lunrsearchresults').innerHTML = '<section class="tiles" id="one"></section>';
-      if(term) {
-          document.getElementById('lunrsearchresults').innerHTML = "<p>Search results for '" + term + "'</p>" + document.getElementById('lunrsearchresults').innerHTML;
-          //put results on the screen.
-          var results = idx.search(term);
-          if(results.length>0){
-              for (var i = 0; i < results.length; i++) {
-                  // more statements
-                  var ref = results[i]['ref'];
-                  var url = documents[ref]['url'];
-                  var title = documents[ref]['title'];
-                  var image = documents[ref]['image'];
-                  var body = documents[ref]['body'].substring(0,160)+'...';
-                  document.querySelector('#lunrsearchresults section').innerHTML = document.querySelector('#lunrsearchresults section').innerHTML + `
-                  <article>
-                    <span class="image">
-                        <img src="${image}" alt="${title}"/>
-                    </span>
-                    <header class="major">
-                        <h4>
-                            <a href="${url}" class="link">${title}</a>
-                        </h4>
-                        <a href="${url}"><p>${body}</p></a>
-                </article>
-        `;
-              }
-          } else {
-              document.querySelector('#lunrsearchresults section').innerHTML = "<li class='lunrsearchresult'>No results found...</li>";
-          }
+  function escapeHtml(value) {
+    return value.replace(/[&<>"']/g, function (character) {
+      return {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[character];
+    });
+  }
+
+  function getQueryFromUrl() {
+    return new URLSearchParams(window.location.search).get('q') || '';
+  }
+
+  function updateQueryInUrl(query) {
+    var url = new URL(window.location.href);
+
+    if (query) {
+      url.searchParams.set('q', query);
+    } else {
+      url.searchParams.delete('q');
+    }
+
+    window.history.replaceState({}, '', url.toString());
+  }
+
+  function buildTileMarkup(documentItem) {
+    var safeUrl = escapeHtml(documentItem.url);
+    var safeTitle = escapeHtml(documentItem.title);
+    var safeImage = escapeHtml(documentItem.image);
+
+    return `
+      <article>
+        <span class="image">
+          <img src="${safeImage}" alt="${safeTitle}" />
+        </span>
+        <a href="${safeUrl}" class="link primary" aria-label="${safeTitle}"></a>
+        <header class="major">
+          <h4>
+            <a href="${safeUrl}" class="link">${safeTitle}</a>
+          </h4>
+        </header>
+      </article>
+    `;
+  }
+
+  function renderIdleState() {
+    document.getElementById('search-feedback').innerHTML = `
+      <p class="search-page__status-copy">Search titles and page content from across the site.</p>
+    `;
+    document.getElementById('lunrsearchresults').innerHTML = '';
+  }
+
+  function renderNoResults(query) {
+    document.getElementById('search-feedback').innerHTML = `
+      <p class="search-page__status-copy">No results for <strong>“${escapeHtml(query)}”</strong>. Try a broader keyword or related term.</p>
+    `;
+    document.getElementById('lunrsearchresults').innerHTML = '<p class="search-page__empty">No matching posts or pages were found.</p>';
+  }
+
+  function renderResults(query, results) {
+    var markup = '<section class="tiles" id="one">';
+
+    for (var i = 0; i < results.length; i++) {
+      markup += buildTileMarkup(documents[results[i].ref]);
+    }
+
+    markup += '</section>';
+
+    document.getElementById('search-feedback').innerHTML = `
+      <p class="search-page__status-copy"><strong>${results.length}</strong> result${results.length === 1 ? '' : 's'} for <strong>“${escapeHtml(query)}”</strong></p>
+    `;
+    document.getElementById('lunrsearchresults').innerHTML = markup;
+  }
+
+  function lunr_search(rawTerm) {
+      var term = rawTerm.trim();
+
+      updateQueryInUrl(term);
+
+      if (!term) {
+          renderIdleState();
+          return false;
       }
+
+      var results = idx.search(term);
+
+      if (results.length > 0) {
+          renderResults(term, results);
+      } else {
+          renderNoResults(term);
+      }
+
       return false;
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var input = document.getElementById('lunrsearch');
+    var initialQuery = getQueryFromUrl().trim();
+
+    if (initialQuery) {
+      input.value = initialQuery;
+      lunr_search(initialQuery);
+    } else {
+      renderIdleState();
+    }
+
+    document.getElementById('search-clear').addEventListener('click', function () {
+      input.value = '';
+      input.focus();
+      lunr_search('');
+    });
+  });
 </script>
 
-<form
-  onSubmit="return lunr_search(document.getElementById('lunrsearch').value);"
->
-  <p>
-    <input
-      type="text"
-      class="form-control"
-      id="lunrsearch"
-      name="q"
-      maxlength="255"
-      value=""
-      placeholder="Search via Lunr.js"
-    />
-  </p>
-</form>
-<div id="lunrsearchresults">
-  <ul style="list-style-type: none;"></ul>
-</div>
+<section class="search-page" aria-label="Site search">
+  <form class="search-page__form" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);" role="search">
+    <label class="visually-hidden" for="lunrsearch">Search query</label>
+    <div class="search-page__controls">
+      <input
+        type="text"
+        class="form-control search-page__input"
+        id="lunrsearch"
+        name="q"
+        maxlength="255"
+        value=""
+        placeholder="Search by topic, tool, or post title"
+      />
+      <button type="submit" class="button special">Search</button>
+      <button type="button" class="button" id="search-clear">Clear</button>
+    </div>
+  </form>
+
+  <div id="search-feedback" class="search-page__status" aria-live="polite"></div>
+  <div id="lunrsearchresults" class="search-page__results"></div>
+</section>

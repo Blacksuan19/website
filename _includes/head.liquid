@@ -2,6 +2,80 @@
   <meta charset="utf-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap">
+  <style>
+    html {
+      background: #0f111a;
+    }
+
+    body {
+      background: #0f111a;
+      color: #ffffff;
+      font-family: "Source Sans Pro", Helvetica, sans-serif;
+      margin: 0;
+    }
+
+    #wrapper {
+      padding-top: 3.25em;
+    }
+
+    #header {
+      background: #181b26;
+      color: #ffffff;
+      height: 3.25em;
+      left: 0;
+      line-height: 3.25em;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10000;
+    }
+
+    #header.alt {
+      background: transparent;
+      position: absolute;
+    }
+
+    #banner {
+      background: #181b26 url("/assets/images/banner.jpg") center / cover no-repeat;
+      min-height: 22em;
+      position: relative;
+      top: -3.25em;
+    }
+
+    #banner::after {
+      background: rgba(15, 17, 26, 0.85);
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    #banner > .inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media screen and (max-width: 736px) {
+      #wrapper {
+        padding-top: 2.75em;
+      }
+
+      #header {
+        height: 2.75em;
+        line-height: 2.75em;
+      }
+
+      #banner {
+        min-height: 0;
+        top: -2.75em;
+      }
+    }
+  </style>
 
   {%- include logo.liquid -%}
   <title>
@@ -14,11 +88,6 @@
 
   {%- assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 -%}
   <meta name="description" content="{%- if pagecontent_description.size > 10 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}">
-
-  <description>
-    {%- if post.image -%}&lt;p&gt;&lt;img src="{{ post.image | prepend: site.baseurl | prepend: site.url }}" alt="{{ post.title }}" class="webfeedsFeaturedVisual"&gt;&lt;/p&gt;
-    {%- endif -%}
-    {{ post.content | xml_escape }}</description>
 
   <!-- Facebook and Twitter integration -->
   <meta property="og:title" content="{{ page.title }}" />
@@ -50,21 +119,11 @@
     href="{{ "/sitemap.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
   <link href="/assets/css/main.css" rel="stylesheet" />
-  <link href="/assets/css/extra.css" rel="stylesheet">
-  <link href="/assets/css/back.to.top.css" rel="stylesheet">
   <link href="/assets/css/prism.css" rel="stylesheet">
 
   {%- comment -%} collect site tags if not defined {%- endcomment -%}
   {%- if site.tags != "" -%}
     {%- include collect-tags.liquid -%}
   {%- endif -%}
-
-  <!-- back to top button -->
-  <a
-    href="#"
-    id="scroll"
-    style="display: none;">
-    <span></span>
-  </a>
 
 </head>
