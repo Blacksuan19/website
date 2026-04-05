@@ -22,7 +22,6 @@ home-about: false # whether to show about-text in home page or contact page
 
 # social settings
 email: me@aolabs.dev
-disqus: "blacksuan19-me" # comments on blog posts
 formspree: https://formspree.io/f/xpzoedna # contact form target
 preferred_contact: linkedin # social media to show on contact page
 
