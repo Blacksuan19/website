@@ -50,8 +50,8 @@ extern_name: External Links
 extern_urls:
   Redash-Python library: https://redash.aolabs.dev/
   StructX Library: https://structx.aolabs.dev
-  Stanford ML Notes: https://kutt.it/u7MfXU
-  Deep Learning Notes: https://kutt.it/kJ5UOf
+  Stanford ML Notes: https://s.aolabs.dev/mlnotes
+  Deep Learning Notes: https://s.aolabs.dev/dlnotes
 
 # build settings
 markdown: kramdown
