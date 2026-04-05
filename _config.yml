@@ -3,7 +3,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: https://aolabs.dev
 title: AO Labs
 landing-title: Hello, Welcome to my website.
-author: Blacksuan19
 description: I'm a data scientist by day and an all around tech enthusiast by night. I write about my experiences, projects and occasionally solutions.
 about-text:
 
@@ -71,10 +70,5 @@ collections:
 
 # remove dates and prettify links
 permalink: pretty
-
-# jekyll admin settings
-jekyll_admin:
-  hidden_links:
-    - datafiles
 
 lsi: true
