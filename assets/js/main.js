@@ -93,6 +93,203 @@
       $searchForm = $("#site-search-form"),
       $searchInput = $("#site-search-input");
 
+    function initPostToc() {
+      var $toc = $("[data-post-toc]").first();
+      var $content = $("[data-post-content]").first();
+      var $nav = $toc.find("[data-post-toc-nav]");
+      var $toggle = $toc.find("[data-post-toc-toggle]");
+      var $toggleText = $toc.find("[data-post-toc-toggle-text]");
+      var $postTags = $(".post-tags").first();
+      var $postHeader = $(".post-header").first();
+      var $scrollButton = $("#scroll");
+      var desktopRailMediaQuery = window.matchMedia("(min-width: 737px)");
+      var wideRailMediaQuery = window.matchMedia("(min-width: 1481px)");
+      var desktopCollapsed = false;
+
+      if ($toc.length === 0 || $content.length === 0 || $nav.length === 0) {
+        return;
+      }
+
+      var $links = $nav.find("a[href^='#']");
+      var headings = $content.find("h2[id], h3[id]").toArray();
+      var linkMap = {};
+
+      if ($links.length === 0 || headings.length === 0) {
+        return;
+      }
+
+      $links.each(function () {
+        var $link = $(this);
+        var href = $link.attr("href") || "";
+        var headingId = href.slice(1);
+
+        if (headingId) {
+          linkMap[headingId] = $link;
+        }
+      });
+
+      function isDesktopRail() {
+        return desktopRailMediaQuery.matches;
+      }
+
+      function prefersCollapsedRail() {
+        return isDesktopRail() && !wideRailMediaQuery.matches;
+      }
+
+      function resetDesktopCollapseState() {
+        desktopCollapsed = prefersCollapsedRail();
+      }
+
+      function getDocumentTop($element) {
+        if (!$element.length) {
+          return null;
+        }
+
+        return window.scrollY + $element[0].getBoundingClientRect().top;
+      }
+
+      function updateDesktopRailMetrics() {
+        if (!isDesktopRail()) {
+          $toc[0].style.removeProperty("--post-toc-chip-top");
+          $toc[0].style.removeProperty("--post-toc-panel-top");
+          $toc[0].style.removeProperty("--post-toc-panel-max-height");
+          return;
+        }
+
+        var anchorTop = getDocumentTop($postTags);
+
+        if (anchorTop === null) {
+          anchorTop = getDocumentTop($postHeader);
+        }
+
+        if (anchorTop === null) {
+          return;
+        }
+
+        var toggleHeight = $toggle.outerHeight() || 0;
+        var tagsHeight = $postTags.length ? $postTags.outerHeight() || 0 : 0;
+        var chipTop = Math.max(anchorTop + Math.max((tagsHeight - toggleHeight) / 2, 0), $header.outerHeight() + 16);
+        var panelTop = chipTop + toggleHeight + 12;
+        var scrollReserved = ($scrollButton.length ? $scrollButton.outerHeight() || 0 : 0) + 40;
+        var panelMaxHeight = Math.max(window.innerHeight - panelTop - scrollReserved, 160);
+
+        $toc[0].style.setProperty("--post-toc-chip-top", chipTop + "px");
+        $toc[0].style.setProperty("--post-toc-panel-top", panelTop + "px");
+        $toc[0].style.setProperty("--post-toc-panel-max-height", panelMaxHeight + "px");
+      }
+
+      function syncTocState() {
+        var expanded = isDesktopRail() ? !desktopCollapsed : $toc.hasClass("is-expanded");
+
+        $toc.toggleClass("is-desktop-rail", isDesktopRail());
+        $toc.toggleClass("is-collapsed", !expanded);
+
+        if (expanded) {
+          $toc.addClass("is-expanded");
+        } else {
+          $toc.removeClass("is-expanded");
+        }
+
+        $toggle.attr("aria-expanded", expanded ? "true" : "false");
+
+        if (isDesktopRail()) {
+          $toggleText.text(expanded ? "Hide sections" : "On this page");
+        } else {
+          $toggleText.text(expanded ? "Hide sections" : "Show sections");
+        }
+
+        updateDesktopRailMetrics();
+      }
+
+      function updateActiveHeading() {
+        var scrollPosition = window.scrollY + $header.outerHeight() + 32;
+        var activeId = headings[0].id;
+
+        headings.forEach(function (heading) {
+          if (heading.offsetTop <= scrollPosition) {
+            activeId = heading.id;
+          }
+        });
+
+        $.each(linkMap, function (headingId, $link) {
+          $link.toggleClass("is-active", headingId === activeId);
+        });
+      }
+
+      function scrollToHeading(headingId) {
+        var target = document.getElementById(headingId);
+
+        if (!target) {
+          return;
+        }
+
+        var scrollTop = window.scrollY + target.getBoundingClientRect().top - $header.outerHeight() - 18;
+
+        window.history.replaceState(null, "", "#" + headingId);
+        window.scrollTo({
+          top: Math.max(scrollTop, 0),
+          behavior: "smooth",
+        });
+      }
+
+      $toggle.on("click", function () {
+        if (isDesktopRail()) {
+          desktopCollapsed = !desktopCollapsed;
+        } else {
+          $toc.toggleClass("is-expanded");
+        }
+
+        syncTocState();
+      });
+
+      $nav.on("click", "a", function (event) {
+        var href = $(this).attr("href") || "";
+        var headingId = href.slice(1);
+
+        if (!headingId) {
+          return;
+        }
+
+        event.preventDefault();
+        scrollToHeading(headingId);
+
+        syncTocState();
+      });
+
+      function handleRailBreakpointChange() {
+        if (!isDesktopRail()) {
+          $toc.removeClass("is-expanded");
+        }
+
+        resetDesktopCollapseState();
+        syncTocState();
+        updateActiveHeading();
+      }
+
+      if (desktopRailMediaQuery.addEventListener) {
+        desktopRailMediaQuery.addEventListener("change", handleRailBreakpointChange);
+        wideRailMediaQuery.addEventListener("change", handleRailBreakpointChange);
+      } else {
+        desktopRailMediaQuery.addListener(handleRailBreakpointChange);
+        wideRailMediaQuery.addListener(handleRailBreakpointChange);
+      }
+
+      resetDesktopCollapseState();
+
+      if (!isDesktopRail()) {
+        $toc.removeClass("is-expanded");
+      }
+
+      syncTocState();
+      updateDesktopRailMetrics();
+      updateActiveHeading();
+      $window.on("scroll", updateActiveHeading);
+      $window.on("resize", function () {
+        updateDesktopRailMetrics();
+        updateActiveHeading();
+      });
+    }
+
     // Clear transitioning state on unload/hide.
     $window.on("unload pagehide", function () {
       window.setTimeout(function () {
@@ -124,6 +321,8 @@
 
     // Tiles.
     var $tiles = $(".tiles > article");
+
+    initPostToc();
 
     $tiles.each(function () {
       var $this = $(this),

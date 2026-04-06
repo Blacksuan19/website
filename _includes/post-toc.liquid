@@ -1,0 +1,53 @@
+{%- assign minimum_items = include.minimum_items | default: 4 | plus: 0 -%}
+{%- assign heading_markup = include.html | replace: '<h2 id="', '[[[TOC-H2::' | replace: '<h3 id="', '[[[TOC-H3::' -%}
+{%- assign heading_parts = heading_markup | split: '[[[TOC-' -%}
+{%- assign toc_count = 0 -%}
+
+{%- for part in heading_parts offset: 1 -%}
+  {%- assign level = part | split: '::' | first | downcase -%}
+  {%- if level == 'h2' or level == 'h3' -%}
+    {%- assign toc_count = toc_count | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if toc_count >= minimum_items -%}
+<aside class="post-toc is-expanded" data-post-toc>
+  <div class="post-toc__inner">
+    <div class="post-toc__header">
+      <p class="post-toc__title">On this page</p>
+      <button
+        type="button"
+        class="tag-chip tag-chip--summary post-toc__toggle"
+        data-post-toc-toggle
+        aria-expanded="false"
+        aria-controls="post-toc-nav">
+        <span class="tag-chip__label post-toc__toggle-text" data-post-toc-toggle-text>Show sections</span>
+        <span class="tag-chip__count post-toc__count">{{ toc_count }}</span>
+      </button>
+    </div>
+    <nav class="post-toc__nav" id="post-toc-nav" aria-label="Table of contents" data-post-toc-nav>
+      <ol class="post-toc__list">
+      {%- for part in heading_parts offset: 1 -%}
+        {%- assign level = part | split: '::' | first | downcase -%}
+        {%- assign heading_data = part | split: '::' | last -%}
+        {%- assign heading_id = heading_data | split: '"' | first -%}
+        {%- assign heading_text = '' -%}
+        {%- assign heading_class = '' -%}
+        {%- if level == 'h2' -%}
+          {%- assign heading_text = heading_data | split: '</h2>' | first | split: '>' | last | strip_html | strip -%}
+          {%- assign heading_class = 'parent' -%}
+        {%- elsif level == 'h3' -%}
+          {%- assign heading_text = heading_data | split: '</h3>' | first | split: '>' | last | strip_html | strip -%}
+          {%- assign heading_class = 'child' -%}
+        {%- endif -%}
+        {%- if heading_id != '' and heading_text != '' -%}
+        <li class="post-toc__item post-toc__item--{{ heading_class }}">
+          <a class="post-toc__link" href="#{{ heading_id }}">{{ heading_text }}</a>
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+      </ol>
+    </nav>
+  </div>
+</aside>
+{%- endif -%}

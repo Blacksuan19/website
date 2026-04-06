@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../libs" as *;
 
 /* Post */
@@ -36,6 +37,178 @@
 
   h3 {
     margin: 0;
+  }
+}
+
+.post-body {
+  margin-top: 1.75rem;
+}
+
+.post-content {
+  min-width: 0;
+
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+
+  h2[id],
+  h3[id] {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+.post-toc {
+  margin: 0 0 1.5rem;
+  transition:
+    opacity duration(transition) ease,
+    right duration(transition) ease,
+    top duration(transition) ease,
+    transform duration(transition) ease,
+    width duration(transition) ease;
+
+  &[hidden] {
+    display: none !important;
+  }
+}
+
+.post-toc__inner {
+  background: linear-gradient(
+    180deg,
+    color.adjust(palette(bg-alt), $alpha: -0.01),
+    color.adjust(palette(bg), $alpha: -0.005)
+  );
+  border: solid 1px color.adjust(palette(border), $alpha: 0.02);
+  border-radius: 1rem;
+  box-shadow:
+    inset 0 0 0 1px color.adjust(palette(border), $alpha: -0.04),
+    0 1.35rem 3rem rgba(palette(bg), 0.24);
+  overflow: hidden;
+  transition:
+    box-shadow duration(transition) ease,
+    border-color duration(transition) ease,
+    transform duration(transition) ease;
+}
+
+.post-toc__header {
+  align-items: center;
+  border-bottom: solid 1px color.adjust(palette(border), $alpha: 0.01);
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  padding: 1rem 1.15rem;
+}
+
+.post-toc__title {
+  color: palette(fg-bold);
+  flex: 1 1 auto;
+  font-size: 0.74rem;
+  font-weight: font(weight-bold);
+  letter-spacing: 0.18em;
+  margin: 0;
+  min-width: 0;
+  text-transform: uppercase;
+}
+
+.post-toc__toggle {
+  font-size: 0.74em;
+  margin-left: auto;
+  margin-top: 0;
+  min-height: 2.05rem;
+  max-width: 100%;
+  padding: 0.42rem 0.7rem;
+  transition:
+    opacity duration(transition) ease,
+    transform duration(transition) ease;
+
+  .post-toc__toggle-text {
+    min-width: 0;
+    white-space: nowrap;
+  }
+}
+
+.post-toc__count {
+  font-size: 0.78em;
+  min-width: 1.7em;
+  padding: 0.22em 0.46em;
+  white-space: nowrap;
+}
+
+.post-toc__nav {
+  color: palette(fg);
+  font-family: font(family);
+  font-size: 0.92rem;
+  font-weight: font(weight-bold);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  max-height: min(70vh, 42rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.95rem 1.15rem 1.15rem;
+  transition:
+    max-height duration(menu) ease,
+    padding duration(transition) ease,
+    opacity duration(transition) ease,
+    transform duration(transition) ease;
+}
+
+.post-toc.is-collapsed {
+  .post-toc__nav {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+    padding-top: 0;
+    pointer-events: none;
+    transform: translateY(-0.35rem);
+  }
+}
+
+.post-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-toc__item + .post-toc__item {
+  margin-top: 0.78rem;
+}
+
+.post-toc__link {
+  border-bottom: 0;
+  color: palette(fg-bold);
+  display: inline-block;
+  font-size: 1em;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  padding: 0.08rem 0;
+  text-decoration: none;
+  transition:
+    color duration(transition) ease,
+    opacity duration(transition) ease;
+
+  &:hover,
+  &:focus-visible,
+  &.is-active {
+    color: palette(highlight);
+  }
+}
+
+.post-toc__item--child > .post-toc__link {
+  border-left: solid 1px color.adjust(palette(border), $alpha: -0.02);
+  color: color.adjust(palette(fg), $alpha: -0.08);
+  font-size: 0.96em;
+  font-weight: font(weight);
+  margin-left: 0.35rem;
+  padding-left: 0.8rem;
+
+  &:hover,
+  &:focus-visible,
+  &.is-active {
+    color: palette(highlight);
   }
 }
 
@@ -93,5 +266,123 @@ body.is-menu-visible {
     margin-left: 0;
     text-align: left;
     width: 100%;
+  }
+}
+
+@include breakpoint(medium) {
+  .post-body {
+    margin-top: 1.5rem;
+  }
+
+  .post-toc__header {
+    padding: 0.95rem 1rem;
+  }
+
+  .post-toc__nav {
+    max-height: min(68vh, 34rem);
+    padding: 0.95rem 1rem 1rem;
+  }
+}
+
+@media screen and (min-width: 737px) {
+  .post-toc {
+    --post-toc-inline-offset: var(--floating-control-offset);
+    --post-toc-chip-height: 1.68rem;
+    margin: 0;
+    position: fixed;
+    right: var(--post-toc-inline-offset);
+    top: var(
+      --post-toc-panel-top,
+      calc(
+        var(--header-height) + (#{size(element-margin)} * 2.5) +
+          #{size(element-height)}
+      )
+    );
+    width: 15.75rem;
+    z-index: misc(z-index-base) - 2;
+  }
+
+  .post-toc__inner {
+    position: static;
+  }
+
+  .post-toc__header {
+    min-height: 0;
+    padding: 0;
+  }
+
+  .post-toc__title {
+    display: none;
+  }
+
+  .post-toc__toggle {
+    font-size: 0.62em;
+    margin-top: 0;
+    min-height: var(--post-toc-chip-height);
+    padding: 0.2rem 0.46rem;
+    position: fixed;
+    right: var(--post-toc-inline-offset);
+    top: var(
+      --post-toc-chip-top,
+      calc(var(--header-height) + (#{size(element-margin)} * 2.25))
+    );
+    z-index: misc(z-index-base) - 1;
+  }
+
+  .post-toc__count {
+    font-size: 0.76em;
+    min-width: 1.55em;
+    padding: 0.2em 0.42em;
+  }
+
+  .post-toc__nav {
+    display: block;
+    max-height: var(
+      --post-toc-panel-max-height,
+      calc(
+        100vh - var(--floating-control-size) -
+          (var(--floating-control-offset) * 2) - var(--header-height) -
+          (#{size(element-margin)} * 2.5)
+      )
+    );
+    overflow-y: auto;
+    scrollbar-color: palette(highlight) color.adjust(palette(bg), $alpha: -0.02);
+  }
+
+  .post-toc.is-collapsed {
+    overflow: visible;
+    pointer-events: none;
+
+    .post-toc__inner {
+      background: transparent;
+      border-color: transparent;
+      border-radius: 999px;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .post-toc__header {
+      border-bottom: 0;
+      min-height: 0;
+    }
+
+    .post-toc__title {
+      display: none;
+    }
+
+    .post-toc__toggle {
+      pointer-events: auto;
+    }
+  }
+
+  .post-toc.is-expanded {
+    transform: none;
+  }
+}
+
+body.is-menu-visible {
+  .post-toc {
+    opacity: 0;
+    pointer-events: none;
   }
 }

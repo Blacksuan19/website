@@ -5,7 +5,7 @@ layout: page
 <!-- Main -->
 <div class="alt" id="main">
     <!-- One -->
-    <section id="one">
+    <section class="post-page" id="one">
         {%- if page.source -%}
         <div class="source" title="View Source Code">
             <a href="{{ page.source }}" class="icon alt fa fa-lg fa-code"></a>
@@ -34,7 +34,12 @@ layout: page
             {%- if page.image -%}
             <span class="image main"><img src="{{ page.image }}" alt="" /></span>
             {%- endif -%}
-            <p>{{ content }}</p>
+            <div class="post-body">
+                {%- include post-toc.liquid html=content minimum_items=4 -%}
+                <div class="post-content" data-post-content>
+                    {{ content }}
+                </div>
+            </div>
             {%- if page.project == false -%}
             <div class="actions" style="padding-top: 10px">
                 {%- include post-navigation.liquid post=page -%}
