@@ -6,7 +6,7 @@ description:
   "How I tracked down a catastrophic mobile LCP regression on my Jekyll site and
   fixed it with responsive images, a manifest-driven Liquid include, and a
   parallel ImageMagick-based Python pipeline."
-image: /assets/images/banner.jpg
+image: /assets/images/website-10x-faster/banner.jpeg
 project: false
 permalink: "/blog/:title/"
 tags:
