@@ -4361,6 +4361,58 @@
     ],
     "width": 2560
   },
+  "/assets/images/kobo-wallabag-vscode-reading-pipeline/banner.jpeg": {
+    "format": "jpeg",
+    "height": 768,
+    "path": "/assets/images/kobo-wallabag-vscode-reading-pipeline/banner.jpeg",
+    "source_mtime_ns": 1781067644527702172,
+    "type": "raster",
+    "variants": [
+      {
+        "format": "webp",
+        "height": 179,
+        "path": "/assets/images/optimized/kobo-wallabag-vscode-reading-pipeline/banner-320.webp",
+        "width": 320
+      },
+      {
+        "format": "webp",
+        "height": 268,
+        "path": "/assets/images/optimized/kobo-wallabag-vscode-reading-pipeline/banner-480.webp",
+        "width": 480
+      },
+      {
+        "format": "webp",
+        "height": 357,
+        "path": "/assets/images/optimized/kobo-wallabag-vscode-reading-pipeline/banner-640.webp",
+        "width": 640
+      },
+      {
+        "format": "webp",
+        "height": 429,
+        "path": "/assets/images/optimized/kobo-wallabag-vscode-reading-pipeline/banner-768.webp",
+        "width": 768
+      },
+      {
+        "format": "webp",
+        "height": 536,
+        "path": "/assets/images/optimized/kobo-wallabag-vscode-reading-pipeline/banner-960.webp",
+        "width": 960
+      },
+      {
+        "format": "webp",
+        "height": 714,
+        "path": "/assets/images/optimized/kobo-wallabag-vscode-reading-pipeline/banner-1280.webp",
+        "width": 1280
+      },
+      {
+        "format": "webp",
+        "height": 768,
+        "path": "/assets/images/optimized/kobo-wallabag-vscode-reading-pipeline/banner-1376.webp",
+        "width": 1376
+      }
+    ],
+    "width": 1376
+  },
   "/assets/images/leisure-places-in-india_files/cover.svg": {
     "format": "svg",
     "height": 900,
@@ -6222,6 +6274,58 @@
       }
     ],
     "width": 998
+  },
+  "/assets/images/website-10x-faster/banner.jpeg": {
+    "format": "jpeg",
+    "height": 768,
+    "path": "/assets/images/website-10x-faster/banner.jpeg",
+    "source_mtime_ns": 1781068661942576048,
+    "type": "raster",
+    "variants": [
+      {
+        "format": "webp",
+        "height": 179,
+        "path": "/assets/images/optimized/website-10x-faster/banner-320.webp",
+        "width": 320
+      },
+      {
+        "format": "webp",
+        "height": 268,
+        "path": "/assets/images/optimized/website-10x-faster/banner-480.webp",
+        "width": 480
+      },
+      {
+        "format": "webp",
+        "height": 357,
+        "path": "/assets/images/optimized/website-10x-faster/banner-640.webp",
+        "width": 640
+      },
+      {
+        "format": "webp",
+        "height": 429,
+        "path": "/assets/images/optimized/website-10x-faster/banner-768.webp",
+        "width": 768
+      },
+      {
+        "format": "webp",
+        "height": 536,
+        "path": "/assets/images/optimized/website-10x-faster/banner-960.webp",
+        "width": 960
+      },
+      {
+        "format": "webp",
+        "height": 714,
+        "path": "/assets/images/optimized/website-10x-faster/banner-1280.webp",
+        "width": 1280
+      },
+      {
+        "format": "webp",
+        "height": 768,
+        "path": "/assets/images/optimized/website-10x-faster/banner-1376.webp",
+        "width": 1376
+      }
+    ],
+    "width": 1376
   },
   "/assets/images/website-10x-faster/before.png": {
     "format": "png",
